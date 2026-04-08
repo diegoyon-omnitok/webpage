@@ -21,7 +21,16 @@ export const metadata: Metadata = {
 };
 
 export default function RecursosPage() {
-  const pages = [
+  const pages: Array<{
+    icon: typeof Layers;
+    title: string;
+    desc: string;
+    href: string;
+    color: string;
+    bg: string;
+    cta: string;
+    external?: boolean;
+  }> = [
     {
       icon: Layers,
       title: "Omnitok Content",
@@ -30,6 +39,7 @@ export default function RecursosPage() {
       color: "text-primary",
       bg: "bg-primary/10",
       cta: "Ver página",
+      external: false,
     },
     {
       icon: Package,
@@ -39,6 +49,7 @@ export default function RecursosPage() {
       color: "text-accent",
       bg: "bg-accent/10",
       cta: "Ver página",
+      external: false,
     },
     {
       icon: Bot,
@@ -48,6 +59,7 @@ export default function RecursosPage() {
       color: "text-violet-600",
       bg: "bg-violet-500/10",
       cta: "Ver página",
+      external: false,
     },
     {
       icon: Boxes,
@@ -57,6 +69,7 @@ export default function RecursosPage() {
       color: "text-sky-700",
       bg: "bg-sky-500/10",
       cta: "Ver página",
+      external: false,
     },
     {
       icon: FlaskConical,
@@ -76,6 +89,7 @@ export default function RecursosPage() {
       color: "text-primary",
       bg: "bg-primary/10",
       cta: "Ver página",
+      external: false,
     },
     {
       icon: Building2,
@@ -85,6 +99,7 @@ export default function RecursosPage() {
       color: "text-accent",
       bg: "bg-accent/10",
       cta: "Ver página",
+      external: false,
     },
     {
       icon: MessageCircle,
@@ -94,8 +109,9 @@ export default function RecursosPage() {
       color: "text-teal-700",
       bg: "bg-teal-500/10",
       cta: "Ver página",
+      external: false,
     },
-  ] as const;
+  ];
 
   return (
     <>

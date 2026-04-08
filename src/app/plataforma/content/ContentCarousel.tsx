@@ -25,7 +25,7 @@ const features: ProductFeatureCarouselItem[] = [
     desc: "Visualiza qué SKUs reciben más visitas en los inpages, qué retailers concentran mayor tráfico y cómo interactúan los usuarios con tu contenido. Obtén una vista clara del desempeño de cada implementación para detectar oportunidades de optimización y tomar mejores decisiones.",
     accent: "from-[#4D4A9D] to-[#6366f1]",
     dot: "#4D4A9D",
-    imageSrc: contentDashboardImage,
+    imageSrc: contentDashboardImage.src,
     imageAlt: "Dashboard de analítica de Omnitok Content con métricas de rendimiento por SKU y retailer",
   },
   {

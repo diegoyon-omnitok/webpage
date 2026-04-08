@@ -27,7 +27,7 @@ export default function ResourcesHub() {
       desc: "Diagnóstico gratuito: Share of Search, análisis de PDP y bandas de precio con insights generados por IA.",
       href: "https://lab.omnitok.com/",
       cta: "Ir a Omnitok LABS",
-      coverImage: labsCover,
+      coverImage: labsCover.src,
       coverImageAlt: "Omnitok LABS con panel de métricas y analítica de ejecución digital",
       external: true,
     },

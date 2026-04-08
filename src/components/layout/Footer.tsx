@@ -52,8 +52,8 @@ export default function Footer() {
             <p className="text-white/50 text-sm leading-relaxed">
               La plataforma de ejecución digital en retail para marcas que venden en LATAM.
             </p>
-            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-white/35">
-              formerly PervasiveMind
+            <p className="mt-4 text-xs font-medium leading-relaxed text-white/35">
+              Omnitok, formerly Pervasive Mind.
             </p>
           </div>
 

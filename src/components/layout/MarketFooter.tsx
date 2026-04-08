@@ -25,6 +25,9 @@ export default function MarketFooter({ market }: MarketFooterProps) {
               />
             </div>
             <p className="max-w-md text-sm leading-relaxed text-white/50">{config.footerText}</p>
+            <p className="mt-4 text-xs font-medium leading-relaxed text-white/35">
+              Omnitok, formerly Pervasive Mind.
+            </p>
           </div>
 
           {Object.entries(config.footerColumns).map(([title, links]) => (

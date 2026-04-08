@@ -1,0 +1,151 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { CarouselSlidePlaceholder } from "@/components/sections/ProductPagePlaceholder";
+
+export type ProductFeatureCarouselItem = {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  descLead?: string;
+  accent: string;
+  dot: string;
+  imageSrc?: string;
+  imageAlt?: string;
+};
+
+type ProductFeatureCarouselProps = {
+  sectionTitle: string;
+  sectionSubtitle: string;
+  labels: readonly string[];
+  features: ProductFeatureCarouselItem[];
+};
+
+function FeatureVisualCell({
+  f,
+  isFirstBlock,
+}: {
+  f: ProductFeatureCarouselItem;
+  isFirstBlock?: boolean;
+}) {
+  const compactInpage = Boolean(isFirstBlock && f.imageSrc);
+
+  return (
+    <div className="flex items-center justify-center p-8 lg:p-10 xl:p-12 min-h-[260px] lg:min-h-[380px] h-full w-full">
+      <div
+        className={
+          compactInpage
+            ? "w-full max-w-[22rem] sm:max-w-[26rem] lg:max-w-[30rem] xl:max-w-[32rem] mx-auto flex items-center justify-center"
+            : "w-full max-w-full flex items-center justify-center"
+        }
+      >
+        {f.imageSrc ? (
+          <Image
+            src={f.imageSrc}
+            alt={f.imageAlt ?? ""}
+            width={1600}
+            height={1000}
+            className={
+              compactInpage
+                ? "h-auto w-full object-contain object-center drop-shadow-[0_14px_36px_rgba(77,74,157,0.16)] motion-safe:transition-[filter,transform] duration-300 group-hover:scale-105"
+                : "h-auto w-full max-w-full object-contain object-center motion-safe:transition-transform duration-300 group-hover:scale-105"
+            }
+            sizes={compactInpage ? "(max-width: 1024px) 90vw, 480px" : "(max-width: 1024px) 100vw, 45vw"}
+          />
+        ) : (
+          <div className="w-full max-w-sm lg:max-w-md scale-95 motion-safe:transition-transform duration-300 group-hover:scale-100">
+            <CarouselSlidePlaceholder />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Mismo bloque que “¿Por qué elegir Omnitok Content?”: tarjetas con franja superior,
+ * zigzag texto/visual e icono + etiqueta 01 — …
+ */
+export default function ProductFeatureCarousel({
+  sectionTitle,
+  sectionSubtitle,
+  labels,
+  features,
+}: ProductFeatureCarouselProps) {
+  return (
+    <section className="py-12 lg:py-20 bg-gray-50 box-border w-full">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-snug mb-4">{sectionTitle}</h2>
+          <p className="text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto">{sectionSubtitle}</p>
+        </div>
+
+        <div className="flex flex-col gap-10 lg:gap-14">
+          {features.map((f, i) => {
+            const Icon = f.icon;
+            const reverse = i % 2 === 1;
+            const label = labels[i] ?? "";
+
+            const textCell = (
+              <div key="text" className="flex flex-col justify-center p-8 lg:p-10 xl:p-12 min-h-0">
+                <div className="flex items-center gap-4 mb-4">
+                  <div
+                    className={`flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br ${f.accent} flex items-center justify-center shadow-md`}
+                  >
+                    <Icon size={26} className="text-white" strokeWidth={2} />
+                  </div>
+                  <p className="text-xs font-bold uppercase tracking-widest" style={{ color: f.dot }}>
+                    {String(i + 1).padStart(2, "0")}{label ? ` — ${label}` : ""}
+                  </p>
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 leading-snug mb-3">{f.title}</h3>
+                {f.descLead ? (
+                  <p className="text-base font-semibold text-gray-800 leading-snug mb-3">{f.descLead}</p>
+                ) : null}
+                <p className="text-base text-gray-500 leading-relaxed">{f.desc}</p>
+              </div>
+            );
+
+            const visualCell = (
+              <div key="visual" className="min-h-0">
+                <FeatureVisualCell f={f} isFirstBlock={i === 0} />
+              </div>
+            );
+
+            return (
+              <article key={f.title} className="group rounded-3xl bg-white border border-gray-100 shadow-card overflow-hidden motion-safe:transition-transform duration-300 hover:scale-[1.02]">
+                <div className={`h-1 w-full bg-gradient-to-r ${f.accent}`} aria-hidden />
+                <div className="grid lg:grid-cols-2 items-stretch min-h-[280px] lg:min-h-[400px]">
+                  {reverse ? (
+                    <>
+                      {visualCell}
+                      {textCell}
+                    </>
+                  ) : (
+                    <>
+                      {textCell}
+                      {visualCell}
+                    </>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="flex flex-col items-center gap-4 mt-12 pt-10 border-t border-gray-200">
+          <p className="text-xs font-bold uppercase tracking-widest text-accent">¿Te identificas con esto?</p>
+          <Link
+            href="/es/contacto"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white gradient-brand hover:opacity-90 transition-opacity shadow-lg"
+          >
+            Agenda una conversación <ArrowRight size={17} />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}

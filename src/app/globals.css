@@ -1,0 +1,281 @@
+@import "tailwindcss";
+
+@theme {
+  --font-nunito: "Nunito Sans", system-ui, sans-serif;
+  --font-open-sans: "Open Sans", system-ui, sans-serif;
+
+  --color-primary: #4D4A9D;
+  --color-primary-dark: #3B3880;
+  --color-accent: #FF177B;
+  --color-sidebar: #211f4b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-family: "Nunito Sans", system-ui, sans-serif;
+    color: #374151;
+    background: #ffffff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Nunito Sans", system-ui, sans-serif;
+    font-weight: 700;
+    color: #111827;
+  }
+}
+
+@keyframes map-dot-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.35);
+  }
+}
+
+@keyframes map-dot-halo {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.08;
+    transform: scale(2.35);
+  }
+}
+
+@layer utilities {
+  .map-dot-core {
+    animation: map-dot-pulse 2.4s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+
+  .map-dot-halo {
+    animation: map-dot-halo 2.4s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+
+  .gradient-brand {
+    background: linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%);
+  }
+
+  .gradient-primary {
+    background: linear-gradient(90deg, #4D4A9D 0%, #3B3880 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, #211f4b 0%, #2d2a6e 50%, #1a1838 100%);
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(90deg, #FF177B 0%, #A78BFA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(90deg, #4D4A9D 0%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @keyframes slide-up-fade {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-slide-up {
+    animation: slide-up-fade 0.35s ease both;
+  }
+
+  .blog-content {
+    display: grid;
+    gap: 1.55rem;
+    color: #374151;
+    line-height: 1.95;
+    font-size: 1.08rem;
+  }
+
+  .blog-content > * {
+    width: 100%;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .blog-content h2 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+    color: #111827;
+    margin-top: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  .blog-content h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: #111827;
+    margin-top: 0.55rem;
+    margin-bottom: 0;
+  }
+
+  .blog-content p,
+  .blog-content li {
+    max-width: 42rem;
+    font-family: "Open Sans", system-ui, sans-serif;
+    color: #374151;
+  }
+
+  .blog-content p {
+    text-wrap: pretty;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+
+  .blog-content ul {
+    display: grid;
+    gap: 0.7rem;
+    padding-left: 1.35rem;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .blog-content li::marker {
+    color: #4d4a9d;
+  }
+
+  .blog-content a {
+    color: #4D4A9D;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .blog-content a:hover {
+    text-decoration: underline;
+  }
+
+  .blog-content strong {
+    color: #111827;
+  }
+
+  .hubspot-form-shell .hs-form {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .hubspot-form-shell .hs-form-field {
+    margin: 0;
+  }
+
+  .hubspot-form-shell .hs-form-field > label,
+  .hubspot-form-shell .hs-richtext,
+  .hubspot-form-shell .legal-consent-container {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .hubspot-form-shell .hs-error-msgs {
+    margin-top: 0.35rem;
+    padding-left: 0;
+    list-style: none;
+    font-size: 0.78rem;
+    color: #dc2626;
+  }
+
+  .hubspot-form-shell input,
+  .hubspot-form-shell textarea,
+  .hubspot-form-shell select {
+    width: 100%;
+    border-radius: 0.9rem;
+    border: 1px solid #e5e7eb;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    color: #111827;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hubspot-form-shell input:focus,
+  .hubspot-form-shell textarea:focus,
+  .hubspot-form-shell select:focus {
+    border-color: #4d4a9d;
+    box-shadow: 0 0 0 3px rgba(77, 74, 157, 0.1);
+  }
+
+  .hubspot-form-shell textarea {
+    min-height: 8rem;
+    resize: vertical;
+  }
+
+  .hubspot-form-shell .hs-submit {
+    margin-top: 0.25rem;
+  }
+
+  .hubspot-form-shell .actions {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hubspot-form-shell .hs-button.primary,
+  .hubspot-form-shell input[type="submit"] {
+    width: 100%;
+    border: 0;
+    border-radius: 0.9rem;
+    padding: 0.9rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(90deg, #ff177b 0%, #4d4a9d 100%);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .hubspot-form-shell .hs-button.primary:hover,
+  .hubspot-form-shell input[type="submit"]:hover {
+    opacity: 0.92;
+  }
+
+  .hubspot-form-shell .submitted-message {
+    border-radius: 1rem;
+    border: 1px solid #dcfce7;
+    background: #f0fdf4;
+    padding: 1rem 1.1rem;
+    color: #166534;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .hubspot-form-shell-compact .hs-form {
+    gap: 0.75rem;
+  }
+
+  .hubspot-form-shell-compact input,
+  .hubspot-form-shell-compact textarea,
+  .hubspot-form-shell-compact select {
+    padding: 0.7rem 0.85rem;
+    font-size: 0.875rem;
+  }
+
+  .hubspot-form-shell-compact .hs-button.primary,
+  .hubspot-form-shell-compact input[type="submit"] {
+    padding: 0.8rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+

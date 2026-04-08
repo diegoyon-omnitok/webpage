@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#211F4B" />
+  <rect x="48" y="48" width="1104" height="534" rx="32" fill="url(#paint0_linear)" />
+  <circle cx="180" cy="160" r="72" fill="rgba(255,255,255,0.08)" />
+  <circle cx="1020" cy="470" r="96" fill="rgba(255,255,255,0.08)" />
+  <text x="96" y="220" fill="white" font-family="Arial, sans-serif" font-size="34" font-weight="700">Omnitok LATAM Blog</text>
+  <text x="96" y="282" fill="white" font-family="Arial, sans-serif" font-size="60" font-weight="700">Digital Shelf y</text>
+  <text x="96" y="352" fill="white" font-family="Arial, sans-serif" font-size="60" font-weight="700">contenido de producto</text>
+  <text x="96" y="430" fill="#F9A8D4" font-family="Arial, sans-serif" font-size="28" font-weight="600">Recursos para marcas que venden en retailers y marketplaces</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="96" y1="88" x2="1088" y2="548" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2D2A6E" />
+      <stop offset="1" stop-color="#4D4A9D" />
+    </linearGradient>
+  </defs>
+</svg>

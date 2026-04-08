@@ -1,0 +1,89 @@
+"use client";
+
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+import { CombineWithLinks } from "@/components/sections/ModuleLinks";
+
+const faqs = [
+  {
+    q: "¿Cómo asegura Omnitok la coherencia del contenido en diferentes plataformas?",
+    a: "Mediante tecnología avanzada, Omnitok sincroniza automáticamente el contenido actualizado con múltiples plataformas de retail en tiempo real.",
+  },
+  {
+    q: "¿Puede Omnitok Content personalizar el contenido para diferentes marcas?",
+    a: "Sí, permite una personalización completa del contenido, adaptando desde la estructura hasta los elementos visuales según las necesidades específicas de cada marca.",
+  },
+  {
+    q: "¿Qué tipo de contenido puedo crear con Omnitok Content?",
+    a: "Puedes crear desde textos enriquecidos hasta elementos interactivos como Hotspots, todos diseñados para potenciar la interacción del usuario y la experiencia de compra.",
+  },
+  {
+    q: "¿Qué necesita el retail para implementar Omnitok en mis productos?",
+    a: "Omnitok ya está integrado en más de 150 retailers en LATAM. Requiere aprobación para usar Omnitok en tus productos y es posible añadir más retailers a través de una integración sencilla y sin costos para ellos.",
+  },
+  {
+    q: "¿En caso de necesitar actualizar un contenido de uno de mis productos, cuánto se demora?",
+    a: "La actualización del contenido en la plataforma se refleja automáticamente en todos los retailers de manera instantánea.",
+  },
+];
+
+export default function FaqAccordion() {
+  const [open, setOpen] = useState<number | null>(0);
+
+  return (
+    <section className="min-h-[100dvh] flex flex-col justify-start py-16 lg:py-24 bg-gray-50 box-border w-full">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-16 items-start">
+
+          {/* Left — sticky header */}
+          <div className="lg:sticky lg:top-32 lg:w-72 flex-shrink-0">
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#FF177B" }}>FAQ</p>
+            <h2 className="text-3xl font-bold text-gray-900 leading-snug">Preguntas frecuentes</h2>
+            <p className="mt-4 text-sm text-gray-500 leading-relaxed">Todo lo que necesitas saber sobre Omnitok Content.</p>
+            <div className="mt-6 w-12 h-1 rounded-full" style={{ background: "linear-gradient(90deg, #FF177B, #4D4A9D)" }} />
+          </div>
+
+          {/* Right — accordion */}
+          <div className="flex-1 space-y-3">
+            {faqs.map((item, i) => {
+              const isOpen = open === i;
+              return (
+                <div key={i} className="rounded-2xl overflow-hidden shadow-sm">
+                  <button
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="w-full flex items-center gap-4 px-6 py-5 text-left transition-all duration-300"
+                    style={{
+                      background: isOpen ? "linear-gradient(135deg, #FF177B 0%, #4D4A9D 100%)" : "#ffffff",
+                      border: isOpen ? "none" : "1px solid rgba(77,74,157,0.12)",
+                    }}
+                  >
+                    <span className="flex-shrink-0 text-xs font-bold tabular-nums w-6" style={{ color: isOpen ? "rgba(255,255,255,0.7)" : "#FF177B" }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className={`flex-1 text-base font-semibold leading-snug ${isOpen ? "text-white" : "text-gray-900"}`}>
+                      {item.q}
+                    </span>
+                    <ChevronDown
+                      size={18}
+                      className={`flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-white" : "text-gray-400"}`}
+                    />
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-48" : "max-h-0"}`}>
+                    <div className="px-6 py-5 bg-white border border-t-0 rounded-b-2xl" style={{ borderColor: "rgba(77,74,157,0.12)" }}>
+                      <p className="text-sm text-gray-600 leading-relaxed">{item.a}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+
+        <div className="mt-16 lg:mt-20 pt-12 border-t border-gray-200/90 text-center">
+          <CombineWithLinks exclude="content" />
+        </div>
+      </div>
+    </section>
+  );
+}

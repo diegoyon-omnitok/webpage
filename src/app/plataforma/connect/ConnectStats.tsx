@@ -55,7 +55,7 @@ export default function ConnectStats() {
   }, []);
 
   return (
-    <section ref={ref} className="relative min-h-[100dvh] flex flex-col justify-center py-16 lg:py-24 overflow-hidden box-border w-full gradient-hero">
+    <section ref={ref} className="relative min-h-0 lg:min-h-[100dvh] flex flex-col justify-center py-16 lg:py-24 overflow-hidden box-border w-full gradient-hero">
       <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       <div className="absolute top-1/2 left-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
       <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/30 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />

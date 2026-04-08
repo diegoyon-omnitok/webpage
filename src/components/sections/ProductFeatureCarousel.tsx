@@ -34,7 +34,7 @@ function FeatureVisualCell({
   const compactInpage = Boolean(isFirstBlock && f.imageSrc);
 
   return (
-    <div className="flex items-center justify-center p-8 lg:p-10 xl:p-12 min-h-[260px] lg:min-h-[380px] h-full w-full">
+    <div className="flex h-full w-full items-center justify-center p-6 sm:p-8 lg:min-h-[380px] lg:p-10 xl:p-12 min-h-[220px]">
       <div
         className={
           compactInpage
@@ -50,13 +50,13 @@ function FeatureVisualCell({
             height={1000}
             className={
               compactInpage
-                ? "h-auto w-full object-contain object-center drop-shadow-[0_14px_36px_rgba(77,74,157,0.16)] motion-safe:transition-[filter,transform] duration-300 group-hover:scale-105"
-                : "h-auto w-full max-w-full object-contain object-center motion-safe:transition-transform duration-300 group-hover:scale-105"
+                ? "h-auto w-full object-contain object-center drop-shadow-[0_14px_36px_rgba(77,74,157,0.16)] motion-safe:transition-[filter,transform] duration-300 lg:group-hover:scale-105"
+                : "h-auto w-full max-w-full object-contain object-center motion-safe:transition-transform duration-300 lg:group-hover:scale-105"
             }
             sizes={compactInpage ? "(max-width: 1024px) 90vw, 480px" : "(max-width: 1024px) 100vw, 45vw"}
           />
         ) : (
-          <div className="w-full max-w-sm lg:max-w-md scale-95 motion-safe:transition-transform duration-300 group-hover:scale-100">
+          <div className="w-full max-w-sm scale-95 motion-safe:transition-transform duration-300 lg:max-w-md lg:group-hover:scale-100">
             <CarouselSlidePlaceholder />
           </div>
         )}
@@ -88,10 +88,12 @@ export default function ProductFeatureCarousel({
             const Icon = f.icon;
             const reverse = i % 2 === 1;
             const label = labels[i] ?? "";
+            const textOrderClass = reverse ? "order-1 lg:order-2" : "order-1";
+            const visualOrderClass = reverse ? "order-2 lg:order-1" : "order-2";
 
             const textCell = (
-              <div key="text" className="flex flex-col justify-center p-8 lg:p-10 xl:p-12 min-h-0">
-                <div className="flex items-center gap-4 mb-4">
+              <div key="text" className={`flex min-h-0 flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12 ${textOrderClass}`}>
+                <div className="mb-4 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
                   <div
                     className={`flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br ${f.accent} flex items-center justify-center shadow-md`}
                   >
@@ -110,26 +112,17 @@ export default function ProductFeatureCarousel({
             );
 
             const visualCell = (
-              <div key="visual" className="min-h-0">
+              <div key="visual" className={`min-h-0 ${visualOrderClass}`}>
                 <FeatureVisualCell f={f} isFirstBlock={i === 0} />
               </div>
             );
 
             return (
-              <article key={f.title} className="group rounded-3xl bg-white border border-gray-100 shadow-card overflow-hidden motion-safe:transition-transform duration-300 hover:scale-[1.02]">
+              <article key={f.title} className="group overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-card motion-safe:transition-transform duration-300 lg:hover:scale-[1.02]">
                 <div className={`h-1 w-full bg-gradient-to-r ${f.accent}`} aria-hidden />
-                <div className="grid lg:grid-cols-2 items-stretch min-h-[280px] lg:min-h-[400px]">
-                  {reverse ? (
-                    <>
-                      {visualCell}
-                      {textCell}
-                    </>
-                  ) : (
-                    <>
-                      {textCell}
-                      {visualCell}
-                    </>
-                  )}
+                <div className="grid items-stretch lg:min-h-[400px] lg:grid-cols-2 min-h-0">
+                  {textCell}
+                  {visualCell}
                 </div>
               </article>
             );

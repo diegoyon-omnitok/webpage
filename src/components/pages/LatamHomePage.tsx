@@ -7,8 +7,8 @@ import ResourcesHub from "@/components/sections/ResourcesHub";
 import ResultsSection from "@/components/sections/ResultsSection";
 import FinalCTA from "@/components/sections/FinalCTA";
 
-const fullBleed = "min-h-[100dvh] flex flex-col justify-center box-border w-full";
-const homeHeroStack = "min-h-[100dvh] flex flex-col box-border w-full";
+const fullBleed = "min-h-0 lg:min-h-[100dvh] flex flex-col justify-center box-border w-full";
+const homeHeroStack = "min-h-0 lg:min-h-[100dvh] flex flex-col box-border w-full";
 
 export default function LatamHomePage() {
   return (

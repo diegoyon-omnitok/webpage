@@ -175,8 +175,10 @@ export default function UsaDigitalShelfAnalyticsPage() {
               },
             ].map((f, i) => {
               const reverse = i % 2 === 1;
+              const textOrderClass = reverse ? "order-1 lg:order-2" : "order-1";
+              const visualOrderClass = reverse ? "order-2 lg:order-1" : "order-2";
               const textCell = (
-                <div key="text" className="flex flex-col justify-center p-8 lg:p-10 xl:p-12 min-h-0">
+                <div key="text" className={`flex min-h-0 flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12 ${textOrderClass}`}>
                   <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: f.dot }}>
                     {String(i + 1).padStart(2, "0")} — {f.eyebrow}
                   </p>
@@ -196,21 +198,22 @@ export default function UsaDigitalShelfAnalyticsPage() {
                 </div>
               );
               const visualCell = (
-                <div key="visual" className="flex items-center justify-center p-4 lg:p-6">
+                <div key="visual" className={`flex items-center justify-center p-4 lg:p-6 ${visualOrderClass}`}>
                   <Image
                     src={f.imageSrc}
                     alt={f.imageAlt}
                     width={800}
                     height={500}
-                    className="w-full h-auto object-contain motion-safe:transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-auto object-contain motion-safe:transition-transform duration-300 lg:group-hover:scale-105"
                   />
                 </div>
               );
               return (
-                <article key={f.title} className="group rounded-3xl bg-white border border-gray-100 shadow-card overflow-hidden motion-safe:transition-transform duration-300 hover:scale-[1.02]">
+                <article key={f.title} className="group overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-card motion-safe:transition-transform duration-300 lg:hover:scale-[1.02]">
                   <div className={`h-1 w-full bg-gradient-to-r ${f.accent}`} />
-                  <div className="grid lg:grid-cols-2 items-stretch min-h-[280px] lg:min-h-[400px]">
-                    {reverse ? <>{visualCell}{textCell}</> : <>{textCell}{visualCell}</>}
+                  <div className="grid items-stretch min-h-0 lg:min-h-[400px] lg:grid-cols-2">
+                    {textCell}
+                    {visualCell}
                   </div>
                 </article>
               );

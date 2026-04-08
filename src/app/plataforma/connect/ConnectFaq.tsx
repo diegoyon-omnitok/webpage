@@ -51,7 +51,7 @@ export default function ConnectFaq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="min-h-[100dvh] flex flex-col justify-start py-16 lg:py-24 bg-gray-50 box-border w-full">
+    <section className="min-h-0 lg:min-h-[100dvh] flex flex-col justify-start py-16 lg:py-24 bg-gray-50 box-border w-full">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
 

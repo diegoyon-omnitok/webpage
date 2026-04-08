@@ -121,10 +121,10 @@ export default function ContentPage() {
                   </div>
                   <span className="text-xs font-bold uppercase tracking-widest mb-2 text-gradient-brand">{item.num}</span>
                   {/* Alturas mínimas para que el párrafo inicie alineado entre columnas */}
-                  <h3 className="text-base font-bold text-gray-900 mb-3 leading-snug min-h-[4rem] flex items-start justify-center">
+                  <h3 className="text-base font-bold text-gray-900 mb-3 leading-snug lg:min-h-[4rem] flex items-start justify-center">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed min-h-[4.75rem]">
+                  <p className="text-sm text-gray-500 leading-relaxed lg:min-h-[4.75rem]">
                     {item.desc}
                   </p>
                 </div>

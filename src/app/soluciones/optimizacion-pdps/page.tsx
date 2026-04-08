@@ -38,7 +38,7 @@ export default function OptimizacionPDPsPage() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">El costo oculto de los PDPs mal optimizados</h2>
-          <div className="grid grid-cols-3 gap-4 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
             {[
               { value: "67%", label: "de consumidores abandona un PDP por falta de información" },
               { value: "3×", label: "más conversión en PDPs con Rich Content vs. contenido básico" },

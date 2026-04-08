@@ -37,7 +37,7 @@ export default function GestionCatalogoPage() {
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-8">El problema que resuelve Connect</h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               { val: "15 hrs", label: "promedio de gestión manual de catálogo por semana" },
               { val: "23%", label: "de errores en catálogos gestionados manualmente" },

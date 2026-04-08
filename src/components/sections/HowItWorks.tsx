@@ -57,7 +57,7 @@ type Module = typeof modules[0];
 
 function ModuleCard({ mod, onClick }: { mod: Module; onClick: () => void }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-7 shadow-card transition-all duration-200 hover:-translate-y-1 hover:scale-[1.04] hover:shadow-card-hover">
+    <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-7 shadow-card transition-all duration-200 lg:hover:-translate-y-1 lg:hover:scale-[1.04] lg:hover:shadow-card-hover">
       <div
         className="absolute left-0 right-0 top-0 h-0.5 rounded-t-2xl"
         style={{
@@ -191,10 +191,10 @@ export default function HowItWorks() {
       {selected && (
         <>
           <div className="fixed inset-0 z-40 backdrop-blur-md" style={{ background: "rgba(10,8,30,0.8)" }} onClick={() => setSelected(null)} />
-          <div className="fixed inset-4 lg:inset-10 z-50 rounded-3xl overflow-hidden shadow-modal flex" style={{ animation: "modalIn 0.4s cubic-bezier(0.34,1.4,0.64,1)" }}>
+          <div className="fixed inset-4 lg:inset-10 z-50 flex flex-col overflow-y-auto rounded-3xl shadow-modal lg:flex-row lg:overflow-hidden" style={{ animation: "modalIn 0.4s cubic-bezier(0.34,1.4,0.64,1)" }}>
 
             {/* Left dark */}
-            <div className="relative flex flex-col justify-between p-8 lg:p-12 w-full lg:w-1/2 flex-shrink-0 gradient-hero overflow-hidden">
+            <div className="relative flex w-full flex-col justify-start overflow-y-auto p-6 sm:p-8 lg:w-1/2 lg:flex-shrink-0 lg:justify-between lg:overflow-hidden lg:p-12 gradient-hero min-h-0">
               <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
               <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "rgba(255,23,123,0.25)" }} />
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "rgba(77,74,157,0.35)" }} />

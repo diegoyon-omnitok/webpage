@@ -31,7 +31,7 @@ export default function FaqAccordion() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="min-h-[100dvh] flex flex-col justify-start py-16 lg:py-24 bg-gray-50 box-border w-full">
+    <section className="min-h-0 lg:min-h-[100dvh] flex flex-col justify-start py-16 lg:py-24 bg-gray-50 box-border w-full">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
 
@@ -50,6 +50,7 @@ export default function FaqAccordion() {
               return (
                 <div key={i} className="rounded-2xl overflow-hidden shadow-sm">
                   <button
+                    type="button"
                     onClick={() => setOpen(isOpen ? null : i)}
                     className="w-full flex items-center gap-4 px-6 py-5 text-left transition-all duration-300"
                     style={{
@@ -68,7 +69,7 @@ export default function FaqAccordion() {
                       className={`flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-white" : "text-gray-400"}`}
                     />
                   </button>
-                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-48" : "max-h-0"}`}>
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[1200px]" : "max-h-0"}`}>
                     <div className="px-6 py-5 bg-white border border-t-0 rounded-b-2xl" style={{ borderColor: "rgba(77,74,157,0.12)" }}>
                       <p className="text-sm text-gray-600 leading-relaxed">{item.a}</p>
                     </div>

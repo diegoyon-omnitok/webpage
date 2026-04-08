@@ -70,7 +70,7 @@ export default function AssistantStats() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100dvh] flex flex-col justify-center py-16 lg:py-24 overflow-hidden box-border w-full gradient-hero"
+      className="relative min-h-0 lg:min-h-[100dvh] flex flex-col justify-center py-16 lg:py-24 overflow-hidden box-border w-full gradient-hero"
     >
       <div
         className="absolute inset-0 opacity-[0.06] pointer-events-none"

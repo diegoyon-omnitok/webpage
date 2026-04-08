@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Twitter, Youtube } from "lucide-react";
 import type { MarketKey } from "@/lib/markets";
 import { marketConfigs } from "@/lib/markets";
 
@@ -26,23 +25,6 @@ export default function MarketFooter({ market }: MarketFooterProps) {
               />
             </div>
             <p className="max-w-md text-sm leading-relaxed text-white/50">{config.footerText}</p>
-            <div className="mt-5 flex items-center gap-3">
-              {[
-                { href: "https://linkedin.com", icon: Linkedin },
-                { href: "https://twitter.com", icon: Twitter },
-                { href: "https://youtube.com", icon: Youtube },
-              ].map((social) => (
-                <a
-                  key={social.href}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-white/20"
-                >
-                  <social.icon size={14} />
-                </a>
-              ))}
-            </div>
           </div>
 
           {Object.entries(config.footerColumns).map(([title, links]) => (

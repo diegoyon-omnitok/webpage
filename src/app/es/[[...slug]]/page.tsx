@@ -71,7 +71,7 @@ type PageDefinition = {
 const latamPages: Record<string, PageDefinition> = {
   "": {
     component: LatamHomePage,
-    manualTitle: "Omnitok | Ejecución Digital para Marcas en Retailers y Marketplaces",
+    manualTitle: "Mejora la ejecución digital de tu marca en marketplaces y retailers",
     manualDescription:
       "Mejora la ejecución digital de tu marca en retailers y marketplaces con Omnitok. Centraliza contenido, optimiza páginas de producto y monitorea tu presencia digital.",
     keywords: [

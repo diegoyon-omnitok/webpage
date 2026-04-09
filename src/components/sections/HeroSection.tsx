@@ -35,7 +35,7 @@ export default function HeroSection() {
             <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-white leading-[1.15] tracking-tight">
               Mejora la{" "}
               <span className="text-gradient-brand">ejecución digital</span>{" "}
-              de tu marca en retailers y marketplaces
+              de tu marca en marketplaces y retailers
             </h1>
 
             <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-xl">

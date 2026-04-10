@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-
 const clients: {
   name: string;
   src: string;

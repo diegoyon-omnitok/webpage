@@ -42,7 +42,7 @@ export default function FinalCTA() {
         </div>
 
         <p className="mt-6 text-sm text-white/40">
-          Sin compromiso · Respuesta en menos de 24 horas · Soporte para equipos en LATAM
+          Sin compromiso · Te contactamos a la brevedad · Soporte para equipos en LATAM
         </p>
       </div>
     </section>

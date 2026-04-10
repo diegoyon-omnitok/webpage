@@ -49,7 +49,7 @@ export default function ContactoPage() {
               <h2 className="text-xl font-bold text-gray-900">Canales de contacto</h2>
               {[
                 { icon: Mail, label: "Email", value: "hola@omnitok.com", href: "mailto:hola@omnitok.com" },
-                { icon: Clock, label: "Tiempo de respuesta", value: "Menos de 24 horas hábiles", href: null },
+                { icon: Clock, label: "Tiempo de respuesta", value: "Nos ponemos en contacto a la brevedad", href: null },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4 bg-gray-50 rounded-xl p-4 border border-gray-100">
                   <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">

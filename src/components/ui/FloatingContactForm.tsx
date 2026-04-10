@@ -37,7 +37,7 @@ export default function FloatingContactForm() {
         >
           <div>
             <p className="text-white font-bold text-sm">¿Hablamos?</p>
-            <p className="text-white/70 text-xs">Te respondemos en menos de 24 h</p>
+            <p className="text-white/70 text-xs">Te respondemos a la brevedad</p>
           </div>
           <button
             onClick={() => setOpen(false)}

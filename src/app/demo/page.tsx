@@ -35,7 +35,7 @@ export default function DemoPage() {
               {[
                 { icon: Clock, text: "30 minutos, sin compromiso" },
                 { icon: Users, text: "Con un especialista en tu industria" },
-                { icon: CheckCircle2, text: "Te contactamos a la brevedad" },
+                { icon: CheckCircle2, text: "Respuesta en menos de 24 horas" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2 text-white/70 text-sm">
                   <item.icon size={14} className="text-success flex-shrink-0" />

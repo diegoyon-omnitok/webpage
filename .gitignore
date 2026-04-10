@@ -39,7 +39,6 @@ omnitok_posts_migracion.xlsx
 
 # local AI/editor helper files
 AGENTS.md
-CLAUDE.md
 
 # vercel
 .vercel

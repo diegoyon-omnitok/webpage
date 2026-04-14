@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     quote:
-      "Con el apoyo de Omnitok logramos ordenar y agilizar significativamente el proceso de gestión de contenido ecommerce, facilitando la carga, actualización y gestión de más de 80 SKUs en distintas categorías. Dimos un salto importante en diseño, haciendo que los inpage sean mucho más interactivos y atractivos. Como resultado, redujimos los tiempos de implementación en aproximadamente una semana por SKU, además de mejorar la calidad y consistencia del contenido, lo que ha tenido un impacto positivo en nuestra operación diaria.",
+      "Con el apoyo de Omnitok logramos ordenar y agilizar significativamente el proceso de gestión de contenido ecommerce, facilitando la carga, actualización y gestión de más de 80 SKUs en distintas categorías. Dimos un salto importante en diseño, haciendo que los inpage sean mucho más interactivos y atractivos para nuestros clientes.",
     name: "Matias Sabaj",
     role: "Product Manager Electro",
     company: "TCL Electronics",

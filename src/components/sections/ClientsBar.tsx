@@ -2,19 +2,14 @@
 
 import Image from "next/image";
 
-const clients: {
-  name: string;
-  src: string;
-  /** Clases extra para igualar peso visual (p. ej. TCL suele verse más grande en el PNG). */
-  logoClassName?: string;
-}[] = [
+const clients: { name: string; src: string; small?: boolean }[] = [
   { name: "Rheem",      src: "/clients/rheem-clean.png"      },
   { name: "Hisense",    src: "/clients/hisense-clean.png"    },
   { name: "L'Oréal",    src: "/clients/loreal-clean.png"     },
   { name: "roSen",      src: "/clients/rosen-clean.png"      },
   { name: "Newell",     src: "/clients/newell-clean.png"     },
   { name: "Beiersdorf", src: "/clients/beiersdorf-clean.png" },
-  { name: "TCL", src: "/clients/tcl-clean.png", logoClassName: "h-auto w-auto max-h-[110px] max-w-[200px] object-contain opacity-100" },
+  { name: "TCL",        src: "/clients/tcl-clean.png", small: true },
   { name: "Midea",      src: "/clients/midea-clean.png"      },
 ];
 
@@ -50,8 +45,9 @@ export default function ClientsBar() {
                 width={180}
                 height={80}
                 className={
-                  client.logoClassName ??
-                  "h-full w-auto max-w-full object-contain opacity-100"
+                  client.small
+                    ? "h-[60%] w-auto max-w-full object-contain"
+                    : "h-full w-auto max-w-full object-contain"
                 }
               />
             </div>

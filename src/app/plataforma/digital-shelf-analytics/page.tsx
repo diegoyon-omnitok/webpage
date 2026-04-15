@@ -63,7 +63,11 @@ export default function AnalyticsPage() {
                 width={1024}
                 height={1024}
                 className="block h-auto w-full max-w-[min(100%,32rem)] sm:max-w-[min(100%,36rem)] lg:max-w-[min(100%,40rem)] xl:max-w-[min(100%,44rem)] object-contain object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 origin-center lg:origin-right"
-                style={{ filter: "drop-shadow(0 24px 48px rgba(77,74,157,0.5))" }}
+                style={{
+                  filter: "drop-shadow(0 24px 48px rgba(77,74,157,0.5))",
+                  maskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
+                  WebkitMaskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
+                }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />

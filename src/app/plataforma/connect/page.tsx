@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function ConnectPage() {
   return (
     <>
-      <section className={`${productHeroSection} pt-24 pb-10 lg:pb-14`}>
+      <section className={`${productHeroSection} pt-24 pb-0`}>
         <div
           className="absolute inset-0 opacity-[0.06] pointer-events-none"
           style={{
@@ -32,9 +32,9 @@ export default function ConnectPage() {
         />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-6 lg:pt-10">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-6 lg:pt-10 pb-0">
           <div className="grid lg:grid-cols-2 gap-12 lg:items-stretch">
-            <div className="self-start">
+            <div className="self-start flex flex-col items-start pb-10 lg:pb-14">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/20 border border-accent/30 mb-5">
                 <Package size={13} className="text-accent" />
                 <span className="text-xs font-semibold text-white">Omnitok Connect</span>
@@ -54,20 +54,22 @@ export default function ConnectPage() {
                 </Link>
               </div>
             </div>
-            <div className="relative flex items-end justify-center lg:justify-end w-full min-w-0 self-end">
+            <div className="relative flex items-end justify-center lg:justify-end w-full min-w-0 pl-0 lg:pl-2 self-end">
               <Image
                 src="/plataforma/connect/page-banner-connect-nobg.png"
                 alt="Omnitok Connect — catálogo centralizado y distribución en retailers"
                 width={1600}
                 height={1000}
-                className="block h-auto w-full max-w-[min(100%,38rem)] sm:max-w-[min(100%,42rem)] lg:max-w-[min(100%,48rem)] xl:max-w-[min(100%,54rem)] object-contain object-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 origin-center lg:origin-right"
-                style={{ filter: "drop-shadow(0 24px 48px rgba(77,74,157,0.3))" }}
+                className="block h-auto w-full max-w-[min(100%,38rem)] sm:max-w-[min(100%,42rem)] lg:max-w-[min(100%,48rem)] xl:max-w-[min(100%,54rem)] object-contain object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 origin-center lg:origin-right"
+                style={{
+                  filter: "drop-shadow(0 24px 48px rgba(77,74,157,0.3))",
+                  maskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
+                  WebkitMaskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
+                }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
                 unoptimized
               />
-              {/* Bottom fade to blend with ClientsBar */}
-              <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent, #1a1838)" }} />
             </div>
           </div>
         </div>

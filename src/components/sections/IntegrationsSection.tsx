@@ -3,11 +3,13 @@
 import Image from "next/image";
 
 /* scale compensates for different amounts of internal whitespace in each PNG
-   so every logo appears roughly the same visual weight in the marquee. */
-const integrations: { name: string; src: string; scale?: number }[] = [
+   so every logo appears roughly the same visual weight in the marquee.
+   wide: true → ultra-wide logos (e.g. Ripley 8:1); removes max-w so
+   the image renders at full container height, centered and clipped. */
+const integrations: { name: string; src: string; scale?: number; wide?: boolean }[] = [
   { name: "Falabella",    src: "/retailers/falabella.png"                  },
   { name: "Mercado Libre", src: "/retailers/mercado-libre.png"              },
-  { name: "Walmart",      src: "/retailers/walmart.png",      scale: 1.35 },
+  { name: "Walmart",      src: "/retailers/walmart.png"                   },
   { name: "Paris",        src: "/retailers/paris.png"                      },
   { name: "Easy",         src: "/retailers/easy.png"                       },
   { name: "Éxito",        src: "/retailers/exito.png"                      },
@@ -20,7 +22,10 @@ const integrations: { name: string; src: string; scale?: number }[] = [
   { name: "Tottus",       src: "/retailers/tottus.png"                     },
   { name: "OnCity",       src: "/retailers/oncity.png",       scale: 1.4  },
   { name: "Naldo",        src: "/retailers/naldo.png",        scale: 0.6  },
-  { name: "Diggit",       src: "/retailers/diggit.png",       scale: 0.6  },
+  { name: "Oechsle",      src: "/retailers/oechsle.png"                    },
+  { name: "Ripley",       src: "/retailers/ripley.png",       wide: true  },
+  { name: "Salcobrand",   src: "/retailers/salcobrand.png"                 },
+  { name: "Farmacias Ahumada", src: "/retailers/farmacias-ahumada.png"     },
 ];
 
 // Duplicate for seamless infinite loop
@@ -70,15 +75,18 @@ export default function IntegrationsSection({ hideTitle = false }: IntegrationsS
             <div
               key={`${item.name}-${i}`}
               className="flex-shrink-0 flex items-center justify-center overflow-hidden"
-              style={{ width: "180px", height: "80px" }}
+              style={{ width: item.wide ? "350px" : "180px", height: "80px" }}
             >
               <Image
                 src={item.src}
                 alt={item.name}
-                width={180}
+                width={item.wide ? 350 : 180}
                 height={80}
-                className="h-full w-auto max-w-full object-contain"
-                style={item.scale ? { transform: `scale(${item.scale})` } : undefined}
+                className="h-full w-auto object-contain"
+                style={{
+                  ...(item.scale ? { transform: `scale(${item.scale})` } : {}),
+                  maxWidth: item.scale && !item.wide ? "none" : "100%",
+                }}
               />
             </div>
           ))}

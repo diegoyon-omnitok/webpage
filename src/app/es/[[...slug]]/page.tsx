@@ -227,7 +227,7 @@ function resolveTitle(metadata?: Metadata, fallback?: string) {
 function buildAlternates(entry?: Partial<Record<MarketKey, string>>) {
   if (!entry) return undefined;
   return {
-    ...(entry.latam ? { es: entry.latam } : {}),
+    ...(entry.latam ? { es: entry.latam, "x-default": entry.latam } : {}),
     ...(entry.usa ? { "en-US": entry.usa } : {}),
   };
 }

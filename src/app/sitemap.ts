@@ -12,6 +12,7 @@ function alt(es: string, enUS: string) {
   return {
     es: `${SITE_URL}${es}`,
     "en-US": `${SITE_URL}${enUS}`,
+    "x-default": `${SITE_URL}${es}`,
   };
 }
 

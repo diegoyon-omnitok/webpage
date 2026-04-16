@@ -21,15 +21,22 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Omnitok",
+    default: "Omnitok | Digital Shelf Execution Platform",
     template: "%s | Omnitok",
   },
   description:
-    "Omnitok is a multi-market SaaS platform for brands selling through retailers and marketplaces.",
+    "Omnitok ayuda a marcas a mejorar su ejecucion digital en retailers y marketplaces. Contenido enriquecido, gestion de producto, digital shelf analytics y MAP monitoring.",
   icons: {
     icon: "/Favicon.png",
     shortcut: "/Favicon.png",
     apple: "/Favicon.png",
+  },
+  alternates: {
+    languages: {
+      es: "/es",
+      "en-US": "/en-us",
+      "x-default": "/es",
+    },
   },
   openGraph: {
     type: "website",
@@ -45,6 +52,8 @@ export default async function RootLayout({
 }>) {
   const headerStore = await headers();
   const htmlLang = headerStore.get("x-omni-lang") ?? "en";
+  const isUSA = htmlLang === "en" || htmlLang === "en-US";
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -59,8 +68,31 @@ export default async function RootLayout({
     sameAs: [
       "https://www.linkedin.com/company/omnitoksolutions/",
     ],
-    description:
-      "Omnitok is a B2B SaaS platform for brands that sell through retailers and marketplaces, helping them improve digital execution, product content and commercial visibility.",
+    description: isUSA
+      ? "Omnitok helps brands monitor MAP violations, detect unauthorized sellers and gain digital shelf visibility across retailers and marketplaces."
+      : "Omnitok ayuda a marcas a mejorar su ejecucion digital en retailers y marketplaces. Contenido enriquecido, gestion de producto y digital shelf analytics.",
+  };
+
+  const siteNavSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: isUSA ? "Omnitok USA Navigation" : "Omnitok LATAM Navigation",
+    itemListElement: isUSA
+      ? [
+          { "@type": "SiteNavigationElement", position: 1, name: "Home", url: `${SITE_URL}/en-us` },
+          { "@type": "SiteNavigationElement", position: 2, name: "MAP Monitoring", url: `${SITE_URL}/en-us/map-monitoring` },
+          { "@type": "SiteNavigationElement", position: 3, name: "Digital Shelf Analytics", url: `${SITE_URL}/en-us/digital-shelf-analytics` },
+          { "@type": "SiteNavigationElement", position: 4, name: "Contact", url: `${SITE_URL}/en-us/contact` },
+          { "@type": "SiteNavigationElement", position: 5, name: "Blog", url: `${SITE_URL}/en-us/blog` },
+        ]
+      : [
+          { "@type": "SiteNavigationElement", position: 1, name: "Inicio", url: `${SITE_URL}/es` },
+          { "@type": "SiteNavigationElement", position: 2, name: "Contenido Enriquecido", url: `${SITE_URL}/es/contenido-enriquecido` },
+          { "@type": "SiteNavigationElement", position: 3, name: "Digital Shelf Analytics", url: `${SITE_URL}/es/digital-shelf-analytics` },
+          { "@type": "SiteNavigationElement", position: 4, name: "Gestion de Contenido", url: `${SITE_URL}/es/gestion-de-contenido-de-producto` },
+          { "@type": "SiteNavigationElement", position: 5, name: "Contacto", url: `${SITE_URL}/es/contacto` },
+          { "@type": "SiteNavigationElement", position: 6, name: "Blog", url: `${SITE_URL}/es/blog` },
+        ],
   };
 
   const GA_ID = "G-Z26M7SM2Z7";
@@ -79,6 +111,10 @@ export default async function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavSchema) }}
         />
         {children}
       </body>

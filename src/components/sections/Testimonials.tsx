@@ -81,17 +81,17 @@ export default function Testimonials() {
 
         <div className="max-w-2xl mx-auto">
           {/* Card + side arrows */}
-          <div className="relative flex items-center gap-8">
+          <div className="relative flex items-center gap-3 lg:gap-8">
 
             <button
               type="button"
               onClick={prev}
-              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-primary border border-gray-200 bg-white transition-all duration-200 hover:border-primary/30 hover:bg-gray-50 hover:-translate-x-2 shadow-sm"
+              className="hidden sm:flex flex-shrink-0 w-10 h-10 rounded-full items-center justify-center text-primary border border-gray-200 bg-white transition-all duration-200 hover:border-primary/30 hover:bg-gray-50 hover:-translate-x-2 shadow-sm"
             >
               <ChevronLeft size={18} />
             </button>
 
-          <div className="flex-1 flex flex-col min-h-[280px] rounded-2xl border border-gray-100 shadow-card bg-white overflow-hidden transition-all duration-300 hover:scale-[1.08] hover:shadow-modal cursor-default">
+          <div className="flex-1 flex flex-col rounded-2xl border border-gray-100 shadow-card bg-white overflow-hidden transition-all duration-300 lg:hover:scale-[1.08] lg:hover:shadow-modal cursor-default">
             <div
               className="h-0.5 w-full shrink-0 rounded-t-2xl"
               style={{
@@ -100,16 +100,16 @@ export default function Testimonials() {
               }}
               aria-hidden
             />
-            <div className="p-8 flex flex-col flex-1 justify-between">
+            <div className="p-5 sm:p-8 flex flex-col flex-1 justify-between">
               <>
                 <div>
-                  <Quote size={28} className="mb-4" style={{ color: "#4D4A9D" }} />
-                  <p className="text-base text-gray-600 leading-relaxed italic">
+                  <Quote size={22} className="mb-3 sm:mb-4" style={{ color: "#4D4A9D" }} />
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed italic">
                     &quot;{t.quote}&quot;
                   </p>
                 </div>
-                <div className="flex items-center gap-4 mt-8 pt-6 border-t border-gray-100">
-                  <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-gray-100">
+                <div className="flex items-center gap-3 sm:gap-4 mt-5 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-100">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-gray-100">
                     <Image
                       src={t.photo}
                       alt={t.name}
@@ -132,11 +132,29 @@ export default function Testimonials() {
             <button
               type="button"
               onClick={next}
-              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-200 hover:opacity-90 hover:translate-x-2 shadow-sm gradient-brand"
+              className="hidden sm:flex flex-shrink-0 w-10 h-10 rounded-full items-center justify-center text-white transition-all duration-200 hover:opacity-90 hover:translate-x-2 shadow-sm gradient-brand"
             >
               <ChevronRight size={18} />
             </button>
 
+          </div>
+
+          {/* Mobile arrows */}
+          <div className="flex sm:hidden justify-center gap-4 mt-4">
+            <button
+              type="button"
+              onClick={prev}
+              className="w-10 h-10 rounded-full flex items-center justify-center text-primary border border-gray-200 bg-white shadow-sm"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              type="button"
+              onClick={next}
+              className="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-sm gradient-brand"
+            >
+              <ChevronRight size={18} />
+            </button>
           </div>
 
           {/* Dots */}

@@ -49,7 +49,7 @@ export default function AssistantFaq() {
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#FF177B" }}>
               FAQ
             </p>
-            <h2 className="text-3xl font-bold text-gray-900 leading-snug">Preguntas frecuentes</h2>
+            <h6 className="text-3xl font-bold text-gray-900 leading-snug">Preguntas frecuentes</h6>
             <p className="mt-4 text-sm text-gray-500 leading-relaxed">Todo lo que necesitas saber sobre Omnitok Assistant.</p>
             <div className="mt-6 w-12 h-1 rounded-full" style={{ background: "linear-gradient(90deg, #FF177B, #4D4A9D)" }} />
           </div>

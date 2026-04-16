@@ -125,9 +125,9 @@ export default function BlogPostPage({
 
           {post.faqItems?.length ? (
             <section className="mt-14 border-t border-gray-100 pt-10">
-              <h2 className="mb-6 text-2xl font-bold text-gray-900">
+              <h6 className="mb-6 text-2xl font-bold text-gray-900">
                 {post.market === "usa" ? "Frequently Asked Questions" : "Preguntas frecuentes"}
-              </h2>
+              </h6>
               <dl className="space-y-6">
                 {post.faqItems.map((item) => (
                   <div key={item.question} className="rounded-2xl border border-gray-100 bg-gray-50/50 p-6">

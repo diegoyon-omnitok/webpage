@@ -1,51 +1,198 @@
-# Mapa de keywords SEO — Omnitok
+# Mapa de Keywords SEO — Omnitok
 
-Referencia para copy, metadata (`title` / `description`), H1/H2 y variedad semántica.  
-Volúmenes orientativos (fuente: planificación interna; validar en herramienta de keywords).
-
-**Destacados en planificación:** Ficha · Digital Shelf
+Referencia para copy, metadata (`title` / `description`), H1/H2 y variedad semantica.
 
 ---
 
-## Tabla por keyword
+## USA Market (English)
 
-| Keyword | Volumen | Página objetivo | Sinónimos / variaciones |
-|--------|---------|-----------------|---------------------------|
-| Catálogo digital | 1.300 | Connect | Catálogo online, catálogo electrónico, catálogo virtual |
-| Ficha técnica | 49.500 | Connect | Especificaciones técnicas, hoja técnica, detalles del producto |
-| Ficha técnica de producto | 1.400 | Connect | Ficha de producto, ficha informativa, ficha descriptiva |
-| Ficha | 14.800 | Connect | *(usar con cuidado: muy genérico; combinar con contexto producto/retailer)* |
-| Asistente virtual | 12.100 | Assistant | Asistente digital, asistente inteligente, asistente conversacional |
-| Chatbot | 14.800 | Assistant | Bot conversacional, asistente de chat, agente virtual |
-| Ecommerce | 8.100 | Content | Comercio electrónico, tienda online, venta |
-| Digital Shelf | 70 | Digital Shelf Analytics | *(término de categoría; volumen bajo, intención específica B2B)* |
-| Product Experience | 590 | Content | Experiencia de producto, gestión de producto, interacción con el producto |
-| Time to market | 210 | Connect | Tiempo de lanzamiento, velocidad de salida al mercado, go-to-market |
-| Estrategia digital | 880 | Home + Content | Estrategia online, estrategia de marketing digital, plan digital |
-| Plataforma integral | 90 | *(sin asignar en planilla)* | Plataforma unificada, sistema integral, solución todo en uno |
-| Experiencia de compra | 260 | Home | Experiencia del cliente, experiencia de usuario, customer experience |
-| Bot | 12.000 | Assistant | Asistente automatizado, bot de conversación, chatbot |
+### Tier 1 — High Commercial Intent (Priority)
+
+| Keyword | Target Page | Notes |
+|---------|-------------|-------|
+| MAP monitoring software | MAP Monitoring | Core product keyword |
+| MAP enforcement software | MAP Monitoring | Core product keyword |
+| MAP compliance software | MAP Monitoring | Core product keyword |
+| minimum advertised price monitoring | MAP Monitoring | Long-tail, high intent |
+| MAP violation monitoring | MAP Monitoring / Blog | Enforcement angle |
+| unauthorized seller monitoring | MAP Monitoring | Seller intelligence |
+| unauthorized reseller monitoring | MAP Monitoring | Variant of above |
+| seller intelligence software | MAP Monitoring | Differentiation keyword |
+| price compliance software | MAP Monitoring | Cross-category |
+| digital shelf analytics software | DSA | Module-specific |
+| digital shelf monitoring software | DSA | Variant |
+| product listing monitoring software | DSA | Variant |
+| pricing visibility software | MAP Monitoring / DSA | Cross-module |
+| marketplace monitoring software | MAP Monitoring | Channel-specific |
+| ecommerce brand protection software | MAP Monitoring | Umbrella term |
+
+### Tier 2 — Commercial Secondary (Landing pages, comparatives)
+
+| Keyword | Target |
+|---------|--------|
+| MAP monitoring service | MAP Monitoring |
+| MAP compliance monitoring | Blog / MAP Monitoring |
+| detect MAP violations online | Blog |
+| ecommerce MAP monitoring | Blog / MAP Monitoring |
+| retailer price monitoring for brands | Blog |
+| enforce MAP policy online | Blog |
+| unauthorized seller detection | Blog |
+| unauthorized seller tracking | Blog |
+| rogue seller monitoring | Blog |
+| gray market seller monitoring | Blog |
+| seller compliance monitoring | Blog |
+| reseller compliance software | MAP Monitoring |
+| price erosion monitoring | Blog / MAP Monitoring |
+| digital shelf visibility software | DSA |
+
+### Tier 3 — Informational High-Intent (Blog TOFU/MOFU)
+
+| Keyword | Best Content Type |
+|---------|-------------------|
+| what is MAP monitoring | Blog / Glossary |
+| what is MAP compliance | Blog / Glossary |
+| what is MAP enforcement | Blog / Glossary |
+| what is a MAP policy | Blog / Glossary |
+| how to enforce a MAP policy | Blog |
+| how to monitor MAP violations | Blog |
+| why MAP violations happen | Blog |
+| how to find unauthorized sellers | Blog |
+| how to remove unauthorized sellers | Blog |
+| how to protect brand pricing online | Blog |
+| what is digital shelf analytics | Blog / Glossary |
+
+### Tier 4 — BOFU Comparative
+
+| Keyword | Content Type |
+|---------|-------------|
+| best MAP monitoring software | Blog / Landing |
+| best digital shelf analytics software | Blog / Landing |
+| MAP monitoring tools for brands | Blog |
+| MAP compliance tools | Blog |
+| brand protection tools for marketplaces | Blog |
+| MAP monitoring platform | Blog / Landing |
 
 ---
 
-## Rutas del sitio (mapeo rápido)
+## LATAM Market (Spanish)
 
-| Etiqueta “Página” en planilla | Ruta típica |
-|-------------------------------|-------------|
-| Connect | `/plataforma/connect` |
-| Assistant | `/plataforma/assistant` |
-| Content | `/plataforma/content` |
-| Digital Shelf | `/plataforma/digital-shelf-analytics` |
-| Home | `/` |
+### Tier 1 — High Commercial Intent (Priority)
+
+| Keyword | Target Page | Notes |
+|---------|-------------|-------|
+| contenido enriquecido para ecommerce | Content | Core product keyword |
+| contenido enriquecido para retailers | Content | Channel-specific |
+| fichas de producto enriquecidas | Content | Product-level |
+| gestion de contenido de producto | Connect | Core module keyword |
+| centralizacion de informacion de producto | Connect | Process keyword |
+| distribucion de contenido de producto | Connect | Process keyword |
+| digital shelf analytics | DSA | Module-specific |
+| monitoreo de precios stock y contenido | DSA | Execution keyword |
+| ejecucion digital en retailers | DSA / Blog | Cross-module |
+| software de monitoreo de precios | DSA | Product keyword |
+| control de ejecucion digital | DSA | Process keyword |
+| visibilidad digital en retailers | DSA / Blog | Outcome keyword |
+| automatizacion de carga de productos | Connect | Process keyword |
+| gestion de fichas de producto | Connect | Product-level |
+| monitoreo de productos en marketplaces | DSA | Channel-specific |
+
+### Tier 2 — Content Module
+
+| Keyword | Target |
+|---------|--------|
+| contenido enriquecido para retail | Content |
+| mejorar fichas de producto | Blog / Content |
+| fichas de producto para ecommerce | Blog / Content |
+| contenido para paginas de producto | Blog |
+| rich content ecommerce | Blog |
+| experiencias de producto en PDP | Blog / Content |
+| contenido visual para ecommerce | Blog |
+| contenido interactivo para PDP | Blog / Content |
+| como mejorar una ficha de producto | Blog |
+| como aumentar conversion en PDP | Blog |
+
+### Tier 3 — Connect Module
+
+| Keyword | Target |
+|---------|--------|
+| sindicacion de contenido de producto | Connect |
+| publicacion de productos en retailers | Connect |
+| actualizar contenido en multiples canales | Connect |
+| catalogo de productos centralizado | Connect |
+| software para gestion de catalogo | Connect |
+
+### Tier 4 — DSA Module
+
+| Keyword | Target |
+|---------|--------|
+| monitoreo de precios y promociones | DSA |
+| share of search ecommerce | DSA / Blog |
+| monitoreo de disponibilidad | DSA |
+| monitoreo de contenido de producto | DSA |
+| monitoreo de posicionamiento digital | DSA |
+| deteccion de quiebres de stock ecommerce | DSA |
+
+### Tier 5 — Assistant Module
+
+| Keyword | Target |
+|---------|--------|
+| asistente de compra para ecommerce | Assistant |
+| asistente virtual para ecommerce | Assistant |
+| chatbot para ecommerce | Assistant / Blog |
+| recomendador de productos ecommerce | Assistant / Blog |
+| IA para ecommerce | Blog |
+| recomendaciones de producto con IA | Blog |
+
+### Tier 6 — Informational Blog (LATAM)
+
+| Keyword | Target |
+|---------|--------|
+| que es contenido enriquecido | Blog |
+| que es digital shelf analytics | Blog |
+| como mejorar una ficha de producto | Blog |
+| como aumentar conversion en ecommerce | Blog |
+| que debe tener una pagina de producto | Blog |
+| como centralizar informacion de producto | Blog |
+| como monitorear precios en retailers | Blog |
+| como mejorar la visibilidad de productos online | Blog |
+| errores comunes en paginas de producto | Blog |
+| que es share of search | Blog |
 
 ---
 
-## Uso recomendado
+## Blog SEO Rules
 
-1. **Meta title / description:** 1 keyword principal + 1 variación natural por página.
-2. **Cuerpo:** alternar sinónimos para no repetir la misma frase; mantener legibilidad humana primero.
-3. **Connect:** priorizar familia *ficha* / *catálogo digital* / *time to market* según sección.
-4. **Assistant:** *asistente virtual*, *chatbot*, *bot* con intención PDP/conversión.
-5. **Digital Shelf:** reforzar término *digital shelf* donde encaje (categoría de producto).
+1. **Every blog post must have unique secondaryKeywords** — never share the exact same 6-keyword set across posts.
+2. **Meta descriptions must be unique per post** — never use templates like "[keyword] for brands: practical guidance...".
+3. **seoTitle and h1 must be different** from each other (complementary phrasing).
+4. **coverImageAlt must be descriptive** — not templated "Illustration for [keyword]".
+5. **Each post has FAQ items** for LLM/AI search optimization (FAQPage JSON-LD schema).
+6. **Primary keyword appears in**: seoTitle, h1, first paragraph, at least 1 body H2.
+7. **Internal links in body**: 2-4 per post using `[anchor text](/path)` format.
+8. **Related links vary by post** — not every post links to the same 3 pages.
 
-Última actualización: incorporación de planilla de keywords Omnitok (B2B SaaS).
+## Route Reference
+
+### LATAM
+| Page | Route |
+|------|-------|
+| Home | `/es` |
+| Content | `/es/contenido-enriquecido` |
+| Connect | `/es/gestion-de-contenido-de-producto` |
+| DSA | `/es/digital-shelf-analytics` |
+| Assistant | `/es/asistente-de-compra` |
+| Contact | `/es/contacto` |
+| Blog | `/es/blog` |
+
+### USA
+| Page | Route |
+|------|-------|
+| Home | `/en-us` |
+| MAP Monitoring | `/en-us/map-monitoring` |
+| DSA | `/en-us/digital-shelf-analytics` |
+| Contact | `/en-us/contact` |
+| Blog | `/en-us/blog` |
+
+---
+
+Last updated: 2026-04-16 — Full keyword strategy with blog SEO rules and LLM optimization.

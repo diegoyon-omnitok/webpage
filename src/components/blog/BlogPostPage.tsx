@@ -47,11 +47,32 @@ export default function BlogPostPage({
       "@type": "WebPage",
       "@id": `${SITE_URL}${post.path}`,
     },
+    keywords: [post.primaryKeyword, ...post.secondaryKeywords].join(", "),
+    inLanguage: post.language,
+    articleSection: post.category,
   };
+
+  const faqJsonLd = post.faqItems?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faqItems.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {faqJsonLd ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      ) : null}
 
       <section className="relative overflow-hidden bg-white pt-28 pb-6">
         <div className="absolute inset-x-0 top-0 h-28 gradient-hero" aria-hidden />
@@ -101,6 +122,22 @@ export default function BlogPostPage({
           </div>
 
           <BlogContent rawText={post.rawText} leadExcerpt={post.excerpt} />
+
+          {post.faqItems?.length ? (
+            <section className="mt-14 border-t border-gray-100 pt-10">
+              <h2 className="mb-6 text-2xl font-bold text-gray-900">
+                {post.market === "usa" ? "Frequently Asked Questions" : "Preguntas frecuentes"}
+              </h2>
+              <dl className="space-y-6">
+                {post.faqItems.map((item) => (
+                  <div key={item.question} className="rounded-2xl border border-gray-100 bg-gray-50/50 p-6">
+                    <dt className="text-base font-semibold text-gray-900">{item.question}</dt>
+                    <dd className="mt-2 text-sm leading-relaxed text-gray-600">{item.answer}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          ) : null}
 
           <div className="mt-16 rounded-3xl gradient-hero p-8 text-white shadow-card">
             <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-pink-300">

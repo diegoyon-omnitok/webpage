@@ -10,6 +10,11 @@ export type BlogRelatedLink = {
   anchor: string;
 };
 
+export type BlogFaqItem = {
+  question: string;
+  answer: string;
+};
+
 export type BlogRecord = {
   id: string;
   market: BlogMarket;
@@ -34,6 +39,7 @@ export type BlogRecord = {
   coverImageAlt: string;
   imageOriginalUrl: string | null;
   relatedLinks: BlogRelatedLink[];
+  faqItems?: BlogFaqItem[];
   bodyHash: string;
   rawText: string;
   contentHtml: string;

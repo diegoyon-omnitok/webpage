@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 70, suffix: "%", label: "Menos tiempo en carga manual" },
-  { value: 68, suffix: "%", label: "Reducción de errores" },
-  { value: 1, suffix: "", label: "Catálogo centralizado" },
+  { value: 70, suffix: "%", label: "Reducción en time to market" },
+  { value: 68, suffix: "%", label: "Menos errores en fichas de producto" },
+  { value: 80, suffix: "%", label: "Menos retrabajo operativo" },
 ];
 
 function StatCard({ value, suffix, label, started, delay }: { value: number; suffix: string; label: string; started: boolean; delay: number }) {

@@ -6,24 +6,72 @@ import { CombineWithLinks } from "@/components/sections/ModuleLinks";
 
 const faqs = [
   {
-    q: "¿Cómo asegura Omnitok la coherencia del contenido en diferentes plataformas?",
-    a: "Mediante tecnología avanzada, Omnitok sincroniza automáticamente el contenido actualizado con múltiples plataformas de retail en tiempo real.",
+    q: "¿Las implementaciones son automáticas en cada retailer?",
+    a: "Depende. Omnitok Content ya está integrado en más de 150 retailers, pero cada retailer debe aprobar a la marca para habilitar la implementación del contenido.",
   },
   {
-    q: "¿Puede Omnitok Content personalizar el contenido para diferentes marcas?",
-    a: "Sí, permite una personalización completa del contenido, adaptando desde la estructura hasta los elementos visuales según las necesidades específicas de cada marca.",
+    q: "¿Si quiero hacer un cambio, cuánto tiempo demora en reflejarse?",
+    a: "Una vez publicado, el cambio se refleja de forma inmediata.",
   },
   {
-    q: "¿Qué tipo de contenido puedo crear con Omnitok Content?",
-    a: "Puedes crear desde textos enriquecidos hasta elementos interactivos como Hotspots, todos diseñados para potenciar la interacción del usuario y la experiencia de compra.",
+    q: "¿Omnitok también se hace cargo del diseño?",
+    a: "Sí. Contamos con un equipo de diseñadores que, en base al material entregado por la marca, desarrolla los contenidos para cada producto.",
   },
   {
-    q: "¿Qué necesita el retail para implementar Omnitok en mis productos?",
-    a: "Omnitok ya está integrado en más de 150 retailers en LATAM. Requiere aprobación para usar Omnitok en tus productos y es posible añadir más retailers a través de una integración sencilla y sin costos para ellos.",
+    q: "¿Si quiero integrar un nuevo canal, cómo se hace?",
+    a: "La marca debe coordinar la aprobación con el retailer o marketplace, y Omnitok acompaña todo el proceso para llevar a cabo la integración.",
   },
   {
-    q: "¿En caso de necesitar actualizar un contenido de uno de mis productos, cuánto se demora?",
-    a: "La actualización del contenido en la plataforma se refleja automáticamente en todos los retailers de manera instantánea.",
+    q: "¿Tiene un costo para el retail implementar Omnitok?",
+    a: "No. La implementación de Omnitok no tiene costo para el retailer.",
+  },
+  {
+    q: "¿Qué tipo de contenido se puede implementar con Omnitok Content?",
+    a: "Omnitok Content permite implementar distintos formatos como banners de marca, imágenes lifestyle, videos, tablas comparativas, hotspots interactivos y otros módulos enriquecidos dentro de la PDP.",
+  },
+  {
+    q: "¿Se puede adaptar el contenido según cada retailer?",
+    a: "Sí. El contenido puede adaptarse según el formato, restricciones y contexto comercial de cada retailer.",
+  },
+  {
+    q: "¿Se puede actualizar el contenido sin volver a implementarlo desde cero?",
+    a: "Sí. Una vez activa la implementación, los cambios de contenido pueden actualizarse de forma ágil sin rehacer todo el desarrollo.",
+  },
+  {
+    q: "¿Omnitok Content sirve para todos los productos?",
+    a: "Depende de la estrategia de la marca, pero suele ser especialmente valioso en categorías donde el contenido ayuda a explicar mejor beneficios, diferenciar productos y mejorar conversión.",
+  },
+  {
+    q: "¿Se puede implementar contenido distinto según campañas o temporadas?",
+    a: "Sí. Omnitok Content permite adaptar piezas y mensajes según campañas, promociones o necesidades comerciales específicas.",
+  },
+  {
+    q: "¿Puedo medir el rendimiento del contenido implementado?",
+    a: "Sí. Omnitok Content puede incluir un dashboard de analítica para monitorear visitas, SKUs más vistos, retailers con mayor tráfico y desempeño general de los inpages.",
+  },
+  {
+    q: "¿Qué necesita entregar la marca para empezar?",
+    a: "Depende del proyecto, pero normalmente se requiere material de producto, lineamientos de marca, assets visuales y la información necesaria para construir el contenido enriquecido.",
+  },
+  {
+    q: "¿Cuánto demora una implementación?",
+    a: "Depende de la cantidad de productos, retailers y complejidad del contenido, pero el tiempo puede variar según el alcance del proyecto y la aprobación de cada canal.",
+  },
+  {
+    q: "¿Omnitok Content reemplaza la ficha nativa del retailer?",
+    a: "No. Omnitok Content complementa la PDP del retailer con capas adicionales de contenido enriquecido para mejorar la experiencia del producto.",
+  },
+  {
+    q: "¿Puedo implementar Omnitok Content en varios retailers al mismo tiempo?",
+    a: "Sí. La plataforma está pensada para escalar y operar en múltiples canales según las aprobaciones e integraciones disponibles.",
+  },
+  {
+    q: "¿Qué pasa si un retailer aún no está integrado?",
+    a: "Omnitok acompaña a la marca en el proceso para evaluar y gestionar la integración con ese nuevo canal.",
+  },
+  {
+    q: "¿Qué beneficio principal entrega Omnitok Content?",
+    a: "Ayuda a transformar páginas de producto estáticas en experiencias más claras, más atractivas y mejor preparadas para convertir.",
   },
 ];
 

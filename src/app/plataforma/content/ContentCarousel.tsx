@@ -13,7 +13,7 @@ const labels = ["", "", ""] as const;
 const features: ProductFeatureCarouselItem[] = [
   {
     icon: LayoutTemplate,
-    title: "Todo lo que tu página de producto necesita para convertir mejor",
+    title: "Contenido enriquecido para mejorar la experiencia de compra en los canales digitales",
     descLead: "Entregamos a las marcas las herramientas para comunicar sus beneficios directamente en la página de producto de cada retailer.",
     desc: "Banners de marca, imágenes lifestyle, videos, tablas comparativas, puntos interactivos sobre las fotos y contenido que se adapta a cada campaña. Omnitok Content le da a tu equipo los formatos para contar la historia de cada producto donde el shopper toma la decision de compra. Alterna entre las dos vistas para ver la diferencia.",
     accent: "from-[#FF177B] to-[#c0136a]",

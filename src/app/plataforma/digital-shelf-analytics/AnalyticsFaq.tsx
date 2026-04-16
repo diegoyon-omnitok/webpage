@@ -6,20 +6,16 @@ import { CombineWithLinks } from "@/components/sections/ModuleLinks";
 
 const faqs = [
   {
-    q: "¿Con qué frecuencia monitorean los sitios?",
-    a: "Depende del canal y del caso de uso. En general, el monitoreo se realiza una vez al día, aunque en algunos escenarios puede ejecutarse más de una vez por día.",
-  },
-  {
-    q: "¿La homologación de productos la hacen ustedes?",
-    a: "Sí. Omnitok realiza la homologación de productos entre distintos canales combinando un motor de IA con validación humana, logrando una precisión superior al 99%.",
-  },
-  {
-    q: "¿Cuánto demora la implementación?",
-    a: "Depende de la cantidad de canales y SKUs a monitorear, pero en general la implementación toma entre 2 y 4 semanas.",
+    q: "¿Qué es Omnitok Digital Shelf Analytics?",
+    a: "Omnitok DSA es el módulo de monitoreo y visibilidad de ejecución digital que permite a las marcas controlar cómo se ejecutan sus productos en retailers y marketplaces.",
   },
   {
     q: "¿Qué variables puede monitorear Omnitok DSA?",
     a: "Omnitok DSA permite monitorear variables como precio, disponibilidad, posicionamiento, calidad de contenido, share of search y cumplimiento de atributos, según el canal y la categoría.",
+  },
+  {
+    q: "¿Con qué frecuencia monitorean los sitios?",
+    a: "Depende del canal y del caso de uso. En general, el monitoreo se realiza una vez al día, aunque en algunos escenarios puede ejecutarse más de una vez por día.",
   },
   {
     q: "¿Pueden monitorear retailers y marketplaces al mismo tiempo?",
@@ -27,11 +23,11 @@ const faqs = [
   },
   {
     q: "¿Los datos se pueden ver por retailer, marca o SKU?",
-    a: "Sí. La información se puede segmentar según la estructura del proyecto, permitiendo analizar resultados por canal, marca, categoría o SKU.",
+    a: "Sí. La información puede segmentarse según la estructura del proyecto, permitiendo analizar resultados por canal, marca, categoría o SKU.",
   },
   {
-    q: "¿Omnitok DSA hace cambios automáticos en los canales?",
-    a: "No. Omnitok DSA monitorea y detecta oportunidades o desviaciones, pero no modifica automáticamente la información publicada en retailers o marketplaces.",
+    q: "¿La homologación de productos la hacen ustedes?",
+    a: "Sí. Omnitok realiza la homologación de productos entre distintos canales combinando un motor de IA con validación humana, logrando una precisión superior al 99%.",
   },
   {
     q: "¿Qué tan confiable es la comparación con la competencia?",
@@ -42,8 +38,32 @@ const faqs = [
     a: "Sí. Omnitok DSA ayuda a detectar problemas como quiebres de stock, diferencias de precio, contenido incompleto, baja visibilidad o inconsistencias entre canales.",
   },
   {
+    q: "¿Omnitok DSA hace cambios automáticos en los canales?",
+    a: "No. Omnitok DSA monitorea, detecta oportunidades o desvíos y ayuda a priorizar acciones, pero no modifica automáticamente la información publicada en retailers o marketplaces.",
+  },
+  {
+    q: "¿Cuánto demora la implementación?",
+    a: "Depende de la cantidad de canales y SKUs a monitorear, pero en general la implementación toma entre 2 y 4 semanas.",
+  },
+  {
     q: "¿Puedo usar Omnitok DSA aunque venda en varios países?",
     a: "Sí. Omnitok puede operar en múltiples mercados y adaptar el monitoreo según los canales y necesidades de cada país.",
+  },
+  {
+    q: "¿Omnitok DSA incluye inteligencia artificial?",
+    a: "Sí. Omnitok DSA incorpora un agente de IA conectado a millones de puntos de datos en tiempo real para ayudarte a interpretar la información y convertirla en insights accionables.",
+  },
+  {
+    q: "¿Qué hace exactamente el agente de IA dentro de DSA?",
+    a: "Te permite hacer preguntas sobre tu marca, tu competencia o tu ejecución digital y obtener respuestas resumidas, accionables y respaldadas por datos verificables.",
+  },
+  {
+    q: "¿Qué tipo de preguntas le puedo hacer al agente de IA?",
+    a: "Puedes preguntarle, por ejemplo, por cambios en ranking, oportunidades de mejora de margen, competidores que están creciendo más rápido, principales insights del trimestre o qué SKUs presentan peores problemas de contenido o ejecución.",
+  },
+  {
+    q: "¿Qué valor agrega la IA frente a un dashboard tradicional?",
+    a: "Mientras un dashboard muestra datos, el agente de IA ayuda a interpretarlos, resumirlos y convertirlos en conclusiones y prioridades concretas. Eso reduce el tiempo de análisis y acelera la acción.",
   },
 ];
 

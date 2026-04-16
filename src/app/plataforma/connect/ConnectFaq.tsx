@@ -6,44 +6,64 @@ import { CombineWithLinks } from "@/components/sections/ModuleLinks";
 
 const faqs = [
   {
-    q: "¿Con qué frecuencia monitorean los sitios?",
-    a: "Depende del canal y del caso de uso. En general, el monitoreo se realiza una vez al día, aunque en algunos escenarios puede ejecutarse más de una vez por día.",
+    q: "¿Qué es Omnitok Connect?",
+    a: "Omnitok Connect es el módulo que centraliza la información de producto y la adapta a los formatos que necesita cada retailer o canal digital.",
   },
   {
-    q: "¿La homologación de productos la hacen ustedes?",
-    a: "Sí. Omnitok realiza la homologación de productos entre distintos canales combinando un motor de IA con validación humana, logrando una precisión superior al 99%.",
+    q: "¿Qué problema resuelve Omnitok Connect?",
+    a: "Resuelve el problema de tener información dispersa, formatos distintos por canal y procesos manuales lentos para preparar y distribuir datos de producto.",
+  },
+  {
+    q: "¿Qué tipo de información se puede gestionar con Omnitok Connect?",
+    a: "Permite centralizar descripciones, atributos, imágenes y otros datos de producto para prepararlos y distribuirlos a distintos canales.",
+  },
+  {
+    q: "¿Omnitok Connect permite diferentes formatos para cada retailer?",
+    a: "Sí. En Omnitok Connect puedes configurar distintos formatos de exportación según los requerimientos de cada retailer.",
+  },
+  {
+    q: "¿Se puede conectar mediante API?",
+    a: "Sí. Omnitok Connect puede integrarse mediante API para facilitar el flujo de información con otros sistemas.",
+  },
+  {
+    q: "¿Si cambio un producto en Omnitok Connect, se actualiza automáticamente en el retail?",
+    a: "No. Omnitok Connect genera el formato de exportación listo para subir al retailer, pero no realiza el cambio automáticamente en el canal por defecto.",
+  },
+  {
+    q: "¿Puedo adaptar la información según cada retailer?",
+    a: "Sí. Puedes trabajar una base central de información y ajustarla según la estructura, formato o requerimientos específicos de cada canal.",
+  },
+  {
+    q: "¿Omnitok Connect sirve solo para retailers o también para marketplaces?",
+    a: "Puede adaptarse a distintos canales digitales, incluyendo retailers y marketplaces, según la lógica de carga o integración de cada uno.",
+  },
+  {
+    q: "¿Omnitok Connect funciona como una fuente central de información de producto?",
+    a: "Sí. Uno de sus principales beneficios es funcionar como una base central para ordenar, gestionar y preparar información de producto antes de distribuirla.",
+  },
+  {
+    q: "¿Ayuda a reducir trabajo manual?",
+    a: "Sí. Omnitok Connect reduce duplicidad de trabajo, mejora el orden operativo y acelera la preparación de información para múltiples canales.",
+  },
+  {
+    q: "¿Se pueden manejar muchos SKUs al mismo tiempo?",
+    a: "Sí. Omnitok Connect está pensado para escalar y facilitar la gestión de catálogos amplios.",
   },
   {
     q: "¿Cuánto demora la implementación?",
-    a: "Depende de la cantidad de canales y SKUs a monitorear, pero en general la implementación toma entre 2 y 4 semanas.",
+    a: "Depende de la cantidad de SKUs, canales e integraciones involucradas, pero normalmente la implementación toma entre 2 y 4 semanas.",
   },
   {
-    q: "¿Qué variables puede monitorear Omnitok DSA?",
-    a: "Omnitok DSA permite monitorear variables como precio, disponibilidad, posicionamiento, calidad de contenido, share of search y cumplimiento de atributos, según el canal y la categoría.",
+    q: "¿Omnitok Connect reemplaza al retailer?",
+    a: "No. Omnitok Connect ayuda a estructurar y preparar mejor la información, pero la publicación final depende del proceso definido con cada retailer.",
   },
   {
-    q: "¿Pueden monitorear retailers y marketplaces al mismo tiempo?",
-    a: "Sí. Omnitok DSA está diseñado para entregar visibilidad sobre distintos canales digitales, incluyendo retailers y marketplaces, en una sola vista de trabajo.",
+    q: "¿Qué valor aporta frente a trabajar con archivos manuales?",
+    a: "Aporta orden, velocidad, consistencia y menos errores al momento de preparar y distribuir información de producto en varios canales.",
   },
   {
-    q: "¿Los datos se pueden ver por retailer, marca o SKU?",
-    a: "Sí. La información se puede segmentar según la estructura del proyecto, permitiendo analizar resultados por canal, marca, categoría o SKU.",
-  },
-  {
-    q: "¿Omnitok DSA hace cambios automáticos en los canales?",
-    a: "No. Omnitok DSA monitorea y detecta oportunidades o desviaciones, pero no modifica automáticamente la información publicada en retailers o marketplaces.",
-  },
-  {
-    q: "¿Qué tan confiable es la comparación con la competencia?",
-    a: "La calidad del análisis depende de una correcta homologación de productos. Por eso combinamos IA y validación humana para asegurar comparaciones consistentes y útiles para la toma de decisiones.",
-  },
-  {
-    q: "¿Sirve para detectar problemas de ejecución digital?",
-    a: "Sí. Omnitok DSA ayuda a detectar problemas como quiebres de stock, diferencias de precio, contenido incompleto, baja visibilidad o inconsistencias entre canales.",
-  },
-  {
-    q: "¿Puedo usar Omnitok DSA aunque venda en varios países?",
-    a: "Sí. Omnitok puede operar en múltiples mercados y adaptar el monitoreo según los canales y necesidades de cada país.",
+    q: "¿Omnitok Connect puede convivir con otros sistemas internos?",
+    a: "Sí. Dependiendo del caso, puede integrarse con sistemas existentes y complementar la operación actual sin obligar a reemplazar toda la infraestructura.",
   },
 ];
 

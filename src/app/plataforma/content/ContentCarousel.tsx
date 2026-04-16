@@ -32,7 +32,7 @@ const features: ProductFeatureCarouselItem[] = [
   {
     icon: BarChart3,
     title: "Mide cuántas personas ven tu contenido enriquecido",
-    descLead: "Sabe exactamente qué SKUs reciben más visitas, en qué retailers concentras más tráfico y cuáles son tus productos más vistos.",
+    descLead: "Conoce exactamente qué SKUs reciben más visitas, en qué retailers concentras más tráfico y cuáles son tus productos más vistos.",
     desc: "Dashboard de analítica que te muestra visitas a los inpages por SKU, distribución de tráfico por retailer y los productos con contenido activo en cada canal. Identifica dónde tu contenido está generando más exposición y qué retailers necesitan atención.",
     accent: "from-[#FF177B] to-[#c0136a]",
     dot: "#FF177B",

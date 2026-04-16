@@ -45,7 +45,7 @@ export default function HeroSection() {
             </p>
 
             {/* CTA */}
-            <div className="mt-8 flex">
+            <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href={canonicalRoutes.latam.contacto}
                 className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-white gradient-brand hover:opacity-90 transition-opacity shadow-lg"
@@ -53,6 +53,14 @@ export default function HeroSection() {
                 Conversemos
                 <ArrowRight size={18} />
               </Link>
+              <a
+                href="https://lab.omnitok.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-white border border-white/20 bg-white/10 hover:bg-white/15 transition-colors"
+              >
+                Diagnóstico gratuito
+              </a>
             </div>
 
           </div>

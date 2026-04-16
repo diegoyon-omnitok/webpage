@@ -48,10 +48,13 @@ export default function AssistantPage() {
               <p className="mt-4 text-lg text-white/70 leading-relaxed max-w-xl">
                 Responde dudas, recomienda productos con IA y acompaña al shopper cuando necesita contexto para avanzar hacia la compra.
               </p>
-              <div className="mt-6 flex w-full">
+              <div className="mt-6 flex flex-wrap gap-3 w-full">
                 <Link href={canonicalRoutes.latam.contacto} className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white gradient-brand hover:opacity-90 transition-opacity shadow-md">
                   Conversemos <ArrowRight size={16} />
                 </Link>
+                <a href="https://lab.omnitok.com/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white border border-white/20 bg-white/10 hover:bg-white/15 transition-colors">
+                  Diagnóstico gratuito
+                </a>
               </div>
             </div>
             <div className="relative flex items-end justify-center lg:justify-end w-full min-w-0 pl-0 lg:pl-2 self-end">

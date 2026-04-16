@@ -30,15 +30,23 @@ export default function FinalCTA() {
           Habla con Omnitok para centralizar contenido de producto, mejorar páginas de producto y ganar visibilidad sobre tu ejecución digital en retailers y marketplaces.
         </p>
 
-        <div className="flex justify-center mt-10">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 mt-10">
           <Link
             href={canonicalRoutes.latam.contacto}
-            className="flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white gradient-brand hover:opacity-90 transition-opacity shadow-lg"
+            className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white gradient-brand hover:opacity-90 transition-opacity shadow-lg"
           >
             <Calendar size={18} />
             Habla con nuestro equipo
             <ArrowRight size={16} />
           </Link>
+          <a
+            href="https://lab.omnitok.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white border border-white/20 bg-white/10 hover:bg-white/15 transition-colors"
+          >
+            Diagnóstico gratuito
+          </a>
         </div>
 
         <p className="mt-6 text-sm text-white/40">

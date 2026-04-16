@@ -27,7 +27,7 @@ const features: ProductFeatureCarouselItem[] = [
   {
     icon: LayoutGrid,
     title: "Disponibilidad y quiebres de stock bajo control",
-    descLead: "Sabe qué productos están agotados antes de que pierdas la venta.",
+    descLead: "Conoce qué productos están agotados antes de que pierdas la venta.",
     desc: "Identifica en tiempo real qué SKUs están activos, agotados o con cobertura parcial en cada retailer. Accede a históricos para entender patrones de quiebre y recibe alertas automáticas. El agente de IA prioriza qué ausencias atacar primero según impacto comercial.no solo te avisa, te dice dónde actuar.",
     accent: "from-[#4D4A9D] to-[#6366f1]",
     dot: "#4D4A9D",

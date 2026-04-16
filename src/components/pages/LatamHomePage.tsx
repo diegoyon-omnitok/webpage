@@ -7,6 +7,7 @@ import IntegrationsSection from "@/components/sections/IntegrationsSection";
 import ResourcesHub from "@/components/sections/ResourcesHub";
 import ResultsSection from "@/components/sections/ResultsSection";
 import FinalCTA from "@/components/sections/FinalCTA";
+import LabsSection from "@/components/sections/LabsSection";
 
 const fullBleed = "min-h-0 lg:min-h-[100dvh] flex flex-col justify-center box-border w-full";
 const homeHeroStack = "min-h-0 lg:min-h-[100dvh] flex flex-col box-border w-full";
@@ -33,6 +34,8 @@ export default function LatamHomePage() {
       <div className={`${fullBleed} bg-white`}>
         <Testimonials />
       </div>
+
+      <LabsSection />
 
       <div className={`${fullBleed} bg-gray-50`}>
         <ResourcesHub />

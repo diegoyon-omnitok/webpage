@@ -106,7 +106,6 @@ export const marketConfigs: Record<MarketKey, MarketConfig> = {
       {
         label: "Recursos",
         items: [
-          { label: "Recursos", href: canonicalRoutes.latam.recursos },
           { label: "Blog", href: canonicalRoutes.latam.blog },
           { label: "Omnitok LABS", href: "https://lab.omnitok.com/", external: true },
         ],

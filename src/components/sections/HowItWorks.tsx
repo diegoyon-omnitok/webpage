@@ -152,7 +152,7 @@ export default function HowItWorks() {
               />
               <div className="relative z-10">
                 <div className="mx-auto mb-4 flex items-center justify-center" style={{ width: "64px", height: "64px" }}>
-                  <Image src="/Favicon.png" alt="Omnitok" width={64} height={64} style={{ width: "64px", height: "64px", objectFit: "contain" }} />
+                  <Image src="/Favicon.png" alt="Omnitok favicon — plataforma de ejecución digital" title="Omnitok" width={64} height={64} style={{ width: "64px", height: "64px", objectFit: "contain" }} />
                 </div>
                 <p className="mb-1 text-2xl font-bold text-white">Omnitok</p>
                 <p className="mb-6 text-base font-medium text-white">Product Experience Suite</p>

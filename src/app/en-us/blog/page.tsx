@@ -102,6 +102,7 @@ export default function UsaBlogPage() {
                           <Image
                             src={featuredPostEn.coverImage}
                             alt={featuredPostEn.coverImageAlt ?? ""}
+                            title={featuredPostEn.title}
                             fill
                             className="object-cover object-center"
                             sizes="(max-width: 768px) 100vw, 400px"
@@ -154,6 +155,7 @@ export default function UsaBlogPage() {
                           <Image
                             src={post.coverImage}
                             alt={post.coverImageAlt ?? ""}
+                            title={post.title}
                             fill
                             className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
                             sizes="(max-width: 768px) 100vw, 360px"

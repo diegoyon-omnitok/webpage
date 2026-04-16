@@ -114,6 +114,7 @@ export default function BlogPostPage({
             <Image
               src={post.coverImage}
               alt={post.coverImageAlt}
+              title={post.h1}
               fill
               priority
               className="object-cover"
@@ -178,6 +179,7 @@ export default function BlogPostPage({
                       <Image
                         src={article.coverImage}
                         alt={article.coverImageAlt}
+                        title={article.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 360px"

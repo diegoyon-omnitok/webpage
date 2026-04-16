@@ -114,7 +114,8 @@ export default function NosotrosMap() {
               {/* eslint-disable-next-line @next/next/no-img-element -- SVG mapa plano; evita optimizador de imágenes con SVG complejo */}
               <img
                 src="/world-map-outline.svg"
-                alt=""
+                alt="Mapa de presencia de Omnitok en Latinoamérica — retailers y marketplaces integrados"
+                title="Omnitok opera en más de 10 países de Latinoamérica"
                 width={950}
                 height={620}
                 className="w-full h-auto max-w-none block align-top pointer-events-none

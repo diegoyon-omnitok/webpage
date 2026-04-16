@@ -25,7 +25,7 @@ function HotspotPopup({ tech, onClose }: { tech: typeof techs[0]; onClose: () =>
     <div className="absolute inset-0 z-20 bg-black/50 backdrop-blur-sm flex items-end">
       <div className="w-full bg-white rounded-t-lg p-2">
         <div className="flex items-start gap-2">
-          <Image src={tech.src} alt={tech.label} width={40} height={40} className="rounded w-9 h-9 object-cover flex-shrink-0" />
+          <Image src={tech.src} alt={tech.label} title={tech.label} width={40} height={40} className="rounded w-9 h-9 object-cover flex-shrink-0" />
           <div className="flex-1"><p className="text-[8px] font-bold text-gray-900">{tech.label}</p><p className="text-[6px] text-gray-500">{tech.desc}</p></div>
           <button type="button" onClick={onClose}><X size={9} className="text-gray-400" /></button>
         </div>
@@ -85,10 +85,10 @@ function BasicContent() {
       <div className="grid grid-cols-[1.2fr_0.8fr] gap-0 border-b border-gray-100">
         <div className="p-2.5 border-r border-gray-100">
           <div className="aspect-[4/3] rounded bg-gray-50 overflow-hidden border border-gray-100 flex items-center justify-center">
-            <Image src={slides[0]} alt="" width={300} height={225} className="w-full h-full object-contain p-2" />
+            <Image src={slides[0]} alt="Smart TV OLED 55 pulgadas — ejemplo de imagen de producto en PDP" title="Ejemplo de página de producto sin contenido enriquecido" width={300} height={225} className="w-full h-full object-contain p-2" />
           </div>
           <div className="flex gap-0.5 mt-1">
-            {slides.map((s, i) => <div key={i} className="w-7 h-7 rounded border border-gray-200 overflow-hidden"><Image src={s} alt="" width={28} height={28} className="w-full h-full object-contain" /></div>)}
+            {slides.map((s, i) => <div key={i} className="w-7 h-7 rounded border border-gray-200 overflow-hidden"><Image src={s} alt={`Miniatura ${i + 1} de producto ejemplo`} width={28} height={28} className="w-full h-full object-contain" /></div>)}
           </div>
         </div>
         <div className="p-2.5">
@@ -174,7 +174,7 @@ function EnrichedContent() {
       <div className="grid grid-cols-[1.2fr_0.8fr] gap-0 border-b border-gray-100">
         <div className="p-2.5 border-r border-gray-100">
           <div className="relative aspect-[4/3] rounded bg-gray-50 overflow-hidden border border-gray-100">
-            <Image src={slides[slide]} alt="" fill className="object-contain p-2" sizes="300px" />
+            <Image src={slides[slide]} alt="Smart TV OLED 55 pulgadas — ejemplo de producto con contenido enriquecido Omnitok" title="Página de producto mejorada con contenido enriquecido Omnitok Content" fill className="object-contain p-2" sizes="300px" />
             {slide === 0 && (
               <>
                 <div className="absolute top-1.5 left-1.5 z-10">
@@ -197,7 +197,7 @@ function EnrichedContent() {
             {slides.map((s, i) => (
               <button key={i} type="button" onClick={() => { setSlide(i); setHp(null); }}
                 className={`w-7 h-7 rounded border-2 overflow-hidden ${i === slide ? "border-accent" : "border-gray-200"}`}>
-                <Image src={s} alt="" width={28} height={28} className="w-full h-full object-contain" />
+                <Image src={s} alt={`Miniatura ${i + 1} de carrusel de producto enriquecido`} width={28} height={28} className="w-full h-full object-contain" />
               </button>
             ))}
           </div>
@@ -214,7 +214,7 @@ function EnrichedContent() {
           <div className="absolute top-1.5 right-1.5 z-10">
             <span className="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[5px] font-bold text-white shadow" style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}><Sparkles size={5} /> Contenido variable</span>
           </div>
-          <Image src={`${IMG}/Banner Mundial.png`} alt="Banner Mundial 2026" width={800} height={300} className="w-full h-auto" />
+          <Image src={`${IMG}/Banner Mundial.png`} alt="Banner promocional Mundial 2026 — ejemplo de contenido variable en PDP" title="Contenido variable por campaña con Omnitok Content" width={800} height={300} className="w-full h-auto" />
         </div>
 
         <div className="flex items-center justify-center gap-1 py-1 bg-gray-50 border-y border-gray-100">
@@ -226,7 +226,7 @@ function EnrichedContent() {
           const rev = i % 2 === 1;
           return (
             <div key={ksp.title} className={`grid grid-cols-2 ${i > 0 ? "border-t border-gray-100" : ""}`} style={{ background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
-              <div className={rev ? "order-2" : "order-1"}><Image src={ksp.img} alt={ksp.title} width={400} height={300} className="w-full h-full object-cover" /></div>
+              <div className={rev ? "order-2" : "order-1"}><Image src={ksp.img} alt={ksp.title} title={ksp.title} width={400} height={300} className="w-full h-full object-cover" /></div>
               <div className={`flex flex-col justify-center px-3 py-2.5 ${rev ? "order-1" : "order-2"}`}>
                 <p className="text-[5px] font-bold uppercase tracking-[0.12em] text-accent">{`0${i + 1}`}</p>
                 <p className="text-[9px] font-bold text-gray-900 leading-tight mt-0.5">{ksp.title}</p>

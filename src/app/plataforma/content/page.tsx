@@ -60,7 +60,8 @@ export default function ContentPage() {
             <div className="relative flex items-end justify-center lg:justify-end w-full min-w-0 pl-0 lg:pl-2 self-end">
               <Image
                 src="/plataforma/content/omnitok-content-hero.png"
-                alt="Omnitok Content — PDPs y contenido de producto en retailers"
+                alt="Omnitok Content — contenido enriquecido para PDPs en retailers y marketplaces"
+                title="Omnitok Content — plataforma de contenido enriquecido para ecommerce"
                 width={1600}
                 height={1000}
                 className="block h-auto w-full max-w-[min(100%,32rem)] sm:max-w-[min(100%,36rem)] lg:max-w-[min(100%,40rem)] xl:max-w-[min(100%,44rem)] object-contain object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 origin-center lg:origin-right"

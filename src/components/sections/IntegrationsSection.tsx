@@ -80,6 +80,7 @@ export default function IntegrationsSection({ hideTitle = false }: IntegrationsS
               <Image
                 src={item.src}
                 alt={item.name}
+                title={item.name}
                 width={item.wide ? 350 : 180}
                 height={80}
                 className="h-full w-auto object-contain"

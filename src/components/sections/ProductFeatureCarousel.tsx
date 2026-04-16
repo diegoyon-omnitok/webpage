@@ -52,6 +52,7 @@ function FeatureVisualCell({
           <Image
             src={f.imageSrc}
             alt={f.imageAlt ?? ""}
+            title={f.imageAlt ?? ""}
             width={1600}
             height={1000}
             className={

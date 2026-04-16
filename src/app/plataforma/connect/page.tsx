@@ -60,7 +60,8 @@ export default function ConnectPage() {
             <div className="relative flex items-end justify-center lg:justify-end w-full min-w-0 pl-0 lg:pl-2 self-end">
               <Image
                 src="/plataforma/connect/page-banner-connect-nobg.png"
-                alt="Omnitok Connect — catálogo centralizado y distribución en retailers"
+                alt="Omnitok Connect — gestión centralizada de contenido de producto para retailers"
+                title="Omnitok Connect — distribución de información de producto a múltiples canales digitales"
                 width={1600}
                 height={1000}
                 className="block h-auto w-full max-w-[min(100%,38rem)] sm:max-w-[min(100%,42rem)] lg:max-w-[min(100%,48rem)] xl:max-w-[min(100%,54rem)] object-contain object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 origin-center lg:origin-right"

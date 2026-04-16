@@ -41,7 +41,8 @@ export default function ContentDistributionMockup() {
         </div>
         <Image
           src={FICHA}
-          alt="Ficha de contenido enriquecido lista para distribuir"
+          alt="Ficha de contenido enriquecido lista para distribuir a retailers"
+          title="Contenido enriquecido centralizado con Omnitok Content"
           width={224}
           height={160}
           className="w-full h-40 object-cover object-top"
@@ -74,7 +75,7 @@ export default function ContentDistributionMockup() {
               {/* Mini ficha preview */}
               <div className={`h-16 transition-all duration-500 overflow-hidden ${done ? "opacity-100" : "opacity-30"}`}>
                 {done ? (
-                  <Image src={FICHA} alt="" width={150} height={64} className="w-full h-full object-cover object-top" />
+                  <Image src={FICHA} alt="Ficha de producto con contenido enriquecido distribuido a retailers" title="Contenido enriquecido publicado en retailer con Omnitok Content" width={150} height={64} className="w-full h-full object-cover object-top" />
                 ) : (
                   <div className="h-full bg-gray-100 flex items-center justify-center">
                     <div className="text-center">

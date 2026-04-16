@@ -35,7 +35,8 @@ export default function Footer() {
             <div className="mb-4">
               <Image
                 src="/omnitok-logo.svg"
-                alt="Omnitok"
+                alt="Omnitok — plataforma de ejecución digital en retail"
+                title="Omnitok"
                 width={180}
                 height={47}
                 className="h-10 sm:h-11 w-auto object-contain"

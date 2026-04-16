@@ -65,7 +65,8 @@ export default function Navbar() {
           <Link href="/" className="flex items-center flex-shrink-0">
             <Image
               src="/omnitok-logo.svg"
-              alt="Omnitok"
+              alt="Omnitok — plataforma de ejecución digital en retail"
+              title="Omnitok"
               width={200}
               height={52}
               className={`h-10 w-auto sm:h-11 lg:h-12 object-contain transition-all ${isScrolled ? "[filter:brightness(0)_saturate(100%)_invert(28%)_sepia(60%)_saturate(600%)_hue-rotate(220deg)_brightness(85%)]" : ""}`}

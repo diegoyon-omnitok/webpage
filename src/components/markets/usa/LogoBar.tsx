@@ -39,7 +39,8 @@ export default function LogoBar() {
             >
               <Image
                 src={client.src}
-                alt={client.name}
+                alt={`${client.name} logo — Omnitok client`}
+                title={client.name}
                 width={180}
                 height={80}
                 className={

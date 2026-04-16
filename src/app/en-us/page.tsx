@@ -51,6 +51,7 @@ export default function UsaHomePage() {
           <Image
             src="/img-header-en.png"
             alt="Omnitok MAP monitoring and digital shelf analytics platform"
+            title="Omnitok — AI-powered MAP monitoring and digital shelf analytics software"
             width={800}
             height={600}
             className="block h-auto w-full max-w-[min(100%,32rem)] sm:max-w-[min(100%,36rem)] lg:max-w-[min(100%,40rem)] xl:max-w-[min(100%,44rem)] object-contain object-right-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 translate-y-[10%] origin-center lg:origin-right"

@@ -112,7 +112,8 @@ export default function Testimonials() {
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-gray-100">
                     <Image
                       src={t.photo}
-                      alt={t.name}
+                      alt={`${t.name} — testimonio sobre Omnitok`}
+                      title={t.name}
                       width={48}
                       height={48}
                       className="w-full h-full object-cover"

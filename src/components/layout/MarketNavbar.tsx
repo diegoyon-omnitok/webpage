@@ -48,7 +48,8 @@ export default function MarketNavbar({ market }: MarketNavbarProps) {
         <Link href={config.homePath} className="flex items-center flex-shrink-0">
           <Image
             src="/omnitok-logo.svg"
-            alt="Omnitok"
+            alt="Omnitok — plataforma de ejecución digital en retail"
+            title="Omnitok"
             width={200}
             height={52}
             className={`h-10 w-auto object-contain transition-all sm:h-11 lg:h-12 ${

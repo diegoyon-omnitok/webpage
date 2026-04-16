@@ -41,7 +41,8 @@ export default function ClientsBar() {
             >
               <Image
                 src={client.src}
-                alt={client.name}
+                alt={`Logo de ${client.name} — cliente de Omnitok`}
+                title={client.name}
                 width={180}
                 height={80}
                 className={

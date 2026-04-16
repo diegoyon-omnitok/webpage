@@ -91,6 +91,7 @@ export default function LatamBlogPage() {
                         <Image
                           src={postDestacado.coverImage}
                           alt={postDestacado.coverImageAlt ?? ""}
+                          title={postDestacado.titulo}
                           fill
                           className="object-cover object-center"
                           sizes="(max-width: 768px) 100vw, 400px"
@@ -133,6 +134,7 @@ export default function LatamBlogPage() {
                           <Image
                             src={post.coverImage}
                             alt={post.coverImageAlt ?? ""}
+                            title={post.titulo}
                             fill
                             className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
                             sizes="(max-width: 768px) 100vw, 360px"

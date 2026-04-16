@@ -141,6 +141,7 @@ export default function AboutPage() {
           <Image
             src="/Imagen principal.png"
             alt="Omnitok platform — MAP monitoring and digital shelf analytics dashboard"
+            title="About Omnitok — brand protection and digital shelf visibility platform"
             width={1600}
             height={1000}
             className="block h-auto w-full max-w-[min(100%,40rem)] object-contain"

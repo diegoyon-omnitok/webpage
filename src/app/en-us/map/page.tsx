@@ -41,6 +41,7 @@ export default function MapPage() {
           <Image
             src="/map-hero.png"
             alt="MAP monitoring software dashboard with AI-powered compliance insights"
+            title="MAP monitoring software — detect violations and enforce pricing compliance"
             width={800}
             height={600}
             className="block h-auto w-full max-w-[min(100%,32rem)] sm:max-w-[min(100%,36rem)] lg:max-w-[min(100%,40rem)] xl:max-w-[min(100%,44rem)] object-contain object-right-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 origin-center lg:origin-right"

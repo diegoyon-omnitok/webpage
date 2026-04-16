@@ -5,7 +5,7 @@ import { canonicalRoutes } from "@/lib/markets";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex-1 min-h-0 w-full gradient-hero flex flex-col overflow-x-hidden pt-10 sm:pt-12 pb-0">
+    <section className="relative flex-1 min-h-0 w-full gradient-hero flex flex-col overflow-hidden pt-10 sm:pt-12 pb-0">
       {/* Background grid pattern */}
       <div
         className="absolute inset-0 opacity-[0.06]"
@@ -72,8 +72,12 @@ export default function HeroSection() {
               alt="Omnitok: experiencia de compra y ejecución en el digital shelf en retailers"
               width={1600}
               height={1000}
-              className="block h-auto w-full max-w-[min(100%,32rem)] sm:max-w-[min(100%,36rem)] lg:max-w-[min(100%,40rem)] xl:max-w-[min(100%,44rem)] object-contain object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 origin-center lg:origin-right"
-              style={{ filter: "drop-shadow(0 24px 48px rgba(77,74,157,0.5))" }}
+              className="block h-auto w-full max-w-[min(100%,32rem)] sm:max-w-[min(100%,36rem)] lg:max-w-[min(100%,40rem)] xl:max-w-[min(100%,44rem)] object-contain object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 translate-y-[10%] origin-center lg:origin-right"
+              style={{
+                filter: "drop-shadow(0 24px 48px rgba(77,74,157,0.5))",
+                maskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
+                WebkitMaskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
+              }}
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
             />

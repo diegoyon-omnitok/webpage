@@ -15,7 +15,7 @@ const pitfalls = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "MAP eBook: 5 Common Pitfalls Hurting Your MAP Program in 2025",
+  title: "MAP eBook: 5 Pitfalls Hurting Your MAP Program",
   description:
     "Get a practical guide to the common gaps that make MAP programs harder to manage, slower to enforce, and less effective across retailers and marketplaces.",
   path: canonicalRoutes.usa.ebooks,

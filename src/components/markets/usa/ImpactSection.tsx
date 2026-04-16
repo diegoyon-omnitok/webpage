@@ -111,6 +111,9 @@ export default function ImpactSection() {
           <h2 className="text-3xl font-bold leading-tight text-white lg:text-4xl">
             Measured impact across pricing, compliance and execution
           </h2>
+          <p className="mt-4 text-sm text-white/60 max-w-xl mx-auto">
+            Based on aggregated client data from brands using Omnitok for MAP monitoring and digital shelf analytics.
+          </p>
         </div>
 
         <div ref={ref} className="grid gap-6 sm:grid-cols-3">

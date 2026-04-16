@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
+  { value: 70, suffix: "%", label: "Menos tiempo en carga manual" },
   { value: 68, suffix: "%", label: "Reducción de errores" },
-  { value: 40, suffix: "%", label: "Mejora de productividad" },
-  { value: 75, suffix: "%", label: "Reducción time to market" },
+  { value: 1, suffix: "", label: "Catálogo centralizado" },
 ];
 
 function StatCard({ value, suffix, label, started, delay }: { value: number; suffix: string; label: string; started: boolean; delay: number }) {
@@ -61,8 +61,8 @@ export default function ConnectStats() {
       <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/30 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">El impacto de Omnitok Connect</h2>
-          <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.6)" }}>Tecnología diseñada con resultados medibles.</p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">Omnitok Connect en números</h2>
+          <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.6)" }}>Basado en datos de operación con marcas que gestionan catálogos en múltiples retailers.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {stats.map((s, i) => (

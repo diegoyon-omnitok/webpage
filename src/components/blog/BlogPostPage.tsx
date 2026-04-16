@@ -28,13 +28,20 @@ export default function BlogPostPage({
   const latestArticles = getSiblingPosts(post, 3);
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.h1,
     description: post.metaDescription,
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     author: { "@type": "Organization", name: "Omnitok" },
-    publisher: { "@type": "Organization", name: "Omnitok" },
+    publisher: {
+      "@type": "Organization",
+      name: "Omnitok",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/omnitok-logo.svg`,
+      },
+    },
     image: `${SITE_URL}${post.coverImage}`,
     mainEntityOfPage: {
       "@type": "WebPage",

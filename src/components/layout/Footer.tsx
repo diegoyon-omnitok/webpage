@@ -11,22 +11,14 @@ const footerLinks: Record<string, FooterLink[]> = {
     { label: "Omnitok Assistant", href: canonicalRoutes.latam.assistant },
     { label: "Digital Shelf Analytics", href: canonicalRoutes.latam.dsa },
   ],
-  Industrias: [
-    { label: "Consumer Goods", href: "/industrias/consumer-goods" },
-    { label: "Electrónica", href: "/industrias/electronica" },
-    { label: "Belleza y Cuidado Personal", href: "/industrias/belleza" },
-    { label: "Hogar", href: "/industrias/hogar" },
-  ],
   Recursos: [
     { label: "Recursos", href: canonicalRoutes.latam.recursos },
     { label: "Blog", href: canonicalRoutes.latam.blog },
-    { label: "Casos de Éxito", href: "/es/casos-de-exito" },
     { label: "Quiénes somos", href: canonicalRoutes.latam.nosotros },
     { label: "Omnitok LABS", href: "https://lab.omnitok.com/", external: true },
   ],
   Empresa: [
     { label: "Nosotros", href: canonicalRoutes.latam.nosotros },
-    { label: "Pricing", href: "/es/pricing" },
     { label: "Contacto", href: canonicalRoutes.latam.contacto },
     { label: "Conversemos", href: canonicalRoutes.latam.contacto },
   ],
@@ -101,7 +93,7 @@ export default function Footer() {
             <Link href={canonicalRoutes.latam.privacyPolicy} className="text-xs text-white/40 hover:text-white/70 transition-colors">
               Política de Privacidad
             </Link>
-            <Link href="/terminos" className="text-xs text-white/40 hover:text-white/70 transition-colors">
+            <Link href={canonicalRoutes.latam.privacyPolicy} className="text-xs text-white/40 hover:text-white/70 transition-colors">
               Términos de Uso
             </Link>
           </div>

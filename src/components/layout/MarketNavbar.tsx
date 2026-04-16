@@ -86,7 +86,8 @@ export default function MarketNavbar({ market }: MarketNavbarProps) {
                 />
               </button>
               {activeDropdown === group.label ? (
-                <div className="absolute left-0 top-full mt-1 w-72 rounded-2xl border border-gray-100 bg-white p-2 shadow-modal">
+                <div className="absolute left-0 top-full w-72 pt-2">
+                <div className="rounded-2xl border border-gray-100 bg-white p-2 shadow-modal">
                   {group.items.map((item) =>
                     item.external ? (
                       <a
@@ -123,6 +124,7 @@ export default function MarketNavbar({ market }: MarketNavbarProps) {
                       </Link>
                     </div>
                   ) : null}
+                </div>
                 </div>
               ) : null}
             </div>

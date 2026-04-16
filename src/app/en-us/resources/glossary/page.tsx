@@ -10,9 +10,9 @@ import {
 } from "@/components/markets/usa/UsaBlocks";
 
 export const metadata: Metadata = buildMetadata({
-  title: "MAP Enforcement Terms: A Complete Glossary for 2025",
+  title: "MAP Enforcement Terms: A Complete Glossary",
   description:
-    "A glossary of essential MAP monitoring, seller compliance and digital shelf terms for brand teams in 2025.",
+    "A glossary of essential MAP monitoring, seller compliance and digital shelf terms for brand teams.",
   path: canonicalRoutes.usa.glossary,
   locale: "en-US",
 });

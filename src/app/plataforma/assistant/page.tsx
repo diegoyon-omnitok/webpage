@@ -39,7 +39,7 @@ export default function AssistantPage() {
                 <Bot size={13} className="text-accent" />
                 <span className="text-xs font-semibold text-white">Omnitok Assistant</span>
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-gradient-brand">
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-white">
                 Convierte mejor con un asistente en tus paginas de producto
               </h1>
               <p className="mt-5 text-xl text-white/70 leading-relaxed max-w-xl">

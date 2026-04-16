@@ -15,6 +15,7 @@ export type ProductFeatureCarouselItem = {
   dot: string;
   imageSrc?: string;
   imageAlt?: string;
+  customVisual?: React.ReactNode;
 };
 
 type ProductFeatureCarouselProps = {
@@ -35,6 +36,11 @@ function FeatureVisualCell({
 
   return (
     <div className="flex h-full w-full items-center justify-center p-6 sm:p-8 lg:min-h-[380px] lg:p-10 xl:p-12 min-h-[220px]">
+      {f.customVisual ? (
+        <div className="w-full motion-safe:transition-transform duration-300 lg:group-hover:scale-[1.02]">
+          {f.customVisual}
+        </div>
+      ) : (
       <div
         className={
           compactInpage
@@ -61,6 +67,7 @@ function FeatureVisualCell({
           </div>
         )}
       </div>
+      )}
     </div>
   );
 }

@@ -47,6 +47,23 @@ export function proxy(request: NextRequest) {
     return new NextResponse(null, { status: 410 });
   }
 
+  // Return 410 Gone for legacy WordPress paths that no longer exist
+  if (
+    normalizedPath.startsWith("/wp-content") ||
+    normalizedPath.startsWith("/wp-admin") ||
+    normalizedPath.startsWith("/wp-json") ||
+    normalizedPath.startsWith("/wp-includes") ||
+    normalizedPath.startsWith("/category") ||
+    normalizedPath.startsWith("/tag") ||
+    normalizedPath.startsWith("/author") ||
+    normalizedPath === "/feed" ||
+    normalizedPath === "/feed/" ||
+    normalizedPath === "/xmlrpc.php" ||
+    normalizedPath === "/wp-login.php"
+  ) {
+    return new NextResponse(null, { status: 410 });
+  }
+
   const redirectPath = getRedirectPath(pathname);
   if (redirectPath) {
     return NextResponse.redirect(new URL(`${redirectPath}${search}`, request.url), 301);

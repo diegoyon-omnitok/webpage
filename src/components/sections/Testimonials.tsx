@@ -23,7 +23,6 @@ const testimonials = [
     company: "TCL Electronics",
     photo: "/testimonials/matias-sabaj.png",
   },
-  { empty: true, name: "", role: "", company: "", photo: "", quote: "" },
 ];
 
 export default function Testimonials() {
@@ -102,17 +101,6 @@ export default function Testimonials() {
               aria-hidden
             />
             <div className="p-8 flex flex-col flex-1 justify-between">
-            {t.empty ? (
-              <div className="flex flex-col items-center justify-center gap-4 flex-1 py-8">
-                <div className="w-12 h-12 rounded-full bg-gray-200/80" />
-                <div className="space-y-2 w-56">
-                  <div className="h-2.5 rounded-full bg-gray-200/80" />
-                  <div className="h-2.5 rounded-full bg-gray-200/80 w-4/5" />
-                  <div className="h-2.5 rounded-full bg-gray-200/80 w-3/5" />
-                </div>
-                <p className="text-[11px] text-gray-300 font-medium tracking-widest uppercase">Próximamente</p>
-              </div>
-            ) : (
               <>
                 <div>
                   <Quote size={28} className="mb-4" style={{ color: "#4D4A9D" }} />
@@ -138,7 +126,6 @@ export default function Testimonials() {
                   </div>
                 </div>
               </>
-            )}
             </div>
           </div>
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BarChart3, Shield } from "lucide-react";
+import { ArrowRight, BarChart3, Shield, Sparkles, MessageSquare, FileText, TrendingUp } from "lucide-react";
 import {
   buildMetadata,
   canonicalRoutes,
@@ -15,7 +15,7 @@ import HowItWorksDiagram from "@/components/markets/usa/HowItWorksDiagram";
 import { featuredPostEn, secondaryPostsEn } from "@/lib/blog-posts-en";
 
 export const metadata: Metadata = buildMetadata({
-  title: "MAP Monitoring and Digital Shelf Analytics Software | Omnitok US",
+  title: "MAP Monitoring & Digital Shelf Analytics | Omnitok",
   description:
     "Protect margins, monitor price violations and gain digital shelf visibility with Omnitok. MAP Monitoring and Digital Shelf Analytics for brands.",
   path: canonicalRoutes.usa.home,
@@ -40,10 +40,13 @@ export default function UsaHomePage() {
     <>
       <UsaHero
         eyebrow="MAP Monitoring and Digital Shelf Analytics"
-        title="Protect margins with MAP Monitoring and Digital Shelf Analytics"
-        highlight="MAP Monitoring and Digital Shelf Analytics"
-        description="Omnitok helps brands monitor MAP violations, detect unauthorized sellers and gain digital shelf visibility across retailers and marketplaces."
-        primaryCta="Talk to us"
+        title="Protect margins with AI-powered MAP Monitoring and Digital Shelf Analytics"
+        highlight="AI-powered"
+        description="Omnitok helps brands monitor MAP violations, detect unauthorized sellers and gain digital shelf visibility across retailers and marketplaces. Our AI agent turns millions of data points into prioritized actions and compliance reports."
+        primaryCta="Talk to sales"
+        primaryHref={canonicalRoutes.usa.contact}
+        secondaryCta="See how the AI works"
+        secondaryHref={canonicalRoutes.usa.dsa}
         aside={
           <Image
             src="/img-header-en.png"
@@ -69,19 +72,15 @@ export default function UsaHomePage() {
               Software built for brand protection and digital shelf visibility
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-gray-500">
-              Omnitok gives brand teams one platform to monitor{" "}
-              <Link href={canonicalRoutes.usa.home} className="font-semibold text-primary hover:underline">
-                Omnitok
-              </Link>{" "}
-              work across ecommerce channels, enforcing{" "}
+              One platform to enforce{" "}
               <Link href={canonicalRoutes.usa.map} className="font-semibold text-primary hover:underline">
                 MAP compliance
-              </Link>{" "}
-              while improving{" "}
+              </Link>
+              {" "}and gain{" "}
               <Link href={canonicalRoutes.usa.dsa} className="font-semibold text-primary hover:underline">
                 digital shelf visibility
               </Link>
-              .
+              {" "}across every retailer and marketplace, with AI that generates insights and compliance reports automatically.
             </p>
           </div>
 
@@ -154,6 +153,75 @@ export default function UsaHomePage() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* AI Section */}
+      <section className="relative overflow-hidden py-20 lg:py-28" style={{ background: "linear-gradient(135deg, #211f4b 0%, #2d2a6e 50%, #1a1838 100%)" }}>
+        <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+        <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-accent/20 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-primary/30 blur-3xl pointer-events-none" />
+
+        <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5" style={{ background: "linear-gradient(90deg,#FF177B 0%,#4D4A9D 100%)" }}>
+              <Sparkles size={13} className="text-white" />
+              <span className="text-xs font-semibold text-white">AI-powered reports</span>
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+              Stop building reports manually.{" "}
+              <span className="text-gradient-brand">Let the AI do it.</span>
+            </h2>
+            <p className="mt-5 text-lg text-white/60 leading-relaxed max-w-2xl mx-auto">
+              Our AI agent is connected to every data point we monitor. Ask it a question, request a compliance summary, or generate a full QBR report in seconds.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: MessageSquare,
+                title: "Ask anything about your data",
+                desc: "Which sellers violated MAP this week? What is my compliance trend? The AI answers with verified data, not guesses.",
+                example: "\"Which product has the most violations on Amazon?\"",
+              },
+              {
+                icon: FileText,
+                title: "Auto-generated executive reports",
+                desc: "Get structured analyses with what changed, why it matters and what to do. Built for weekly reviews, QBRs and fast decisions.",
+                example: "\"Generate my quarterly compliance report\"",
+              },
+              {
+                icon: TrendingUp,
+                title: "Prioritized actions, not just alerts",
+                desc: "The AI ranks violations by impact, flags repeat offenders and tells you where to focus enforcement efforts first.",
+                example: "\"What are the 5 most urgent actions this month?\"",
+              },
+            ].map((card) => {
+              const Icon = card.icon;
+              return (
+                <div key={card.title} className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-7 transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: "rgba(255,23,123,0.15)" }}>
+                    <Icon size={22} className="text-accent" />
+                  </div>
+                  <h3 className="text-base font-bold text-white mb-2">{card.title}</h3>
+                  <p className="text-sm text-white/60 leading-relaxed mb-4">{card.desc}</p>
+                  <div className="rounded-lg bg-white/5 border border-white/10 px-3 py-2">
+                    <p className="text-xs text-white/40 italic">{card.example}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-12 flex justify-center gap-4">
+            <Link href={canonicalRoutes.usa.map} className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white gradient-brand hover:opacity-90 transition-opacity shadow-lg">
+              See MAP AI in action <ArrowRight size={15} />
+            </Link>
+            <Link href={canonicalRoutes.usa.dsa} className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white border border-white/20 bg-white/10 hover:bg-white/15 transition-colors">
+              See DSA AI in action <ArrowRight size={15} />
+            </Link>
           </div>
         </div>
       </section>

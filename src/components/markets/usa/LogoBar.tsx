@@ -2,14 +2,18 @@
 
 import Image from "next/image";
 
-const logos = [
-  { name: "HP",      src: "/logos/logo-hp.jpg" },
-  { name: "Samsung", src: "/logos/logo-samsung.jpg" },
-  { name: "Oster",   src: "/logos/logo-oster.jpg" },
-  { name: "Brand",   src: "/logos/logo-5.png" },
+const clients: { name: string; src: string; small?: boolean }[] = [
+  { name: "Rheem",      src: "/clients/rheem-clean.png"      },
+  { name: "Hisense",    src: "/clients/hisense-clean.png"    },
+  { name: "L'Oréal",    src: "/clients/loreal-clean.png"     },
+  { name: "roSen",      src: "/clients/rosen-clean.png"      },
+  { name: "Newell",     src: "/clients/newell-clean.png"     },
+  { name: "Beiersdorf", src: "/clients/beiersdorf-clean.png" },
+  { name: "TCL",        src: "/clients/tcl-clean.png", small: true },
+  { name: "Midea",      src: "/clients/midea-clean.png"      },
 ];
 
-const track = [...logos, ...logos, ...logos, ...logos];
+const track = [...clients, ...clients];
 
 export default function LogoBar() {
   return (
@@ -27,18 +31,22 @@ export default function LogoBar() {
 
         {/* Track */}
         <div className="logos-track flex items-center gap-16 w-max">
-          {track.map((logo, i) => (
+          {track.map((client, i) => (
             <div
               key={i}
               className="flex-shrink-0 flex items-center justify-center"
               style={{ width: "180px", height: "80px" }}
             >
               <Image
-                src={logo.src}
-                alt={logo.name}
+                src={client.src}
+                alt={client.name}
                 width={180}
                 height={80}
-                className="h-full w-auto max-w-full object-contain"
+                className={
+                  client.small
+                    ? "h-[60%] w-auto max-w-full object-contain"
+                    : "h-full w-auto max-w-full object-contain"
+                }
               />
             </div>
           ))}
@@ -51,7 +59,10 @@ export default function LogoBar() {
           100% { transform: translateX(-50%); }
         }
         .logos-track {
-          animation: scroll-logos 18s linear infinite;
+          animation: scroll-logos 28s linear infinite;
+        }
+        .logos-track:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </section>

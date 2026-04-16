@@ -55,9 +55,7 @@ export default function AnalyticsStats() {
             Nuestra tecnología en números
           </h2>
           <p className="mt-5 text-sm leading-relaxed max-w-3xl mx-auto text-white/80 lg:text-base">
-            Las principales marcas de tecnología, electrodomésticos, belleza y consumo masivo ya
-            confían en Omnitok Digital Shelf Analytics para monitorear su ejecución, detectar
-            oportunidades y mejorar su desempeño en retailers y marketplaces.
+            Datos operativos reales de la plataforma Omnitok DSA, actualizado en base a la operación diaria con marcas en LATAM.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">

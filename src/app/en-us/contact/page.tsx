@@ -10,6 +10,11 @@ export const metadata: Metadata = buildMetadata({
   description: "Talk to the Omnitok team about MAP monitoring, digital shelf analytics and brand protection for ecommerce channels.",
   path: canonicalRoutes.usa.contact,
   locale: "en-US",
+  alternates: {
+    es: canonicalRoutes.latam.contacto,
+    "en-US": canonicalRoutes.usa.contact,
+  },
+  keywords: ["contact Omnitok", "MAP monitoring demo", "digital shelf analytics demo", "talk to sales Omnitok"],
 });
 
 export default function ContactPage() {

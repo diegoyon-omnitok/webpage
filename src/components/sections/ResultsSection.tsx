@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 35, suffix: "%", label: "Mejora en conversión" },
-  { value: 43, suffix: "%", label: "Más productividad operativa" },
-  { value: 76, suffix: "%", label: "Menor time to market" },
-  { value: 68, suffix: "%", label: "Menos errores en publicación" },
+  { value: 50, suffix: "+", label: "Marcas confían en Omnitok" },
+  { value: 150, suffix: "+", label: "Retailers conectados" },
+  { value: 1, suffix: "M+", label: "Publicaciones auditadas al día" },
+  { value: 99, suffix: "%", label: "Precisión de datos" },
 ];
 
 function StatCard({
@@ -112,10 +112,10 @@ export default function ResultsSection() {
         {/* Header */}
         <div className="text-center mb-14">
           <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
-            Mejora tu contenido, visibilidad y ejecución
+            La plataforma en números
           </h2>
           <p className="mt-4 text-base text-white/60 max-w-xl mx-auto">
-            Omnitok conecta operación, contenido y monitoreo para mejorar la experiencia de compra y el desempeño de tu marca en retailers y marketplaces.
+            Marcas líderes en tecnología, electro, belleza y consumo masivo confían en Omnitok para mejorar su ejecución digital en retailers y marketplaces.
           </p>
         </div>
 

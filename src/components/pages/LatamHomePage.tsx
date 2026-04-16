@@ -1,5 +1,6 @@
 import HeroSection from "@/components/sections/HeroSection";
 import ClientsBar from "@/components/sections/ClientsBar";
+import ProblemSection from "@/components/sections/ProblemSection";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Testimonials from "@/components/sections/Testimonials";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
@@ -17,6 +18,8 @@ export default function LatamHomePage() {
         <HeroSection />
         <ClientsBar />
       </div>
+
+      <ProblemSection />
 
       <div className={`${fullBleed} bg-white flex flex-col`}>
         <HowItWorks />

@@ -3,42 +3,13 @@ import { notFound, redirect } from "next/navigation";
 import type { ComponentType } from "react";
 import LatamHomePage from "@/components/pages/LatamHomePage";
 import ContactoPage from "@/app/contacto/page";
-import DemoPage, { metadata as demoMetadata } from "@/app/demo/page";
-import PricingPage, { metadata as pricingMetadata } from "@/app/pricing/page";
 import SuscripcionPage from "@/app/suscripcion/page";
-import PlataformaPage, { metadata as plataformaMetadata } from "@/app/plataforma/page";
 import ContentPage from "@/app/plataforma/content/page";
 import ConnectPage from "@/app/plataforma/connect/page";
 import AssistantPage from "@/app/plataforma/assistant/page";
 import DigitalShelfAnalyticsPage from "@/app/plataforma/digital-shelf-analytics/page";
-import SolucionesPage, { metadata as solucionesMetadata } from "@/app/soluciones/page";
-import MarketplacesPage, {
-  metadata as marketplacesMetadata,
-} from "@/app/soluciones/marketplaces/page";
-import GestionCatalogoPage, {
-  metadata as gestionCatalogoMetadata,
-} from "@/app/soluciones/gestion-catalogo/page";
-import OptimizacionPdpsPage, {
-  metadata as optimizacionPdpsMetadata,
-} from "@/app/soluciones/optimizacion-pdps/page";
-import AnalyticsSolutionsPage, {
-  metadata as analyticsSolutionsMetadata,
-} from "@/app/soluciones/analytics/page";
-import IndustriasPage, { metadata as industriasMetadata } from "@/app/industrias/page";
-import ConsumerGoodsPage, {
-  metadata as consumerGoodsMetadata,
-} from "@/app/industrias/consumer-goods/page";
-import ElectronicaPage, {
-  metadata as electronicaMetadata,
-} from "@/app/industrias/electronica/page";
-import BellezaPage, { metadata as bellezaMetadata } from "@/app/industrias/belleza/page";
-import HogarPage, { metadata as hogarMetadata } from "@/app/industrias/hogar/page";
 import NosotrosPage from "@/app/nosotros/page";
-import NosotrosEquipoPage, {
-  metadata as nosotrosEquipoMetadata,
-} from "@/app/nosotros/equipo/page";
 import RecursosPage from "@/app/recursos/page";
-import CasoExitoPage, { metadata as casosMetadata } from "@/app/casos-de-exito/page";
 import LatamPrivacyPolicyPage from "@/components/pages/LatamPrivacyPolicyPage";
 import MundialPage, {
   metadata as mundialMetadata,
@@ -71,7 +42,7 @@ type PageDefinition = {
 const latamPages: Record<string, PageDefinition> = {
   "": {
     component: LatamHomePage,
-    manualTitle: "Omnitok | Ejecución Digital para Marcas en Retailers y Marketplaces",
+    manualTitle: "Omnitok | Ejecución Digital en Retailers",
     manualDescription:
       "Mejora la ejecución digital de tu marca en retailers y marketplaces con Omnitok. Centraliza contenido, optimiza páginas de producto y monitorea tu presencia digital.",
     keywords: [
@@ -88,7 +59,7 @@ const latamPages: Record<string, PageDefinition> = {
   },
   "asistente-de-compra": {
     component: AssistantPage,
-    manualTitle: "Asistente de Compra para Ecommerce | Chat y Recomendación con IA",
+    manualTitle: "Asistente de Compra para Ecommerce | Omnitok",
     manualDescription:
       "Ayuda a tus shoppers a elegir mejor con un asistente de compra para ecommerce. Responde preguntas, recomienda productos y mejora la conversión en tus PDP.",
     keywords: [
@@ -104,7 +75,7 @@ const latamPages: Record<string, PageDefinition> = {
   },
   "contenido-enriquecido": {
     component: ContentPage,
-    manualTitle: "Contenido Enriquecido para Ecommerce y Retailers | Omnitok Content",
+    manualTitle: "Contenido Enriquecido para Ecommerce | Omnitok",
     manualDescription:
       "Crea y distribuye contenido enriquecido para tus páginas de producto. Mejora fichas de producto, destaca beneficios y aumenta conversión en retailers y marketplaces.",
     keywords: [
@@ -120,7 +91,7 @@ const latamPages: Record<string, PageDefinition> = {
   },
   "gestion-de-contenido-de-producto": {
     component: ConnectPage,
-    manualTitle: "Gestiona y distribuye tu contenido de producto | Omnitok Connect",
+    manualTitle: "Gestión de Contenido de Producto | Omnitok",
     manualDescription:
       "Centraliza, adapta y distribuye tu contenido de producto a retailers y marketplaces. Reduce trabajo manual y mejora la consistencia entre canales.",
     keywords: [
@@ -136,9 +107,9 @@ const latamPages: Record<string, PageDefinition> = {
   },
   "digital-shelf-analytics": {
     component: DigitalShelfAnalyticsPage,
-    manualTitle: "Digital Shelf Analytics para Marcas | Monitorea precios, stock y contenido",
+    manualTitle: "Digital Shelf Analytics con IA | Omnitok",
     manualDescription:
-      "Monitorea precios, stock, contenido y visibilidad digital en retailers y marketplaces. Detecta quiebres de ejecución y toma decisiones con Digital Shelf Analytics.",
+      "Monitoreo de precios, stock y contenido con IA integrada. Pregunta, analiza y prioriza acciones en retailers y marketplaces.",
     keywords: [
       "digital shelf analytics",
       "software de monitoreo de precios",
@@ -154,9 +125,9 @@ const latamPages: Record<string, PageDefinition> = {
   },
   contacto: {
     component: ContactoPage,
-    manualTitle: "Contacto | Omnitok",
+    manualTitle: "Contacto | Habla con Ventas de Omnitok",
     manualDescription:
-      "Habla con el equipo de Omnitok y conoce cómo mejorar la ejecución digital, el contenido y la visibilidad de tu marca en retailers y marketplaces.",
+      "Habla con el equipo de Omnitok y mejora la ejecución digital de tu marca en retailers y marketplaces.",
     keywords: [
       "contacto Omnitok",
       "solicitar demo Omnitok",
@@ -165,14 +136,6 @@ const latamPages: Record<string, PageDefinition> = {
       "agenda una demo Omnitok",
     ],
     alternates: marketAlternates.contact,
-  },
-  demo: {
-    component: DemoPage,
-    sourceMetadata: demoMetadata,
-  },
-  pricing: {
-    component: PricingPage,
-    sourceMetadata: pricingMetadata,
   },
   suscripcion: {
     component: SuscripcionPage,
@@ -187,55 +150,11 @@ const latamPages: Record<string, PageDefinition> = {
       "Conoce como Omnitok recopila, usa y protege la informacion compartida en el sitio para LATAM.",
     alternates: marketAlternates.privacy,
   },
-  plataforma: {
-    component: PlataformaPage,
-    sourceMetadata: plataformaMetadata,
-  },
-  soluciones: {
-    component: SolucionesPage,
-    sourceMetadata: solucionesMetadata,
-  },
-  "soluciones/marketplaces": {
-    component: MarketplacesPage,
-    sourceMetadata: marketplacesMetadata,
-  },
-  "soluciones/gestion-catalogo": {
-    component: GestionCatalogoPage,
-    sourceMetadata: gestionCatalogoMetadata,
-  },
-  "soluciones/optimizacion-pdps": {
-    component: OptimizacionPdpsPage,
-    sourceMetadata: optimizacionPdpsMetadata,
-  },
-  "soluciones/analytics": {
-    component: AnalyticsSolutionsPage,
-    sourceMetadata: analyticsSolutionsMetadata,
-  },
-  industrias: {
-    component: IndustriasPage,
-    sourceMetadata: industriasMetadata,
-  },
-  "industrias/consumer-goods": {
-    component: ConsumerGoodsPage,
-    sourceMetadata: consumerGoodsMetadata,
-  },
-  "industrias/electronica": {
-    component: ElectronicaPage,
-    sourceMetadata: electronicaMetadata,
-  },
-  "industrias/belleza": {
-    component: BellezaPage,
-    sourceMetadata: bellezaMetadata,
-  },
-  "industrias/hogar": {
-    component: HogarPage,
-    sourceMetadata: hogarMetadata,
-  },
   nosotros: {
     component: NosotrosPage,
-    manualTitle: "Nosotros | Omnitok",
+    manualTitle: "Sobre Nosotros | Equipo y Misión de Omnitok",
     manualDescription:
-      "Conoce a Omnitok, la plataforma que ayuda a marcas a mejorar su ejecución digital, contenido y visibilidad en retailers y marketplaces.",
+      "Conoce a Omnitok, la plataforma que ayuda a marcas a mejorar su ejecución digital en retailers y marketplaces.",
     keywords: [
       "Omnitok",
       "quiénes somos Omnitok",
@@ -244,21 +163,13 @@ const latamPages: Record<string, PageDefinition> = {
       "sobre Omnitok",
     ],
   },
-  "nosotros/equipo": {
-    component: NosotrosEquipoPage,
-    sourceMetadata: nosotrosEquipoMetadata,
-  },
   recursos: {
     component: RecursosPage,
-    manualTitle: "Recursos | Omnitok",
+    manualTitle: "Recursos de Ecommerce y Digital Shelf | Omnitok",
     manualDescription:
-      "Explora las paginas activas de Omnitok sobre ejecucion digital, ecommerce, contenido de producto y herramientas para marcas en LATAM.",
+      "Explora recursos de Omnitok sobre ejecución digital, ecommerce y contenido de producto para marcas en LATAM.",
     keywords: ["recursos Omnitok", "recursos ecommerce", "digital shelf recursos"],
     alternates: marketAlternates.resources,
-  },
-  "casos-de-exito": {
-    component: CasoExitoPage,
-    sourceMetadata: casosMetadata,
   },
   "recursos/blog/mundial-2026-ecommerce-contenido-producto": {
     component: MundialPage,
@@ -287,6 +198,22 @@ const latamRedirects: Record<string, string> = {
   "recursos/whitepapers": canonicalRoutes.latam.recursos,
   "recursos/webinars": canonicalRoutes.latam.recursos,
   "recursos/webinars/la-experiencia-digital-hoy-define-la-decision-de-compra": canonicalRoutes.latam.recursos,
+  // Páginas eliminadas — redirigen a destinos relevantes
+  demo: canonicalRoutes.latam.contacto,
+  pricing: canonicalRoutes.latam.contacto,
+  plataforma: canonicalRoutes.latam.home,
+  "nosotros/equipo": canonicalRoutes.latam.nosotros,
+  soluciones: canonicalRoutes.latam.home,
+  "soluciones/marketplaces": canonicalRoutes.latam.home,
+  "soluciones/gestion-catalogo": canonicalRoutes.latam.home,
+  "soluciones/optimizacion-pdps": canonicalRoutes.latam.home,
+  "soluciones/analytics": canonicalRoutes.latam.dsa,
+  industrias: canonicalRoutes.latam.home,
+  "industrias/consumer-goods": canonicalRoutes.latam.home,
+  "industrias/electronica": canonicalRoutes.latam.home,
+  "industrias/belleza": canonicalRoutes.latam.home,
+  "industrias/hogar": canonicalRoutes.latam.home,
+  "casos-de-exito": canonicalRoutes.latam.home,
 };
 
 function resolveTitle(metadata?: Metadata, fallback?: string) {

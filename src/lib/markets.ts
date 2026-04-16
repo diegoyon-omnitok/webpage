@@ -129,7 +129,6 @@ export const marketConfigs: Record<MarketKey, MarketConfig> = {
       Recursos: [
         { label: "Recursos", href: canonicalRoutes.latam.recursos },
         { label: "Blog", href: canonicalRoutes.latam.blog },
-        { label: "Casos de exito", href: "/es/casos-de-exito" },
         { label: "Omnitok LABS", href: "https://lab.omnitok.com/", external: true },
       ],
       Empresa: [
@@ -193,6 +192,7 @@ export const marketConfigs: Record<MarketKey, MarketConfig> = {
       },
     ],
     topLevelNav: [
+      { label: "About", href: "/en-us/about" },
       { label: "Contact", href: canonicalRoutes.usa.contact },
     ],
     footerColumns: {
@@ -207,6 +207,7 @@ export const marketConfigs: Record<MarketKey, MarketConfig> = {
         { label: "Blog", href: canonicalRoutes.usa.blog },
       ],
       Company: [
+        { label: "About", href: "/en-us/about" },
         { label: "Contact", href: canonicalRoutes.usa.contact },
         { label: "Privacy policy", href: canonicalRoutes.usa.privacyPolicy },
         { label: "Terms of service", href: canonicalRoutes.usa.termsOfService },
@@ -283,7 +284,7 @@ export const exactRedirects: Record<string, string> = {
   "/terms": canonicalRoutes.usa.termsOfService,
   "/tos": canonicalRoutes.usa.termsOfService,
   "/webinar-la-experiencia-digital-hoy-define-la-decision-de-compra":
-    "/es/recursos/webinars/la-experiencia-digital-hoy-define-la-decision-de-compra",
+    canonicalRoutes.latam.recursos,
   "/plataforma/assistant": canonicalRoutes.latam.assistant,
   "/plataforma/content": canonicalRoutes.latam.content,
   "/plataforma/connect": canonicalRoutes.latam.connect,
@@ -327,7 +328,9 @@ export function getMarketFromPathname(pathname: string): MarketKey | null {
 }
 
 export function getSwitcherTarget(pathname: string, targetMarket: MarketKey): string {
-  return switcherMap[pathname]?.[targetMarket] ?? marketConfigs[targetMarket].homePath;
+  const normalizedPath =
+    pathname.length > 1 && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+  return switcherMap[normalizedPath]?.[targetMarket] ?? marketConfigs[targetMarket].homePath;
 }
 
 export function getRedirectPath(pathname: string): string | null {

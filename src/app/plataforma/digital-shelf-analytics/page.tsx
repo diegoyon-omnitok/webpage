@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ClientsBar from "@/components/sections/ClientsBar";
-import { BarChart3, ArrowRight, Repeat, Folders, XCircle, TrendingDown } from "lucide-react";
+import { BarChart3, ArrowRight, Clock, EyeOff, Brain, BarChart2 } from "lucide-react";
+import DsaAiAgent from "./DsaAiAgent";
 import AnalyticsCarousel from "./AnalyticsCarousel";
 import AnalyticsStats from "./AnalyticsStats";
 import AnalyticsFaq from "./AnalyticsFaq";
@@ -41,14 +42,13 @@ export default function AnalyticsPage() {
                 <span className="text-xs font-semibold text-white">Digital Shelf Analytics</span>
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-gradient-brand">
-                Mide y controla la ejecucion digital de tu marca
+                Monitoreo + IA: convierte datos del digital shelf en decisiones
               </h1>
               <p className="mt-5 text-xl text-white/90 leading-relaxed font-medium max-w-xl">
-                Digital shelf analytics para monitorear precio, stock, contenido y visibilidad en retailers y marketplaces.
+                Monitorea precio, stock, contenido y visibilidad. Y pregúntale a la IA qué está pasando y qué hacer.
               </p>
               <p className="mt-4 text-lg text-white/70 leading-relaxed max-w-xl">
-                Omnitok te ayuda a detectar quiebres de ejecución digital, monitorear productos en marketplaces
-                y convertir señales de precio, disponibilidad y contenido en acciones concretas para tu equipo.
+                Omnitok DSA combina monitoreo continuo de ejecución digital con un agente de IA conectado a millones de datos en tiempo real. No solo detecta problemas, te dice por qué ocurren y qué priorizar.
               </p>
               <div className="mt-6 flex w-full">
                 <Link href={canonicalRoutes.latam.contacto} className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white gradient-brand hover:opacity-90 transition-opacity shadow-md">
@@ -86,10 +86,10 @@ export default function AnalyticsPage() {
           <div className="text-center mb-16">
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#FF177B" }}>El problema</p>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 max-w-4xl mx-auto leading-tight">
-              Detecta problemas de ejecución antes de que impacten ventas
+              Tienes datos, pero no tienes respuestas
             </h2>
             <p className="mt-5 text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto">
-              Sin visibilidad digital en retailers, los errores de precio, stock, contenido y posicionamiento pasan desapercibidos hasta que afectan ventas y participación.
+              Las marcas monitorean precios y stock, pero siguen sin poder responder rápidamente por qué cambian las cosas, qué priorizar y dónde actuar primero. El problema ya no es tener datos. Es convertirlos en decisiones.
             </p>
           </div>
 
@@ -100,27 +100,27 @@ export default function AnalyticsPage() {
               {[
                 {
                   num: "01",
-                  icon: Repeat,
-                  title: "Sin visibilidad sobre la ejecución real",
-                  desc: "No sabes si tus productos están correctamente publicados, visibles o activos en cada retailer en tiempo real.",
+                  icon: EyeOff,
+                  title: "Dashboards que nadie lee completos",
+                  desc: "Tu equipo tiene acceso a datos, pero no tiene tiempo para analizarlos todos. Los problemas se detectan tarde o se pierden entre métricas.",
                 },
                 {
                   num: "02",
-                  icon: Folders,
-                  title: "Errores que pasan desapercibidos",
-                  desc: "Problemas en contenido, atributos o configuración impactan las ventas sin que el equipo los detecte a tiempo.",
+                  icon: Clock,
+                  title: "Análisis manual que toma días",
+                  desc: "Armar un reporte de ejecución, comparar precios o preparar un QBR requiere horas de trabajo manual cruzando fuentes.",
                 },
                 {
                   num: "03",
-                  icon: XCircle,
-                  title: "Posicionamiento frente a competencia desconocido",
-                  desc: "No tienes claridad sobre cómo aparecen tus productos frente a competidores dentro de cada retailer.",
+                  icon: Brain,
+                  title: "Contexto que se pierde entre equipos",
+                  desc: "Los insights quedan en la cabeza de quien los encontró. Sin una capa que conecte análisis con acción, el conocimiento no escala.",
                 },
                 {
                   num: "04",
-                  icon: TrendingDown,
-                  title: "Precio y disponibilidad sin control",
-                  desc: "Quiebres de stock, precios incorrectos o cambios no monitoreados afectan directamente la conversión y el margen.",
+                  icon: BarChart2,
+                  title: "Datos sin priorización ni recomendación",
+                  desc: "Sabes que hay problemas, pero no cuáles atacar primero. Sin priorización automática, todo parece igual de urgente.",
                 },
               ].map((item) => (
                 <div key={item.num} className="relative flex flex-col items-center text-center group h-full">
@@ -144,6 +144,8 @@ export default function AnalyticsPage() {
         </div>
       </section>
 
+
+      <DsaAiAgent />
 
       <AnalyticsCarousel />
 

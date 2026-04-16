@@ -50,7 +50,12 @@ export default async function RootLayout({
     "@type": "Organization",
     name: "Omnitok",
     url: SITE_URL,
-    logo: `${SITE_URL}/omnitok-logo.svg`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/omnitok-logo.svg`,
+      width: 180,
+      height: 47,
+    },
     sameAs: [
       "https://www.linkedin.com/company/omnitoksolutions/",
     ],

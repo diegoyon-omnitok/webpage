@@ -1,60 +1,50 @@
 "use client";
 
-import { BarChart3, CalendarDays, Layers, MousePointerClick } from "lucide-react";
-import contentDashboardImage from "../../../../omnitok content dashboard.png";
+import { BarChart3, LayoutTemplate, Share2 } from "lucide-react";
 import ProductFeatureCarousel, {
   type ProductFeatureCarouselItem,
 } from "@/components/sections/ProductFeatureCarousel";
+import ContentPdpMockup from "./ContentPdpMockup";
+import ContentDistributionMockup from "./ContentDistributionMockup";
+import ContentAnalyticsMockup from "./ContentAnalyticsMockup";
 
-const labels = ["", "", "", ""] as const;
+const labels = ["", "", ""] as const;
 
 const features: ProductFeatureCarouselItem[] = [
   {
-    icon: Layers,
-    title: "Transforma tu página de producto en una experiencia visual completa.",
-    desc: "Crea contenido enriquecido dentro de la PDP para destacar los beneficios de tu marca con textos, imágenes y videos que fortalecen la experiencia de producto en los principales retailers.",
+    icon: LayoutTemplate,
+    title: "Todo lo que tu página de producto necesita para convertir mejor",
+    descLead: "Entregamos a las marcas las herramientas para comunicar sus beneficios directamente en la página de producto de cada retailer.",
+    desc: "Banners de marca, imágenes lifestyle, videos, tablas comparativas, puntos interactivos sobre las fotos y contenido que se adapta a cada campaña. Omnitok Content le da a tu equipo los formatos para contar la historia de cada producto donde el shopper toma la decision de compra. Alterna entre las dos vistas para ver la diferencia.",
     accent: "from-[#FF177B] to-[#c0136a]",
     dot: "#FF177B",
-    imageSrc: "/plataforma/content/omnitok-omnitok-content.png",
-    imageAlt: "Inpage — experiencia visual en la página de producto",
+    customVisual: <ContentPdpMockup />,
+  },
+  {
+    icon: Share2,
+    title: "Distribuye tu contenido a cada retailer, automáticamente",
+    descLead: "Publica una vez y tu contenido enriquecido llega a todos tus canales al mismo tiempo.",
+    desc: "Nuestra tecnología conecta tu contenido directamente con cada retailer. No necesitas cargar archivos manualmente ni coordinar con cada canal. Actualizas en Omnitok y el cambio se refleja en todos los puntos de venta digitales. Actualmente contamos con más de 150 retailers conectados en LATAM.",
+    accent: "from-[#4D4A9D] to-[#6366f1]",
+    dot: "#4D4A9D",
+    customVisual: <ContentDistributionMockup />,
   },
   {
     icon: BarChart3,
-    title: "Dashboard de Analítica",
-    descLead: "Monitorea el rendimiento de tu contenido enriquecido en cada retailer.",
-    desc: "Visualiza qué SKUs reciben más visitas en los inpages, qué retailers concentran mayor tráfico y cómo interactúan los usuarios con tu contenido. Obtén una vista clara del desempeño de cada implementación para detectar oportunidades de optimización y tomar mejores decisiones.",
-    accent: "from-[#4D4A9D] to-[#6366f1]",
-    dot: "#4D4A9D",
-    imageSrc: contentDashboardImage.src,
-    imageAlt: "Dashboard de analítica de Omnitok Content con métricas de rendimiento por SKU y retailer",
-  },
-  {
-    icon: MousePointerClick,
-    title: "Hotspots Interactivos",
-    descLead: "Convierte cada imagen en un punto de interacción.",
-    desc: "Destaca los beneficios de tus productos con puntos clicables en el carrusel de imágenes, guiando al usuario hacia lo que realmente importa y elevando la experiencia de producto en cada PDP.",
-    accent: "from-[#4D4A9D] to-[#6366f1]",
-    dot: "#4D4A9D",
-    imageSrc: "/plataforma/content/hotspots-interactivos.png",
-    imageAlt: "Hotspots interactivos en el carrusel de imágenes del PDP",
-  },
-  {
-    icon: CalendarDays,
-    title: "Contenido Variable",
-    descLead: "Adáptate a cada temporada y momento del año, automáticamente.",
-    desc: "Personaliza banners y módulos visuales según fechas clave, promociones o campañas específicas en retailers, manteniendo tu contenido enriquecido siempre actualizado.",
-    accent: "from-[#FF177B] to-[#EC4899]",
+    title: "Mide cuántas personas ven tu contenido enriquecido",
+    descLead: "Sabe exactamente qué SKUs reciben más visitas, en qué retailers concentras más tráfico y cuáles son tus productos más vistos.",
+    desc: "Dashboard de analítica que te muestra visitas a los inpages por SKU, distribución de tráfico por retailer y los productos con contenido activo en cada canal. Identifica dónde tu contenido está generando más exposición y qué retailers necesitan atención.",
+    accent: "from-[#FF177B] to-[#c0136a]",
     dot: "#FF177B",
-    imageSrc: "/plataforma/content/page-4ta-rev-img-content-1-4.png",
-    imageAlt: "Contenido variable por temporada y campañas en el PDP",
+    customVisual: <ContentAnalyticsMockup />,
   },
 ];
 
 export default function ContentCarousel() {
   return (
     <ProductFeatureCarousel
-      sectionTitle="¿Por qué elegir Omnitok Content?"
-      sectionSubtitle="Gestiona y distribuye el contenido de tus PDPs desde un solo lugar. Omnitok Content centraliza la experiencia de producto y la adapta a lo que exige cada retailer o canal de venta."
+      sectionTitle="Todo lo que tu página de producto necesita para convertir mejor"
+      sectionSubtitle="Contenido enriquecido, distribución automática y analítica de rendimiento en una sola plataforma."
       labels={labels}
       features={features}
     />

@@ -2,66 +2,67 @@ import type { MetadataRoute } from "next";
 import { latamBlogPosts, usaBlogPosts } from "@/lib/blog";
 import { SITE_URL, canonicalRoutes } from "@/lib/markets";
 
-const now = new Date();
+/* ------------------------------------------------------------------ */
+/*  hreflang alternate pairs                                          */
+/*  Each entry maps a path to its es / en-US counterpart so Google    */
+/*  understands the language relationship.                            */
+/* ------------------------------------------------------------------ */
 
-const alternatePairs: Record<string, { es?: string; enUS?: string }> = {
-  [canonicalRoutes.latam.home]: { es: `${SITE_URL}${canonicalRoutes.latam.home}`, enUS: `${SITE_URL}${canonicalRoutes.usa.home}` },
-  [canonicalRoutes.usa.home]: { es: `${SITE_URL}${canonicalRoutes.latam.home}`, enUS: `${SITE_URL}${canonicalRoutes.usa.home}` },
-  [canonicalRoutes.latam.contacto]: { es: `${SITE_URL}${canonicalRoutes.latam.contacto}`, enUS: `${SITE_URL}${canonicalRoutes.usa.contact}` },
-  [canonicalRoutes.usa.contact]: { es: `${SITE_URL}${canonicalRoutes.latam.contacto}`, enUS: `${SITE_URL}${canonicalRoutes.usa.contact}` },
-  [canonicalRoutes.latam.dsa]: {
-    es: `${SITE_URL}${canonicalRoutes.latam.dsa}`,
-    enUS: `${SITE_URL}${canonicalRoutes.usa.dsa}`,
-  },
-  [canonicalRoutes.usa.dsa]: {
-    es: `${SITE_URL}${canonicalRoutes.latam.dsa}`,
-    enUS: `${SITE_URL}${canonicalRoutes.usa.dsa}`,
-  },
-  [canonicalRoutes.latam.recursos]: { es: `${SITE_URL}${canonicalRoutes.latam.recursos}`, enUS: `${SITE_URL}${canonicalRoutes.usa.resources}` },
-  [canonicalRoutes.usa.resources]: { es: `${SITE_URL}${canonicalRoutes.latam.recursos}`, enUS: `${SITE_URL}${canonicalRoutes.usa.resources}` },
-  [canonicalRoutes.latam.blog]: { es: `${SITE_URL}${canonicalRoutes.latam.blog}`, enUS: `${SITE_URL}${canonicalRoutes.usa.blog}` },
-  [canonicalRoutes.usa.blog]: { es: `${SITE_URL}${canonicalRoutes.latam.blog}`, enUS: `${SITE_URL}${canonicalRoutes.usa.blog}` },
-  [canonicalRoutes.latam.privacyPolicy]: {
-    es: `${SITE_URL}${canonicalRoutes.latam.privacyPolicy}`,
-    enUS: `${SITE_URL}${canonicalRoutes.usa.privacyPolicy}`,
-  },
-  [canonicalRoutes.usa.privacyPolicy]: {
-    es: `${SITE_URL}${canonicalRoutes.latam.privacyPolicy}`,
-    enUS: `${SITE_URL}${canonicalRoutes.usa.privacyPolicy}`,
-  },
+function alt(es: string, enUS: string) {
+  return {
+    es: `${SITE_URL}${es}`,
+    "en-US": `${SITE_URL}${enUS}`,
+  };
+}
+
+const alternatePairs: Record<string, Record<string, string>> = {
+  // Home
+  [canonicalRoutes.latam.home]: alt(canonicalRoutes.latam.home, canonicalRoutes.usa.home),
+  [canonicalRoutes.usa.home]: alt(canonicalRoutes.latam.home, canonicalRoutes.usa.home),
+  // Contact
+  [canonicalRoutes.latam.contacto]: alt(canonicalRoutes.latam.contacto, canonicalRoutes.usa.contact),
+  [canonicalRoutes.usa.contact]: alt(canonicalRoutes.latam.contacto, canonicalRoutes.usa.contact),
+  // Digital Shelf Analytics
+  [canonicalRoutes.latam.dsa]: alt(canonicalRoutes.latam.dsa, canonicalRoutes.usa.dsa),
+  [canonicalRoutes.usa.dsa]: alt(canonicalRoutes.latam.dsa, canonicalRoutes.usa.dsa),
+  // Resources
+  [canonicalRoutes.latam.recursos]: alt(canonicalRoutes.latam.recursos, canonicalRoutes.usa.resources),
+  [canonicalRoutes.usa.resources]: alt(canonicalRoutes.latam.recursos, canonicalRoutes.usa.resources),
+  // Blog index
+  [canonicalRoutes.latam.blog]: alt(canonicalRoutes.latam.blog, canonicalRoutes.usa.blog),
+  [canonicalRoutes.usa.blog]: alt(canonicalRoutes.latam.blog, canonicalRoutes.usa.blog),
+  // Privacy policy
+  [canonicalRoutes.latam.privacyPolicy]: alt(canonicalRoutes.latam.privacyPolicy, canonicalRoutes.usa.privacyPolicy),
+  [canonicalRoutes.usa.privacyPolicy]: alt(canonicalRoutes.latam.privacyPolicy, canonicalRoutes.usa.privacyPolicy),
 };
 
-const urls = [
-  "/",
+/* ------------------------------------------------------------------ */
+/*  Static page URLs (no redirects, no aliases, only real pages)      */
+/* ------------------------------------------------------------------ */
+
+const staticUrls: string[] = [
+  // ── LATAM core ──
   canonicalRoutes.latam.home,
-  canonicalRoutes.latam.contacto,
-  "/es/demo",
-  "/es/pricing",
-  canonicalRoutes.latam.suscripcion,
   canonicalRoutes.latam.content,
   canonicalRoutes.latam.connect,
   canonicalRoutes.latam.assistant,
   canonicalRoutes.latam.dsa,
-  "/es/soluciones",
-  "/es/soluciones/marketplaces",
-  "/es/soluciones/gestion-catalogo",
-  "/es/soluciones/optimizacion-pdps",
-  "/es/soluciones/analytics",
-  "/es/industrias",
-  "/es/industrias/consumer-goods",
-  "/es/industrias/electronica",
-  "/es/industrias/belleza",
-  "/es/industrias/hogar",
+  canonicalRoutes.latam.contacto,
   canonicalRoutes.latam.nosotros,
-  "/es/nosotros/equipo",
   canonicalRoutes.latam.recursos,
   canonicalRoutes.latam.blog,
+  canonicalRoutes.latam.suscripcion,
   canonicalRoutes.latam.privacyPolicy,
-  "/es/recursos/whitepapers",
-  "/es/recursos/webinars",
-  "/es/recursos/webinars/la-experiencia-digital-hoy-define-la-decision-de-compra",
-  "/es/casos-de-exito",
+
+  // ── LATAM blog posts estáticos ──
+  "/es/recursos/blog/mundial-2026-ecommerce-contenido-producto",
+  "/es/recursos/blog/cyberday-ventas-online-ecommerce",
+  "/es/recursos/blog/cross-selling-up-selling-ecommerce",
+  "/es/recursos/blog/contenido-enriquecido-tecnologia-ecommerce",
+
+  // ── USA core ──
   canonicalRoutes.usa.home,
+  "/en-us/about",
   canonicalRoutes.usa.map,
   canonicalRoutes.usa.dsa,
   canonicalRoutes.usa.resources,
@@ -71,26 +72,74 @@ const urls = [
   canonicalRoutes.usa.contact,
   canonicalRoutes.usa.privacyPolicy,
   canonicalRoutes.usa.termsOfService,
+
+  // ── USA blog posts estáticos ──
+  "/en-us/resources/blog/authorized-retailers-map-violations",
+  "/en-us/resources/blog/amazon-prime-day-map-monitoring",
+  "/en-us/resources/blog/walmart-map-monitoring",
+  "/en-us/resources/blog/map-enforcement-kpis",
+];
+
+/* ------------------------------------------------------------------ */
+/*  Build the full URL list: static pages + generated blog posts      */
+/* ------------------------------------------------------------------ */
+
+const allUrls = [
+  ...staticUrls,
   ...latamBlogPosts.map((post) => post.path),
   ...usaBlogPosts.map((post) => post.path),
-] as const;
+];
+
+// De-duplicate (blog posts estáticos could overlap with generated data)
+const uniqueUrls = [...new Set(allUrls)];
+
+/* ------------------------------------------------------------------ */
+/*  Priority helper                                                   */
+/* ------------------------------------------------------------------ */
+
+function getPriority(path: string): number {
+  // Market homepages — highest priority
+  if (path === "/es" || path === "/en-us") return 1.0;
+  // Core product pages
+  if (
+    path === canonicalRoutes.latam.content ||
+    path === canonicalRoutes.latam.connect ||
+    path === canonicalRoutes.latam.assistant ||
+    path === canonicalRoutes.latam.dsa ||
+    path === canonicalRoutes.usa.map ||
+    path === canonicalRoutes.usa.dsa
+  )
+    return 0.9;
+  // Contact / lead capture
+  if (path === canonicalRoutes.latam.contacto || path === canonicalRoutes.usa.contact) return 0.9;
+  // Blog posts
+  if (path.includes("/blog/")) return 0.6;
+  // Everything else (resources, legal, solutions, industries)
+  return 0.7;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Change frequency helper                                           */
+/* ------------------------------------------------------------------ */
+
+function getChangeFreq(path: string): MetadataRoute.Sitemap[number]["changeFrequency"] {
+  if (path === "/es" || path === "/en-us") return "weekly";
+  if (path.includes("/blog")) return "weekly";
+  return "monthly";
+}
+
+/* ------------------------------------------------------------------ */
+/*  Export                                                             */
+/* ------------------------------------------------------------------ */
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return urls.map((path) => ({
-    url: `${SITE_URL}${path === "/" ? "" : path}`,
-    lastModified: now,
-    changeFrequency:
-      path.startsWith("/en-us/blog") || path.startsWith("/es/blog") || path.includes("/recursos/blog")
-        ? "weekly"
-        : "monthly",
-    priority: path === "/" ? 0.7 : path === "/es" || path === "/en-us" ? 1 : 0.8,
-    alternates: alternatePairs[path]
-      ? {
-          languages: {
-            ...(alternatePairs[path].es ? { es: alternatePairs[path].es } : {}),
-            ...(alternatePairs[path].enUS ? { "en-US": alternatePairs[path].enUS } : {}),
-          },
-        }
-      : undefined,
+  return uniqueUrls.map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: new Date("2026-04-15"),
+    changeFrequency: getChangeFreq(path),
+    priority: getPriority(path),
+    ...(alternatePairs[path]
+      ? { alternates: { languages: alternatePairs[path] } }
+      : {}),
   }));
 }

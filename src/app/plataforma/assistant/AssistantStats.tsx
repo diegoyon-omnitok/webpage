@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 35, suffix: "%", label: "Aumento en conversión" },
-  { value: 40, suffix: "%", label: "Ahorro en costos operativos" },
-  { value: 95, suffix: "%", label: "Resolución de dudas autónomas" },
+  { value: 95, suffix: "%", label: "Resolución autónoma de consultas" },
+  { value: 40, suffix: "%", label: "Ahorro en costos" },
+  { value: 33, suffix: "%", label: "Aumento de conversión" },
 ];
 
 function StatCard({ value, suffix, label, started, delay }: { value: number; suffix: string; label: string; started: boolean; delay: number }) {
@@ -84,9 +84,9 @@ export default function AssistantStats() {
       <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/30 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">El impacto de Omnitok Assistant</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">Omnitok Assistant en números</h2>
           <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.6)" }}>
-            Tecnología diseñada con resultados medibles.
+            Basado en datos de asistentes activos en retailers de LATAM.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

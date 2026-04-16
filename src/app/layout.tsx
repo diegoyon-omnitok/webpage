@@ -63,8 +63,18 @@ export default async function RootLayout({
       "Omnitok is a B2B SaaS platform for brands that sell through retailers and marketplaces, helping them improve digital execution, product content and commercial visibility.",
   };
 
+  const GA_ID = "G-Z26M7SM2Z7";
+
   return (
     <html lang={htmlLang} className={`${nunitoSans.variable} ${openSans.variable}`}>
+      <head>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`,
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"

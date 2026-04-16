@@ -39,7 +39,7 @@ export default function ConnectPage() {
                 <Package size={13} className="text-accent" />
                 <span className="text-xs font-semibold text-white">Omnitok Connect</span>
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-gradient-brand">
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-white">
                 Centraliza y distribuye informacion de producto en todos tus canales
               </h1>
               <p className="mt-5 text-xl text-white/70 leading-relaxed">

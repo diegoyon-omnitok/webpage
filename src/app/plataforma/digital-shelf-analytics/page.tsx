@@ -41,7 +41,7 @@ export default function AnalyticsPage() {
                 <BarChart3 size={13} className="text-accent" />
                 <span className="text-xs font-semibold text-white">Digital Shelf Analytics</span>
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-gradient-brand">
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-white">
                 Monitoreo + IA: convierte datos del digital shelf en decisiones
               </h1>
               <p className="mt-5 text-xl text-white/90 leading-relaxed font-medium max-w-xl">

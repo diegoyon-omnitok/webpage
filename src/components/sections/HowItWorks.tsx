@@ -80,8 +80,7 @@ function ModuleCard({ mod }: { mod: Module }) {
       <p className="mb-5 text-sm leading-relaxed text-gray-500 flex-1">{mod.desc}</p>
       <Link
         href={mod.href}
-        className="inline-flex items-center gap-1.5 self-start px-3 py-1.5 rounded-lg text-xs font-semibold text-white transition-opacity hover:opacity-85"
-        style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}
+        className="module-btn inline-flex items-center gap-1.5 self-start px-3 py-1.5 rounded-lg text-xs font-semibold"
       >
         Conoce más <ArrowRight size={12} />
       </Link>
@@ -180,6 +179,15 @@ export default function HowItWorks() {
       </div>
 
       <style jsx>{`
+        .module-btn {
+          background: linear-gradient(135deg, #211f4b 0%, #2d2a6e 50%, #1a1838 100%);
+          color: #ffffff;
+          transition: background 0.2s ease, color 0.2s ease;
+        }
+        .module-btn:hover {
+          background: #ffffff;
+          color: #111827;
+        }
         @keyframes flowArrow {
           0%   { left: -4%; opacity: 0; }
           8%   { opacity: 1; }

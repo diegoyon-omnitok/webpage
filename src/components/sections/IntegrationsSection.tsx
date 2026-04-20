@@ -74,7 +74,7 @@ export default function IntegrationsSection({ hideTitle = false }: IntegrationsS
           {track.map((item, i) => (
             <div
               key={`${item.name}-${i}`}
-              className="flex-shrink-0 flex items-center justify-center overflow-hidden"
+              className="flex-shrink-0 flex items-center justify-center overflow-hidden group"
               style={{ width: item.wide ? "350px" : "180px", height: "80px" }}
             >
               <Image
@@ -83,7 +83,7 @@ export default function IntegrationsSection({ hideTitle = false }: IntegrationsS
                 title={item.name}
                 width={item.wide ? 350 : 180}
                 height={80}
-                className="h-full w-auto object-contain"
+                className="h-full w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                 style={{
                   ...(item.scale ? { transform: `scale(${item.scale})` } : {}),
                   maxWidth: item.scale && !item.wide ? "none" : "100%",

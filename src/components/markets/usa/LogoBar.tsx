@@ -44,9 +44,10 @@ export default function LogoBar() {
                 width={180}
                 height={80}
                 className={
-                  client.small
+                  (client.small
                     ? "h-[60%] w-auto max-w-full object-contain"
-                    : "h-full w-auto max-w-full object-contain"
+                    : "h-full w-auto max-w-full object-contain") +
+                  " grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 }
               />
             </div>

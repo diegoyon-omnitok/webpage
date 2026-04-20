@@ -179,15 +179,6 @@ export default function HowItWorks() {
       </div>
 
       <style jsx>{`
-        .module-btn {
-          background: linear-gradient(135deg, #211f4b 0%, #2d2a6e 50%, #1a1838 100%);
-          color: #ffffff;
-          transition: background 0.2s ease, color 0.2s ease;
-        }
-        .module-btn:hover {
-          background: #ffffff;
-          color: #111827;
-        }
         @keyframes flowArrow {
           0%   { left: -4%; opacity: 0; }
           8%   { opacity: 1; }

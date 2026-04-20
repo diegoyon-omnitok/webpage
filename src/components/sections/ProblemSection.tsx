@@ -136,7 +136,7 @@ export default function ProblemSection() {
           </h2>
 
           <p className="mt-5 text-lg text-gray-500 leading-relaxed max-w-xl mx-auto">
-            Vender a través de retailers y marketplaces es solo el primer paso.
+            Pero, ¿cómo se ve? Vender a través de retailers y marketplaces es solo el primer paso.
             El verdadero reto es controlar cómo se ejecuta tu marca en cada canal digital.
           </p>
         </div>

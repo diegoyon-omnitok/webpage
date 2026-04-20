@@ -49,6 +49,7 @@ export const canonicalRoutes = {
     blog: "/es/blog",
     suscripcion: "/es/suscripcion",
     privacyPolicy: "/es/politica-de-privacidad",
+    termsOfUse: "/es/terminos-de-uso",
   },
   usa: {
     home: "/en-us",

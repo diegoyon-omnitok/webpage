@@ -39,9 +39,19 @@ const sections = [
       "This site is not intended for children under 13, and we do not knowingly collect Personal Data from children. Our site may link to third-party services or websites, and this policy does not govern those external properties.",
   },
   {
-    title: "8. Updates and Contact",
+    title: "8. California Privacy Rights (CCPA)",
     body:
-      "We may update this Privacy Policy from time to time. The current version will always be the one published on this page. For questions about this policy or requests related to your information, contact us at hello@omnitok.com.",
+      "If you are a California resident, you have the right under the California Consumer Privacy Act (CCPA) to request disclosure of the categories and specific pieces of personal information we have collected about you; request deletion of your personal information; and opt out of any sale of your personal information. Omnitok does not sell personal information. To exercise your rights, contact us at hello@omnitok.com.",
+  },
+  {
+    title: "9. Cybersecurity",
+    body:
+      "We implement reasonable technical and organizational security measures to protect personal data against unauthorized access, loss, alteration or disclosure. This includes HTTPS encryption for data in transit, internal access controls and ongoing review of our security practices. In the event of a data security incident affecting personal information, we will notify affected individuals and relevant authorities as required by applicable law.",
+  },
+  {
+    title: "10. Updates and Contact",
+    body:
+      "We may update this Privacy Policy from time to time. The current version will always be the one published on this page. Last updated: April 2026. For questions about this policy or requests related to your information, contact us at hello@omnitok.com.",
   },
 ];
 

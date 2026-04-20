@@ -31,7 +31,7 @@ const sections = [
   {
     title: "6. Governing Law and Miscellaneous",
     body:
-      "These terms are governed by applicable law as described in the historical terms previously published for Omnitok's legacy site, including prior references to Florida law and courts for dispute resolution. If any provision is found unenforceable, the remaining provisions remain in effect. These terms govern website use only and do not replace any separate customer contract.",
+      "These terms are governed by applicable law in the jurisdiction where Omnitok operates or where the user accesses the site. If any provision is found unenforceable, the remaining provisions remain in full effect. These terms govern website use only and do not replace any separate customer or partner agreement.",
   },
   {
     title: "7. Contact",
@@ -86,8 +86,8 @@ export default function UsaTermsOfServicePage() {
           <div className="rounded-3xl border border-gray-100 bg-white p-8 shadow-card lg:p-10">
             <div className="space-y-8">
               <p className="text-sm leading-relaxed text-gray-600">
-                This page replaces the older legal URLs and provides a current home for the terms
-                that govern use of the Omnitok United States website experience.
+                These terms govern access to and use of the Omnitok United States website. By
+                using this site you agree to these conditions. Last updated: April 2026.
               </p>
               {sections.map((section) => (
                 <section key={section.title}>

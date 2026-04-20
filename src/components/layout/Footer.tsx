@@ -87,14 +87,17 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/40">
+          <Link
+            href={canonicalRoutes.latam.privacyPolicy}
+            className="text-xs text-white/40 hover:text-white/70 transition-colors"
+          >
             © {new Date().getFullYear()} Omnitok. Todos los derechos reservados.
-          </p>
+          </Link>
           <div className="flex items-center gap-4">
             <Link href={canonicalRoutes.latam.privacyPolicy} className="text-xs text-white/40 hover:text-white/70 transition-colors">
               Política de Privacidad
             </Link>
-            <Link href={canonicalRoutes.latam.privacyPolicy} className="text-xs text-white/40 hover:text-white/70 transition-colors">
+            <Link href={canonicalRoutes.latam.termsOfUse} className="text-xs text-white/40 hover:text-white/70 transition-colors">
               Términos de Uso
             </Link>
           </div>

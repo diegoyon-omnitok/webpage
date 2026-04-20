@@ -11,6 +11,7 @@ import DigitalShelfAnalyticsPage from "@/app/plataforma/digital-shelf-analytics/
 import NosotrosPage from "@/app/nosotros/page";
 import RecursosPage from "@/app/recursos/page";
 import LatamPrivacyPolicyPage from "@/components/pages/LatamPrivacyPolicyPage";
+import LatamTermsOfUsePage from "@/components/pages/LatamTermsOfUsePage";
 import MundialPage, {
   metadata as mundialMetadata,
 } from "@/app/recursos/blog/mundial-2026-ecommerce-contenido-producto/page";
@@ -145,10 +146,16 @@ const latamPages: Record<string, PageDefinition> = {
   },
   "politica-de-privacidad": {
     component: LatamPrivacyPolicyPage,
-    manualTitle: "Politica de privacidad | Omnitok",
+    manualTitle: "Política de Privacidad | Omnitok",
     manualDescription:
-      "Conoce como Omnitok recopila, usa y protege la informacion compartida en el sitio para LATAM.",
+      "Conoce cómo Omnitok recopila, usa y protege la información compartida en el sitio. Incluye derechos ARCO, cookies y ciberseguridad.",
     alternates: marketAlternates.privacy,
+  },
+  "terminos-de-uso": {
+    component: LatamTermsOfUsePage,
+    manualTitle: "Términos de Uso | Omnitok",
+    manualDescription:
+      "Condiciones que regulan el acceso y uso del sitio web de Omnitok para usuarios en América Latina.",
   },
   nosotros: {
     component: NosotrosPage,

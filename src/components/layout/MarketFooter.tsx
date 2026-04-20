@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { MarketKey } from "@/lib/markets";
-import { marketConfigs } from "@/lib/markets";
+import { marketConfigs, canonicalRoutes } from "@/lib/markets";
 
 type MarketFooterProps = {
   market: MarketKey;
@@ -65,9 +65,12 @@ export default function MarketFooter({ market }: MarketFooterProps) {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-5 sm:flex-row lg:px-8">
-          <p className="text-xs text-white/40">
+          <Link
+            href={market === "latam" ? canonicalRoutes.latam.privacyPolicy : canonicalRoutes.usa.privacyPolicy}
+            className="text-xs text-white/40 hover:text-white/70 transition-colors"
+          >
             © {new Date().getFullYear()} Omnitok. All rights reserved.
-          </p>
+          </Link>
           <p className="text-xs text-white/40">{config.brandText}</p>
         </div>
       </div>

@@ -132,8 +132,7 @@ export default function ProblemSection() {
           </div>
 
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-            Tu marca está en los retailers.{" "}
-            <span className="text-gradient-brand">Pero, ¿cómo se ve?</span>
+            Tu marca está en los retailers.
           </h2>
 
           <p className="mt-5 text-lg text-gray-500 leading-relaxed max-w-xl mx-auto">

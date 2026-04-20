@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Network, LayoutTemplate, Bot, BarChart2, X, ArrowRight } from "lucide-react";
+import { Network, LayoutTemplate, Bot, BarChart2, ArrowRight } from "lucide-react";
 import { canonicalRoutes } from "@/lib/markets";
 
 const modules = [
@@ -55,9 +54,9 @@ const modules = [
 
 type Module = typeof modules[0];
 
-function ModuleCard({ mod, onClick }: { mod: Module; onClick: () => void }) {
+function ModuleCard({ mod }: { mod: Module }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-7 shadow-card transition-all duration-200 lg:hover:-translate-y-1 lg:hover:scale-[1.04] lg:hover:shadow-card-hover">
+    <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-7 shadow-card transition-all duration-200 lg:hover:-translate-y-1 lg:hover:scale-[1.04] lg:hover:shadow-card-hover flex flex-col">
       <div
         className="absolute left-0 right-0 top-0 h-0.5 rounded-t-2xl"
         style={{
@@ -78,26 +77,19 @@ function ModuleCard({ mod, onClick }: { mod: Module; onClick: () => void }) {
         </div>
       </div>
       <h3 className="mb-2 text-base font-bold text-gray-900">{mod.title}</h3>
-      <p className="mb-5 text-sm leading-relaxed text-gray-500">{mod.desc}</p>
-      {/* Plus button */}
-      <div className="flex justify-end">
-        <button
-          type="button"
-          onClick={onClick}
-          className="flex h-8 w-8 items-center justify-center rounded-full text-lg font-light text-white shadow-md transition-transform hover:scale-110"
-          style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}
-          aria-label={`Más sobre ${mod.product}`}
-        >
-          +
-        </button>
-      </div>
+      <p className="mb-5 text-sm leading-relaxed text-gray-500 flex-1">{mod.desc}</p>
+      <Link
+        href={mod.href}
+        className="inline-flex items-center gap-1.5 self-start px-3 py-1.5 rounded-lg text-xs font-semibold text-white transition-opacity hover:opacity-85"
+        style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}
+      >
+        Conoce más <ArrowRight size={12} />
+      </Link>
     </div>
   );
 }
 
 export default function HowItWorks() {
-  const [selected, setSelected] = useState<Module | null>(null);
-
   const leftModules  = modules.filter(m => m.position === "left");
   const rightModules = modules.filter(m => m.position === "right");
 
@@ -133,7 +125,7 @@ export default function HowItWorks() {
 
           {/* Left */}
           <div className="flex flex-col gap-5 relative z-10">
-            {leftModules.map(m => <ModuleCard key={m.product} mod={m} onClick={() => setSelected(m)} />)}
+            {leftModules.map(m => <ModuleCard key={m.product} mod={m}  />)}
           </div>
 
           {/* Center hub */}
@@ -166,13 +158,13 @@ export default function HowItWorks() {
 
           {/* Right */}
           <div className="flex flex-col gap-5 relative z-10">
-            {rightModules.map(m => <ModuleCard key={m.product} mod={m} onClick={() => setSelected(m)} />)}
+            {rightModules.map(m => <ModuleCard key={m.product} mod={m}  />)}
           </div>
         </div>
 
         {/* Mobile grid */}
         <div className="lg:hidden grid sm:grid-cols-2 gap-4">
-          {modules.map(m => <ModuleCard key={m.product} mod={m} onClick={() => setSelected(m)} />)}
+          {modules.map(m => <ModuleCard key={m.product} mod={m}  />)}
         </div>
 
         <div className="mt-12 flex justify-center lg:mt-16">
@@ -187,86 +179,7 @@ export default function HowItWorks() {
 
       </div>
 
-      {/* Split modal */}
-      {selected && (
-        <>
-          <div className="fixed inset-0 z-40 backdrop-blur-md" style={{ background: "rgba(10,8,30,0.8)" }} onClick={() => setSelected(null)} />
-          <div className="fixed inset-4 lg:inset-10 z-50 flex flex-col overflow-y-auto rounded-3xl shadow-modal lg:flex-row lg:overflow-hidden" style={{ animation: "modalIn 0.4s cubic-bezier(0.34,1.4,0.64,1)" }}>
-
-            {/* Left dark */}
-            <div className="relative flex w-full flex-col justify-start overflow-y-auto p-6 sm:p-8 lg:w-1/2 lg:flex-shrink-0 lg:justify-between lg:overflow-hidden lg:p-12 gradient-hero min-h-0">
-              <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "rgba(255,23,123,0.25)" }} />
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "rgba(77,74,157,0.35)" }} />
-
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-8" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.15)" }}>
-                  <selected.icon size={13} className="text-white/70" />
-                  <span className="text-[11px] font-semibold text-white/70 uppercase tracking-widest">{selected.label}</span>
-                </div>
-                <p className="text-accent text-sm font-semibold mb-2">{selected.product}</p>
-                <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">{selected.title}</h3>
-                <div className="space-y-4">
-                  {selected.detail.split("\n\n").map((para, i) => (
-                    <p key={i} className="text-white/60 leading-relaxed text-base">{para}</p>
-                  ))}
-                </div>
-              </div>
-
-              <div className="relative z-10 mt-10">
-                <Link href={selected.href} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white border border-white/20 hover:bg-white/10 transition-colors" onClick={() => setSelected(null)}>
-                  Conocer {selected.product} <ArrowRight size={15} />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right white */}
-            <div className="hidden lg:flex flex-col bg-white w-1/2 overflow-y-auto relative">
-              <button onClick={() => setSelected(null)} className="absolute top-5 right-5 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors">
-                <X size={15} className="text-gray-600" />
-              </button>
-              <div className="p-10 flex flex-col gap-8 flex-1 justify-center">
-                <div>
-                  <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-4">Beneficios</p>
-                  <div className="space-y-3">
-                    {selected.bullets.map((b, i) => (
-                      <div
-                        key={b}
-                        className="flex items-center gap-4 p-4 rounded-2xl border border-gray-100 bg-white shadow-sm cursor-default motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out hover:scale-[1.03] hover:shadow-lg hover:border-primary/40 hover:bg-gradient-to-r hover:from-[rgba(255,23,123,0.12)] hover:to-[rgba(77,74,157,0.1)] group"
-                      >
-                        <div
-                          className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 font-bold text-xs text-white motion-safe:transition-transform motion-safe:duration-300 group-hover:scale-110 group-hover:shadow-md"
-                          style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}
-                        >
-                          {i + 1}
-                        </div>
-                        <span className="text-sm font-medium text-gray-700 motion-safe:transition-colors motion-safe:duration-300 group-hover:text-primary">
-                          {b}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="h-px bg-gray-100" />
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  Parte de la <span className="font-semibold text-primary">Omnitok Product Experience Suite</span> — un sistema conectado que controla tu ejecución digital de principio a fin.
-                </p>
-              </div>
-            </div>
-
-            {/* Mobile close */}
-            <button onClick={() => setSelected(null)} className="lg:hidden absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center z-20" style={{ background: "rgba(255,255,255,0.15)" }}>
-              <X size={16} className="text-white" />
-            </button>
-          </div>
-        </>
-      )}
-
       <style jsx>{`
-        @keyframes modalIn {
-          from { transform: scale(0.9) translateY(20px); opacity: 0; }
-          to   { transform: scale(1) translateY(0); opacity: 1; }
-        }
         @keyframes flowArrow {
           0%   { left: -4%; opacity: 0; }
           8%   { opacity: 1; }

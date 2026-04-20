@@ -30,19 +30,19 @@ export default function LogoBar() {
         />
 
         {/* Track */}
-        <div className="logos-track flex items-center gap-16 w-max">
+        <div className="logos-track flex items-center gap-10 w-max">
           {track.map((client, i) => (
             <div
               key={i}
               className="flex-shrink-0 flex items-center justify-center"
-              style={{ width: "180px", height: "80px" }}
+              style={{ width: "120px", height: "50px" }}
             >
               <Image
                 src={client.src}
                 alt={`${client.name} logo — Omnitok client`}
                 title={client.name}
-                width={180}
-                height={80}
+                width={120}
+                height={50}
                 className={
                   (client.small
                     ? "h-[60%] w-auto max-w-full object-contain"

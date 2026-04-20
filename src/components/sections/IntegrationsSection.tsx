@@ -70,19 +70,19 @@ export default function IntegrationsSection({ hideTitle = false }: IntegrationsS
         />
 
         {/* Track */}
-        <div className="integrations-track flex items-center gap-16 w-max">
+        <div className="integrations-track flex items-center gap-10 w-max">
           {track.map((item, i) => (
             <div
               key={`${item.name}-${i}`}
               className="flex-shrink-0 flex items-center justify-center overflow-hidden group"
-              style={{ width: item.wide ? "350px" : "180px", height: "80px" }}
+              style={{ width: item.wide ? "220px" : "120px", height: "50px" }}
             >
               <Image
                 src={item.src}
                 alt={item.name}
                 title={item.name}
-                width={item.wide ? 350 : 180}
-                height={80}
+                width={item.wide ? 220 : 120}
+                height={50}
                 className="h-full w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                 style={{
                   ...(item.scale ? { transform: `scale(${item.scale})` } : {}),

@@ -19,6 +19,7 @@ const features: ProductFeatureCarouselItem[] = [
     accent: "from-[#FF177B] to-[#c0136a]",
     dot: "#FF177B",
     customVisual: <ContentPdpMockup />,
+    disableHoverScale: true,
   },
   {
     icon: Share2,

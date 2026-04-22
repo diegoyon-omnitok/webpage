@@ -16,6 +16,8 @@ export type ProductFeatureCarouselItem = {
   imageSrc?: string;
   imageAlt?: string;
   customVisual?: React.ReactNode;
+  /** Disable hover scale/transform on this card's visual — useful for dense mockups where scaling blurs text/images. */
+  disableHoverScale?: boolean;
 };
 
 type ProductFeatureCarouselProps = {
@@ -37,7 +39,7 @@ function FeatureVisualCell({
   return (
     <div className="flex h-full w-full items-center justify-center p-3 sm:p-6 lg:min-h-[380px] lg:p-10 xl:p-12 min-h-[220px]">
       {f.customVisual ? (
-        <div className="w-full motion-safe:transition-transform duration-300 lg:group-hover:scale-[1.02]">
+        <div className={`w-full ${f.disableHoverScale ? "" : "motion-safe:transition-transform duration-300 lg:group-hover:scale-[1.02]"}`}>
           {f.customVisual}
         </div>
       ) : (
@@ -126,7 +128,7 @@ export default function ProductFeatureCarousel({
             );
 
             return (
-              <article key={f.title} className="group overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-card motion-safe:transition-transform duration-300 lg:hover:scale-[1.02]">
+              <article key={f.title} className={`group overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-card ${f.disableHoverScale ? "" : "motion-safe:transition-transform duration-300 lg:hover:scale-[1.02]"}`}>
                 <div className={`h-1 w-full bg-gradient-to-r ${f.accent}`} aria-hidden />
                 <div className="grid items-stretch lg:min-h-[400px] lg:grid-cols-2 min-h-0">
                   {textCell}

@@ -55,14 +55,14 @@ function StatCard({
   }, [animate, delay]);
 
   return (
-    <div className="group relative flex flex-col items-center justify-center rounded-3xl border border-white/20 bg-white px-8 py-10 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover overflow-hidden">
+    <div className="group relative flex flex-col items-center justify-center rounded-3xl border border-white/20 bg-white px-4 py-6 sm:px-8 sm:py-10 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover overflow-hidden">
       {prefix ? (
         <p className="relative text-xs font-bold uppercase tracking-[0.2em] text-gray-400">{prefix}</p>
       ) : (
         <p className="relative text-xs font-bold uppercase tracking-[0.2em] text-transparent select-none">—</p>
       )}
 
-      <p className="relative mt-1 text-6xl font-bold leading-none tracking-tight text-accent sm:text-7xl">
+      <p className="relative mt-1 text-5xl font-bold leading-none tracking-tight text-accent sm:text-6xl lg:text-7xl">
         {count}
         <span>{suffix}</span>
       </p>
@@ -91,7 +91,7 @@ export default function ImpactSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden gradient-hero py-28">
+    <section className="relative overflow-hidden gradient-hero py-16 sm:py-20 lg:py-28">
       {/* Grid pattern */}
       <div
         className="absolute inset-0 opacity-[0.06] pointer-events-none"

@@ -5,13 +5,13 @@ export default function SolutionVision() {
   return (
     <section className="py-20 lg:py-28 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           {/* Left: text */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
               <span className="text-xs font-semibold text-primary">La solución</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
               Omnitok es tu plataforma de{" "}
               <span className="text-gradient-brand">ejecución digital en retail</span>
             </h2>
@@ -48,7 +48,7 @@ export default function SolutionVision() {
 
           {/* Right: flow diagram */}
           <div className="relative">
-            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+            <div className="bg-gray-50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-gray-100">
               {/* Flow */}
               <div className="space-y-3">
                 {/* Marca */}

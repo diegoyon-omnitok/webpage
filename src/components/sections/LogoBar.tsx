@@ -44,8 +44,8 @@ export default function LogoBar() {
       <div className="absolute top-1/2 right-10 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
       <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/30 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
       {/* Title */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 mb-10 text-center">
-        <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 mb-6 sm:mb-10 text-center">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-tight">
           Conectados con los principales retailers de LATAM
         </h3>
       </div>
@@ -63,11 +63,11 @@ export default function LogoBar() {
         />
 
         {/* Track */}
-        <div className="logobar-track flex items-center gap-12 w-max py-2">
+        <div className="logobar-track flex items-center gap-8 sm:gap-12 w-max py-2">
           {track.map((name, i) => (
             <span
               key={i}
-              className="text-2xl font-semibold text-white/80 whitespace-nowrap flex-shrink-0 hover:text-white transition-colors cursor-default"
+              className="text-lg sm:text-2xl font-semibold text-white/80 whitespace-nowrap flex-shrink-0 hover:text-white transition-colors cursor-default"
             >
               {name}
             </span>

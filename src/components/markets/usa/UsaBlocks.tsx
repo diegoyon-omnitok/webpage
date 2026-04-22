@@ -44,7 +44,7 @@ export function UsaHero({
       <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-accent/20 blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-primary/30 blur-3xl pointer-events-none" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pb-0 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:items-stretch">
+      <div className="relative mx-auto grid max-w-7xl gap-8 px-6 pb-0 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8 lg:items-stretch">
         <div className="animate-slide-up self-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
             <ShieldCheck size={14} className="text-accent" />
@@ -171,8 +171,8 @@ export function TimelineSteps({
 
 export function OutcomeBand({ items }: { items: string[] }) {
   return (
-    <div className="rounded-[28px] bg-sidebar p-8 text-white">
-      <div className="grid gap-4 lg:grid-cols-4">
+    <div className="rounded-[28px] bg-sidebar p-4 sm:p-8 text-white">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((item) => (
           <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-4">
             <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10">
@@ -256,7 +256,7 @@ export function CardLinkGrid({
         <Link
           key={item.href}
           href={item.href}
-          className="group rounded-3xl border border-gray-100 bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+          className="group rounded-3xl border border-gray-100 bg-white p-5 sm:p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
         >
           <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
           <p className="mt-3 text-sm leading-relaxed text-gray-500">{item.description}</p>

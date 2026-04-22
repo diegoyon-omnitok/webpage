@@ -36,13 +36,13 @@ export default function ResourcesHub() {
   return (
     <section className="py-20 lg:py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 lg:mb-12">
           <div>
             <div className="inline-flex items-center px-4 py-1.5 rounded-full mb-4"
               style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}>
               <span className="text-xs font-semibold text-white">Recursos</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
               Insights sobre ecommerce, digital shelf y retailers
             </h2>
           </div>

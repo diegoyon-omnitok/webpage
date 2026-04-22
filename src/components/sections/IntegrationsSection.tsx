@@ -61,11 +61,11 @@ export default function IntegrationsSection({ hideTitle = false }: IntegrationsS
       <div className="relative bg-white">
         {/* Edge fades */}
         <div
-          className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          className="absolute left-0 top-0 bottom-0 w-10 sm:w-24 z-10 pointer-events-none"
           style={{ background: "linear-gradient(to right, #ffffff, transparent)" }}
         />
         <div
-          className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          className="absolute right-0 top-0 bottom-0 w-10 sm:w-24 z-10 pointer-events-none"
           style={{ background: "linear-gradient(to left, #ffffff, transparent)" }}
         />
 

@@ -72,8 +72,12 @@ export function PricingMatrixMockup({ locale = "es" }: { locale?: Locale }) {
           <span className="rounded px-2 py-0.5 text-[9px] font-semibold bg-accent/80 text-white">{t.expand}</span>
         </div>
       </div>
-      <table className="w-full">
-        <thead><tr className="bg-gray-50">{t.headers.map((h) => <th key={h} className="px-1.5 py-2 text-left font-bold text-gray-500 uppercase tracking-wider" style={{ borderBottom: cellBorder, fontSize: "8px" }}>{h}</th>)}</tr></thead>
+      <div className="overflow-x-auto">
+      <table className="w-full sm:min-w-[560px]">
+        <thead><tr className="bg-gray-50">{t.headers.map((h, idx) => {
+          const hideMobile = [0, 1, 3, 6, 7, 9, 10].includes(idx);
+          return <th key={h} className={`px-1.5 py-2 text-left font-bold text-gray-500 uppercase tracking-wider ${hideMobile ? 'hidden sm:table-cell' : ''}`} style={{ borderBottom: cellBorder, fontSize: "8px" }}>{h}</th>;
+        })}</tr></thead>
         <tbody>
           {pricingRows.map((r) => {
             const status = locale === "en" ? r.statusEn : r.statusEs;
@@ -81,22 +85,23 @@ export function PricingMatrixMockup({ locale = "es" }: { locale?: Locale }) {
             const isTied = status === "Empatado" || status === "Tied";
             return (
               <tr key={r.id} className="hover:bg-gray-50/50">
-                <td className="px-1.5 py-2 text-gray-400 tabular-nums" style={{ borderBottom: cellBorder }}>{r.id}</td>
-                <td className="px-1.5 py-2 font-semibold text-gray-700" style={{ borderBottom: cellBorder }}>{r.brand}</td>
-                <td className="px-1.5 py-2 text-gray-600 truncate max-w-[80px]" style={{ borderBottom: cellBorder }}>{r.model}</td>
-                <td className="px-1.5 py-2 text-gray-500" style={{ borderBottom: cellBorder }}>{r.cat}</td>
+                <td className="hidden sm:table-cell px-1.5 py-2 text-gray-400 tabular-nums" style={{ borderBottom: cellBorder }}>{r.id}</td>
+                <td className="hidden sm:table-cell px-1.5 py-2 font-semibold text-gray-700" style={{ borderBottom: cellBorder }}>{r.brand}</td>
+                <td className="px-1.5 py-2 text-gray-600 truncate max-w-[100px] sm:max-w-[80px]" style={{ borderBottom: cellBorder }}>{r.model}</td>
+                <td className="hidden sm:table-cell px-1.5 py-2 text-gray-500" style={{ borderBottom: cellBorder }}>{r.cat}</td>
                 <td className="px-1.5 py-2 tabular-nums" style={{ borderBottom: cellBorder }}>{r.r1 ? <div><span className="font-semibold text-gray-800">{r.r1}</span>{r.r1note && <div className="text-[9px] text-green-600">{r.r1note}</div>}</div> : <span className="text-gray-300">-</span>}</td>
                 <td className="px-1.5 py-2 tabular-nums text-gray-600" style={{ borderBottom: cellBorder }}>{r.r2 || <span className="text-gray-300">-</span>}</td>
-                <td className="px-1.5 py-2 tabular-nums text-gray-600" style={{ borderBottom: cellBorder }}>{r.r3 || <span className="text-gray-300">-</span>}</td>
-                <td className="px-1.5 py-2 tabular-nums text-gray-600" style={{ borderBottom: cellBorder }}>{r.r4 || <span className="text-gray-300">-</span>}</td>
+                <td className="hidden sm:table-cell px-1.5 py-2 tabular-nums text-gray-600" style={{ borderBottom: cellBorder }}>{r.r3 || <span className="text-gray-300">-</span>}</td>
+                <td className="hidden sm:table-cell px-1.5 py-2 tabular-nums text-gray-600" style={{ borderBottom: cellBorder }}>{r.r4 || <span className="text-gray-300">-</span>}</td>
                 <td className="px-1.5 py-2 tabular-nums font-semibold" style={{ borderBottom: cellBorder, color: r.gap === "Best" || r.gap.startsWith("-") ? "#16a34a" : "#dc2626" }}>{r.gap}</td>
-                <td className="px-1.5 py-2" style={{ borderBottom: cellBorder }}><WinnerBadge text={r.winner} color={r.winTag} /></td>
-                <td className="px-1.5 py-2" style={{ borderBottom: cellBorder }}><span className="rounded px-1.5 py-0.5 text-[9px] font-semibold" style={{ background: isWinning ? "#dcfce7" : isTied ? "#fef3c7" : "#fee2e2", color: isWinning ? "#166534" : isTied ? "#92400e" : "#991b1b" }}>{status}</span></td>
+                <td className="hidden sm:table-cell px-1.5 py-2" style={{ borderBottom: cellBorder }}><WinnerBadge text={r.winner} color={r.winTag} /></td>
+                <td className="hidden sm:table-cell px-1.5 py-2" style={{ borderBottom: cellBorder }}><span className="rounded px-1.5 py-0.5 text-[9px] font-semibold" style={{ background: isWinning ? "#dcfce7" : isTied ? "#fef3c7" : "#fee2e2", color: isWinning ? "#166534" : isTied ? "#92400e" : "#991b1b" }}>{status}</span></td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
@@ -132,22 +137,27 @@ export function AvailabilityMockup({ locale = "es" }: { locale?: Locale }) {
       <div className="grid grid-cols-4 gap-px bg-gray-100">
         {t.kpis.map((kpi) => <div key={kpi.l} className="bg-white px-2 py-2.5 text-center"><p className="font-bold tabular-nums" style={{ color: kpi.c, fontSize: "20px" }}>{kpi.v}</p><p className="text-[9px] text-gray-400 uppercase tracking-wider font-semibold mt-0.5">{kpi.l}</p></div>)}
       </div>
-      <table className="w-full">
-        <thead><tr className="bg-gray-50">{t.headers.map((h) => <th key={h} className="px-1.5 py-2 text-left font-bold text-gray-500 uppercase tracking-wider" style={{ borderBottom: cellBorder, fontSize: "8px" }}>{h}</th>)}</tr></thead>
+      <div className="overflow-x-auto">
+      <table className="w-full sm:min-w-[420px]">
+        <thead><tr className="bg-gray-50">{t.headers.map((h, idx) => {
+          const hideMobile = [0, 6].includes(idx);
+          return <th key={h} className={`px-1.5 py-2 text-left font-bold text-gray-500 uppercase tracking-wider ${hideMobile ? 'hidden sm:table-cell' : ''}`} style={{ borderBottom: cellBorder, fontSize: "8px" }}>{h}</th>;
+        })}</tr></thead>
         <tbody>
           {stockRows.map((r) => (
             <tr key={r.sku} className={r.days > 5 ? "bg-red-50/40" : ""}>
-              <td className="px-1.5 py-2 text-gray-400 tabular-nums font-mono" style={{ borderBottom: cellBorder }}>{r.sku}</td>
-              <td className="px-1.5 py-2 font-semibold text-gray-700 truncate max-w-[90px]" style={{ borderBottom: cellBorder }}>{r.name}</td>
+              <td className="hidden sm:table-cell px-1.5 py-2 text-gray-400 tabular-nums font-mono" style={{ borderBottom: cellBorder }}>{r.sku}</td>
+              <td className="px-1.5 py-2 font-semibold text-gray-700 truncate max-w-[110px] sm:max-w-[90px]" style={{ borderBottom: cellBorder }}>{r.name}</td>
               <td className="px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><StockDot status={r.r1} /></td>
               <td className="px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><StockDot status={r.r2} /></td>
               <td className="px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><StockDot status={r.r3} /></td>
               <td className="px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><StockDot status={r.r4} /></td>
-              <td className="px-1.5 py-2 tabular-nums text-center font-semibold" style={{ borderBottom: cellBorder, color: r.days > 5 ? "#dc2626" : r.days > 0 ? "#f59e0b" : "#22c55e" }}>{r.days === 0 ? "OK" : `${r.days}d`}</td>
+              <td className="hidden sm:table-cell px-1.5 py-2 tabular-nums text-center font-semibold" style={{ borderBottom: cellBorder, color: r.days > 5 ? "#dc2626" : r.days > 0 ? "#f59e0b" : "#22c55e" }}>{r.days === 0 ? "OK" : `${r.days}d`}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
@@ -177,20 +187,25 @@ export function ShareOfSearchMockup({ locale = "es" }: { locale?: Locale }) {
       <div className="grid grid-cols-4 gap-px bg-gray-100">
         {t.kpis.map((kpi) => <div key={kpi.l} className="bg-white px-2 py-2.5 text-center"><p className="font-bold tabular-nums" style={{ color: kpi.c, fontSize: "20px" }}>{kpi.v}</p><p className="text-[9px] text-gray-400 uppercase tracking-wider font-semibold mt-0.5">{kpi.l}</p></div>)}
       </div>
-      <table className="w-full">
-        <thead><tr className="bg-gray-50">{t.headers.map((h) => <th key={h} className="px-2 py-2 text-left font-bold text-gray-500 uppercase tracking-wider" style={{ borderBottom: cellBorder, fontSize: "8px" }}>{h}</th>)}</tr></thead>
+      <div className="overflow-x-auto">
+      <table className="w-full sm:min-w-[480px]">
+        <thead><tr className="bg-gray-50">{t.headers.map((h, idx) => {
+          const hideMobile = [3, 4].includes(idx);
+          return <th key={h} className={`px-2 py-2 text-left font-bold text-gray-500 uppercase tracking-wider ${hideMobile ? 'hidden sm:table-cell' : ''}`} style={{ borderBottom: cellBorder, fontSize: "8px" }}>{h}</th>;
+        })}</tr></thead>
         <tbody>
           {sosData.map((r) => (
             <tr key={r.kwEs}>
               <td className="px-2 py-2 font-semibold text-gray-700" style={{ borderBottom: cellBorder }}>{locale === "en" ? r.kwEn : r.kwEs}</td>
               <td className="px-2 py-2" style={{ borderBottom: cellBorder }}><MiniBar value={r.brand} max={40} color="#4D4A9D" /></td>
               <td className="px-2 py-2" style={{ borderBottom: cellBorder }}><MiniBar value={r.comp1} max={40} color="#FF177B" /></td>
-              <td className="px-2 py-2" style={{ borderBottom: cellBorder }}><MiniBar value={r.comp2} max={40} color="#f59e0b" /></td>
-              <td className="px-2 py-2" style={{ borderBottom: cellBorder }}><MiniBar value={r.comp3} max={40} color="#6b7280" /></td>
+              <td className="hidden sm:table-cell px-2 py-2" style={{ borderBottom: cellBorder }}><MiniBar value={r.comp2} max={40} color="#f59e0b" /></td>
+              <td className="hidden sm:table-cell px-2 py-2" style={{ borderBottom: cellBorder }}><MiniBar value={r.comp3} max={40} color="#6b7280" /></td>
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
@@ -220,24 +235,29 @@ export function ContentComplianceMockup({ locale = "es" }: { locale?: Locale }) 
       <div className="grid grid-cols-3 gap-px bg-gray-100">
         {t.kpis.map((kpi) => <div key={kpi.l} className="bg-white px-2 py-2.5 text-center"><p className="font-bold tabular-nums" style={{ color: kpi.c, fontSize: "20px" }}>{kpi.v}</p><p className="text-[9px] text-gray-400 uppercase tracking-wider font-semibold mt-0.5">{kpi.l}</p></div>)}
       </div>
-      <table className="w-full">
-        <thead><tr className="bg-gray-50">{t.headers.map((h) => <th key={h} className="px-1.5 py-2 text-left font-bold text-gray-500 uppercase tracking-wider" style={{ borderBottom: cellBorder, fontSize: "8px" }}>{h}</th>)}</tr></thead>
+      <div className="overflow-x-auto">
+      <table className="w-full sm:min-w-[520px]">
+        <thead><tr className="bg-gray-50">{t.headers.map((h, idx) => {
+          const hideMobile = [0, 3, 4, 5, 6].includes(idx);
+          return <th key={h} className={`px-1.5 py-2 text-left font-bold text-gray-500 uppercase tracking-wider ${hideMobile ? 'hidden sm:table-cell' : ''}`} style={{ borderBottom: cellBorder, fontSize: "8px" }}>{h}</th>;
+        })}</tr></thead>
         <tbody>
           {contentRows.map((r) => (
             <tr key={r.sku} className={r.score < 50 ? "bg-red-50/40" : ""}>
-              <td className="px-1.5 py-2 text-gray-400 tabular-nums font-mono" style={{ borderBottom: cellBorder }}>{r.sku}</td>
-              <td className="px-1.5 py-2 font-semibold text-gray-700 truncate max-w-[90px]" style={{ borderBottom: cellBorder }}>{r.name}</td>
+              <td className="hidden sm:table-cell px-1.5 py-2 text-gray-400 tabular-nums font-mono" style={{ borderBottom: cellBorder }}>{r.sku}</td>
+              <td className="px-1.5 py-2 font-semibold text-gray-700 truncate max-w-[110px] sm:max-w-[90px]" style={{ borderBottom: cellBorder }}>{r.name}</td>
               <td className="px-1.5 py-2 tabular-nums text-center font-semibold" style={{ borderBottom: cellBorder, color: r.images >= 5 ? "#166534" : r.images >= 3 ? "#92400e" : "#dc2626" }}>{r.images}</td>
-              <td className="px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><CheckMark ok={r.title} /></td>
-              <td className="px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><CheckMark ok={r.desc} /></td>
-              <td className="px-1.5 py-2 tabular-nums text-center text-gray-600" style={{ borderBottom: cellBorder }}>{r.attrs}</td>
-              <td className="px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><CheckMark ok={r.video} /></td>
+              <td className="hidden sm:table-cell px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><CheckMark ok={r.title} /></td>
+              <td className="hidden sm:table-cell px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><CheckMark ok={r.desc} /></td>
+              <td className="hidden sm:table-cell px-1.5 py-2 tabular-nums text-center text-gray-600" style={{ borderBottom: cellBorder }}>{r.attrs}</td>
+              <td className="hidden sm:table-cell px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><CheckMark ok={r.video} /></td>
               <td className="px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><CheckMark ok={r.rich} /></td>
               <td className="px-1.5 py-2 text-center" style={{ borderBottom: cellBorder }}><ScoreBadge score={r.score} /></td>
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
@@ -298,3 +318,4 @@ export function AiReportMockup({ locale = "es" }: { locale?: Locale }) {
     </div>
   );
 }
+

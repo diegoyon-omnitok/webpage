@@ -70,11 +70,11 @@ export default function Testimonials() {
       />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="max-w-2xl mx-auto text-center mb-14">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+        <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
             Testimonios de marcas que ya usan Omnitok
           </h2>
-          <p className="mt-4 text-lg text-gray-500">
+          <p className="mt-4 text-base sm:text-lg text-gray-500">
             Equipos de digital commerce en LATAM que transformaron su visibilidad y conversión con Omnitok.
           </p>
         </div>

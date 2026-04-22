@@ -5,7 +5,7 @@ import { canonicalRoutes } from "@/lib/markets";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex-1 min-h-0 w-full gradient-hero flex flex-col overflow-hidden pt-10 sm:pt-12 pb-0">
+    <section className="relative flex-1 min-h-0 w-full gradient-hero flex flex-col overflow-hidden pt-20 sm:pt-24 lg:pt-12 pb-0">
       {/* Background grid pattern */}
       <div
         className="absolute inset-0 opacity-[0.06]"
@@ -21,7 +21,7 @@ export default function HeroSection() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full flex-1 flex flex-col min-h-0 pt-4 sm:pt-6 lg:pt-8 pb-0">
-        <div className="grid flex-1 min-h-0 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-24 lg:items-stretch">
+        <div className="grid flex-1 min-h-0 lg:grid-cols-2 gap-8 lg:gap-20 xl:gap-24 lg:items-stretch">
           {/* Left column */}
           <div className="animate-slide-up self-center">
             {/* Badge */}
@@ -32,7 +32,7 @@ export default function HeroSection() {
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-white leading-[1.15] tracking-tight">
+            <h1 className="text-[2rem] sm:text-5xl lg:text-[3.25rem] font-bold text-white leading-[1.15] tracking-tight">
               Mejora la{" "}
               <span className="text-gradient-brand">ejecución digital</span>{" "}
               de tu marca en retailers y marketplaces
@@ -73,11 +73,9 @@ export default function HeroSection() {
               title="Plataforma Omnitok — contenido enriquecido, digital shelf analytics y asistente IA para retailers"
               width={1600}
               height={1000}
-              className="block h-auto w-full max-w-[min(100%,32rem)] sm:max-w-[min(100%,36rem)] lg:max-w-[min(100%,40rem)] xl:max-w-[min(100%,44rem)] object-contain object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 translate-y-[10%] origin-center lg:origin-right"
+              className="hero-image block h-auto w-full max-w-[min(100%,22rem)] sm:max-w-[min(100%,30rem)] lg:max-w-[min(100%,40rem)] xl:max-w-[min(100%,44rem)] object-contain object-center lg:object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 lg:translate-y-[10%] origin-center lg:origin-right lg:[mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)]"
               style={{
                 filter: "drop-shadow(0 24px 48px rgba(77,74,157,0.5))",
-                maskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
-                WebkitMaskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
               }}
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority

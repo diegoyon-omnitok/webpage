@@ -26,7 +26,7 @@ export default function FinalCTA() {
           <span className="text-gradient-brand">conversión</span>
         </h2>
 
-        <p className="mt-5 text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-5 text-base sm:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
           Habla con Omnitok para centralizar contenido de producto, mejorar páginas de producto y ganar visibilidad sobre tu ejecución digital en retailers y marketplaces.
         </p>
 

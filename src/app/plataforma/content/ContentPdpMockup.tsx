@@ -240,18 +240,19 @@ function EnrichedContent() {
           ))}
         </div>
 
-        {/* KSP zigzag — lifestyle images with fixed aspect ratio (no stretch/blur) */}
+        {/* KSP zigzag — lifestyle images at natural proportions (no crop) */}
         {ksps.map((ksp, i) => {
           const rev = i % 2 === 1;
           return (
             <div key={ksp.title} className={`grid grid-cols-2 ${i > 0 ? "border-t border-gray-100" : ""}`} style={{ background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
-              <div className={`relative overflow-hidden ${rev ? "order-2" : "order-1"}`} style={{ aspectRatio: "16/9" }}>
+              <div className={`flex items-center justify-center overflow-hidden ${rev ? "order-2" : "order-1"}`}>
                 <Image
                   src={ksp.img}
                   alt={ksp.title}
                   title={ksp.title}
-                  fill
-                  className="object-cover"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain"
                   sizes="200px"
                   quality={100}
                 />

@@ -66,9 +66,9 @@ export default function DsaImpact() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
 
         {/* Header */}
-        <div className="mb-14 text-center">
+        <div className="mb-10 lg:mb-14 text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-pink-400">Our technology in numbers</p>
-          <h2 className="mx-auto max-w-2xl text-3xl font-bold leading-tight text-white lg:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-2xl sm:text-3xl font-bold leading-tight text-white lg:text-4xl">
             Trusted results for digital shelf analytics
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/60">
@@ -85,7 +85,7 @@ export default function DsaImpact() {
                 {/* Front */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center rounded-3xl border border-gray-100 bg-gray-50 p-8 text-center shadow-card [backface-visibility:hidden]">
                   <div
-                    className="mb-3 text-7xl font-black leading-none lg:text-8xl"
+                    className="mb-3 text-6xl font-black leading-none lg:text-7xl xl:text-8xl"
                     style={{ color: stat.color }}
                   >
                     {counts[i]}{stat.suffix}

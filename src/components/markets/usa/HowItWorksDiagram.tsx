@@ -51,7 +51,7 @@ export default function HowItWorksDiagram() {
     <section className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-        <div className="mb-20 text-center">
+        <div className="mb-12 lg:mb-20 text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-accent">Platform</p>
           <h2 className="text-3xl font-bold leading-tight text-gray-900 lg:text-4xl">
             Turn pricing and shelf signals into action

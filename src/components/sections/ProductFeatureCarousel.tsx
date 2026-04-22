@@ -35,7 +35,7 @@ function FeatureVisualCell({
   const compactInpage = Boolean(isFirstBlock && f.imageSrc);
 
   return (
-    <div className="flex h-full w-full items-center justify-center p-6 sm:p-8 lg:min-h-[380px] lg:p-10 xl:p-12 min-h-[220px]">
+    <div className="flex h-full w-full items-center justify-center p-3 sm:p-6 lg:min-h-[380px] lg:p-10 xl:p-12 min-h-[220px]">
       {f.customVisual ? (
         <div className="w-full motion-safe:transition-transform duration-300 lg:group-hover:scale-[1.02]">
           {f.customVisual}
@@ -87,8 +87,8 @@ export default function ProductFeatureCarousel({
     <section className="py-12 lg:py-20 bg-gray-50 box-border w-full">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full">
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-snug mb-4">{sectionTitle}</h2>
-          <p className="text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto">{sectionSubtitle}</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-snug mb-4">{sectionTitle}</h2>
+          <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto">{sectionSubtitle}</p>
         </div>
 
         <div className="flex flex-col gap-10 lg:gap-14">

@@ -39,7 +39,7 @@ export default function ConnectPage() {
                 <Package size={13} className="text-accent" />
                 <span className="text-xs font-semibold text-white">Omnitok Connect</span>
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-white">
+              <h1 className="text-[2rem] sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
                 Centraliza y distribuye informacion de producto en todos tus canales
               </h1>
               <p className="mt-5 text-xl text-white/70 leading-relaxed">
@@ -64,11 +64,9 @@ export default function ConnectPage() {
                 title="Omnitok Connect — distribución de información de producto a múltiples canales digitales"
                 width={1600}
                 height={1000}
-                className="block h-auto w-full max-w-[min(100%,38rem)] sm:max-w-[min(100%,42rem)] lg:max-w-[min(100%,48rem)] xl:max-w-[min(100%,54rem)] object-contain object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 origin-center lg:origin-right"
+                className="block h-auto w-full max-w-[min(100%,22rem)] sm:max-w-[min(100%,30rem)] lg:max-w-[min(100%,48rem)] xl:max-w-[min(100%,54rem)] object-contain object-center lg:object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 origin-center lg:origin-right lg:[mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)]"
                 style={{
                   filter: "drop-shadow(0 24px 48px rgba(77,74,157,0.3))",
-                  maskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
-                  WebkitMaskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
                 }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority

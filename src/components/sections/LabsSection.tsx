@@ -26,16 +26,16 @@ export default function LabsSection() {
       <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-primary/30 blur-3xl pointer-events-none" />
 
       <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 lg:mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/20 border border-accent/30 mb-5">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-xs font-semibold text-white">Gratis, sin registro</span>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
             Analiza tu ejecución digital gratis con{" "}
             <span className="text-gradient-brand">Omnitok Labs</span>
           </h2>
-          <p className="mt-4 text-lg text-white/60 leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-white/60 leading-relaxed max-w-2xl mx-auto">
             Tres herramientas de diagnóstico para entender cómo se posiciona tu marca en retailers y marketplaces. Sin compromiso.
           </p>
         </div>

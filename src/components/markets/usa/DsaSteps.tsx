@@ -74,7 +74,7 @@ export default function DsaSteps() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
 
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-10 lg:mb-16 text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-accent">How it works</p>
           <h2 className="text-3xl font-bold leading-tight text-gray-900 lg:text-4xl">
             How Our Digital Shelf Analytics Software Works
@@ -87,7 +87,7 @@ export default function DsaSteps() {
 
           <div className="space-y-0">
             {steps.map((step, i) => (
-              <div key={step.number} className="relative flex gap-8 lg:gap-12">
+              <div key={step.number} className="relative flex gap-5 lg:gap-12">
 
                 {/* Node */}
                 <div className="relative z-10 flex flex-col items-center">
@@ -100,7 +100,7 @@ export default function DsaSteps() {
                 </div>
 
                 {/* Content */}
-                <div className={`grid flex-1 gap-8 pb-16 lg:grid-cols-2 lg:items-center ${i === steps.length - 1 ? "pb-0" : ""}`}>
+                <div className={`grid flex-1 gap-6 pb-10 lg:gap-8 lg:grid-cols-2 lg:items-center lg:pb-16 ${i === steps.length - 1 ? "pb-0 lg:pb-0" : ""}`}>
 
                   {/* Image */}
                   <div className={`flex items-center justify-center overflow-hidden rounded-2xl p-4 ${i === 1 ? "lg:order-first bg-transparent border-0 shadow-none" : "lg:order-last bg-white border border-gray-100 shadow-card"}`}>

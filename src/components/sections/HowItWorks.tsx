@@ -100,7 +100,7 @@ export default function HowItWorks() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Controla cómo aparece tu marca en canales digitales
           </h2>
-          <p className="mt-5 text-xl text-gray-500">
+          <p className="mt-5 text-base sm:text-lg lg:text-xl text-gray-500">
             Omnitok conecta gestión de contenido de producto, contenido enriquecido, asistencia y digital shelf analytics para mejorar visibilidad, experiencia y conversión.
           </p>
         </div>

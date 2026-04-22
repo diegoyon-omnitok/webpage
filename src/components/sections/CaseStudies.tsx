@@ -35,12 +35,12 @@ export default function CaseStudies() {
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 lg:mb-12">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-4">
               <span className="text-xs font-semibold text-primary">Casos de éxito</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
               Marcas que ya controlan su digital shelf
             </h2>
           </div>

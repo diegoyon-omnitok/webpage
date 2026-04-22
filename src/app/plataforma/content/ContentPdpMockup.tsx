@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Star, ShoppingCart, Truck, ShieldCheck, Heart, ChevronLeft, ChevronRight, Sparkles, X } from "lucide-react";
+import { Star, ShoppingCart, Truck, ShieldCheck, Heart, ChevronLeft, ChevronRight, Sparkles, X, Play, Volume2, Ruler, RotateCw } from "lucide-react";
 
 const IMG = "/plataforma/content";
 const slides = [
@@ -17,6 +17,7 @@ const ksps = [
   { img: `${IMG}/lifestlye 1.png`, title: "Colores que cobran vida", desc: "Negros absolutos y más de mil millones de colores. Cada píxel se ilumina de forma independiente.", dark: false },
   { img: `${IMG}/lifestyle 2.png`, title: "Sonido que te envuelve", desc: "Dolby Atmos integrado con 40W. El audio sigue la acción en pantalla para una experiencia de cine real.", dark: false },
   { img: `${IMG}/lifestyle 3.png`, title: "Diseño ultra delgado", desc: "Solo 5mm de perfil. Bordes casi invisibles que maximizan el área de pantalla.", dark: false },
+  { img: `${IMG}/CARRUSEL 2.png`, title: "Explora cada ángulo", desc: "Vista 360° del producto. Rota el TV para ver el perfil, los puertos y los detalles de diseño antes de comprar.", dark: false },
 ];
 
 const techFeatures = [
@@ -92,7 +93,7 @@ function BasicContent() {
       <div className="grid grid-cols-[1.2fr_0.8fr] gap-0 border-b border-gray-100">
         <div className="p-2.5 border-r border-gray-100">
           <div className="aspect-[4/3] rounded bg-gray-50 overflow-hidden border border-gray-100 flex items-center justify-center">
-            <Image src={slides[0]} alt="Smart TV OLED 55 pulgadas — ejemplo de imagen de producto en PDP" title="Ejemplo de página de producto sin contenido enriquecido" width={300} height={225} className="w-full h-full object-contain p-2" />
+            <Image src={slides[0]} alt="Smart TV OLED 55 pulgadas — ejemplo de imagen de producto en PDP" title="Ejemplo de página de producto sin contenido enriquecido" width={800} height={600} className="w-full h-full object-contain p-2" sizes="(max-width: 640px) 60vw, 400px" quality={95} />
           </div>
           <div className="flex gap-0.5 mt-1">
             {slides.map((s, i) => <div key={i} className="w-7 h-7 rounded border border-gray-200 overflow-hidden"><Image src={s} alt={`Miniatura ${i + 1} de producto ejemplo`} width={28} height={28} className="w-full h-full object-contain" /></div>)}
@@ -181,7 +182,7 @@ function EnrichedContent() {
       <div className="grid grid-cols-[1.2fr_0.8fr] gap-0 border-b border-gray-100">
         <div className="p-2.5 border-r border-gray-100">
           <div className="relative aspect-[4/3] rounded bg-gray-50 overflow-hidden border border-gray-100">
-            <Image src={slides[slide]} alt="Smart TV OLED 55 pulgadas — ejemplo de producto con contenido enriquecido Omnitok" title="Página de producto mejorada con contenido enriquecido Omnitok Content" fill className="object-contain p-2" sizes="300px" />
+            <Image src={slides[slide]} alt="Smart TV OLED 55 pulgadas — ejemplo de producto con contenido enriquecido Omnitok" title="Página de producto mejorada con contenido enriquecido Omnitok Content" fill className="object-contain p-2" sizes="(max-width: 640px) 60vw, 400px" quality={95} />
             {slide === 0 && (
               <>
                 <div className="absolute top-1.5 left-1.5 z-10">
@@ -224,10 +225,6 @@ function EnrichedContent() {
           <Image src={`${IMG}/Banner Mundial.png`} alt="Banner promocional Mundial 2026 — ejemplo de contenido variable en PDP" title="Contenido variable por campaña con Omnitok Content" width={800} height={300} className="w-full h-auto" />
         </div>
 
-        <div className="flex items-center justify-center gap-1 py-1 bg-gray-50 border-y border-gray-100">
-          <span className="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[5px] font-bold text-white" style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}><Sparkles size={5} /> Ficha de contenido</span>
-        </div>
-
         {/* Tech features bar */}
         <div className="grid grid-cols-4 border-b border-gray-100" style={{ background: "#fafafa" }}>
           {techFeatures.map((f, i) => (
@@ -240,22 +237,117 @@ function EnrichedContent() {
           ))}
         </div>
 
-        {/* KSP zigzag — lifestyle images at natural proportions (no crop) */}
+        {/* KSP zigzag — each card demonstrates a different enriched-content format */}
         {ksps.map((ksp, i) => {
           const rev = i % 2 === 1;
           return (
             <div key={ksp.title} className={`grid grid-cols-2 ${i > 0 ? "border-t border-gray-100" : ""}`} style={{ background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
-              <div className={`flex items-center justify-center overflow-hidden ${rev ? "order-2" : "order-1"}`}>
-                <Image
-                  src={ksp.img}
-                  alt={ksp.title}
-                  title={ksp.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-contain"
-                  sizes="200px"
-                  quality={100}
-                />
+              <div className={`relative flex items-stretch justify-center overflow-hidden ${rev ? "order-2" : "order-1"}`}>
+                {i === 1 ? (
+                  /* Card 2 — VIDEO (family watching TV) with cinematic caption */
+                  <>
+                    <video src={`${IMG}/VIDEO TELE.mp4`} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/25" />
+                    {/* Top row: live dot + timestamp */}
+                    <div className="absolute top-1.5 left-1.5 right-1.5 flex items-center justify-between text-white">
+                      <span className="inline-flex items-center gap-[3px] text-[5px] font-semibold tracking-[0.18em]" style={{ fontFamily: "ui-monospace, monospace" }}>
+                        <span className="h-[5px] w-[5px] rounded-full bg-accent pdp-livedot" />
+                        REPRODUCIENDO
+                      </span>
+                      <span className="text-[5px] font-semibold tracking-wider tabular-nums" style={{ fontFamily: "ui-monospace, monospace" }}>00:12 / 00:30</span>
+                    </div>
+                    {/* Cinematic caption */}
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-[78%]">
+                      <p className="text-center text-[6px] font-semibold text-white tracking-wide leading-tight" style={{ textShadow: "0 1px 2px rgba(0,0,0,0.6)" }}>
+                        Dolby Atmos · 40 W · 5.1.2
+                      </p>
+                    </div>
+                    {/* Thin scrubbable waveform at very bottom */}
+                    <div className="absolute bottom-[4px] left-2 right-2 flex items-end gap-[1px] h-[6px] opacity-90">
+                      {[0.3,0.55,0.7,0.45,0.85,0.6,0.5,0.95,0.4,0.7,0.55,0.8,0.35,0.6,0.75,0.5,0.9,0.45,0.65,0.55].map((h, k) => (
+                        <span key={k} className="flex-1 rounded-[0.5px] bg-white pdp-wave" style={{ height: `${h * 100}%`, animationDelay: `${k * 0.05}s` }} />
+                      ))}
+                    </div>
+                  </>
+                ) : i === 0 ? (
+                  /* Card 1 — Colors (gradient sweep + spec chip) */
+                  <>
+                    <Image src={ksp.img} alt={ksp.title} title={ksp.title} width={1200} height={800} className="w-full h-full object-cover" sizes="(max-width: 640px) 50vw, 640px" quality={95} />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                    {/* Tag chip top-left */}
+                    <span className="absolute top-1.5 left-1.5 inline-flex items-center gap-[3px] text-[5px] font-semibold tracking-[0.18em] text-white" style={{ fontFamily: "ui-monospace, monospace" }}>
+                      <span className="h-[5px] w-[5px] rounded-full bg-accent" />
+                      RANGO DE COLOR
+                    </span>
+                    {/* Spec line */}
+                    <div className="absolute bottom-1.5 left-2 right-2 flex items-center justify-between text-white/95" style={{ fontFamily: "ui-monospace, monospace" }}>
+                      <span className="text-[5px] font-semibold tracking-wider tabular-nums">1.07B</span>
+                      <span className="text-[5px] font-semibold tracking-widest">DCI-P3 · 98%</span>
+                    </div>
+                  </>
+                ) : i === 2 ? (
+                  /* Card 3 — Technical schematic (measurement + crosshairs) */
+                  <>
+                    <Image src={ksp.img} alt={ksp.title} title={ksp.title} width={1200} height={800} className="w-full h-full object-cover" sizes="(max-width: 640px) 50vw, 640px" quality={95} />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/55" />
+                    {/* Tag chip top-left */}
+                    <span className="absolute top-1.5 left-1.5 inline-flex items-center gap-[3px] text-[5px] font-semibold tracking-[0.18em] text-white" style={{ fontFamily: "ui-monospace, monospace" }}>
+                      <span className="h-[5px] w-[5px] rounded-full bg-accent" />
+                      VISTA TÉCNICA
+                    </span>
+                    {/* Corner crosshairs — HUD feel */}
+                    {[
+                      { t: 0,    l: 0,    dTop: true,  dLeft: true  },
+                      { t: 0,    r: 0,    dTop: true,  dRight: true },
+                      { b: 0,    l: 0,    dBot: true,  dLeft: true  },
+                      { b: 0,    r: 0,    dBot: true,  dRight: true },
+                    ].map((p, k) => (
+                      <span key={k} className="absolute w-2 h-2" style={{ top: p.t as number | undefined, bottom: p.b as number | undefined, left: p.l as number | undefined, right: p.r as number | undefined, margin: "4px" }}>
+                        {p.dTop &&  <span className="absolute top-0 left-0 h-[1px] w-full bg-white/80" />}
+                        {p.dBot &&  <span className="absolute bottom-0 left-0 h-[1px] w-full bg-white/80" />}
+                        {p.dLeft && <span className="absolute top-0 left-0 w-[1px] h-full bg-white/80" />}
+                        {p.dRight && <span className="absolute top-0 right-0 w-[1px] h-full bg-white/80" />}
+                      </span>
+                    ))}
+                    {/* Technical measurement line with thin dashes */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1 pdp-pulse">
+                      <span className="h-[1px] w-5 bg-white/80" style={{ backgroundImage: "repeating-linear-gradient(90deg, #fff 0, #fff 2px, transparent 2px, transparent 4px)" }} />
+                      <span className="inline-flex items-center rounded-[2px] border border-white/60 bg-black/70 backdrop-blur-sm px-1 py-[1px] text-[5.5px] font-bold text-white tabular-nums tracking-wider" style={{ fontFamily: "ui-monospace, monospace" }}>
+                        5.0 mm
+                      </span>
+                      <span className="h-[1px] w-5 bg-white/80" style={{ backgroundImage: "repeating-linear-gradient(90deg, #fff 0, #fff 2px, transparent 2px, transparent 4px)" }} />
+                    </div>
+                    {/* Scale caption */}
+                    <div className="absolute bottom-1.5 left-1.5 right-1.5 flex items-center justify-between text-white/90" style={{ fontFamily: "ui-monospace, monospace" }}>
+                      <span className="text-[5px] font-semibold tracking-widest">PERFIL LATERAL</span>
+                      <span className="text-[5px] font-semibold tracking-widest">ESCALA 1:1</span>
+                    </div>
+                  </>
+                ) : (
+                  /* Card 4 — 360° view */
+                  <>
+                    <Image src={ksp.img} alt={ksp.title} title={ksp.title} width={1200} height={800} className="w-full h-full object-cover" sizes="(max-width: 640px) 50vw, 640px" quality={95} />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+                    {/* Tag chip top-left */}
+                    <span className="absolute top-1.5 left-1.5 inline-flex items-center gap-[3px] text-[5px] font-semibold tracking-[0.18em] text-white" style={{ fontFamily: "ui-monospace, monospace" }}>
+                      <span className="h-[5px] w-[5px] rounded-full bg-accent" />
+                      VISTA 360°
+                    </span>
+                    {/* Azimuth readout top-right */}
+                    <span className="absolute top-1.5 right-1.5 inline-flex items-center gap-[3px] text-[5px] font-semibold tracking-wider text-white tabular-nums" style={{ fontFamily: "ui-monospace, monospace" }}>
+                      AZIMUTH 045°
+                    </span>
+                    {/* Compass ticks at bottom (0/90/180/270) */}
+                    <div className="absolute bottom-2 left-2 right-2 flex items-end justify-between text-white/80" style={{ fontFamily: "ui-monospace, monospace" }}>
+                      {["0°", "90°", "180°", "270°"].map((deg, k) => (
+                        <span key={deg} className="flex flex-col items-center gap-[1px]">
+                          <span className="h-1 w-[1px] bg-white/70" />
+                          <span className={`text-[4.5px] font-semibold tabular-nums tracking-wider ${k === 1 ? "text-accent" : ""}`}>{deg}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
               <div className={`flex flex-col justify-center px-3 py-2.5 ${rev ? "order-1" : "order-2"}`}>
                 <p className="text-[5px] font-bold uppercase tracking-[0.12em] text-accent">{`0${i + 1}`}</p>
@@ -266,16 +358,50 @@ function EnrichedContent() {
           );
         })}
 
-        {/* Video */}
-        <div className="border-t border-gray-100 bg-black">
-          <video src={`${IMG}/VIDEO TELE.mp4`} autoPlay loop muted playsInline className="w-full h-auto" />
-        </div>
-
         <div className="flex items-center justify-center gap-1 py-1.5 bg-gray-50 border-t border-gray-100">
           <Sparkles size={5} className="text-accent" />
           <span className="text-[5px] text-gray-300 font-semibold tracking-wider uppercase">Contenido enriquecido por Omnitok</span>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes pdp-wave {
+          0%, 100% { transform: scaleY(0.35); }
+          50%      { transform: scaleY(1);    }
+        }
+        .pdp-wave {
+          transform-origin: bottom;
+          animation: pdp-wave 0.9s ease-in-out infinite;
+        }
+        @keyframes pdp-pulse {
+          0%, 100% { opacity: 0.85; transform: translate(-50%, -50%) scale(1);    }
+          50%      { opacity: 1;    transform: translate(-50%, -50%) scale(1.04); }
+        }
+        .pdp-pulse {
+          animation: pdp-pulse 1.8s ease-in-out infinite;
+        }
+        @keyframes pdp-sweep {
+          0%   { transform: translateX(-100%); }
+          100% { transform: translateX(400%);  }
+        }
+        .pdp-sweep {
+          animation: pdp-sweep 2.6s ease-in-out infinite;
+        }
+        @keyframes pdp-livedot {
+          0%, 100% { opacity: 1;   box-shadow: 0 0 0 0 rgba(255,23,123,0.6); }
+          50%      { opacity: 0.7; box-shadow: 0 0 0 3px rgba(255,23,123,0);   }
+        }
+        .pdp-livedot {
+          animation: pdp-livedot 1.4s ease-in-out infinite;
+        }
+        @keyframes pdp-spin {
+          from { transform: rotate(0deg);   }
+          to   { transform: rotate(360deg); }
+        }
+        .pdp-spin {
+          animation: pdp-spin 4s linear infinite;
+        }
+      `}</style>
     </>
   );
 }

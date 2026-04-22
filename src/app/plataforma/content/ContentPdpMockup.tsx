@@ -214,23 +214,51 @@ function EnrichedContent() {
           <div className="absolute top-1.5 right-1.5 z-10">
             <span className="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[5px] font-bold text-white shadow" style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}><Sparkles size={5} /> Contenido variable</span>
           </div>
-          <Image src={`${IMG}/Banner Mundial.png`} alt="Banner promocional Mundial 2026 — ejemplo de contenido variable en PDP" title="Contenido variable por campaña con Omnitok Content" width={800} height={300} className="w-full h-auto" />
+          <Image src={`${IMG}/Banner Mundial.png`} alt="Banner promocional Mundial 2026 — ejemplo de contenido variable en PDP" title="Contenido variable por campaña con Omnitok Content" width={800} height={300} className="w-full h-auto" quality={100} sizes="100vw" />
         </div>
 
         <div className="flex items-center justify-center gap-1 py-1 bg-gray-50 border-y border-gray-100">
           <span className="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[5px] font-bold text-white" style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}><Sparkles size={5} /> Ficha de contenido</span>
         </div>
 
-        {/* Zigzag */}
+        {/* Zigzag KSPs — estilo A+ content premium */}
         {ksps.map((ksp, i) => {
           const rev = i % 2 === 1;
           return (
-            <div key={ksp.title} className={`grid grid-cols-2 ${i > 0 ? "border-t border-gray-100" : ""}`} style={{ background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
-              <div className={rev ? "order-2" : "order-1"}><Image src={ksp.img} alt={ksp.title} title={ksp.title} width={400} height={300} className="w-full h-full object-cover" /></div>
-              <div className={`flex flex-col justify-center px-3 py-2.5 ${rev ? "order-1" : "order-2"}`}>
-                <p className="text-[5px] font-bold uppercase tracking-[0.12em] text-accent">{`0${i + 1}`}</p>
-                <p className="text-[9px] font-bold text-gray-900 leading-tight mt-0.5">{ksp.title}</p>
-                <p className="text-[6px] text-gray-500 leading-relaxed mt-1">{ksp.desc}</p>
+            <div
+              key={ksp.title}
+              className={`grid grid-cols-2 ${i > 0 ? "border-t border-gray-100" : ""}`}
+              style={{ background: "#fff", minHeight: "120px" }}
+            >
+              {/* Imagen con altura fija para evitar blur por escalado */}
+              <div
+                className={`relative overflow-hidden ${rev ? "order-2" : "order-1"}`}
+                style={{ height: "130px" }}
+              >
+                <Image
+                  src={ksp.img}
+                  alt={ksp.title}
+                  title={ksp.title}
+                  fill
+                  className="object-cover"
+                  sizes="280px"
+                  quality={100}
+                />
+              </div>
+
+              {/* Texto */}
+              <div
+                className={`flex flex-col justify-center gap-1 px-3 py-3 ${rev ? "order-1" : "order-2"}`}
+                style={{ borderLeft: rev ? "none" : "1px solid #f3f2f8", borderRight: rev ? "1px solid #f3f2f8" : "none" }}
+              >
+                <span
+                  className="inline-block text-[5px] font-black uppercase tracking-[0.2em] px-1.5 py-0.5 rounded-full w-fit"
+                  style={{ background: "rgba(255,23,123,0.10)", color: "#FF177B" }}
+                >
+                  {`0${i + 1}`}
+                </span>
+                <p className="text-[10px] font-black text-gray-900 leading-tight">{ksp.title}</p>
+                <p className="text-[7px] text-gray-500 leading-relaxed font-medium line-clamp-4">{ksp.desc}</p>
               </div>
             </div>
           );

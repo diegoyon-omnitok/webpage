@@ -208,135 +208,42 @@ function EnrichedContent() {
       </div>
 
       {/* ═══ INPAGE ═══ */}
-      <div style={{ borderTop: "3px solid #FF177B" }}>
-
-        {/* ── Banner campaña ── */}
-        <div className="relative overflow-hidden" style={{ height: "120px" }}>
-          <Image
-            src={`${IMG}/Banner Mundial.png`}
-            alt="Banner campaña Mundial 2026"
-            fill className="object-cover object-top"
-            quality={100} sizes="100vw" priority
-          />
-          <div className="absolute top-2 right-2 z-10">
-            <span className="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[5px] font-bold text-white"
-              style={{ background: "linear-gradient(90deg,#FF177B,#4D4A9D)" }}>
-              <Sparkles size={4} /> Contenido variable
-            </span>
+      <div className="border-t-[3px]" style={{ borderColor: "#FF177B" }}>
+        {/* Banner */}
+        <div className="relative">
+          <div className="absolute top-1.5 right-1.5 z-10">
+            <span className="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[5px] font-bold text-white shadow" style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}><Sparkles size={5} /> Contenido variable</span>
           </div>
+          <Image src={`${IMG}/Banner Mundial.png`} alt="Banner promocional Mundial 2026 — ejemplo de contenido variable en PDP" title="Contenido variable por campaña con Omnitok Content" width={800} height={300} className="w-full h-auto" />
         </div>
 
-        {/* ── Separador ficha ── */}
-        <div className="flex items-center gap-2 px-3 py-1.5" style={{ background: "#0a0a14" }}>
-          <div style={{ width: 3, height: 14, borderRadius: 2, background: "linear-gradient(180deg,#FF177B,#4D4A9D)" }} />
-          <span className="text-[6px] font-bold text-white uppercase tracking-[0.2em]">Ficha de producto</span>
-          <span className="ml-auto inline-flex items-center gap-0.5">
-            <Sparkles size={4} style={{ color: "#FF6AAA" }} />
-            <span className="text-[5px] font-bold" style={{ color: "#FF6AAA" }}>Omnitok Content</span>
-          </span>
+        <div className="flex items-center justify-center gap-1 py-1 bg-gray-50 border-y border-gray-100">
+          <span className="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[5px] font-bold text-white" style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}><Sparkles size={5} /> Ficha de contenido</span>
         </div>
 
-        {/* ── KSP 01: hero full-width ── */}
-        <div className="relative overflow-hidden" style={{ height: "180px" }}>
-          <Image
-            src={`${IMG}/omnitok-content-hero.png`}
-            alt="Colores que cobran vida — Smart TV OLED"
-            fill className="object-cover object-center"
-            quality={100} sizes="100vw"
-          />
-          {/* overlay izquierda */}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg,rgba(8,6,20,0.88) 0%,rgba(8,6,20,0.4) 48%,transparent 75%)" }} />
-          <div className="absolute inset-0 flex flex-col justify-center px-4 gap-1">
-            <span className="text-[5px] font-black uppercase tracking-[0.22em]" style={{ color: "#FF6AAA" }}>01 · Pantalla</span>
-            <p className="text-[11px] font-black text-white leading-tight max-w-[160px]">Colores que<br/>cobran vida</p>
-            <p className="text-[6px] font-medium leading-relaxed max-w-[180px]" style={{ color: "rgba(255,255,255,0.65)" }}>
-              Más de mil millones de colores.<br/>Negros absolutos. Brillo hasta 2 000 nits.
-            </p>
-          </div>
-        </div>
-
-        {/* ── KSP 02: imagen izq · texto der ── */}
-        <div className="grid border-t border-gray-100" style={{ gridTemplateColumns: "1.1fr 1fr" }}>
-          <div className="relative overflow-hidden" style={{ height: "155px" }}>
-            <Image
-              src={`${IMG}/page-img-content-1-3.png`}
-              alt="Sonido que te envuelve — Dolby Atmos"
-              fill className="object-cover"
-              quality={100} sizes="260px"
-            />
-          </div>
-          <div className="flex flex-col justify-center gap-1.5 px-3 py-3" style={{ background: "#fff" }}>
-            <span className="text-[5px] font-black uppercase tracking-[0.2em]" style={{ color: "#FF177B" }}>02 · Audio</span>
-            <p className="text-[10px] font-black text-gray-900 leading-tight">Sonido que<br/>te envuelve</p>
-            <p className="text-[6.5px] leading-relaxed font-medium text-gray-500">Dolby Atmos 60 W con Object Tracking Sound. Cine en tu sala.</p>
-            <div className="flex flex-col gap-0.5 mt-0.5">
-              {["Dolby Atmos integrado", "60 W · 4 altavoces", "OTS+ dirección de audio"].map(b => (
-                <div key={b} className="flex items-center gap-1">
-                  <div className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#FF177B" }} />
-                  <span className="text-[5.5px] font-semibold text-gray-600">{b}</span>
-                </div>
-              ))}
+        {/* Zigzag */}
+        {ksps.map((ksp, i) => {
+          const rev = i % 2 === 1;
+          return (
+            <div key={ksp.title} className={`grid grid-cols-2 ${i > 0 ? "border-t border-gray-100" : ""}`} style={{ background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
+              <div className={rev ? "order-2" : "order-1"}><Image src={ksp.img} alt={ksp.title} title={ksp.title} width={400} height={300} className="w-full h-full object-cover" /></div>
+              <div className={`flex flex-col justify-center px-3 py-2.5 ${rev ? "order-1" : "order-2"}`}>
+                <p className="text-[5px] font-bold uppercase tracking-[0.12em] text-accent">{`0${i + 1}`}</p>
+                <p className="text-[9px] font-bold text-gray-900 leading-tight mt-0.5">{ksp.title}</p>
+                <p className="text-[6px] text-gray-500 leading-relaxed mt-1">{ksp.desc}</p>
+              </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
 
-        {/* ── KSP 03: texto izq · imagen der (dark) ── */}
-        <div className="grid border-t border-gray-100" style={{ gridTemplateColumns: "1fr 1.1fr" }}>
-          <div className="flex flex-col justify-center gap-1.5 px-3 py-3" style={{ background: "#0a0a14" }}>
-            <span className="text-[5px] font-black uppercase tracking-[0.2em]" style={{ color: "#FF6AAA" }}>03 · Gaming</span>
-            <p className="text-[10px] font-black text-white leading-tight">120 Hz.<br/>Sin lag.</p>
-            <p className="text-[6px] leading-relaxed font-medium" style={{ color: "rgba(255,255,255,0.6)" }}>
-              VRR · AMD FreeSync Premium · 4× HDMI 2.1
-            </p>
-            <div className="flex gap-2 mt-1">
-              {[["120", "Hz"], ["1", "ms"], ["4K", "VRR"]].map(([v, l]) => (
-                <div key={l} className="flex flex-col items-center">
-                  <span className="text-[10px] font-black" style={{ color: "#FF6AAA" }}>{v}</span>
-                  <span className="text-[4.5px] text-white/40 font-bold uppercase tracking-wide">{l}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative overflow-hidden" style={{ height: "155px" }}>
-            <Image
-              src={`${IMG}/page-4ta-rev-img-content-1-4.png`}
-              alt="Gaming 120Hz sin lag"
-              fill className="object-cover"
-              quality={100} sizes="260px"
-            />
-          </div>
-        </div>
-
-        {/* ── KSP 04: hotspots full-width ── */}
-        <div className="relative overflow-hidden border-t border-gray-100" style={{ height: "160px" }}>
-          <Image
-            src={`${IMG}/hotspots-interactivos.png`}
-            alt="Puntos interactivos sobre el producto"
-            fill className="object-cover object-center"
-            quality={100} sizes="100vw"
-          />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top,rgba(8,6,20,0.75) 0%,transparent 55%)" }} />
-          <div className="absolute bottom-0 left-0 right-0 px-4 pb-3">
-            <span className="text-[5px] font-black uppercase tracking-[0.2em]" style={{ color: "#FF6AAA" }}>04 · Hotspots interactivos</span>
-            <p className="text-[8px] font-black text-white leading-tight mt-0.5">Explora cada tecnología<br/>directamente en la imagen</p>
-          </div>
-          <div className="absolute top-1.5 right-2 z-10">
-            <span className="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[5px] font-bold text-white"
-              style={{ background: "linear-gradient(90deg,#FF177B,#4D4A9D)" }}>
-              <Sparkles size={4} /> Interactivo
-            </span>
-          </div>
-        </div>
-
-        {/* ── Video ── */}
-        <div className="border-t border-gray-800 overflow-hidden" style={{ background: "#000" }}>
+        {/* Video */}
+        <div className="border-t border-gray-100 bg-black">
           <video src={`${IMG}/VIDEO TELE.mp4`} autoPlay loop muted playsInline className="w-full h-auto" />
         </div>
 
-        {/* ── Footer badge ── */}
-        <div className="flex items-center justify-center gap-1.5 py-2 border-t" style={{ background: "#0a0a14", borderColor: "#1a1a2e" }}>
-          <Sparkles size={5} style={{ color: "#FF6AAA" }} />
-          <span className="text-[5.5px] font-bold uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>Contenido enriquecido por Omnitok</span>
+        <div className="flex items-center justify-center gap-1 py-1.5 bg-gray-50 border-t border-gray-100">
+          <Sparkles size={5} className="text-accent" />
+          <span className="text-[5px] text-gray-300 font-semibold tracking-wider uppercase">Contenido enriquecido por Omnitok</span>
         </div>
       </div>
     </>
@@ -372,7 +279,7 @@ export default function ContentPdpMockup() {
             <span className="text-[8px] text-gray-400 font-mono truncate">retailer.com/tecnologia/smart-tv-oled-55-4k-uhd</span>
           </div>
         </div>
-        <div className="overflow-y-auto" style={{ maxHeight: "600px" }}>
+        <div className="overflow-y-auto" style={{ maxHeight: "480px" }}>
           {mode === "before" ? <BasicContent /> : <EnrichedContent />}
         </div>
       </div>

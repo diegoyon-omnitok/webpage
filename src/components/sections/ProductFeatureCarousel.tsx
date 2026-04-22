@@ -100,7 +100,7 @@ export default function ProductFeatureCarousel({
             const visualOrderClass = reverse ? "order-2 lg:order-1" : "order-2";
 
             const textCell = (
-              <div key="text" className={`flex min-h-0 flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12 ${textOrderClass}`}>
+              <div key="text" className={`flex min-h-0 min-w-0 flex-col justify-center p-5 sm:p-8 lg:p-10 xl:p-12 ${textOrderClass}`}>
                 <div className="mb-4 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
                   <div
                     className={`flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br ${f.accent} flex items-center justify-center shadow-md`}
@@ -111,7 +111,7 @@ export default function ProductFeatureCarousel({
                     {String(i + 1).padStart(2, "0")}{label ? ` — ${label}` : ""}
                   </p>
                 </div>
-                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 leading-snug mb-3">{f.title}</h3>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 leading-snug mb-3">{f.title}</h3>
                 {f.descLead ? (
                   <p className="text-base font-semibold text-gray-800 leading-snug mb-3">{f.descLead}</p>
                 ) : null}
@@ -120,7 +120,7 @@ export default function ProductFeatureCarousel({
             );
 
             const visualCell = (
-              <div key="visual" className={`min-h-0 ${visualOrderClass}`}>
+              <div key="visual" className={`min-h-0 min-w-0 overflow-hidden ${visualOrderClass}`}>
                 <FeatureVisualCell f={f} isFirstBlock={i === 0} />
               </div>
             );

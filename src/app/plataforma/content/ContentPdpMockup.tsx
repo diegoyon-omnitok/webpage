@@ -288,14 +288,14 @@ export default function ContentPdpMockup() {
 
   return (
     <div className="w-full">
-      <div className="flex justify-center mb-4">
-        <div className="inline-flex rounded-xl border border-gray-200 bg-gray-50 p-1">
+      <div className="mb-4">
+        <div className="flex w-full rounded-xl border border-gray-200 bg-gray-50 p-1">
           <button type="button" onClick={() => setMode("before")}
-            className={`rounded-lg px-5 py-2 text-[11px] font-semibold transition-all ${mode === "before" ? "bg-white text-gray-900 shadow-sm" : "text-gray-400 hover:text-gray-600"}`}>
+            className={`flex-1 text-center rounded-lg px-2 py-2 text-[10px] sm:text-[11px] font-semibold transition-all ${mode === "before" ? "bg-white text-gray-900 shadow-sm" : "text-gray-400 hover:text-gray-600"}`}>
             Sin contenido enriquecido
           </button>
           <button type="button" onClick={() => setMode("after")}
-            className={`rounded-lg px-5 py-2 text-[11px] font-semibold transition-all ${mode === "after" ? "bg-white text-gray-900 shadow-sm" : "text-gray-400 hover:text-gray-600"}`}>
+            className={`flex-1 text-center rounded-lg px-2 py-2 text-[10px] sm:text-[11px] font-semibold transition-all ${mode === "after" ? "bg-white text-gray-900 shadow-sm" : "text-gray-400 hover:text-gray-600"}`}>
             Con Omnitok Content
           </button>
         </div>

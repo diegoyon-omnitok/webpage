@@ -43,7 +43,7 @@ export default function BenefitsSection() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-success/10 border border-success/20 mb-4">
             <span className="text-xs font-semibold text-success">Resultados reales</span>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
             Métricas que impactan el negocio
           </h2>
           <p className="mt-4 text-lg text-gray-500">
@@ -55,12 +55,12 @@ export default function BenefitsSection() {
           {metrics.map((m) => (
             <div
               key={m.label}
-              className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 text-center"
+              className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 text-center"
             >
-              <div className={`w-12 h-12 rounded-2xl ${m.bg} flex items-center justify-center mx-auto mb-4`}>
-                <m.icon size={22} className={m.color} />
+              <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-2xl ${m.bg} flex items-center justify-center mx-auto mb-3 sm:mb-4`}>
+                <m.icon size={20} className={m.color} />
               </div>
-              <div className={`text-4xl font-extrabold ${m.color} mb-2`}>{m.value}</div>
+              <div className={`text-3xl sm:text-4xl font-extrabold ${m.color} mb-2`}>{m.value}</div>
               <div className="text-sm font-bold text-gray-900 mb-2">{m.label}</div>
               <p className="text-xs text-gray-500 leading-relaxed">{m.desc}</p>
             </div>

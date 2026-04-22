@@ -13,7 +13,7 @@ export default function MarketFooter({ market }: MarketFooterProps) {
   return (
     <footer className="relative z-10 bg-sidebar text-white">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-5 md:gap-8 md:grid-cols-3 lg:grid-cols-6">
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <div className="mb-4">
               <Image

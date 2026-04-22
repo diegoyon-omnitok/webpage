@@ -56,7 +56,7 @@ type Module = typeof modules[0];
 
 function ModuleCard({ mod }: { mod: Module }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-7 shadow-card transition-all duration-200 lg:hover:-translate-y-1 lg:hover:scale-[1.04] lg:hover:shadow-card-hover flex flex-col">
+    <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-5 sm:p-7 shadow-card transition-all duration-200 lg:hover:-translate-y-1 lg:hover:scale-[1.04] lg:hover:shadow-card-hover flex flex-col">
       <div
         className="absolute left-0 right-0 top-0 h-0.5 rounded-t-2xl"
         style={{
@@ -97,7 +97,7 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Controla cómo aparece tu marca en canales digitales
           </h2>
           <p className="mt-5 text-xl text-gray-500">
@@ -162,14 +162,14 @@ export default function HowItWorks() {
         </div>
 
         {/* Mobile grid */}
-        <div className="lg:hidden grid sm:grid-cols-2 gap-4">
+        <div className="lg:hidden grid sm:grid-cols-2 gap-4 sm:gap-5">
           {modules.map(m => <ModuleCard key={m.product} mod={m}  />)}
         </div>
 
         <div className="mt-12 flex justify-center lg:mt-16">
           <Link
             href={canonicalRoutes.latam.contacto}
-            className="inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white gradient-brand shadow-lg transition-opacity hover:opacity-90"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white gradient-brand shadow-lg transition-opacity hover:opacity-90"
           >
             Conversemos
             <ArrowRight size={16} aria-hidden />

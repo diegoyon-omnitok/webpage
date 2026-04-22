@@ -62,7 +62,7 @@ function ProblemCard({
 
   return (
     <div
-      className="group relative overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+      className="group relative overflow-hidden rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
       style={{
         background: "linear-gradient(145deg, #1e1c42 0%, #272560 100%)",
         opacity: isVisible ? 1 : 0,
@@ -79,7 +79,7 @@ function ProblemCard({
 
         {/* Ghost number */}
         <span
-          className="absolute -bottom-2 -right-1 text-[96px] font-black leading-none select-none pointer-events-none"
+          className="absolute -bottom-2 -right-1 text-[64px] sm:text-[96px] font-black leading-none select-none pointer-events-none"
           style={{ color: "rgba(255,255,255,0.05)" }}
         >
           {problem.number}
@@ -131,7 +131,7 @@ export default function ProblemSection() {
             <span className="text-xs font-semibold text-accent">El desafío de las marcas hoy</span>
           </div>
 
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
             Tu marca está en los retailers.
           </h2>
 

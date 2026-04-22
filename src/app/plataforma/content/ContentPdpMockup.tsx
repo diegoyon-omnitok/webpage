@@ -14,9 +14,16 @@ const techs = [
   { src: `${IMG}/hdr.png`, label: "HDR Dolby Vision", desc: "Colores y brillo más realistas." },
 ];
 const ksps = [
-  { img: `${IMG}/lifestlye 1.png`, title: "Colores que cobran vida", desc: "Más de mil millones de colores con negros absolutos y brillo que resalta cada detalle." },
-  { img: `${IMG}/lifestyle 2.png`, title: "Sonido que te envuelve", desc: "Sistema Dolby Atmos integrado con 40W de potencia que proyecta el audio en todas las direcciones. Escucha cada detalle sin necesidad de barra de sonido. El sonido sigue la accion en pantalla para una experiencia de cine real en tu sala." },
-  { img: `${IMG}/lifestyle 3.png`, title: "Diseño ultra delgado", desc: "Un perfil de menos de 5mm que se integra en cualquier espacio. Bordes practicamente invisibles que maximizan el area de pantalla. Pensado para montaje en muro o sobre cualquier mueble, transformando tu living en una experiencia visual completa." },
+  { img: `${IMG}/lifestlye 1.png`, title: "Colores que cobran vida", desc: "Negros absolutos y más de mil millones de colores. Cada píxel se ilumina de forma independiente.", dark: false },
+  { img: `${IMG}/lifestyle 2.png`, title: "Sonido que te envuelve", desc: "Dolby Atmos integrado con 40W. El audio sigue la acción en pantalla para una experiencia de cine real.", dark: false },
+  { img: `${IMG}/lifestyle 3.png`, title: "Diseño ultra delgado", desc: "Solo 5mm de perfil. Bordes casi invisibles que maximizan el área de pantalla.", dark: false },
+];
+
+const techFeatures = [
+  { src: `${IMG}/OLED.png`, label: "OLED" },
+  { src: `${IMG}/4k.png`, label: "4K UHD" },
+  { src: `${IMG}/hdr.png`, label: "Dolby Vision" },
+  { src: `${IMG}/QUANTOM DOT.png`, label: "Quantum Dot" },
 ];
 
 /* ── Hotspot popup ── */
@@ -221,12 +228,34 @@ function EnrichedContent() {
           <span className="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[5px] font-bold text-white" style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }}><Sparkles size={5} /> Ficha de contenido</span>
         </div>
 
-        {/* Zigzag */}
+        {/* Tech features bar */}
+        <div className="grid grid-cols-4 border-b border-gray-100" style={{ background: "#fafafa" }}>
+          {techFeatures.map((f, i) => (
+            <div key={f.label} className={`flex flex-col items-center gap-0.5 py-2 ${i < 3 ? "border-r border-gray-100" : ""}`}>
+              <div className="w-6 h-6 rounded-md flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1a1838 0%, #2d2a6e 100%)" }}>
+                <Image src={f.src} alt={f.label} width={14} height={14} className="w-3 h-3 object-contain" quality={100} />
+              </div>
+              <p className="text-[4.5px] font-bold text-gray-700 text-center leading-tight">{f.label}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* KSP zigzag — lifestyle images with fixed aspect ratio (no stretch/blur) */}
         {ksps.map((ksp, i) => {
           const rev = i % 2 === 1;
           return (
             <div key={ksp.title} className={`grid grid-cols-2 ${i > 0 ? "border-t border-gray-100" : ""}`} style={{ background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
-              <div className={rev ? "order-2" : "order-1"}><Image src={ksp.img} alt={ksp.title} title={ksp.title} width={400} height={300} className="w-full h-full object-cover" /></div>
+              <div className={`relative overflow-hidden ${rev ? "order-2" : "order-1"}`} style={{ aspectRatio: "16/9" }}>
+                <Image
+                  src={ksp.img}
+                  alt={ksp.title}
+                  title={ksp.title}
+                  fill
+                  className="object-cover"
+                  sizes="200px"
+                  quality={100}
+                />
+              </div>
               <div className={`flex flex-col justify-center px-3 py-2.5 ${rev ? "order-1" : "order-2"}`}>
                 <p className="text-[5px] font-bold uppercase tracking-[0.12em] text-accent">{`0${i + 1}`}</p>
                 <p className="text-[9px] font-bold text-gray-900 leading-tight mt-0.5">{ksp.title}</p>

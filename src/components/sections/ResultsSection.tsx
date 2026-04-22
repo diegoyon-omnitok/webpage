@@ -55,10 +55,10 @@ function StatCard({
   }, [started, value, delay]);
 
   return (
-    <div className="flex flex-col items-center justify-center rounded-2xl px-8 py-10 transition-colors duration-300 bg-white"
+    <div className="flex flex-col items-center justify-center rounded-2xl px-4 py-6 sm:px-8 sm:py-10 transition-colors duration-300 bg-white"
       style={{ border: "1px solid rgba(255,23,123,0.2)" }}>
       <p
-        className="text-5xl lg:text-6xl font-bold tabular-nums"
+        className="text-4xl sm:text-5xl lg:text-6xl font-bold tabular-nums"
         style={{ color: "#FF177B" }}
       >
         {display}{suffix}
@@ -92,7 +92,7 @@ export default function ResultsSection() {
   return (
     <section
       ref={ref}
-      className="relative py-32 lg:py-40 overflow-hidden gradient-hero"
+      className="relative py-20 sm:py-28 lg:py-36 overflow-hidden gradient-hero"
     >
       {/* Grid pattern */}
       <div

@@ -48,7 +48,7 @@ export default function IntegrationsSection({ hideTitle = false }: IntegrationsS
       {!hideTitle && (
         <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
           <div className="mx-auto mb-5 w-full max-w-3xl text-center sm:mb-6 lg:mb-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
               Conectado con todo tu ecosistema digital
             </h2>
             <p className="mt-4 text-lg text-gray-600">

@@ -2,15 +2,23 @@
 
 import Image from "next/image";
 
-const clients: { name: string; src: string; small?: boolean }[] = [
-  { name: "Rheem",      src: "/clients/rheem-clean.png"      },
-  { name: "Hisense",    src: "/clients/hisense-clean.png"    },
-  { name: "L'Oréal",    src: "/clients/loreal-clean.png"     },
-  { name: "roSen",      src: "/clients/rosen-clean.png"      },
-  { name: "Newell",     src: "/clients/newell-clean.png"     },
-  { name: "Beiersdorf", src: "/clients/beiersdorf-clean.png" },
-  { name: "TCL",        src: "/clients/tcl-clean.png", small: true },
-  { name: "Midea",      src: "/clients/midea-clean.png"      },
+// `tall` = stacked logos (icon + wordmark) that need extra height to stay legible.
+// `shiftUp` = logos whose wordmark sits below the visual center because the source
+//             image has extra content (taglines, secondary text) below the wordmark.
+const clients: { name: string; src: string; tall?: boolean; shiftUp?: boolean }[] = [
+  { name: "HP",            src: "/clients/hp-logo.png" },
+  { name: "Panasonic",     src: "/clients/panasonic-logo.png" },
+  { name: "Electrolux",    src: "/clients/electrolux-logo.png", tall: true },
+  { name: "Midea",         src: "/clients/midea-logo.png" },
+  { name: "Hisense",       src: "/clients/hisense-logo.png" },
+  { name: "TCL",           src: "/clients/tcl-logo.png" },
+  { name: "L'Oréal",       src: "/clients/loreal-logo.png" },
+  { name: "Beiersdorf",    src: "/clients/beiersdorf-logo.png" },
+  { name: "Newell Brands", src: "/clients/newell-logo.png" },
+  { name: "Reckitt",       src: "/clients/reckitt-logo.png",   shiftUp: true },
+  { name: "Edgewell",      src: "/clients/edgewell-logo.png",  shiftUp: true },
+  { name: "Kärcher",       src: "/clients/karcher-logo.png" },
+  { name: "Red Bull",      src: "/clients/redbull-logo.png" },
 ];
 
 const track = [...clients, ...clients];
@@ -29,25 +37,28 @@ export default function LogoBar() {
           style={{ background: "linear-gradient(to left, #ffffff, transparent)" }}
         />
 
-        {/* Track */}
-        <div className="logos-track flex items-center gap-10 w-max">
+        {/* Track — trailing margin on every item keeps seam spacing consistent. */}
+        <div className="logos-track flex items-center w-max">
           {track.map((client, i) => (
             <div
               key={i}
-              className="flex-shrink-0 flex items-center justify-center"
-              style={{ width: "120px", height: "50px" }}
+              className="flex-shrink-0 flex items-center justify-center mr-12 sm:mr-14"
+              style={{ width: "140px", height: "56px" }}
             >
               <Image
                 src={client.src}
                 alt={`${client.name} logo — Omnitok client`}
                 title={client.name}
-                width={120}
-                height={50}
+                width={140}
+                height={56}
                 className={
-                  (client.small
-                    ? "h-[60%] w-auto max-w-full object-contain"
-                    : "h-full w-auto max-w-full object-contain") +
-                  " grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  (client.tall
+                    ? "max-h-16 "
+                    : client.shiftUp
+                      ? "max-h-12 "
+                      : "max-h-10 ") +
+                  (client.shiftUp ? "-translate-y-[5px] " : "") +
+                  "w-auto max-w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 }
               />
             </div>
@@ -61,7 +72,7 @@ export default function LogoBar() {
           100% { transform: translateX(-50%); }
         }
         .logos-track {
-          animation: scroll-logos 28s linear infinite;
+          animation: scroll-logos 40s linear infinite;
         }
         .logos-track:hover {
           animation-play-state: paused;

@@ -28,6 +28,45 @@ function getPreferredMarket(request: NextRequest): MarketKey | null {
   return null;
 }
 
+/**
+ * Detects search engine crawlers via User-Agent.
+ * For crawlers we always serve the LATAM (Spanish) version as the default
+ * (x-default), so Google indexes omnitok.com with Spanish metadata.
+ * Without this, Googlebot crawls from US IPs and gets redirected to /en-us,
+ * causing the bare omnitok.com URL to be indexed with English metadata.
+ */
+function isSearchEngineCrawler(request: NextRequest): boolean {
+  const userAgent = request.headers.get("user-agent")?.toLowerCase() ?? "";
+  if (!userAgent) return false;
+
+  // Major search engine bots
+  return (
+    userAgent.includes("googlebot") ||
+    userAgent.includes("bingbot") ||
+    userAgent.includes("slurp") || // Yahoo
+    userAgent.includes("duckduckbot") ||
+    userAgent.includes("baiduspider") ||
+    userAgent.includes("yandexbot") ||
+    userAgent.includes("yandex.com/bots") ||
+    userAgent.includes("applebot") ||
+    userAgent.includes("facebookexternalhit") ||
+    userAgent.includes("twitterbot") ||
+    userAgent.includes("linkedinbot") ||
+    userAgent.includes("whatsapp") ||
+    userAgent.includes("ahrefsbot") ||
+    userAgent.includes("semrushbot") ||
+    userAgent.includes("mj12bot") ||
+    userAgent.includes("petalbot") ||
+    userAgent.includes("gptbot") ||
+    userAgent.includes("chatgpt-user") ||
+    userAgent.includes("oai-searchbot") ||
+    userAgent.includes("perplexitybot") ||
+    userAgent.includes("anthropic-ai") ||
+    userAgent.includes("claude-web") ||
+    userAgent.includes("ccbot")
+  );
+}
+
 function nextWithLang(request: NextRequest, lang: string) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-omni-lang", lang);
@@ -70,6 +109,15 @@ export function proxy(request: NextRequest) {
   }
 
   if (pathname === "/") {
+    // Search engines (Googlebot, Bingbot, GPTBot, etc.) always go to /es/
+    // with a 301 (permanent) so the bare omnitok.com URL is indexed with
+    // Spanish metadata as the x-default. Without this, Googlebot crawling
+    // from US IPs would be redirected to /en-us and the LATAM SERPs would
+    // show English titles/descriptions.
+    if (isSearchEngineCrawler(request)) {
+      return NextResponse.redirect(new URL("/es/", request.url), 301);
+    }
+
     const preferredMarket = getPreferredMarket(request);
 
     if (preferredMarket === "usa") {

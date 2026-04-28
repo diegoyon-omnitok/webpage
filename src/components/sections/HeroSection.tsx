@@ -39,9 +39,8 @@ export default function HeroSection() {
             </h1>
 
             <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-xl">
-              Omnitok ayuda a marcas que venden en retailers y marketplaces a centralizar
-              contenido de producto, mejorar páginas de producto y ganar visibilidad
-              sobre su ejecución digital.
+              Monitorea tu presencia digital, optimiza páginas de producto y
+              centraliza contenido con Omnitok.
             </p>
 
             {/* CTA */}

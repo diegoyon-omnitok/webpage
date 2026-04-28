@@ -45,7 +45,7 @@ const latamPages: Record<string, PageDefinition> = {
     component: LatamHomePage,
     manualTitle: "Omnitok | Ejecución Digital en Retailers",
     manualDescription:
-      "Mejora la ejecución digital de tu marca en retailers y marketplaces con Omnitok. Centraliza contenido, optimiza páginas de producto y monitorea tu presencia digital.",
+      "Mejora la ejecución digital de tu marca en retailers y marketplaces con Omnitok. Monitorea tu presencia digital, optimiza páginas de producto y centraliza contenido.",
     keywords: [
       "ejecución digital para marcas",
       "digital shelf para retailers y marketplaces",

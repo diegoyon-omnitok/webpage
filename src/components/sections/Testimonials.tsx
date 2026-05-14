@@ -23,6 +23,14 @@ const testimonials = [
     company: "TCL Electronics",
     photo: "/testimonials/matias-sabaj.png",
   },
+  {
+    quote:
+      "Antes de trabajar con Omnitok, uno de nuestros principales desafíos era la gestión y ejecución de contenido de forma eficiente, especialmente por el volumen de materiales y las limitaciones de algunos retailers. En uno de los países donde tenemos presencia, por ejemplo, los retailers no permiten contenido sindicado, lo que representaba un reto importante para mantener consistencia y agilidad en nuestras publicaciones. Con Omnitok logramos optimizar significativamente nuestra forma de trabajar. Su equipo nos ha brindado alternativas y soluciones para implementar el contenido de manera eficiente, adaptándose a las restricciones de cada plataforma y facilitando la gestión operativa del día a día. Aunque seguimos en una curva de aprendizaje, el equipo de Omnitok siempre ha estado disponible para resolver dudas y brindar acompañamiento durante el proceso, lo que ha facilitado la adopción de la plataforma y la ejecución de nuestras tareas. Gracias a esto, hemos mejorado nuestros tiempos de ejecución, mantenido una mayor consistencia en el contenido publicado y logrado una operación más organizada y alineada a las necesidades de cada mercado.",
+    name: "Fernanda Ruiz",
+    role: "Digital Marketing Analyst",
+    company: "Midea México",
+    photo: "/testimonials/fernanda-ruiz.jpg",
+  },
 ];
 
 export default function Testimonials() {

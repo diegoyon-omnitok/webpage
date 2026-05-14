@@ -93,7 +93,7 @@ export default function LatamBlogPage() {
                           alt={postDestacado.coverImageAlt ?? ""}
                           title={postDestacado.titulo}
                           fill
-                          className="object-cover object-center"
+                          className="object-cover object-[30%_50%]"
                           sizes="(max-width: 768px) 100vw, 400px"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/10" aria-hidden />
@@ -136,7 +136,7 @@ export default function LatamBlogPage() {
                             alt={post.coverImageAlt ?? ""}
                             title={post.titulo}
                             fill
-                            className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                            className="object-cover object-[30%_50%] group-hover:scale-105 transition-transform duration-300"
                             sizes="(max-width: 768px) 100vw, 360px"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" aria-hidden />

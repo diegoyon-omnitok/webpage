@@ -23,6 +23,14 @@ const testimonials = [
     company: "TCL Electronics",
     photo: "/testimonials/matias-sabaj.png",
   },
+  {
+    quote:
+      "Con Omnitok logramos ordenar y hacer más eficiente la administración del contenido, centralizando la gestión y facilitando la actualización de fichas de producto de forma más consistente entre los distintos canales. Hemos visto una mejora en la implementación y gestión de contenidos, además de una comunicación más ordenada entre equipos y retailers. Destacamos mucho la disposición del equipo y el acompañamiento constante durante el proceso.",
+    name: "Andrés Morales",
+    role: "Digital Marketing Head",
+    company: "Hisense Chile",
+    photo: "/testimonials/andres-morales.jpg",
+  },
 ];
 
 export default function Testimonials() {

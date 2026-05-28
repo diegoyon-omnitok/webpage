@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -14,6 +15,7 @@ type MarketNavbarProps = {
 
 export default function MarketNavbar({ market }: MarketNavbarProps) {
   const config = marketConfigs[market];
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -48,7 +50,13 @@ export default function MarketNavbar({ market }: MarketNavbarProps) {
         <Link
           href={config.homePath}
           className="flex items-center flex-shrink-0"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={(e) => {
+            const isHome = pathname === config.homePath || pathname === `${config.homePath}/`;
+            if (isHome) {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
         >
           <Image
             src="/omnitok-logo.svg"

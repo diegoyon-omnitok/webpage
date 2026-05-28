@@ -45,7 +45,11 @@ export default function MarketNavbar({ market }: MarketNavbarProps) {
       }`}
     >
       <div className="mx-auto flex min-h-[4.5rem] max-w-7xl items-center justify-between px-6 py-2 lg:px-8 sm:min-h-20 sm:py-0">
-        <Link href={config.homePath} className="flex items-center flex-shrink-0">
+        <Link
+          href={config.homePath}
+          className="flex items-center flex-shrink-0"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
           <Image
             src="/omnitok-logo.svg"
             alt="Omnitok — plataforma de ejecución digital en retail"

@@ -31,6 +31,14 @@ const testimonials = [
     company: "Hisense Chile",
     photo: "/testimonials/andres-morales.jpg",
   },
+  {
+    quote:
+      "Trabajar con Omnitok nos permitió optimizar la implementación de contenido in-page, mejorando significativamente la presentación de nuestros productos. Logramos fortalecer nuestra presencia de marca dentro del ecommerce, entregar una experiencia más completa e informativa al consumidor y contar con fichas de producto más atractivas, capaces de comunicar de mejor manera los beneficios y diferenciales de nuestros productos. Destacamos el acompañamiento del equipo, la rapidez en la gestión y la facilidad para implementar soluciones alineadas con nuestras necesidades.",
+    name: "Josefa Ode",
+    role: "Head of Marketing",
+    company: "Caixun Chile",
+    photo: "/testimonials/josefa-ode.jpg",
+  },
 ];
 
 export default function Testimonials() {

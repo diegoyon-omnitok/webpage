@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { MarketKey } from "@/lib/markets";
 import MarketNavbar from "./MarketNavbar";
 import MarketFooter from "./MarketFooter";
+import WhatsAppWidget from "@/components/ui/WhatsAppWidget";
 
 type MarketShellProps = {
   market: MarketKey;
@@ -14,6 +15,7 @@ export default function MarketShell({ market, children }: MarketShellProps) {
       <MarketNavbar market={market} />
       <main>{children}</main>
       <MarketFooter market={market} />
+      <WhatsAppWidget locale={market === "usa" ? "en" : "es"} />
     </>
   );
 }

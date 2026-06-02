@@ -3,7 +3,6 @@
 import { useState } from "react";
 import {
   Sparkles,
-  Send,
   BarChart2,
   TrendingUp,
   AlertTriangle,
@@ -14,6 +13,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { canonicalRoutes } from "@/lib/markets";
+import DsaAnimatedChat from "./DsaAnimatedChat";
 
 type Locale = "es" | "en";
 
@@ -108,8 +108,6 @@ const copy = {
   },
 };
 
-const kpiValues = ["820", "4,260", "72.4%", "47.3%", "18.5%"];
-
 type TabKey = "chat" | "analysis";
 
 export default function DsaAiAgent({ locale = "es" }: { locale?: Locale }) {
@@ -163,51 +161,7 @@ export default function DsaAiAgent({ locale = "es" }: { locale?: Locale }) {
                 </div>
               </div>
 
-              <div className="rounded-2xl overflow-hidden shadow-card-hover" style={{ background: "linear-gradient(135deg, #211f4b 0%, #2d2a6e 100%)" }}>
-                <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/10">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "rgba(255,23,123,0.2)" }}>
-                      <Sparkles size={14} className="text-accent" />
-                    </div>
-                    <span className="text-sm font-semibold text-white">Pricing-Retail Chat</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-[10px] text-white/50">{t.chatConnected}</span>
-                  </div>
-                </div>
-
-                <div className="p-5 space-y-4">
-                  <div className="flex justify-end">
-                    <div className="max-w-[85%] rounded-2xl rounded-tr-md px-4 py-3" style={{ background: "linear-gradient(135deg, #FF177B 0%, #4D4A9D 100%)" }}>
-                      <p className="text-sm text-white leading-relaxed">{t.chatQuestion}</p>
-                    </div>
-                  </div>
-                  <div className="flex justify-start">
-                    <div className="max-w-[95%] rounded-2xl rounded-tl-md bg-white/10 backdrop-blur-sm border border-white/10 px-5 py-4">
-                      <p className="text-sm font-semibold text-white mb-1">Pricing Overview, Retail 1</p>
-                      <p className="text-[11px] text-white/50 mb-3">Latest snapshot</p>
-                      <div className="space-y-2">
-                        {t.kpiLabels.map((label, i) => (
-                          <div key={label} className="flex items-center justify-between text-sm">
-                            <span className="text-white/70">{label}</span>
-                            <span className="font-bold text-white tabular-nums">{kpiValues[i]}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="px-5 pb-4">
-                  <div className="flex items-center gap-2 rounded-xl bg-white/10 border border-white/10 px-4 py-3">
-                    <p className="flex-1 text-sm text-white/40">{t.chatPlaceholder}</p>
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "linear-gradient(135deg, #FF177B 0%, #4D4A9D 100%)" }}>
-                      <Send size={14} className="text-white" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <DsaAnimatedChat locale={locale} />
             </div>
           ) : (
             <div className="rounded-2xl overflow-hidden shadow-card-hover border border-gray-100">

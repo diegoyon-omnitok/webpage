@@ -14,7 +14,7 @@ const SEG_COLORS = [VIOLET, PINK, PURPLE, LAVENDER];
 
 const DAY_LABELS = [
   "01 may", "", "03", "", "05", "", "07", "", "09", "", "11", "", "13", "", "15", "",
-  "17", "", "19", "", "21", "", "23", "", "25", "", "27", "", "29", "", "31 may", "01 jun", "02",
+  "17", "", "19", "", "21", "", "23", "", "25", "", "27", "", "29", "", "31 may", "", "2 jun",
 ];
 
 const DISCOUNT_DAILY = [
@@ -123,22 +123,27 @@ function linePath(data: number[], yMin: number, yMax: number) {
   return data.map((v, i) => `${i === 0 ? "M" : "L"}${xPos(i, data.length).toFixed(1)},${yPos(v, yMin, yMax).toFixed(1)}`).join(" ");
 }
 
-/* ── Chart 2: Daily discount (single line + area) ── */
+/* ── Chart 2: Daily price index, base 100 (curve drops on discount) ── */
 function DiscountDaily() {
-  const yMin = -2;
-  const yMax = 11;
-  const n = DISCOUNT_DAILY.length;
-  const ticks = [-2, 0, 2, 4, 6, 8, 10];
+  // Price indexed to the product's own habitual level: 100 = precio habitual.
+  // A real discount pushes the price below 100, so the curve dips down.
+  const PRICE_INDEX = DISCOUNT_DAILY.map((d) => 100 - d);
+  const yMin = 88;
+  const yMax = 103;
+  const n = PRICE_INDEX.length;
+  const ticks = [90, 92, 94, 96, 98, 100, 102];
   const cyberStart = 31;
-  const area = `${linePath(DISCOUNT_DAILY, yMin, yMax)} L${xPos(n - 1, n).toFixed(1)},${yPos(yMin, yMin, yMax).toFixed(1)} L${xPos(0, n).toFixed(1)},${yPos(yMin, yMin, yMax).toFixed(1)} Z`;
+  const baseY = yPos(100, yMin, yMax);
+  // area between the line and the 100 baseline (the deviation from habitual)
+  const area = `${linePath(PRICE_INDEX, yMin, yMax)} L${xPos(n - 1, n).toFixed(1)},${baseY.toFixed(1)} L${xPos(0, n).toFixed(1)},${baseY.toFixed(1)} Z`;
 
   return (
-    <ChartFrame title="Evolución diaria del descuento real">
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Evolución diaria del descuento real durante 33 días">
+    <ChartFrame title="Evolución diaria del precio (base 100 = precio habitual)">
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Evolución diaria del precio indexado a base 100 durante el período">
         <defs>
           <linearGradient id="discFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor={VIOLET} stopOpacity="0.22" />
-            <stop offset="100%" stopColor={VIOLET} stopOpacity="0.02" />
+            <stop offset="0%" stopColor={VIOLET} stopOpacity="0.04" />
+            <stop offset="100%" stopColor={VIOLET} stopOpacity="0.22" />
           </linearGradient>
         </defs>
         {/* cyber band */}
@@ -147,26 +152,25 @@ function DiscountDaily() {
         {ticks.map((t) => (
           <g key={t}>
             <line x1={PAD.l} y1={yPos(t, yMin, yMax)} x2={W - PAD.r} y2={yPos(t, yMin, yMax)} stroke="#F0EEF8" strokeWidth="1" />
-            <text x={PAD.l - 8} y={yPos(t, yMin, yMax) + 4} textAnchor="end" fontSize="12" fill="#9CA3AF">{t}%</text>
+            <text x={PAD.l - 8} y={yPos(t, yMin, yMax) + 4} textAnchor="end" fontSize="12" fill="#9CA3AF">{t}</text>
           </g>
         ))}
-        {/* zero line */}
-        <line x1={PAD.l} y1={yPos(0, yMin, yMax)} x2={W - PAD.r} y2={yPos(0, yMin, yMax)} stroke="#9CA3AF" strokeWidth="1.5" strokeDasharray="4 4" />
-        {/* area + line */}
+        {/* deviation area + line */}
         <path d={area} fill="url(#discFill)" />
-        <path d={linePath(DISCOUNT_DAILY, yMin, yMax)} fill="none" stroke={VIOLET} strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" />
-        {/* cyber points */}
-        {DISCOUNT_DAILY.map((v, i) =>
+        <path d={linePath(PRICE_INDEX, yMin, yMax)} fill="none" stroke={VIOLET} strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" />
+        {/* base 100 reference line */}
+        <line x1={PAD.l} y1={baseY} x2={W - PAD.r} y2={baseY} stroke="#6B7280" strokeWidth="1.5" strokeDasharray="4 4" />
+        <text x={PAD.l + 6} y={baseY - 8} textAnchor="start" fontSize="11" fontWeight="700" fill="#6B7280">Precio habitual = 100</text>
+        {/* cyber points (the drop) */}
+        {PRICE_INDEX.map((v, i) =>
           i >= cyberStart ? <circle key={i} cx={xPos(i, n)} cy={yPos(v, yMin, yMax)} r="5" fill={PINK} /> : null
         )}
-        {/* cyber label */}
-        <text x={xPos(cyberStart, n) - 6} y={PAD.t + 14} textAnchor="end" fontSize="12" fontWeight="700" fill={PINK}>CYBER DAY</text>
         {/* x labels */}
         {DAY_LABELS.map((lbl, i) =>
           lbl ? <text key={i} x={xPos(i, n)} y={H - 12} textAnchor="middle" fontSize="10" fill="#9CA3AF">{lbl}</text> : null
         )}
       </svg>
-      <p className="mt-1 text-center text-xs italic text-gray-400">Bajo la línea = precio por encima de lo normal</p>
+      <p className="mt-1 text-center text-xs italic text-gray-400">Cada producto vale 100 en su precio habitual. Bajo 100 = más barato de lo normal. El tramo sombreado marca los días del Cyber Day.</p>
     </ChartFrame>
   );
 }

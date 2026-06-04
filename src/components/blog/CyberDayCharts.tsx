@@ -170,7 +170,7 @@ function DiscountDaily() {
           lbl ? <text key={i} x={xPos(i, n)} y={H - 12} textAnchor="middle" fontSize="10" fill="#9CA3AF">{lbl}</text> : null
         )}
       </svg>
-      <p className="mt-1 text-center text-xs italic text-gray-400">Cada producto vale 100 en su precio habitual. Bajo 100 = más barato de lo normal. El tramo sombreado marca los días del Cyber Day.</p>
+      <p className="mt-1 text-center text-xs italic text-gray-400">Metodología: el precio de cada producto se llevó a base 100 sobre su nivel habitual (la mediana de sus precios en el período). Así, 100 = precio habitual y bajo 100 = más barato de lo normal. El tramo sombreado marca los días del Cyber Day.</p>
     </ChartFrame>
   );
 }

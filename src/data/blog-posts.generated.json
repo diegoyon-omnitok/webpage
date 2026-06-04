@@ -1,5 +1,79 @@
 [
   {
+    "id": "latam-cyber-day-2026-precios-retail-chile",
+    "market": "latam",
+    "category": "Digital Shelf",
+    "slug": "cyber-day-2026-precios-retail-chile",
+    "title": "Cyber Day 2026: lo que los datos dicen sobre los precios en el retail chileno",
+    "seoTitle": "Cyber Day 2026: Análisis de Precios en el Retail Chileno | Omnitok",
+    "metaDescription": "Analizamos 840 productos en los 3 principales retailers de Chile durante 33 días. El descuento real del Cyber Day fue 9,4%. Descubre qué pasó con los precios.",
+    "h1": "Cyber Day 2026: lo que los datos dicen sobre los precios en el retail chileno",
+    "excerpt": "El Cyber Day es uno de los eventos más importantes del retail chileno. Monitoreamos 840 productos en los principales retailers del país durante 33 días para entender qué pasó con los precios antes, durante y después del evento. Esto dicen los datos.",
+    "publishedAt": "2026-06-04",
+    "dateLabel": "04 jun 2026",
+    "readTime": "7 min de lectura",
+    "path": "/es/blog/cyber-day-2026-precios-retail-chile",
+    "originalUrl": "",
+    "originalPath": "",
+    "legacyPaths": [],
+    "primaryKeyword": "cyber day 2026 precios retail chile",
+    "secondaryKeywords": [
+      "descuento real cyber day",
+      "monitoreo de precios retail",
+      "dispersión de precios ecommerce",
+      "digital shelf analytics chile",
+      "precios cyber day chile",
+      "análisis precios retailers",
+      "ecommerce chile 2026"
+    ],
+    "searchIntent": "informational",
+    "coverImage": "/blog/latam/cyber-day-2026-cover-cyberday.png",
+    "coverImageAlt": "Gráfico de evolución de precios durante el Cyber Day 2026 en retailers de Chile mostrando el descuento real",
+    "imageOriginalUrl": null,
+    "relatedLinks": [
+      {
+        "title": "Digital Shelf Analytics",
+        "description": "Monitorea precios, disponibilidad y ejecución digital en tiempo real en los principales retailers de Chile y LATAM.",
+        "href": "/es/digital-shelf-analytics",
+        "anchor": "Descubrir Digital Shelf Analytics"
+      },
+      {
+        "title": "Contenido enriquecido para ecommerce",
+        "description": "Optimiza tus páginas de producto con contenido visual y persuasivo que convierte más durante eventos de alta demanda.",
+        "href": "/es/contenido-enriquecido",
+        "anchor": "Explorar contenido enriquecido"
+      },
+      {
+        "title": "Gestión de contenido de producto",
+        "description": "Centraliza y distribuye contenido a retailers y marketplaces desde una sola fuente de verdad.",
+        "href": "/es/gestion-de-contenido-de-producto",
+        "anchor": "Ver Omnitok Connect"
+      }
+    ],
+    "bodyHash": "cyber-day-2026-precios-retail-chile-v1",
+    "rawText": "El Cyber Day es uno de los eventos comerciales más importantes del retail chileno. Millones de shoppers esperan descuentos, las marcas activan campañas y los retailers ajustan precios. Para entender qué pasa realmente con los precios, monitoreamos a diario 840 productos presentes simultáneamente en los tres principales retailers del país, en cuatro segmentos: Video, Audio, Línea Blanca y Electrodomésticos. Esto encontramos.\n\nLos datos del Cyber Day 2026\n\nCómo medimos el descuento real:\n\nNo usamos el precio promedio del mercado, porque ese número se mueve cuando entran o salen productos del catálogo, no solo cuando bajan los precios. En su lugar, comparamos cada producto contra su propio precio habitual: la mediana de sus precios durante el período. Así, un descuento solo cuenta como descuento si ese mismo producto está más barato que su nivel normal. Esto aísla el efecto precio del efecto catálogo.\n\nEl resultado es claro: durante el Cyber Day, el precio de un producto estuvo en promedio 9,4% por debajo de su nivel habitual, y 6 de cada 10 productos tuvieron un descuento real. En un día normal, solo 1 de cada 10 lo tenía.\n\n[[embed:chart-discount-segment]]\n\nNo todos los segmentos descuentan igual. Electrodomésticos lideró con los descuentos más profundos, mientras que Video, la categoría más visible del evento, tuvo descuentos reales más moderados. Cada categoría tiene su propia dinámica, y entenderla permite a las marcas evaluar su participación con datos concretos.\n\nLos precios no son estáticos: las semanas previas importan\n\nLos precios en retail no son fijos. El retailer los ajusta constantemente según la competencia, el stock y la proximidad a eventos de alto tráfico. Por eso, mirar solo los días del Cyber da una imagen incompleta: el contexto de las semanas previas es lo que define si un descuento es real.\n\n[[embed:chart-discount-daily]]\n\nEl gráfico muestra el punto clave: durante casi todo el período el descuento real ronda el 0%, los precios están en su nivel habitual. En la semana previa al Cyber incluso cae por debajo de cero, lo que indica que algunos precios estuvieron ligeramente por encima de lo normal. Recién con el inicio del evento aparece el salto a casi +10%.\n\nPor qué esto importa:\n\nSi un producto cuesta $100.000 la mayor parte del mes, sube a $120.000 la semana previa y en el Cyber se ofrece a $100.000, la etiqueta dirá \"-17%\". Pero frente a su precio habitual, el descuento real es 0%. Medir cada producto contra su propio nivel normal, y no contra el precio inflado del momento, es lo que permite distinguir un descuento real de uno aparente.\n\nEsto no es una crítica al retail: es la dinámica natural de un mercado competitivo. Pero es exactamente por qué las marcas necesitan [monitoreo continuo de precios](/es/digital-shelf-analytics). El seguimiento puntual del día del evento da una foto; el monitoreo diario da la película completa.\n\nLa dispersión: el mismo producto, distinto precio según el retailer\n\nCuando cada retailer ajusta sus precios de forma independiente, y más aún durante el Cyber, aparece un fenómeno clave: la dispersión de precios. La medimos como la diferencia porcentual entre el precio más alto y el más bajo de un mismo producto, el mismo día, entre los principales retailers.\n\nEn productos de mayor valor como televisores, la dispersión habitual es de alrededor de 8%. Pero durante el Cyber Day casi se triplica, llegando a cerca de 24%: el mismo televisor podía costar una cuarta parte más en un retailer que en otro, el mismo día.\n\n[[embed:chart-dispersion-daily]]\n\n[[embed:chart-dispersion-compare]]\n\nPara una marca, no tener visibilidad de esta dispersión tiene un costo directo. Si tu producto está más caro en un canal, pierdes conversión ahí: el consumidor compara y elige el más barato. Si está más barato de lo necesario, puedes estar cediendo margen sin razón. Durante el Cyber, donde el tráfico se multiplica, el impacto de estas brechas en el sell-out es mayor. Las marcas que detectan la dispersión en tiempo real con [Digital Shelf Analytics](/es/digital-shelf-analytics) pueden actuar; las que no, lo ven cuando ya pasó.\n\nMonitorear antes, durante y después\n\nEl Cyber Day confirma una idea simple: el precio es una de las variables más sensibles del digital shelf, y se mueve antes, durante y después del evento. Las marcas que trabajan su ejecución digital con monitoreo continuo convierten el tráfico en ventas reales; el resto reacciona cuando ya es tarde.",
+    "contentHtml": "",
+    "language": "es",
+    "faqItems": [
+      {
+        "question": "¿Cuál fue el descuento real promedio del Cyber Day 2026 en Chile?",
+        "answer": "El descuento real promedio fue de 9,4%, medido comparando cada producto contra su propio precio habitual (mediana del período). Solo 6 de cada 10 productos tuvieron un descuento real, versus 1 de cada 10 en un día normal."
+      },
+      {
+        "question": "¿Cómo se mide el descuento real de un evento como el Cyber Day?",
+        "answer": "Comparando cada producto contra su propio precio habitual (la mediana de sus precios en el período), no contra el precio promedio del mercado. Esto aísla el efecto precio del efecto catálogo y permite distinguir descuentos reales de descuentos aparentes."
+      },
+      {
+        "question": "¿Qué es la dispersión de precios entre retailers?",
+        "answer": "Es la diferencia porcentual entre el precio más alto y el más bajo de un mismo producto, el mismo día, entre distintos retailers. Durante el Cyber Day 2026, la dispersión en Video se triplicó, pasando de 8% a 24%."
+      },
+      {
+        "question": "¿Por qué las marcas necesitan monitoreo continuo de precios en retail?",
+        "answer": "Porque los precios se ajustan constantemente antes, durante y después de eventos comerciales. Sin monitoreo continuo, las marcas no pueden distinguir descuentos reales de aparentes ni detectar dispersión de precios que afecta conversión y margen."
+      }
+    ]
+  },
+  {
     "id": "latam-digital-shelf-fechas-clave-ecommerce",
     "market": "latam",
     "category": "Digital Shelf",

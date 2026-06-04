@@ -4,6 +4,7 @@ import Link from "next/link";
 type BlogContentProps = {
   rawText: string;
   leadExcerpt?: string;
+  embeds?: Record<string, ReactNode>;
 };
 
 const skipBlocks = new Set(["contáctanos", "contactanos", "agenda una demo", "comienza ahora", "share:", "tags:"]);
@@ -16,7 +17,9 @@ type ContentNode =
   | { type: "paragraph"; text: string }
   | { type: "heading"; text: string }
   | { type: "subheading"; text: string }
-  | { type: "list"; items: string[] };
+  | { type: "list"; items: string[] }
+  | { type: "image"; src: string; alt: string }
+  | { type: "embed"; key: string };
 
 function normalizeSpacing(text: string) {
   return text
@@ -251,6 +254,22 @@ function parseNodes(rawText: string): ContentNode[] {
       continue;
     }
 
+    if (lines.length === 1 && /^\[\[embed:([a-z0-9-]+)\]\]$/.test(lines[0])) {
+      const embedMatch = lines[0].match(/^\[\[embed:([a-z0-9-]+)\]\]$/);
+      if (embedMatch) {
+        nodes.push({ type: "embed", key: embedMatch[1] });
+        continue;
+      }
+    }
+
+    if (lines.length === 1 && /^!\[([^\]]*)\]\(([^)]+)\)$/.test(lines[0])) {
+      const imgMatch = lines[0].match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+      if (imgMatch) {
+        nodes.push({ type: "image", src: imgMatch[2], alt: imgMatch[1] });
+        continue;
+      }
+    }
+
     if (lines.length === 1 && isColonSubheading(lines[0])) {
       nodes.push({ type: "subheading", text: lines[0].replace(/:$/, "") });
       continue;
@@ -276,7 +295,7 @@ function parseNodes(rawText: string): ContentNode[] {
   return nodes;
 }
 
-export default function BlogContent({ rawText, leadExcerpt }: BlogContentProps) {
+export default function BlogContent({ rawText, leadExcerpt, embeds }: BlogContentProps) {
   const nodes = parseNodes(rawText);
   const normalizedExcerpt = leadExcerpt ? normalizeComparableText(leadExcerpt) : "";
   const filteredNodes =
@@ -303,6 +322,20 @@ export default function BlogContent({ rawText, leadExcerpt }: BlogContentProps) 
 
         if (node.type === "subheading") {
           return <h3 key={`${index}-${node.text}`}>{node.text}</h3>;
+        }
+
+        if (node.type === "embed") {
+          const embed = embeds?.[node.key];
+          return embed ? <Fragment key={`${index}-embed-${node.key}`}>{embed}</Fragment> : null;
+        }
+
+        if (node.type === "image") {
+          return (
+            <figure key={`${index}-img`} className="my-6">
+              <img src={node.src} alt={node.alt} className="w-full rounded-lg border border-gray-200" loading="lazy" />
+              {node.alt && <figcaption className="mt-2 text-center text-sm text-gray-400">{node.alt}</figcaption>}
+            </figure>
+          );
         }
 
         if (node.type === "list") {

@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import RelatedLinksSection from "@/components/seo/RelatedLinksSection";
 import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
 import BlogContent from "@/components/blog/BlogContent";
+import { cyberDayCharts } from "@/components/blog/CyberDayCharts";
 import { getSiblingPosts, type BlogRecord } from "@/lib/blog";
 import { canonicalRoutes, SITE_URL } from "@/lib/markets";
 
@@ -26,6 +27,7 @@ export default function BlogPostPage({
   cta,
 }: BlogPostPageProps) {
   const latestArticles = getSiblingPosts(post, 3);
+  const contentEmbeds = post.slug === "cyber-day-2026-precios-retail-chile" ? cyberDayCharts : undefined;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -122,7 +124,7 @@ export default function BlogPostPage({
             />
           </div>
 
-          <BlogContent rawText={post.rawText} leadExcerpt={post.excerpt} />
+          <BlogContent rawText={post.rawText} leadExcerpt={post.excerpt} embeds={contentEmbeds} />
 
           {post.faqItems?.length ? (
             <section className="mt-14 border-t border-gray-100 pt-10">

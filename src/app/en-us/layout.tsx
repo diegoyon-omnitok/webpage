@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
   alternates: {
     es: "/es",
     "en-US": "/en-us",
-    "x-default": "/",
+    "x-default": "/es",
   },
 });
 

@@ -9,6 +9,7 @@ import ConnectFaq from "./ConnectFaq";
 import FinalCTA from "@/components/sections/FinalCTA";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
 import RelatedLinksSection from "@/components/seo/RelatedLinksSection";
+import ProductSchema from "@/components/seo/ProductSchema";
 import { canonicalRoutes } from "@/lib/markets";
 import { productHeroSection, sectionViewport } from "@/lib/sectionViewport";
 
@@ -21,6 +22,12 @@ export const metadata: Metadata = {
 export default function ConnectPage() {
   return (
     <>
+      <ProductSchema
+        name="Omnitok Connect"
+        description="Centraliza, adapta y distribuye tu contenido de producto a retailers y marketplaces. Reduce trabajo manual y mejora la consistencia entre canales."
+        path={canonicalRoutes.latam.connect}
+        locale="es"
+      />
       <section className={`${productHeroSection} pt-24 pb-0`}>
         <div
           className="absolute inset-0 opacity-[0.06] pointer-events-none"

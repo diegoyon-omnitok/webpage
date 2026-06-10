@@ -35,6 +35,12 @@ const alternatePairs: Record<string, Record<string, string>> = {
   // Privacy policy
   [canonicalRoutes.latam.privacyPolicy]: alt(canonicalRoutes.latam.privacyPolicy, canonicalRoutes.usa.privacyPolicy),
   [canonicalRoutes.usa.privacyPolicy]: alt(canonicalRoutes.latam.privacyPolicy, canonicalRoutes.usa.privacyPolicy),
+  // About / Nosotros
+  [canonicalRoutes.latam.nosotros]: alt(canonicalRoutes.latam.nosotros, canonicalRoutes.usa.about),
+  [canonicalRoutes.usa.about]: alt(canonicalRoutes.latam.nosotros, canonicalRoutes.usa.about),
+  // Terms
+  [canonicalRoutes.latam.termsOfUse]: alt(canonicalRoutes.latam.termsOfUse, canonicalRoutes.usa.termsOfService),
+  [canonicalRoutes.usa.termsOfService]: alt(canonicalRoutes.latam.termsOfUse, canonicalRoutes.usa.termsOfService),
 };
 
 /* ------------------------------------------------------------------ */
@@ -54,11 +60,11 @@ const staticUrls: string[] = [
   canonicalRoutes.latam.blog,
   canonicalRoutes.latam.suscripcion,
   canonicalRoutes.latam.privacyPolicy,
+  canonicalRoutes.latam.termsOfUse,
 
   // ── LATAM blog posts estáticos ──
-  "/es/recursos/blog/mundial-2026-ecommerce-contenido-producto",
-  "/es/recursos/blog/cyberday-ventas-online-ecommerce",
-  "/es/recursos/blog/cross-selling-up-selling-ecommerce",
+  // (mundial-2026, cyberday y cross-selling se quitaron: esas URLs ahora son
+  //  redirecciones 301 hacia /es/blog/* y no deben estar en el sitemap)
   "/es/recursos/blog/contenido-enriquecido-tecnologia-ecommerce",
 
   // ── USA core ──
@@ -75,9 +81,8 @@ const staticUrls: string[] = [
   canonicalRoutes.usa.termsOfService,
 
   // ── USA blog posts estáticos ──
-  "/en-us/resources/blog/authorized-retailers-map-violations",
-  "/en-us/resources/blog/amazon-prime-day-map-monitoring",
-  "/en-us/resources/blog/walmart-map-monitoring",
+  // (authorized-retailers, amazon-prime-day y walmart se quitaron: esas URLs
+  //  ahora son redirecciones 301 hacia /en-us/blog/* y no deben estar en el sitemap)
   "/en-us/resources/blog/map-enforcement-kpis",
 ];
 
@@ -130,13 +135,32 @@ function getChangeFreq(path: string): MetadataRoute.Sitemap[number]["changeFrequ
 }
 
 /* ------------------------------------------------------------------ */
+/*  lastModified: fecha real de publicación para posts del blog        */
+/* ------------------------------------------------------------------ */
+
+const blogDates = new Map<string, string>(
+  [...latamBlogPosts, ...usaBlogPosts].map((post) => [post.path, post.publishedAt]),
+);
+
+const STATIC_LAST_MODIFIED = new Date("2026-06-10");
+
+function getLastModified(path: string): Date {
+  const published = blogDates.get(path);
+  if (published) {
+    const timestamp = Date.parse(published);
+    if (!Number.isNaN(timestamp)) return new Date(timestamp);
+  }
+  return STATIC_LAST_MODIFIED;
+}
+
+/* ------------------------------------------------------------------ */
 /*  Export                                                             */
 /* ------------------------------------------------------------------ */
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return uniqueUrls.map((path) => ({
     url: `${SITE_URL}${path}`,
-    lastModified: new Date("2026-04-15"),
+    lastModified: getLastModified(path),
     changeFrequency: getChangeFreq(path),
     priority: getPriority(path),
     ...(alternatePairs[path]

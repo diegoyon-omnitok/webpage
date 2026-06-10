@@ -7,6 +7,7 @@ import { ArrowRight, Clock, EyeOff, ShieldAlert, Users } from "lucide-react";
 import { buildMetadata, canonicalRoutes } from "@/lib/markets";
 import { UsaHero, UsaFinalCta } from "@/components/markets/usa/UsaBlocks";
 import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
+import ProductSchema from "@/components/seo/ProductSchema";
 import MapCarousel from "./MapCarousel";
 import MapAiAgent from "./MapAiAgent";
 
@@ -30,6 +31,12 @@ export const metadata: Metadata = buildMetadata({
 export default function MapPage() {
   return (
     <>
+      <ProductSchema
+        name="Omnitok MAP Monitoring"
+        description="AI-powered MAP monitoring software that detects price violations, identifies unauthorized sellers and generates compliance reports automatically."
+        path={canonicalRoutes.usa.map}
+        locale="en-US"
+      />
       <UsaHero
         eyebrow="AI-Powered MAP Enforcement Software"
         title="MAP Monitoring + AI: detect violations, enforce with confidence"

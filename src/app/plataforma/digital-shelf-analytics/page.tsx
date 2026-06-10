@@ -11,6 +11,7 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
 import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
 import RelatedLinksSection from "@/components/seo/RelatedLinksSection";
+import ProductSchema from "@/components/seo/ProductSchema";
 import { canonicalRoutes } from "@/lib/markets";
 import { productHeroSection, sectionViewport } from "@/lib/sectionViewport";
 
@@ -23,6 +24,12 @@ export const metadata: Metadata = {
 export default function AnalyticsPage() {
   return (
     <>
+      <ProductSchema
+        name="Omnitok Digital Shelf Analytics"
+        description="Monitorea precios, stock, contenido y visibilidad digital en retailers y marketplaces, con un agente de IA que prioriza acciones."
+        path={canonicalRoutes.latam.dsa}
+        locale="es"
+      />
       <section className={`${productHeroSection} pt-24 pb-0`}>
         <div
           className="absolute inset-0 opacity-[0.06] pointer-events-none"

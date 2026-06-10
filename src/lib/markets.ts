@@ -55,6 +55,7 @@ export const canonicalRoutes = {
     home: "/en-us",
     map: "/en-us/map-monitoring",
     dsa: "/en-us/digital-shelf-analytics",
+    about: "/en-us/about",
     resources: "/en-us/resources",
     ebooks: "/en-us/resources/ebooks",
     glossary: "/en-us/resources/glossary",
@@ -242,6 +243,14 @@ export const marketAlternates = {
     latam: canonicalRoutes.latam.privacyPolicy,
     usa: canonicalRoutes.usa.privacyPolicy,
   },
+  about: {
+    latam: canonicalRoutes.latam.nosotros,
+    usa: canonicalRoutes.usa.about,
+  },
+  terms: {
+    latam: canonicalRoutes.latam.termsOfUse,
+    usa: canonicalRoutes.usa.termsOfService,
+  },
 } as const;
 
 export const switcherMap: Record<string, Partial<Record<MarketKey, string>>> = {
@@ -296,6 +305,23 @@ export const exactRedirects: Record<string, string> = {
   "/es/recursos/blog": canonicalRoutes.latam.blog,
   "/en-us/map": canonicalRoutes.usa.map,
   "/en-us/resources/blog": canonicalRoutes.usa.blog,
+  // Rutas legacy en la raiz del dominio que quedaron sirviendo 200 tras la
+  // migracion a mercados. Mismos destinos que sus equivalentes /es del catch-all.
+  "/plataforma": canonicalRoutes.latam.home,
+  "/soluciones": canonicalRoutes.latam.home,
+  "/soluciones/marketplaces": canonicalRoutes.latam.home,
+  "/soluciones/gestion-catalogo": canonicalRoutes.latam.home,
+  "/soluciones/optimizacion-pdps": canonicalRoutes.latam.home,
+  "/soluciones/analytics": canonicalRoutes.latam.dsa,
+  "/industrias": canonicalRoutes.latam.home,
+  "/industrias/consumer-goods": canonicalRoutes.latam.home,
+  "/industrias/electronica": canonicalRoutes.latam.home,
+  "/industrias/belleza": canonicalRoutes.latam.home,
+  "/industrias/hogar": canonicalRoutes.latam.home,
+  "/nosotros/equipo": canonicalRoutes.latam.nosotros,
+  "/casos-de-exito": canonicalRoutes.latam.home,
+  "/demo": canonicalRoutes.latam.contacto,
+  "/pricing": canonicalRoutes.latam.contacto,
   ...blogRedirectMap,
 };
 
@@ -355,6 +381,9 @@ type MetadataInput = {
   openGraphImage?: string;
 };
 
+// Imagen Open Graph por defecto (1200x630) para paginas que no definen una propia.
+export const OG_DEFAULT_IMAGE = "/og-default.png";
+
 export function buildMetadata(input: MetadataInput): Metadata {
   const canonical = input.path;
   return {
@@ -375,13 +404,13 @@ export function buildMetadata(input: MetadataInput): Metadata {
       siteName: "Omnitok",
       locale: input.locale === "es" ? "es_CL" : "en_US",
       type: "website",
-      images: input.openGraphImage ? [input.openGraphImage] : undefined,
+      images: [input.openGraphImage ?? OG_DEFAULT_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title: input.title,
       description: input.description,
-      images: input.openGraphImage ? [input.openGraphImage] : undefined,
+      images: [input.openGraphImage ?? OG_DEFAULT_IMAGE],
     },
   };
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { ComponentType } from "react";
 import LatamHomePage from "@/components/pages/LatamHomePage";
 import ContactoPage from "@/app/contacto/page";
@@ -28,6 +28,7 @@ import {
   buildMetadata,
   canonicalRoutes,
   marketAlternates,
+  OG_DEFAULT_IMAGE,
   type MarketKey,
 } from "@/lib/markets";
 
@@ -140,9 +141,9 @@ const latamPages: Record<string, PageDefinition> = {
   },
   suscripcion: {
     component: SuscripcionPage,
-    manualTitle: "Suscripcion al blog de Omnitok",
+    manualTitle: "Suscríbete al Blog de Omnitok | Newsletter de Ecommerce",
     manualDescription:
-      "Suscribete para recibir contenido actualizado sobre ecommerce, digital shelf y novedades de Omnitok.",
+      "Suscríbete para recibir contenido actualizado sobre ecommerce, digital shelf y novedades de Omnitok.",
   },
   "politica-de-privacidad": {
     component: LatamPrivacyPolicyPage,
@@ -156,12 +157,14 @@ const latamPages: Record<string, PageDefinition> = {
     manualTitle: "Términos de Uso | Omnitok",
     manualDescription:
       "Condiciones que regulan el acceso y uso del sitio web de Omnitok para usuarios en América Latina.",
+    alternates: marketAlternates.terms,
   },
   nosotros: {
     component: NosotrosPage,
     manualTitle: "Sobre Nosotros | Equipo y Misión de Omnitok",
     manualDescription:
       "Conoce a Omnitok, la plataforma que ayuda a marcas a mejorar su ejecución digital en retailers y marketplaces.",
+    alternates: marketAlternates.about,
     keywords: [
       "Omnitok",
       "quiénes somos Omnitok",
@@ -290,11 +293,13 @@ export async function generateMetadata(props: {
       description,
       url: key ? `/es/${key}` : "/es",
       locale: "es_CL",
+      images: ogImages ? [ogImages] : [OG_DEFAULT_IMAGE],
     },
     twitter: {
       ...entry.sourceMetadata?.twitter,
       title,
       description,
+      images: ogImages ? [ogImages] : [OG_DEFAULT_IMAGE],
     },
   };
 }
@@ -306,7 +311,7 @@ export default async function LatamCatchAllPage(props: {
   const key = slug?.join("/") ?? "";
 
   if (latamRedirects[key]) {
-    redirect(latamRedirects[key]);
+    permanentRedirect(latamRedirects[key]);
   }
 
   const entry = latamPages[key];

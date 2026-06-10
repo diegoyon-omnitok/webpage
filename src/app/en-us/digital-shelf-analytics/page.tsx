@@ -7,6 +7,7 @@ import { buildMetadata, canonicalRoutes, marketAlternates } from "@/lib/markets"
 import { UsaHero, UsaFinalCta } from "@/components/markets/usa/UsaBlocks";
 import DsaImpact from "@/components/markets/usa/DsaImpact";
 import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
+import ProductSchema from "@/components/seo/ProductSchema";
 import UsaDsaCarousel from "./UsaDsaCarousel";
 import DsaAiAgent from "@/app/plataforma/digital-shelf-analytics/DsaAiAgent";
 
@@ -33,6 +34,12 @@ export const metadata: Metadata = buildMetadata({
 export default function UsaDigitalShelfAnalyticsPage() {
   return (
     <>
+      <ProductSchema
+        name="Omnitok Digital Shelf Analytics"
+        description="Monitor pricing, availability, content quality and product visibility across retailers and marketplaces, with AI-powered analytics and prioritized actions."
+        path={canonicalRoutes.usa.dsa}
+        locale="en-US"
+      />
       <UsaHero
         eyebrow="Digital Shelf Analytics Software"
         title="Monitoring + AI: turn digital shelf data into decisions"

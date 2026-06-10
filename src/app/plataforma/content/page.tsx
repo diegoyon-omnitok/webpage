@@ -8,6 +8,7 @@ import FaqAccordion from "./FaqAccordion";
 import FinalCTA from "@/components/sections/FinalCTA";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
 import RelatedLinksSection from "@/components/seo/RelatedLinksSection";
+import ProductSchema from "@/components/seo/ProductSchema";
 import { canonicalRoutes } from "@/lib/markets";
 import { LayoutTemplate, ArrowRight, Repeat, Folders, XCircle, TrendingDown } from "lucide-react";
 import { productHeroSection, sectionViewport } from "@/lib/sectionViewport";
@@ -21,6 +22,12 @@ export const metadata: Metadata = {
 export default function ContentPage() {
   return (
     <>
+      <ProductSchema
+        name="Omnitok Content"
+        description="Crea y distribuye contenido enriquecido para tus páginas de producto. Mejora fichas de producto, destaca beneficios y aumenta conversión en retailers y marketplaces."
+        path={canonicalRoutes.latam.content}
+        locale="es"
+      />
       <section className={`${productHeroSection} pt-24 pb-0`}>
         <div
           className="absolute inset-0 opacity-[0.06] pointer-events-none"

@@ -13,13 +13,13 @@ import {
 import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
 import { UsaHero, UsaFinalCta } from "@/components/markets/usa/UsaBlocks";
 import LogoBar from "@/components/markets/usa/LogoBar";
-import { buildMetadata, canonicalRoutes } from "@/lib/markets";
+import { buildMetadata, canonicalRoutes, marketAlternates } from "@/lib/markets";
 
 export const metadata: Metadata = buildMetadata({
   title: "About Omnitok | Digital Shelf Execution Platform",
   description:
     "Omnitok is a B2B SaaS platform that helps brands improve digital execution across retailers and marketplaces. Learn about our mission, platform and team.",
-  path: "/en-us/about",
+  path: canonicalRoutes.usa.about,
   locale: "en-US",
   keywords: [
     "about Omnitok",
@@ -28,6 +28,11 @@ export const metadata: Metadata = buildMetadata({
     "MAP monitoring company",
     "digital shelf analytics company",
   ],
+  alternates: {
+    es: marketAlternates.about.latam,
+    "en-US": marketAlternates.about.usa,
+    "x-default": marketAlternates.about.latam,
+  },
 });
 
 /* ------------------------------------------------------------------ */

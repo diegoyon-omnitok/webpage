@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
-import { buildMetadata, canonicalRoutes } from "@/lib/markets";
+import { buildMetadata, canonicalRoutes, marketAlternates } from "@/lib/markets";
 
 const sections = [
   {
@@ -46,6 +46,11 @@ export const metadata: Metadata = buildMetadata({
     "Read the terms of service and legal use guidelines that govern use of Omnitok's United States website experience.",
   path: canonicalRoutes.usa.termsOfService,
   locale: "en-US",
+  alternates: {
+    es: marketAlternates.terms.latam,
+    "en-US": marketAlternates.terms.usa,
+    "x-default": marketAlternates.terms.latam,
+  },
 });
 
 export default function UsaTermsOfServicePage() {

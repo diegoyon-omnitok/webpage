@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import Script from "next/script";
 import { Nunito_Sans, Open_Sans } from "next/font/google";
 import "./globals.css";
-import { SITE_URL } from "@/lib/markets";
+import { OG_DEFAULT_IMAGE, SITE_URL } from "@/lib/markets";
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
@@ -42,6 +43,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     siteName: "Omnitok",
+    images: [OG_DEFAULT_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [OG_DEFAULT_IMAGE],
   },
 };
 
@@ -100,20 +106,26 @@ export default async function RootLayout({
 
   return (
     <html lang={htmlLang} className={`${nunitoSans.variable} ${openSans.variable}`}>
-      <head>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
-        <script
+      <body className="font-sans antialiased">
+        {/* Analytics con next/script (afterInteractive): no bloquean el render inicial */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`,
           }}
         />
-        <script
+        <Script
+          id="ms-clarity"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");`,
           }}
         />
-      </head>
-      <body className="font-sans antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

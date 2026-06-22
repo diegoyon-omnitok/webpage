@@ -61,8 +61,17 @@ export type BlogCard = {
 const blogPosts = blogPostsData as BlogRecord[];
 export const blogRedirectMap = blogRedirectsData as Record<string, string>;
 
-export const latamBlogPosts = blogPosts.filter((post) => post.market === "latam");
-export const usaBlogPosts = blogPosts.filter((post) => post.market === "usa");
+// El listado del blog se ordena por fecha (más nuevo primero), de modo que el
+// post más reciente queda siempre como destacado (postDestacado = blogPostsCards[0]).
+const newestFirst = (a: BlogRecord, b: BlogRecord) =>
+  a.publishedAt < b.publishedAt ? 1 : a.publishedAt > b.publishedAt ? -1 : 0;
+
+export const latamBlogPosts = blogPosts
+  .filter((post) => post.market === "latam")
+  .sort(newestFirst);
+export const usaBlogPosts = blogPosts
+  .filter((post) => post.market === "usa")
+  .sort(newestFirst);
 
 export function getBlogPostBySlug(market: BlogMarket, slug: string) {
   return blogPosts.find((post) => post.market === market && post.slug === slug) ?? null;

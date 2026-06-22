@@ -47,7 +47,7 @@ export default function ConnectPage() {
                 <span className="text-xs font-semibold text-white">Omnitok Connect</span>
               </div>
               <h1 className="text-[2rem] sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
-                Centraliza y distribuye informacion de producto en todos tus canales
+                Gestión de contenido de producto: centraliza y distribuye a retailers y marketplaces
               </h1>
               <p className="mt-5 text-xl text-white/70 leading-relaxed">
                 Gestiona contenido de producto para retailers y marketplaces desde una sola fuente de verdad.

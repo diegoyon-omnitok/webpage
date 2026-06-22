@@ -46,7 +46,7 @@ const latamPages: Record<string, PageDefinition> = {
     component: LatamHomePage,
     manualTitle: "Omnitok | Ejecución Digital en Retailers",
     manualDescription:
-      "Mejora la ejecución digital de tu marca en retailers y marketplaces con Omnitok. Monitorea tu presencia digital, optimiza páginas de producto y centraliza contenido.",
+      "Mejora la ejecución digital de tu marca en retailers y marketplaces: monitorea tu presencia, optimiza páginas de producto y centraliza contenido.",
     keywords: [
       "ejecución digital para marcas",
       "digital shelf para retailers y marketplaces",
@@ -79,7 +79,7 @@ const latamPages: Record<string, PageDefinition> = {
     component: ContentPage,
     manualTitle: "Contenido Enriquecido para Ecommerce | Omnitok",
     manualDescription:
-      "Crea y distribuye contenido enriquecido para tus páginas de producto. Mejora fichas de producto, destaca beneficios y aumenta conversión en retailers y marketplaces.",
+      "Crea y distribuye contenido enriquecido para tus páginas de producto. Mejora fichas, destaca beneficios y aumenta conversión en retailers y marketplaces.",
     keywords: [
       "contenido enriquecido para ecommerce",
       "contenido enriquecido para retailers",
@@ -109,18 +109,18 @@ const latamPages: Record<string, PageDefinition> = {
   },
   "digital-shelf-analytics": {
     component: DigitalShelfAnalyticsPage,
-    manualTitle: "Digital Shelf Analytics con IA | Omnitok",
+    manualTitle: "Digital Shelf Analytics y Monitoreo de Precios | Omnitok",
     manualDescription:
-      "Monitoreo de precios, stock y contenido con IA integrada. Pregunta, analiza y prioriza acciones en retailers y marketplaces.",
+      "Monitorea precios propios y de la competencia, stock y contenido en cada retailer y marketplace. Analiza y prioriza acciones con un agente de IA.",
     keywords: [
-      "digital shelf analytics",
+      "monitoreo de precios",
       "software de monitoreo de precios",
-      "monitoreo de precios stock y contenido",
-      "ejecución digital en retailers",
-      "control de ejecución digital",
-      "visibilidad digital en retailers",
-      "monitoreo de productos en marketplaces",
+      "monitoreo de precios de la competencia",
+      "monitoreo de precios, stock y contenido",
       "monitoreo de precios y promociones",
+      "monitoreo de productos en marketplaces",
+      "digital shelf analytics",
+      "visibilidad digital en retailers",
       "share of search ecommerce",
     ],
     alternates: marketAlternates.dsa,

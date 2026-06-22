@@ -14,7 +14,7 @@ import DsaAiAgent from "@/app/plataforma/digital-shelf-analytics/DsaAiAgent";
 export const metadata: Metadata = buildMetadata({
   title: "Digital Shelf Analytics Software | Omnitok US",
   description:
-    "Monitor pricing, availability, content quality and product visibility across retailers and marketplaces. AI-powered analytics that tell you what changed, why it matters and what to do.",
+    "Monitor pricing, availability, content and product visibility across retailers and marketplaces. AI analytics that tell you what changed and what to do.",
   path: canonicalRoutes.usa.dsa,
   locale: "en-US",
   keywords: [

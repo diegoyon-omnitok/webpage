@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Omnitok",
   },
   description:
-    "Omnitok ayuda a marcas a mejorar su ejecucion digital en retailers y marketplaces. Contenido enriquecido, gestion de producto, digital shelf analytics y MAP monitoring.",
+    "Omnitok mejora la ejecución digital en retailers y marketplaces: contenido enriquecido, gestión de producto, digital shelf analytics y MAP monitoring.",
   icons: {
     icon: "/Favicon.png",
     shortcut: "/Favicon.png",

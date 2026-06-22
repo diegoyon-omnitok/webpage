@@ -16,9 +16,9 @@ import { canonicalRoutes } from "@/lib/markets";
 import { productHeroSection, sectionViewport } from "@/lib/sectionViewport";
 
 export const metadata: Metadata = {
-  title: "Digital Shelf Analytics para Marcas | Monitorea precios, stock y contenido",
+  title: "Digital Shelf Analytics y Monitoreo de Precios | Omnitok",
   description:
-    "Monitorea precios, stock, contenido y visibilidad digital en retailers y marketplaces. Detecta quiebres de ejecución y toma decisiones con Digital Shelf Analytics.",
+    "Monitorea precios propios y de la competencia, stock y contenido en cada retailer y marketplace. Analiza y prioriza acciones con un agente de IA.",
 };
 
 export default function AnalyticsPage() {
@@ -46,13 +46,13 @@ export default function AnalyticsPage() {
             <div className="self-start flex flex-col items-start pb-10 lg:pb-14 w-full">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/20 border border-accent/30 mb-5">
                 <BarChart3 size={13} className="text-accent" />
-                <span className="text-xs font-semibold text-white">Digital Shelf Analytics</span>
+                <span className="text-xs font-semibold text-white">Omnitok DSA</span>
               </div>
               <h1 className="text-[2rem] sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
-                Monitoreo + IA: convierte datos del digital shelf en decisiones
+                Digital Shelf Analytics: monitorea precios, stock y contenido con un agente de IA
               </h1>
               <p className="mt-5 text-xl text-white/90 leading-relaxed font-medium max-w-xl">
-                Monitorea precio, stock, contenido y visibilidad. Y pregúntale a la IA qué está pasando y qué hacer.
+                Monitorea precio, stock, contenido y visibilidad. Y pregúntale al agente qué está pasando y qué hacer.
               </p>
               <p className="mt-4 text-lg text-white/70 leading-relaxed max-w-xl">
                 Omnitok DSA combina monitoreo continuo de ejecución digital con un agente de IA conectado a millones de datos en tiempo real. No solo detecta problemas, te dice por qué ocurren y qué priorizar.

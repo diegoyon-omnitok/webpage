@@ -47,10 +47,10 @@ export default function AssistantPage() {
                 <span className="text-xs font-semibold text-white">Omnitok Assistant</span>
               </div>
               <h1 className="text-[2rem] sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
-                Convierte mejor con un asistente en tus paginas de producto
+                Asistente de compra para ecommerce que convierte en tus páginas de producto
               </h1>
               <p className="mt-5 text-xl text-white/70 leading-relaxed max-w-xl">
-                Implementa un asistente de compra para ecommerce en el momento exacto de la decision.
+                Implementa un asistente de compra en el momento exacto de la decisión.
               </p>
               <p className="mt-4 text-lg text-white/70 leading-relaxed max-w-xl">
                 Responde dudas, recomienda productos con IA y acompaña al shopper cuando necesita contexto para avanzar hacia la compra.

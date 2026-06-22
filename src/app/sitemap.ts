@@ -63,9 +63,9 @@ const staticUrls: string[] = [
   canonicalRoutes.latam.termsOfUse,
 
   // ── LATAM blog posts estáticos ──
-  // (mundial-2026, cyberday y cross-selling se quitaron: esas URLs ahora son
-  //  redirecciones 301 hacia /es/blog/* y no deben estar en el sitemap)
-  "/es/recursos/blog/contenido-enriquecido-tecnologia-ecommerce",
+  // (mundial-2026, cyberday, cross-selling y contenido-enriquecido-tecnologia se
+  //  quitaron: esas URLs ahora redirigen 301 hacia /es/blog/* y no van en el sitemap.
+  //  Sus versiones canónicas entran vía latamBlogPosts más abajo.)
 
   // ── USA core ──
   canonicalRoutes.usa.home,
@@ -120,7 +120,16 @@ function getPriority(path: string): number {
   if (path === canonicalRoutes.latam.contacto || path === canonicalRoutes.usa.contact) return 0.9;
   // Blog posts
   if (path.includes("/blog/")) return 0.6;
-  // Everything else (resources, legal, solutions, industries)
+  // Legal / utility pages — low priority
+  if (
+    path === canonicalRoutes.latam.privacyPolicy ||
+    path === canonicalRoutes.latam.termsOfUse ||
+    path === canonicalRoutes.latam.suscripcion ||
+    path === canonicalRoutes.usa.privacyPolicy ||
+    path === canonicalRoutes.usa.termsOfService
+  )
+    return 0.3;
+  // Everything else (resources, solutions, industries)
   return 0.7;
 }
 

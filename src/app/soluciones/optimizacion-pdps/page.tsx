@@ -6,7 +6,7 @@ import { canonicalRoutes } from "@/lib/markets";
 export const metadata: Metadata = {
   title: "Optimización de PDPs — Páginas de producto que convierten",
   description:
-    "Transforma PDPs deficientes en páginas de alto rendimiento. Omnitok Content y Assistant trabajan juntos para mejorar la calidad de contenido y aumentar la conversión.",
+    "Transforma PDPs deficientes en páginas de alto rendimiento. Omnitok Content mejora la calidad de contenido y aumenta la conversión.",
 };
 
 export default function OptimizacionPDPsPage() {
@@ -70,9 +70,9 @@ export default function OptimizacionPDPsPage() {
               <div className="w-10 h-10 rounded-xl bg-violet/10 flex items-center justify-center mb-4">
                 <TrendingUp size={20} className="text-violet" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">Omnitok Assistant</h3>
-              <p className="text-sm text-gray-500 mb-4">Agrega inteligencia dinámica: el asistente IA responde preguntas del consumidor en tiempo real dentro del PDP.</p>
-              <Link href={canonicalRoutes.latam.assistant} className="text-sm font-semibold text-violet hover:opacity-80 flex items-center gap-1">Ver Assistant <ArrowRight size={13} /></Link>
+              <h3 className="font-bold text-gray-900 mb-2">Omnitok PIM</h3>
+              <p className="text-sm text-gray-500 mb-4">Centraliza la información de producto y distribúyela con consistencia a cada retailer y marketplace.</p>
+              <Link href={canonicalRoutes.latam.connect} className="text-sm font-semibold text-violet hover:opacity-80 flex items-center gap-1">Ver PIM <ArrowRight size={13} /></Link>
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function OptimizacionPDPsPage() {
             </div>
             <div className="rounded-2xl border-2 border-success/20 bg-success/5 p-6">
               <p className="text-sm font-bold text-success mb-4">PDP con Omnitok</p>
-              {["Título optimizado con keywords por retailer", "8 imágenes + 1 video de producto", "Descripción rica con storytelling y beneficios", "Todos los atributos técnicos completados", "Asistente IA respondiendo preguntas en tiempo real"].map((i) => (
+              {["Título optimizado con keywords por retailer", "8 imágenes + 1 video de producto", "Descripción rica con storytelling y beneficios", "Todos los atributos técnicos completados", "Contenido consistente en todos los retailers"].map((i) => (
                 <div key={i} className="flex items-start gap-2 mb-2 text-sm text-gray-600"><CheckCircle2 size={14} className="text-success flex-shrink-0 mt-0.5" />{i}</div>
               ))}
             </div>

@@ -30,8 +30,8 @@ function StatCard({ value, suffix, label, started, delay }: { value: number; suf
   }, [started, value, delay]);
 
   return (
-    <div className="flex flex-col items-center justify-center rounded-2xl px-8 py-10 bg-white" style={{ border: "1px solid rgba(255,23,123,0.2)", boxShadow: "0 2px 12px rgba(77,74,157,0.08)" }}>
-      <p className="text-5xl lg:text-6xl font-bold tabular-nums" style={{ color: "#FF177B" }}>
+    <div className="flex flex-col items-center justify-center rounded-2xl px-8 py-10 bg-white" style={{ border: "1px solid rgba(110,193,228,0.45)", boxShadow: "0 2px 12px rgba(77,74,157,0.08)" }}>
+      <p className="text-5xl lg:text-6xl font-bold tabular-nums" style={{ color: "#1F87B5" }}>
         {display}{suffix}
       </p>
       <p className="mt-3 text-xs font-semibold text-gray-500 uppercase tracking-widest text-center">{label}</p>
@@ -61,7 +61,7 @@ export default function ConnectStats() {
       <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/30 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">Omnitok Connect en números</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">Omnitok PIM en números</h2>
           <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.6)" }}>Basado en datos de operación con marcas que gestionan catálogos en múltiples retailers.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

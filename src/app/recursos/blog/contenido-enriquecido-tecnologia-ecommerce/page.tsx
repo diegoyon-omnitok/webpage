@@ -225,8 +225,8 @@ export default function ContenidoEnriquecidoTecnologiaPage() {
               </p>
               <p>
                 Una de las soluciones líderes en América Latina es{" "}
-                <strong className="text-gray-900">Omnitok</strong>, que a través de dos herramientas clave
-                ayuda a las marcas a gestionar y enriquecer su presencia en el retail online:
+                <strong className="text-gray-900">Omnitok</strong>, que ayuda a las marcas a gestionar y
+                enriquecer su presencia en el retail online:
               </p>
               <ul className="list-disc list-outside pl-5 space-y-4 my-4 text-left">
                 <li>
@@ -247,16 +247,15 @@ export default function ContenidoEnriquecidoTecnologiaPage() {
                 <li>
                   <strong className="text-gray-900">
                     <Link
-                      href={canonicalRoutes.latam.assistant}
+                      href={canonicalRoutes.latam.connect}
                       className="text-primary font-semibold underline-offset-2 hover:underline"
                     >
-                      Omnitok Assistant
+                      Omnitok PIM
                     </Link>
                   </strong>{" "}
-                  ofrece asistencia en vivo y personalizada directamente en las páginas de producto de los
-                  retailers, integrando chat en vivo, videollamadas y un{" "}
-                  <strong className="text-gray-900">bot de IA conversacional</strong> que resuelve dudas en
-                  tiempo real y acompaña al comprador hasta la decisión final.
+                  centraliza la información de producto en una sola fuente de verdad y la adapta a los
+                  formatos que exige cada retailer, manteniendo el contenido consistente y actualizado en
+                  todos los canales.
                 </li>
               </ul>
               <p>
@@ -311,12 +310,12 @@ export default function ContenidoEnriquecidoTecnologiaPage() {
                 </Link>{" "}
                 gestiona fichas y experiencias interactivas, o cómo{" "}
                 <Link
-                  href={canonicalRoutes.latam.assistant}
+                  href={canonicalRoutes.latam.connect}
                   className="text-primary font-semibold underline-offset-2 hover:underline"
                 >
-                  Omnitok Assistant
+                  Omnitok PIM
                 </Link>{" "}
-                acompaña al comprador en tiempo real. También podés leer sobre{" "}
+                centraliza y distribuye tu contenido de producto. También podés leer sobre{" "}
                 <Link
                   href="/es/recursos/blog/cross-selling-up-selling-ecommerce"
                   className="text-primary font-semibold underline-offset-2 hover:underline"

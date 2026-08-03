@@ -172,7 +172,7 @@ export default function ContentPage() {
             title: "Gestión de contenido de producto",
             description: "Centraliza y distribuye la información que luego se transforma en contenido enriquecido.",
             href: canonicalRoutes.latam.connect,
-            anchor: "Explora Omnitok Connect",
+            anchor: "Explora Omnitok PIM",
           },
           {
             title: "Digital Shelf Analytics",

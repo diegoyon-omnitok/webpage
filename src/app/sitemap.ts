@@ -52,7 +52,6 @@ const staticUrls: string[] = [
   canonicalRoutes.latam.home,
   canonicalRoutes.latam.content,
   canonicalRoutes.latam.connect,
-  canonicalRoutes.latam.assistant,
   canonicalRoutes.latam.dsa,
   canonicalRoutes.latam.contacto,
   canonicalRoutes.latam.nosotros,
@@ -110,7 +109,6 @@ function getPriority(path: string): number {
   if (
     path === canonicalRoutes.latam.content ||
     path === canonicalRoutes.latam.connect ||
-    path === canonicalRoutes.latam.assistant ||
     path === canonicalRoutes.latam.dsa ||
     path === canonicalRoutes.usa.map ||
     path === canonicalRoutes.usa.dsa

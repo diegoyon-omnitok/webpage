@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Layers, Package, Bot, BarChart3, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Layers, Package, BarChart3, ArrowRight, CheckCircle2 } from "lucide-react";
 import { sectionViewport } from "@/lib/sectionViewport";
 import { canonicalRoutes } from "@/lib/markets";
 
 export const metadata: Metadata = {
   title: "Plataforma — Digital Shelf Execution",
   description:
-    "Descubre los cuatro módulos de Omnitok: Content, Connect, Assistant y Digital Shelf Analytics. Una plataforma integrada para la ejecución digital en retail.",
+    "Descubre los tres módulos de Omnitok: Content, PIM y Digital Shelf Analytics. Una plataforma integrada para la ejecución digital en retail.",
 };
 
 const modules = [
@@ -22,21 +22,12 @@ const modules = [
   },
   {
     icon: Package,
-    name: "Omnitok Connect",
+    name: "Omnitok PIM",
     tagline: "Centraliza tu catálogo y distribuye sin esfuerzo",
     desc: "Un solo hub para todos tus atributos, imágenes y descripciones. Sincronización multicanal en segundos.",
     href: canonicalRoutes.latam.connect,
     color: "from-accent to-[#f43f5e]",
     features: ["PIM centralizado", "Sincronización multicanal", "Gestión de atributos", "Reducción de trabajo manual"],
-  },
-  {
-    icon: Bot,
-    name: "Omnitok Assistant",
-    tagline: "IA en el PDP que responde y convierte",
-    desc: "Asistente inteligente que entiende tus productos y responde preguntas del consumidor en tiempo real.",
-    href: canonicalRoutes.latam.assistant,
-    color: "from-violet to-[#7C3AED]",
-    features: ["Q&A automático con IA", "Comprensión contextual del producto", "Aumento de conversión", "Sin código de integración"],
   },
   {
     icon: BarChart3,

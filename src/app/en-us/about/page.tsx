@@ -83,7 +83,7 @@ const timeline = [
   {
     year: "2023",
     title: "Rebranded as Omnitok",
-    desc: "Evolved into a full Digital Shelf Execution Platform. Launched Connect, Content, Assistant and DSA as integrated modules under one platform.",
+    desc: "Evolved into a full Digital Shelf Execution Platform. Launched PIM, Content and DSA as integrated modules under one platform.",
   },
   {
     year: "2025",

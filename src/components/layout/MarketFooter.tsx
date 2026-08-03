@@ -37,7 +37,7 @@ export default function MarketFooter({ market }: MarketFooterProps) {
               </h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
-                  <li key={link.href}>
+                  <li key={`${link.label}-${link.href}`}>
                     {link.external ? (
                       <a
                         href={link.href}

@@ -8,7 +8,7 @@ const cases = [
     result: "+31% en conversión en Mercado Libre",
     detail:
       "Optimizaron 2,400 PDPs en 3 semanas usando Omnitok Content y eliminaron inconsistencias entre Falabella y MercadoLibre.",
-    modules: ["Content", "Connect"],
+    modules: ["Content", "PIM"],
     href: "/casos-de-exito/fmcg-chile",
   },
   {
@@ -17,7 +17,7 @@ const cases = [
     result: "−55% tiempo de actualización de catálogo",
     detail:
       "Centralizaron 800 SKUs y los distribuyen a 5 retailers simultáneamente. Lo que tomaba 2 semanas ahora toma 2 horas.",
-    modules: ["Connect", "Analytics"],
+    modules: ["PIM", "Analytics"],
     href: "/casos-de-exito/electronica-latam",
   },
   {

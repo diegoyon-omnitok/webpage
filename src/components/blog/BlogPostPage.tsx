@@ -6,6 +6,7 @@ import RelatedLinksSection from "@/components/seo/RelatedLinksSection";
 import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
 import BlogContent from "@/components/blog/BlogContent";
 import { cyberDayCharts } from "@/components/blog/CyberDayCharts";
+import { digitalShelfEmbeds } from "@/components/blog/DigitalShelfEmbeds";
 import { getSiblingPosts, type BlogRecord } from "@/lib/blog";
 import { canonicalRoutes, SITE_URL } from "@/lib/markets";
 
@@ -27,7 +28,12 @@ export default function BlogPostPage({
   cta,
 }: BlogPostPageProps) {
   const latestArticles = getSiblingPosts(post, 3);
-  const contentEmbeds = post.slug === "cyber-day-2026-precios-retail-chile" ? cyberDayCharts : undefined;
+  const contentEmbeds =
+    post.slug === "cyber-day-2026-precios-retail-chile"
+      ? cyberDayCharts
+      : post.slug === "por-que-medir-tu-digital-shelf-ya-no-es-opcional"
+        ? digitalShelfEmbeds
+        : undefined;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",

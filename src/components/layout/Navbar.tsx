@@ -3,14 +3,13 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown, BarChart3, Package, Bot, Layers } from "lucide-react";
+import { Menu, X, ChevronDown, BarChart3, Package, Layers } from "lucide-react";
 import { canonicalRoutes } from "@/lib/markets";
 
 const plataformaItems = [
   { label: "Omnitok Content", href: canonicalRoutes.latam.content, icon: Layers, desc: "Crea y distribuye contenido enriquecido" },
   { label: "Digital Shelf Analytics", href: canonicalRoutes.latam.dsa, icon: BarChart3, desc: "Monitorea tu ejecución en retailers" },
-  { label: "Omnitok Connect", href: canonicalRoutes.latam.connect, icon: Package, desc: "Centraliza y distribuye tu catálogo" },
-  { label: "Omnitok Assistant", href: canonicalRoutes.latam.assistant, icon: Bot, desc: "IA que responde al consumidor en el PDP" },
+  { label: "Omnitok PIM", href: canonicalRoutes.latam.connect, icon: Package, desc: "Centraliza y distribuye tu catálogo" },
 ];
 
 const recursosNavItems: { label: string; href: string; external?: boolean }[] = [

@@ -69,7 +69,7 @@ export default function HeroSection() {
             <Image
               src="/Imagen principal.png"
               alt="Omnitok: experiencia de compra y ejecución en el digital shelf en retailers"
-              title="Plataforma Omnitok — contenido enriquecido, digital shelf analytics y asistente IA para retailers"
+              title="Plataforma Omnitok — contenido enriquecido, digital shelf analytics y gestión de contenido de producto para retailers"
               width={1600}
               height={1000}
               className="hero-image block h-auto w-full max-w-[min(100%,22rem)] sm:max-w-[min(100%,30rem)] lg:max-w-[min(100%,40rem)] xl:max-w-[min(100%,44rem)] object-contain object-center lg:object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 lg:translate-y-[10%] origin-center lg:origin-right lg:[mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)]"

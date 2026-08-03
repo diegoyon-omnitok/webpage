@@ -66,14 +66,10 @@ export default function LatamBlogPage() {
             ,{" "}
             <Link href={canonicalRoutes.latam.connect} className="font-semibold text-primary hover:underline">
               gestión de contenido de producto
-            </Link>
-            ,{" "}
+            </Link>{" "}
+            y{" "}
             <Link href={canonicalRoutes.latam.content} className="font-semibold text-primary hover:underline">
               contenido enriquecido para ecommerce
-            </Link>{" "}
-            y nuestro{" "}
-            <Link href={canonicalRoutes.latam.assistant} className="font-semibold text-primary hover:underline">
-              asistente de compra para ecommerce
             </Link>
             .
           </p>

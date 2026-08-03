@@ -50,7 +50,7 @@ export default function GestionCatalogoPage() {
             ))}
           </div>
           <div className="mt-10 p-4 bg-success/5 rounded-xl border border-success/10">
-            <p className="text-sm font-semibold text-gray-700">Con Omnitok Connect, las marcas reducen el tiempo de gestión de catálogo en un <span className="text-success font-bold">60%</span> en los primeros 30 días.</p>
+            <p className="text-sm font-semibold text-gray-700">Con Omnitok PIM, las marcas reducen el tiempo de gestión de catálogo en un <span className="text-success font-bold">60%</span> en los primeros 30 días.</p>
           </div>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default function GestionCatalogoPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">¿Listo para centralizar tu catálogo?</h2>
           <Link href={canonicalRoutes.latam.connect} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white gradient-primary hover:opacity-90 transition-opacity mr-3">
-            Ver Omnitok Connect <ArrowRight size={15} />
+            Ver Omnitok PIM <ArrowRight size={15} />
           </Link>
           <Link href={canonicalRoutes.latam.contacto} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white gradient-brand hover:opacity-90 transition-opacity">
             Conversemos <ArrowRight size={15} />

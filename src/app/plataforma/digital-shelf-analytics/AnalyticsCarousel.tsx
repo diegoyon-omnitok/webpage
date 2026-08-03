@@ -20,8 +20,8 @@ const features: ProductFeatureCarouselItem[] = [
     title: "Monitoreo de precios con contexto, no solo números",
     descLead: "Detecta variaciones de precio antes de que impacten tu margen.",
     desc: "Visualiza cómo se mueven los precios de tus productos en cada retailer, compara contra competencia y detecta descuentos no planificados o cambios de pricing en tiempo real. La IA de DSA analiza patrones y te dice cuáles son los movimientos más relevantes.sin que tengas que revisar cada canal manualmente.",
-    accent: "from-[#FF177B] to-[#c0136a]",
-    dot: "#FF177B",
+    accent: "from-[#393689] to-[#4D4A9D]",
+    dot: "#393689",
     customVisual: <PricingMatrixMockup />,
   },
   {
@@ -38,8 +38,8 @@ const features: ProductFeatureCarouselItem[] = [
     title: "Share of Search: visibilidad frente a la competencia",
     descLead: "Entiende quién gana la atención del shopper en cada categoría.",
     desc: "Analiza la posición de tus productos en los resultados de búsqueda de cada retailer. Compara tu presencia contra competidores en las primeras posiciones y distingue si tu visibilidad viene de posicionamiento orgánico o inversión en ads. Con la IA puedes preguntar directamente qué competidor creció más y por qué.",
-    accent: "from-[#FF177B] to-[#EC4899]",
-    dot: "#FF177B",
+    accent: "from-[#393689] to-[#6366f1]",
+    dot: "#393689",
     customVisual: <ShareOfSearchMockup />,
   },
   {
@@ -56,8 +56,8 @@ const features: ProductFeatureCarouselItem[] = [
     title: "Reportes ejecutivos generados por IA",
     descLead: "De millones de datos a un resumen accionable en segundos.",
     desc: "El agente de IA de DSA genera análisis ejecutivos automáticos con lo que cambió, por qué importa y qué hacer. Ideal para QBRs, reuniones de equipo o decisiones rápidas. No necesitas armar reportes, solo pregunta o activa el análisis y obtén un resumen respaldado por datos verificables de todos tus canales.",
-    accent: "from-[#FF177B] to-[#c0136a]",
-    dot: "#FF177B",
+    accent: "from-[#393689] to-[#4D4A9D]",
+    dot: "#393689",
     customVisual: <AiReportMockup />,
   },
 ];

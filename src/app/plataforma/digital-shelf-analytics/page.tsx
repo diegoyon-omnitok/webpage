@@ -44,8 +44,8 @@ export default function AnalyticsPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-6 lg:pt-10 pb-0">
           <div className="grid lg:grid-cols-2 gap-12 lg:items-stretch">
             <div className="self-start flex flex-col items-start pb-10 lg:pb-14 w-full">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/20 border border-accent/30 mb-5">
-                <BarChart3 size={13} className="text-accent" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#393689]/60 border border-[#7B78CE]/40 mb-5">
+                <BarChart3 size={13} className="text-[#A5A3DC]" />
                 <span className="text-xs font-semibold text-white">Omnitok DSA</span>
               </div>
               <h1 className="text-[2rem] sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
@@ -97,7 +97,7 @@ export default function AnalyticsPage() {
       <section className={`${sectionViewport} py-16 lg:py-20 relative overflow-hidden bg-white`}>
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 w-full">
           <div className="text-center mb-16">
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#FF177B" }}>El problema</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#393689" }}>El problema</p>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 max-w-4xl mx-auto leading-tight">
               Tienes datos, pero no tienes respuestas
             </h2>
@@ -107,7 +107,7 @@ export default function AnalyticsPage() {
           </div>
 
           <div className="relative">
-            <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5" style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }} />
+            <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5" style={{ background: "linear-gradient(90deg, #393689 0%, #FF177B 100%)" }} />
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               {[
@@ -177,7 +177,7 @@ export default function AnalyticsPage() {
             title: "Gestión de contenido de producto",
             description: "Centraliza la información que luego necesitas monitorear en retailers y marketplaces.",
             href: canonicalRoutes.latam.connect,
-            anchor: "Explora Omnitok Connect",
+            anchor: "Explora Omnitok PIM",
           },
           {
             title: "Contenido enriquecido para ecommerce",

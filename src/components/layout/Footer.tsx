@@ -7,8 +7,7 @@ type FooterLink = { label: string; href: string; external?: boolean };
 const footerLinks: Record<string, FooterLink[]> = {
   Plataforma: [
     { label: "Omnitok Content", href: canonicalRoutes.latam.content },
-    { label: "Omnitok Connect", href: canonicalRoutes.latam.connect },
-    { label: "Omnitok Assistant", href: canonicalRoutes.latam.assistant },
+    { label: "Omnitok PIM", href: canonicalRoutes.latam.connect },
     { label: "Digital Shelf Analytics", href: canonicalRoutes.latam.dsa },
   ],
   Recursos: [

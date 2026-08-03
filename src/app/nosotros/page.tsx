@@ -74,7 +74,7 @@ export default function NosotrosPage() {
             title: "Gestión de contenido de producto",
             description: "Descubre cómo Omnitok centraliza información de producto para retailers y marketplaces.",
             href: canonicalRoutes.latam.connect,
-            anchor: "Explora Omnitok Connect",
+            anchor: "Explora Omnitok PIM",
           },
           {
             title: "Contenido enriquecido para ecommerce",

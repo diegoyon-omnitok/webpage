@@ -4,13 +4,12 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { canonicalRoutes } from "@/lib/markets";
 
-export type ProductModuleId = "content" | "connect" | "assistant" | "digital-shelf-analytics";
+export type ProductModuleId = "content" | "connect" | "digital-shelf-analytics";
 
-const allModules: { id: ProductModuleId; label: string; href: string }[] = [
-  { id: "content", label: "Omnitok Content", href: canonicalRoutes.latam.content },
-  { id: "connect", label: "Omnitok Connect", href: canonicalRoutes.latam.connect },
-  { id: "assistant", label: "Omnitok Assistant", href: canonicalRoutes.latam.assistant },
-  { id: "digital-shelf-analytics", label: "Digital Shelf Analytics", href: canonicalRoutes.latam.dsa },
+const allModules: { id: ProductModuleId; label: string; href: string; color: string }[] = [
+  { id: "digital-shelf-analytics", label: "Omnitok DSA", href: canonicalRoutes.latam.dsa, color: "#393689" },
+  { id: "content", label: "Omnitok Content", href: canonicalRoutes.latam.content, color: "#FF177B" },
+  { id: "connect", label: "Omnitok PIM", href: canonicalRoutes.latam.connect, color: "#1F87B5" },
 ];
 
 /** Bloque “Combínalo con” para incrustar dentro de la misma sección que el FAQ */
@@ -26,14 +25,14 @@ export function CombineWithLinks({ exclude }: { exclude: ProductModuleId }) {
             key={m.id}
             href={m.href}
             className="flex items-center gap-2 px-5 py-2.5 rounded-2xl border bg-white text-sm font-semibold transition-all duration-200 hover:text-white hover:border-transparent hover:shadow-md"
-            style={{ borderColor: "rgba(77,74,157,0.25)", color: "#4D4A9D" }}
+            style={{ borderColor: "rgba(77,74,157,0.25)", color: m.color }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = "linear-gradient(135deg, #FF177B 0%, #4D4A9D 100%)";
               e.currentTarget.style.color = "#fff";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = "";
-              e.currentTarget.style.color = "#4D4A9D";
+              e.currentTarget.style.color = m.color;
             }}
           >
             {m.label} <ArrowRight size={14} />

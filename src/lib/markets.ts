@@ -39,7 +39,6 @@ export type MarketConfig = {
 export const canonicalRoutes = {
   latam: {
     home: "/es",
-    assistant: "/es/asistente-de-compra",
     content: "/es/contenido-enriquecido",
     connect: "/es/gestion-de-contenido-de-producto",
     dsa: "/es/digital-shelf-analytics",
@@ -84,24 +83,19 @@ export const marketConfigs: Record<MarketKey, MarketConfig> = {
         label: "Productos",
         items: [
           {
+            label: "Omnitok DSA",
+            href: canonicalRoutes.latam.dsa,
+            desc: "Digital shelf analytics: monitoreo de precios, stock y contenido en retailers",
+          },
+          {
             label: "Omnitok Content",
             href: canonicalRoutes.latam.content,
             desc: "Contenido enriquecido para ecommerce y retailers",
           },
           {
-            label: "Digital Shelf Analytics",
-            href: canonicalRoutes.latam.dsa,
-            desc: "Control de ejecucion digital en retailers",
-          },
-          {
-            label: "Omnitok Connect",
+            label: "Omnitok PIM",
             href: canonicalRoutes.latam.connect,
             desc: "Gestion de contenido de producto y sindicación",
-          },
-          {
-            label: "Omnitok Assistant",
-            href: canonicalRoutes.latam.assistant,
-            desc: "Asistente de compra para ecommerce",
           },
         ],
       },
@@ -111,6 +105,8 @@ export const marketConfigs: Record<MarketKey, MarketConfig> = {
           { label: "Blog", href: canonicalRoutes.latam.blog },
           { label: "Omnitok LABS", href: "https://lab.omnitok.com/", external: true },
         ],
+        overviewHref: canonicalRoutes.latam.recursos,
+        overviewLabel: "Ver todos los recursos",
       },
       {
         label: "Nosotros",
@@ -124,8 +120,7 @@ export const marketConfigs: Record<MarketKey, MarketConfig> = {
       Plataforma: [
         { label: "Contenido enriquecido", href: canonicalRoutes.latam.content },
         { label: "Digital Shelf Analytics", href: canonicalRoutes.latam.dsa },
-        { label: "Gestion de contenido", href: canonicalRoutes.latam.connect },
-        { label: "Asistente de compra", href: canonicalRoutes.latam.assistant },
+        { label: "Gestion de contenido (PIM)", href: canonicalRoutes.latam.connect },
       ],
       Recursos: [
         { label: "Recursos", href: canonicalRoutes.latam.recursos },
@@ -270,7 +265,7 @@ export const switcherMap: Record<string, Partial<Record<MarketKey, string>>> = {
 
 export const exactRedirects: Record<string, string> = {
   "/map-monitoring-and-enforcement": canonicalRoutes.usa.map,
-  "/assistant": canonicalRoutes.latam.assistant,
+  "/assistant": canonicalRoutes.latam.home,
   "/blog-omnitok": canonicalRoutes.latam.blog,
   "/content": canonicalRoutes.latam.content,
   "/connect": canonicalRoutes.latam.connect,
@@ -294,11 +289,13 @@ export const exactRedirects: Record<string, string> = {
   "/tos": canonicalRoutes.usa.termsOfService,
   "/webinar-la-experiencia-digital-hoy-define-la-decision-de-compra":
     canonicalRoutes.latam.recursos,
-  "/plataforma/assistant": canonicalRoutes.latam.assistant,
+  "/plataforma/assistant": canonicalRoutes.latam.home,
   "/plataforma/content": canonicalRoutes.latam.content,
   "/plataforma/connect": canonicalRoutes.latam.connect,
   "/plataforma/digital-shelf-analytics": canonicalRoutes.latam.dsa,
-  "/es/plataforma/assistant": canonicalRoutes.latam.assistant,
+  "/es/plataforma/assistant": canonicalRoutes.latam.home,
+  // Página Assistant eliminada del sitio — la URL antigua redirige al home LATAM.
+  "/es/asistente-de-compra": canonicalRoutes.latam.home,
   "/es/plataforma/content": canonicalRoutes.latam.content,
   "/es/plataforma/connect": canonicalRoutes.latam.connect,
   "/es/plataforma/digital-shelf-analytics": canonicalRoutes.latam.dsa,
@@ -307,11 +304,11 @@ export const exactRedirects: Record<string, string> = {
   "/en-us/resources/blog": canonicalRoutes.usa.blog,
   // Rutas legacy en la raiz del dominio que quedaron sirviendo 200 tras la
   // migracion a mercados. Mismos destinos que sus equivalentes /es del catch-all.
-  "/plataforma": canonicalRoutes.latam.home,
+  "/plataforma": canonicalRoutes.latam.dsa,
   "/soluciones": canonicalRoutes.latam.home,
-  "/soluciones/marketplaces": canonicalRoutes.latam.home,
-  "/soluciones/gestion-catalogo": canonicalRoutes.latam.home,
-  "/soluciones/optimizacion-pdps": canonicalRoutes.latam.home,
+  "/soluciones/marketplaces": canonicalRoutes.latam.dsa,
+  "/soluciones/gestion-catalogo": canonicalRoutes.latam.connect,
+  "/soluciones/optimizacion-pdps": canonicalRoutes.latam.content,
   "/soluciones/analytics": canonicalRoutes.latam.dsa,
   "/industrias": canonicalRoutes.latam.home,
   "/industrias/consumer-goods": canonicalRoutes.latam.home,

@@ -246,10 +246,31 @@ function parseNodes(rawText: string): ContentNode[] {
 
     if (!lines.length) continue;
 
+    // Encabezados explícitos estilo markdown (## / ###) para posts editoriales nuevos
+    if (lines.length === 1 && /^###\s+/.test(lines[0])) {
+      nodes.push({ type: "subheading", text: normalizeSpacing(lines[0].replace(/^###\s+/, "")) });
+      continue;
+    }
+
+    if (lines.length === 1 && /^##\s+/.test(lines[0])) {
+      nodes.push({ type: "heading", text: normalizeSpacing(lines[0].replace(/^##\s+/, "")) });
+      continue;
+    }
+
     if (lines.every((line) => isListItem(line))) {
       nodes.push({
         type: "list",
         items: lines.map((line) => normalizeSpacing(line.replace(/^(-|\d+\.)\s+/, ""))),
+      });
+      continue;
+    }
+
+    // Párrafo introductorio con ":" seguido inmediatamente de una lista (mismo bloque)
+    if (lines.length >= 2 && /:$/.test(lines[0]) && !isListItem(lines[0]) && lines.slice(1).every(isListItem)) {
+      nodes.push({ type: "paragraph", text: normalizeSpacing(lines[0]) });
+      nodes.push({
+        type: "list",
+        items: lines.slice(1).map((line) => normalizeSpacing(line.replace(/^(-|\d+\.)\s+/, ""))),
       });
       continue;
     }

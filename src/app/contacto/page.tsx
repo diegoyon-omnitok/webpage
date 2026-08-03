@@ -114,7 +114,7 @@ export default function ContactoPage() {
             title: "Gestión de contenido de producto",
             description: "Centraliza información de producto y publica con menos fricción en múltiples canales.",
             href: canonicalRoutes.latam.connect,
-            anchor: "Conoce Omnitok Connect",
+            anchor: "Conoce Omnitok PIM",
           },
           {
             title: "Digital Shelf Analytics",

@@ -6,7 +6,6 @@ import ContactoPage from "@/app/contacto/page";
 import SuscripcionPage from "@/app/suscripcion/page";
 import ContentPage from "@/app/plataforma/content/page";
 import ConnectPage from "@/app/plataforma/connect/page";
-import AssistantPage from "@/app/plataforma/assistant/page";
 import DigitalShelfAnalyticsPage from "@/app/plataforma/digital-shelf-analytics/page";
 import NosotrosPage from "@/app/nosotros/page";
 import RecursosPage from "@/app/recursos/page";
@@ -58,22 +57,6 @@ const latamPages: Record<string, PageDefinition> = {
       "marcas en retailers y marketplaces",
     ],
     alternates: marketAlternates.home,
-  },
-  "asistente-de-compra": {
-    component: AssistantPage,
-    manualTitle: "Asistente de Compra para Ecommerce | Omnitok",
-    manualDescription:
-      "Ayuda a tus shoppers a elegir mejor con un asistente de compra para ecommerce. Responde preguntas, recomienda productos y mejora la conversión en tus PDP.",
-    keywords: [
-      "asistente de compra para ecommerce",
-      "asistente virtual para ecommerce",
-      "chatbot para ecommerce",
-      "chatbot de ventas para ecommerce",
-      "recomendador de productos con IA",
-      "asistente en pagina de producto",
-      "chat para aumentar conversion ecommerce",
-      "asistente virtual para PDP",
-    ],
   },
   "contenido-enriquecido": {
     component: ContentPage,
@@ -200,7 +183,9 @@ const latamPages: Record<string, PageDefinition> = {
 };
 
 const latamRedirects: Record<string, string> = {
-  "plataforma/assistant": canonicalRoutes.latam.assistant,
+  // Página Assistant eliminada — redirige al home LATAM.
+  "asistente-de-compra": canonicalRoutes.latam.home,
+  "plataforma/assistant": canonicalRoutes.latam.home,
   "plataforma/content": canonicalRoutes.latam.content,
   "plataforma/connect": canonicalRoutes.latam.connect,
   "plataforma/digital-shelf-analytics": canonicalRoutes.latam.dsa,

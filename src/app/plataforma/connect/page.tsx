@@ -14,7 +14,7 @@ import { canonicalRoutes } from "@/lib/markets";
 import { productHeroSection, sectionViewport } from "@/lib/sectionViewport";
 
 export const metadata: Metadata = {
-  title: "Gestiona y distribuye tu contenido de producto | Omnitok Connect",
+  title: "Gestiona y distribuye tu contenido de producto | Omnitok PIM",
   description:
     "Centraliza, adapta y distribuye tu contenido de producto a retailers y marketplaces. Reduce trabajo manual y mejora la consistencia entre canales.",
 };
@@ -23,7 +23,7 @@ export default function ConnectPage() {
   return (
     <>
       <ProductSchema
-        name="Omnitok Connect"
+        name="Omnitok PIM"
         description="Centraliza, adapta y distribuye tu contenido de producto a retailers y marketplaces. Reduce trabajo manual y mejora la consistencia entre canales."
         path={canonicalRoutes.latam.connect}
         locale="es"
@@ -37,14 +37,14 @@ export default function ConnectPage() {
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#6EC1E4]/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-6 lg:pt-10 pb-0">
           <div className="grid lg:grid-cols-2 gap-12 lg:items-stretch">
             <div className="self-start flex flex-col items-start pb-10 lg:pb-14">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/20 border border-accent/30 mb-5">
-                <Package size={13} className="text-accent" />
-                <span className="text-xs font-semibold text-white">Omnitok Connect</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#6EC1E4]/15 border border-[#6EC1E4]/40 mb-5">
+                <Package size={13} className="text-[#6EC1E4]" />
+                <span className="text-xs font-semibold text-white">Omnitok PIM</span>
               </div>
               <h1 className="text-[2rem] sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
                 Gestión de contenido de producto: centraliza y distribuye a retailers y marketplaces
@@ -67,8 +67,8 @@ export default function ConnectPage() {
             <div className="relative flex items-end justify-center lg:justify-end w-full min-w-0 pl-0 lg:pl-2 self-end">
               <Image
                 src="/plataforma/connect/page-banner-connect-nobg.png"
-                alt="Omnitok Connect — gestión centralizada de contenido de producto para retailers"
-                title="Omnitok Connect — distribución de información de producto a múltiples canales digitales"
+                alt="Omnitok PIM — gestión centralizada de contenido de producto para retailers"
+                title="Omnitok PIM — distribución de información de producto a múltiples canales digitales"
                 width={1600}
                 height={1000}
                 className="block h-auto w-full max-w-[min(100%,22rem)] sm:max-w-[min(100%,30rem)] lg:max-w-[min(100%,48rem)] xl:max-w-[min(100%,54rem)] object-contain object-center lg:object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 origin-center lg:origin-right lg:[mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)]"
@@ -91,7 +91,7 @@ export default function ConnectPage() {
       <section className={`${sectionViewport} py-16 lg:py-20 relative overflow-hidden bg-white`}>
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 w-full">
           <div className="text-center mb-16">
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#FF177B" }}>El problema</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#1F87B5" }}>El problema</p>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 max-w-4xl mx-auto leading-tight">
               Reduce trabajo manual en retailers y marketplaces
             </h2>
@@ -103,7 +103,7 @@ export default function ConnectPage() {
           {/* Timeline */}
           <div className="relative">
             {/* Connecting line */}
-            <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5" style={{ background: "linear-gradient(90deg, #FF177B 0%, #4D4A9D 100%)" }} />
+            <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5" style={{ background: "linear-gradient(90deg, #6EC1E4 0%, #4D4A9D 100%)" }} />
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               {[

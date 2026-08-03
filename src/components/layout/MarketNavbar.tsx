@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, LogIn } from "lucide-react";
 import type { MarketKey } from "@/lib/markets";
 import { marketConfigs } from "@/lib/markets";
 import MarketSwitcher from "./MarketSwitcher";
@@ -15,6 +15,7 @@ type MarketNavbarProps = {
 
 export default function MarketNavbar({ market }: MarketNavbarProps) {
   const config = marketConfigs[market];
+  const loginLabel = market === "usa" ? "Log in" : "Iniciar sesión";
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -158,8 +159,19 @@ export default function MarketNavbar({ market }: MarketNavbarProps) {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
           <MarketSwitcher currentMarket={market} inverted={!isScrolled} />
+          <Link
+            href="/biblioteca/login"
+            className={`flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+              isScrolled
+                ? "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                : "text-white/90 hover:bg-white/10 hover:text-white"
+            }`}
+          >
+            <LogIn size={16} />
+            {loginLabel}
+          </Link>
           <Link
             href={config.ctaHref}
             className="rounded-xl px-5 py-2 text-sm font-semibold text-white shadow-sm transition-opacity gradient-brand hover:opacity-90"
@@ -232,6 +244,15 @@ export default function MarketNavbar({ market }: MarketNavbarProps) {
                 {item.label}
               </Link>
             ))}
+
+            <Link
+              href="/biblioteca/login"
+              className="flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
+              onClick={() => setMobileOpen(false)}
+            >
+              <LogIn size={16} />
+              {loginLabel}
+            </Link>
 
             <div className="flex items-center justify-between gap-3 border-t border-gray-100 pt-3">
               <MarketSwitcher currentMarket={market} />

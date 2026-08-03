@@ -86,12 +86,12 @@ export default function AnalyticsFaq() {
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
           <div className="lg:sticky lg:top-32 lg:w-72 flex-shrink-0">
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#FF177B" }}>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#393689" }}>
               FAQ
             </p>
             <h6 className="text-3xl font-bold text-gray-900 leading-snug">Preguntas frecuentes</h6>
             <p className="mt-4 text-sm text-gray-500 leading-relaxed">Todo lo que necesitas saber sobre Digital Shelf Analytics.</p>
-            <div className="mt-6 w-12 h-1 rounded-full" style={{ background: "linear-gradient(90deg, #FF177B, #4D4A9D)" }} />
+            <div className="mt-6 w-12 h-1 rounded-full" style={{ background: "linear-gradient(90deg, #393689, #FF177B)" }} />
           </div>
 
           <div className="flex-1 space-y-3">
@@ -104,13 +104,13 @@ export default function AnalyticsFaq() {
                     onClick={() => setOpen(isOpen ? null : i)}
                     className="w-full flex items-center gap-4 px-6 py-5 text-left transition-all duration-300"
                     style={{
-                      background: isOpen ? "linear-gradient(135deg, #FF177B 0%, #4D4A9D 100%)" : "#ffffff",
+                      background: isOpen ? "linear-gradient(135deg, #393689 0%, #4D4A9D 100%)" : "#ffffff",
                       border: isOpen ? "none" : "1px solid rgba(77,74,157,0.12)",
                     }}
                   >
                     <span
                       className="flex-shrink-0 text-xs font-bold tabular-nums w-6"
-                      style={{ color: isOpen ? "rgba(255,255,255,0.7)" : "#FF177B" }}
+                      style={{ color: isOpen ? "rgba(255,255,255,0.7)" : "#393689" }}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>

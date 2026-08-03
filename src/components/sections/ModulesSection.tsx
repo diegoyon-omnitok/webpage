@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { LayoutTemplate, Package, Bot, BarChart3, ArrowRight } from "lucide-react";
+import { LayoutTemplate, Package, BarChart3, ArrowRight } from "lucide-react";
 import { canonicalRoutes } from "@/lib/markets";
 
 type Module = {
@@ -38,7 +38,7 @@ const modules: Module[] = [
   },
   {
     icon: Package,
-    name: "Omnitok Connect",
+    name: "Omnitok PIM",
     tagline: "Centraliza tu catálogo y distribúyelo sin trabajo manual",
     desc: "Un solo lugar para gestionar todos los atributos, descripciones e imágenes de tus productos. Sincroniza cambios en segundos a múltiples destinos.",
     href: canonicalRoutes.latam.connect,
@@ -49,20 +49,6 @@ const modules: Module[] = [
     features: ["PIM centralizado", "Sincronización multicanal", "Gestión de atributos"],
     headline: "Mejora la conversión de tus páginas de producto con contenido enriquecido y consistente en todos tus retailers.",
     longDesc: "Muchas páginas de producto no logran reflejar el valor real en los retailers. Esto afecta la conversión, genera dudas y debilita la percepción de marca.\n\nCrea fichas técnicas de productos claras, completas y enriquecidas desde un catálogo centralizado, manteniendo la misma información como descripciones, imágenes y especificaciones en todos tus retailers.",
-  },
-  {
-    icon: Bot,
-    name: "Omnitok Assistant",
-    tagline: "IA que responde al consumidor en el momento de decisión",
-    desc: "Un asistente inteligente integrado dentro del PDP que responde preguntas del consumidor, mejora la comprensión del producto y aumenta la tasa de conversión.",
-    href: canonicalRoutes.latam.assistant,
-    color: "from-[#FF177B] to-[#4D4A9D]",
-    bgLight: "bg-accent/10",
-    textColor: "text-accent",
-    hoverColor: "#E0156E",
-    features: ["Q&A automatizado", "Recomendaciones personalizadas", "Integración en PDP"],
-    headline: "Atiende, asesora y convierte desde cualquier canal digital.",
-    longDesc: "Tus clientes tienen preguntas al momento de comprar, pero muchas veces no encuentran cómo resolverlas. Esto genera fricción, dudas y abandonos de carrito.\n\nIntegra asistencia inteligente, humana o automatizada en todos tus puntos de venta digitales. Un asistente virtual con IA guía a tus clientes, resuelve dudas en tiempo real y recomienda el producto ideal para cada caso, en cualquier canal.",
   },
   {
     icon: BarChart3,

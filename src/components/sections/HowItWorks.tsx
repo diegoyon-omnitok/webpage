@@ -2,14 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Network, LayoutTemplate, Bot, BarChart2, ArrowRight } from "lucide-react";
+import { Network, LayoutTemplate, BarChart2, ArrowRight } from "lucide-react";
 import { canonicalRoutes } from "@/lib/markets";
 
 const modules = [
   {
     icon: Network,
     label: "Estructura",
-    product: "Omnitok Connect",
+    product: "Omnitok PIM",
+    productColor: "#1F87B5",
     href: canonicalRoutes.latam.connect,
     title: "Gestiona el contenido de producto desde una sola plataforma.",
     desc: "Centraliza y adapta información de producto para retailers y marketplaces sin retrabajo.",
@@ -21,6 +22,7 @@ const modules = [
     icon: LayoutTemplate,
     label: "Contenido",
     product: "Omnitok Content",
+    productColor: "#FF177B",
     href: canonicalRoutes.latam.content,
     title: "Mejora tus páginas de producto con contenido enriquecido y consistente.",
     desc: "Lleva contenido enriquecido a cada retailer para destacar beneficios, atributos y valor de marca.",
@@ -29,20 +31,10 @@ const modules = [
     position: "right",
   },
   {
-    icon: Bot,
-    label: "Experiencia",
-    product: "Omnitok Assistant",
-    href: canonicalRoutes.latam.assistant,
-    title: "Acompaña al shopper y convierte mejor en el momento de decisión.",
-    desc: "Suma un asistente de compra para ecommerce que responda dudas y recomiende productos.",
-    detail: "Tus clientes tienen preguntas al momento de comprar, pero muchas veces no encuentran cómo resolverlas. Esto genera fricción, dudas y abandonos de carrito.\n\nIntegra asistencia inteligente, humana o automatizada en todos tus puntos de venta digitales. Un asistente virtual con IA guía a tus clientes, resuelve dudas en tiempo real y recomienda el producto ideal para cada caso, en cualquier canal.",
-    bullets: ["Reduce el abandono de carrito en el punto de compra", "Resuelve dudas del consumidor sin intervención humana", "Aumenta la confianza antes de la compra", "Mejora la experiencia en cada punto de contacto digital"],
-    position: "left",
-  },
-  {
     icon: BarChart2,
     label: "Performance",
-    product: "Digital Shelf Analytics",
+    product: "Omnitok DSA",
+    productColor: "#393689",
     href: canonicalRoutes.latam.dsa,
     title: "Convierte señales del digital shelf en acción",
     desc: "Monitorea precio, stock, contenido y visibilidad antes de que impacten tus ventas.",
@@ -71,7 +63,7 @@ function ModuleCard({ mod }: { mod: Module }) {
         </div>
         <div>
           <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand">{mod.label}</p>
-          <p className="text-xs font-bold" style={{ color: "#4D4A9D" }}>
+          <p className="text-xs font-bold" style={{ color: mod.productColor }}>
             {mod.product}
           </p>
         </div>
@@ -101,7 +93,7 @@ export default function HowItWorks() {
             Controla cómo aparece tu marca en canales digitales
           </h2>
           <p className="mt-5 text-base sm:text-lg lg:text-xl text-gray-500">
-            Omnitok conecta gestión de contenido de producto, contenido enriquecido, asistencia y digital shelf analytics para mejorar visibilidad, experiencia y conversión.
+            Omnitok Suite conecta digital shelf analytics, contenido enriquecido y gestión de contenido de producto (PIM) para mejorar visibilidad, experiencia y conversión.
           </p>
         </div>
 
@@ -145,8 +137,12 @@ export default function HowItWorks() {
                 <div className="mx-auto mb-4 flex items-center justify-center" style={{ width: "64px", height: "64px" }}>
                   <Image src="/Favicon.png" alt="Omnitok favicon — plataforma de ejecución digital" title="Omnitok" width={64} height={64} style={{ width: "64px", height: "64px", objectFit: "contain" }} />
                 </div>
-                <p className="mb-1 text-2xl font-bold text-white">Omnitok</p>
-                <p className="mb-6 text-base font-medium text-white">Product Experience Suite</p>
+                <p className="mb-1 text-2xl font-bold text-white">Omnitok Suite</p>
+                <div className="mb-6 flex items-center justify-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full" style={{ background: "#7B78CE" }} />
+                  <span className="h-2 w-2 rounded-full" style={{ background: "#FF177B" }} />
+                  <span className="h-2 w-2 rounded-full" style={{ background: "#6EC1E4" }} />
+                </div>
                 <div className="mb-5 h-px w-full" style={{ background: "linear-gradient(90deg, transparent, rgba(255,23,123,0.4), transparent)" }} />
                 <p className="text-sm leading-relaxed text-white/60">
                   Un sistema conectado que controla cómo tu producto se muestra, convierte y compite en cada retailer.

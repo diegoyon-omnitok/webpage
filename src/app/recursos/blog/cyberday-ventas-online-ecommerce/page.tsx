@@ -219,13 +219,7 @@ export default function CyberdayArticuloPage() {
                 </li>
                 <li>
                   <strong className="text-gray-900">Entrega una atención al cliente de alta calidad.</strong>{" "}
-                  Tanto el equipo humano como los{" "}
-                  <Link
-                    href={canonicalRoutes.latam.assistant}
-                    className="text-primary font-semibold underline-offset-2 hover:underline"
-                  >
-                    asistentes virtuales
-                  </Link>{" "}
+                  Tanto el equipo humano como los asistentes virtuales{" "}
                   deben estar entrenados para resolver dudas de forma rápida y empática. Si usás IA
                   Conversacional, optimizala para anticipar preguntas frecuentes y derivar casos complejos a
                   un agente humano sin fricciones.

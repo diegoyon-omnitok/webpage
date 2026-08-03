@@ -6,63 +6,63 @@ import { CombineWithLinks } from "@/components/sections/ModuleLinks";
 
 const faqs = [
   {
-    q: "¿Qué es Omnitok Connect?",
-    a: "Omnitok Connect es el módulo que centraliza la información de producto y la adapta a los formatos que necesita cada retailer o canal digital.",
+    q: "¿Qué es Omnitok PIM?",
+    a: "Omnitok PIM es el módulo que centraliza la información de producto y la adapta a los formatos que necesita cada retailer o canal digital.",
   },
   {
-    q: "¿Qué problema resuelve Omnitok Connect?",
+    q: "¿Qué problema resuelve Omnitok PIM?",
     a: "Resuelve el problema de tener información dispersa, formatos distintos por canal y procesos manuales lentos para preparar y distribuir datos de producto.",
   },
   {
-    q: "¿Qué tipo de información se puede gestionar con Omnitok Connect?",
+    q: "¿Qué tipo de información se puede gestionar con Omnitok PIM?",
     a: "Permite centralizar descripciones, atributos, imágenes y otros datos de producto para prepararlos y distribuirlos a distintos canales.",
   },
   {
-    q: "¿Omnitok Connect permite diferentes formatos para cada retailer?",
-    a: "Sí. En Omnitok Connect puedes configurar distintos formatos de exportación según los requerimientos de cada retailer.",
+    q: "¿Omnitok PIM permite diferentes formatos para cada retailer?",
+    a: "Sí. En Omnitok PIM puedes configurar distintos formatos de exportación según los requerimientos de cada retailer.",
   },
   {
     q: "¿Se puede conectar mediante API?",
-    a: "Sí. Omnitok Connect puede integrarse mediante API para facilitar el flujo de información con otros sistemas.",
+    a: "Sí. Omnitok PIM puede integrarse mediante API para facilitar el flujo de información con otros sistemas.",
   },
   {
-    q: "¿Si cambio un producto en Omnitok Connect, se actualiza automáticamente en el retail?",
-    a: "No. Omnitok Connect genera el formato de exportación listo para subir al retailer, pero no realiza el cambio automáticamente en el canal por defecto.",
+    q: "¿Si cambio un producto en Omnitok PIM, se actualiza automáticamente en el retail?",
+    a: "No. Omnitok PIM genera el formato de exportación listo para subir al retailer, pero no realiza el cambio automáticamente en el canal por defecto.",
   },
   {
     q: "¿Puedo adaptar la información según cada retailer?",
     a: "Sí. Puedes trabajar una base central de información y ajustarla según la estructura, formato o requerimientos específicos de cada canal.",
   },
   {
-    q: "¿Omnitok Connect sirve solo para retailers o también para marketplaces?",
+    q: "¿Omnitok PIM sirve solo para retailers o también para marketplaces?",
     a: "Puede adaptarse a distintos canales digitales, incluyendo retailers y marketplaces, según la lógica de carga o integración de cada uno.",
   },
   {
-    q: "¿Omnitok Connect funciona como una fuente central de información de producto?",
+    q: "¿Omnitok PIM funciona como una fuente central de información de producto?",
     a: "Sí. Uno de sus principales beneficios es funcionar como una base central para ordenar, gestionar y preparar información de producto antes de distribuirla.",
   },
   {
     q: "¿Ayuda a reducir trabajo manual?",
-    a: "Sí. Omnitok Connect reduce duplicidad de trabajo, mejora el orden operativo y acelera la preparación de información para múltiples canales.",
+    a: "Sí. Omnitok PIM reduce duplicidad de trabajo, mejora el orden operativo y acelera la preparación de información para múltiples canales.",
   },
   {
     q: "¿Se pueden manejar muchos SKUs al mismo tiempo?",
-    a: "Sí. Omnitok Connect está pensado para escalar y facilitar la gestión de catálogos amplios.",
+    a: "Sí. Omnitok PIM está pensado para escalar y facilitar la gestión de catálogos amplios.",
   },
   {
     q: "¿Cuánto demora la implementación?",
     a: "Depende de la cantidad de SKUs, canales e integraciones involucradas, pero normalmente la implementación toma entre 2 y 4 semanas.",
   },
   {
-    q: "¿Omnitok Connect reemplaza al retailer?",
-    a: "No. Omnitok Connect ayuda a estructurar y preparar mejor la información, pero la publicación final depende del proceso definido con cada retailer.",
+    q: "¿Omnitok PIM reemplaza al retailer?",
+    a: "No. Omnitok PIM ayuda a estructurar y preparar mejor la información, pero la publicación final depende del proceso definido con cada retailer.",
   },
   {
     q: "¿Qué valor aporta frente a trabajar con archivos manuales?",
     a: "Aporta orden, velocidad, consistencia y menos errores al momento de preparar y distribuir información de producto en varios canales.",
   },
   {
-    q: "¿Omnitok Connect puede convivir con otros sistemas internos?",
+    q: "¿Omnitok PIM puede convivir con otros sistemas internos?",
     a: "Sí. Dependiendo del caso, puede integrarse con sistemas existentes y complementar la operación actual sin obligar a reemplazar toda la infraestructura.",
   },
 ];
@@ -88,10 +88,10 @@ export default function ConnectFaq() {
 
           {/* Left — sticky header */}
           <div className="lg:sticky lg:top-32 lg:w-72 flex-shrink-0">
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#FF177B" }}>FAQ</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#1F87B5" }}>FAQ</p>
             <h6 className="text-3xl font-bold text-gray-900 leading-snug">Preguntas frecuentes</h6>
-            <p className="mt-4 text-sm text-gray-500 leading-relaxed">Todo lo que necesitas saber sobre Omnitok Connect.</p>
-            <div className="mt-6 w-12 h-1 rounded-full" style={{ background: "linear-gradient(90deg, #FF177B, #4D4A9D)" }} />
+            <p className="mt-4 text-sm text-gray-500 leading-relaxed">Todo lo que necesitas saber sobre Omnitok PIM.</p>
+            <div className="mt-6 w-12 h-1 rounded-full" style={{ background: "linear-gradient(90deg, #6EC1E4, #4D4A9D)" }} />
           </div>
 
           {/* Right — accordion */}
@@ -105,11 +105,11 @@ export default function ConnectFaq() {
                     onClick={() => setOpen(isOpen ? null : i)}
                     className="w-full flex items-center gap-4 px-6 py-5 text-left transition-all duration-300"
                     style={{
-                      background: isOpen ? "linear-gradient(135deg, #FF177B 0%, #4D4A9D 100%)" : "#ffffff",
+                      background: isOpen ? "linear-gradient(135deg, #1F87B5 0%, #4D4A9D 100%)" : "#ffffff",
                       border: isOpen ? "none" : "1px solid rgba(77,74,157,0.12)",
                     }}
                   >
-                    <span className="flex-shrink-0 text-xs font-bold tabular-nums w-6" style={{ color: isOpen ? "rgba(255,255,255,0.7)" : "#FF177B" }}>
+                    <span className="flex-shrink-0 text-xs font-bold tabular-nums w-6" style={{ color: isOpen ? "rgba(255,255,255,0.7)" : "#1F87B5" }}>
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className={`flex-1 text-base font-semibold leading-snug ${isOpen ? "text-white" : "text-gray-900"}`}>

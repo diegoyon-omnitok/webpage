@@ -34,7 +34,7 @@ const sections: Section[] = [
         items: [
           {
             term: "Plataforma / Omnitok",
-            text: "la suite de software de comercio digital provista bajo modalidad SaaS, en sus módulos Connect, Content, Assistant y Digital Shelf Analytics (DSA).",
+            text: "la suite de software de comercio digital provista bajo modalidad SaaS, en sus módulos PIM, Content, Assistant y Digital Shelf Analytics (DSA).",
           },
           {
             term: "Orden de Servicio (OS)",

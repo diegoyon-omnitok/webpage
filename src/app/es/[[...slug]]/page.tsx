@@ -11,6 +11,7 @@ import NosotrosPage from "@/app/nosotros/page";
 import RecursosPage from "@/app/recursos/page";
 import LatamPrivacyPolicyPage from "@/components/pages/LatamPrivacyPolicyPage";
 import LatamTermsOfUsePage from "@/components/pages/LatamTermsOfUsePage";
+import LatamServiceTermsPage from "@/components/pages/LatamServiceTermsPage";
 import MundialPage, {
   metadata as mundialMetadata,
 } from "@/app/recursos/blog/mundial-2026-ecommerce-contenido-producto/page";
@@ -38,6 +39,8 @@ type PageDefinition = {
   manualDescription?: string;
   keywords?: string[];
   alternates?: Partial<Record<MarketKey, string>>;
+  /** Para páginas no listadas: se accede solo por URL directa, sin indexar. */
+  robots?: { index: boolean; follow: boolean };
 };
 
 const latamPages: Record<string, PageDefinition> = {
@@ -141,6 +144,15 @@ const latamPages: Record<string, PageDefinition> = {
     manualDescription:
       "Condiciones que regulan el acceso y uso del sitio web de Omnitok para usuarios en América Latina.",
     alternates: marketAlternates.terms,
+  },
+  // Página NO LISTADA: solo accesible por URL directa (sin nav, sin footer,
+  // fuera del sitemap y con noindex/nofollow).
+  "terminos-y-condiciones": {
+    component: LatamServiceTermsPage,
+    manualTitle: "Términos y Condiciones del Servicio | Omnitok",
+    manualDescription:
+      "Términos y Condiciones del Servicio de la plataforma Omnitok en modalidad SaaS.",
+    robots: { index: false, follow: false },
   },
   nosotros: {
     component: NosotrosPage,
@@ -270,6 +282,7 @@ export async function generateMetadata(props: {
       locale: "es",
       alternates,
       keywords,
+      robots: entry.robots,
       openGraphImage: typeof ogImages === "string" ? ogImages : undefined,
     }),
     openGraph: {

@@ -72,9 +72,21 @@ export type Resource = {
    * Proporción con la que se muestra la portada en la landing:
    *   "portrait" (por defecto) → 4:5, para portadas tipo tapa de ebook
    *   "wide"                    → 16:9, para banners horizontales
-   * Evita que un banner 1920×1080 se recorte como si fuera una tapa vertical.
+   *   "page"                    → 4:3, para la primera página de un PDF
+   * Evita que un banner 1920×1080 se recorte como si fuera una tapa vertical,
+   * y que a la portada de un reporte se le corten el titular o las cifras.
    */
-  coverAspect?: "portrait" | "wide";
+  coverAspect?: "portrait" | "wide" | "page";
+  /**
+   * Ruta del PDF dentro de /public. Si está, el formulario entrega el archivo
+   * apenas se envía (además de registrar el lead en HubSpot). Si no está, la
+   * pantalla de éxito dice que el recurso llega por correo, y la entrega queda
+   * en manos del workflow de HubSpot.
+   *
+   * Los PDF viven en `public/recursos/pdf/` y esa carpeta está bloqueada en
+   * `robots.ts` para que el archivo no se indexe y la gente llegue por la landing.
+   */
+  file?: string;
   /** Línea corta que va bajo el título en la portada generada. */
   coverSubtitle?: string;
   /** ISO (YYYY-MM-DD). Ordena la biblioteca de más nuevo a más antiguo. */
@@ -156,11 +168,12 @@ export const resources: Resource[] = [
       "Qué tan distinta puede ser la calidad de una PDP según el canal.",
       "Por qué la ejecución se gestiona SKU por SKU y retailer por retailer.",
     ],
-    // Portada exportada del diseño de Canva "Estado del Digital shelf en Chile 2026".
-    cover: "/recursos/estado-digital-shelf-chile-2026.jpg",
+    // Portada real del reporte: primera página del PDF v3, rasterizada a 1600px.
+    cover: "/recursos/estado-digital-shelf-chile-2026-portada.jpg",
     coverAlt:
-      "Equipo de trabajo en una reunión frente a una pizarra, con el título del estudio Estado del Digital Shelf en Chile 2026",
-    coverAspect: "wide",
+      "Portada del estudio Estado del Digital Shelf en Chile 2026, con las cifras del análisis: 7.588 SKUs homologados, 807.057 observaciones, 1.050 posiciones top 10 y 291 PDPs auditadas",
+    coverAspect: "page",
+    file: "/recursos/pdf/estado-digital-shelf-chile-2026.pdf",
     // La pregunta gancho vive en el resumen, no aquí: así no se repite.
     coverSubtitle: "Ejecución digital en grandes retailers de Chile · Edición 2026",
     date: "2026-08-12",

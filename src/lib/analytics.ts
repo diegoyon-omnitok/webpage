@@ -24,6 +24,8 @@ export type ResourceEvent =
   | "ebook_cta_click"
   | "ebook_form_start"
   | "ebook_form_submit"
+  /** Clic en el botón de descarga del PDF, ya con el formulario enviado. */
+  | "ebook_download"
   | "related_resource_click";
 
 export function trackEvent(event: ResourceEvent, params: EventParams = {}): void {

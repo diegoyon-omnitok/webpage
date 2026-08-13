@@ -36,7 +36,15 @@ import { SITE_URL, canonicalRoutes } from "@/lib/markets";
 export default function LatamResourceLandingPage({ resource }: { resource: Resource }) {
   const related = getRelatedResources(resource, 3);
   const typeLabel = resourceTypeLabels[resource.type];
-  const isWideCover = resource.coverAspect === "wide";
+  // Apaisadas ocupan el ancho de la columna; verticales van más angostas.
+  const isLandscapeCover =
+    resource.coverAspect === "wide" || resource.coverAspect === "page";
+  const coverAspectClass =
+    resource.coverAspect === "page"
+      ? "aspect-[4/3]"
+      : resource.coverAspect === "wide"
+        ? "aspect-video"
+        : "aspect-[4/5]";
 
   const resourceSchema = {
     "@context": "https://schema.org",
@@ -107,10 +115,10 @@ export default function LatamResourceLandingPage({ resource }: { resource: Resou
           <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14">
             {/* Portada + qué aprenderás */}
             <div>
-              {/* Banner horizontal (16:9) o tapa vertical (4:5), según el recurso. */}
+              {/* Banner (16:9), página de PDF (4:3) o tapa vertical (4:5). */}
               <div
                 className={`mx-auto w-full lg:mx-0 ${
-                  isWideCover ? "max-w-full" : "max-w-[260px] sm:max-w-[300px]"
+                  isLandscapeCover ? "max-w-full" : "max-w-[260px] sm:max-w-[300px]"
                 }`}
               >
                 <div className="relative">
@@ -119,9 +127,7 @@ export default function LatamResourceLandingPage({ resource }: { resource: Resou
                     className="absolute inset-x-5 -bottom-2.5 h-7 rounded-3xl bg-primary/15 blur-xl"
                   />
                   <div
-                    className={`relative overflow-hidden rounded-2xl shadow-card-hover ring-1 ring-black/5 ${
-                      isWideCover ? "aspect-video" : "aspect-[4/5]"
-                    }`}
+                    className={`relative overflow-hidden rounded-2xl shadow-card-hover ring-1 ring-black/5 ${coverAspectClass}`}
                   >
                     <ResourceCover resource={resource} variant="hero" priority />
                   </div>
@@ -157,6 +163,7 @@ export default function LatamResourceLandingPage({ resource }: { resource: Resou
                 resourceTitle={resource.title}
                 resourceType={resource.type}
                 hubspotFormId={resource.hubspotFormId}
+                downloadUrl={resource.file}
               />
             </div>
           </div>

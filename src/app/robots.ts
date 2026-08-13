@@ -6,7 +6,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/preview/", "/biblioteca/"],
+      // /recursos/pdf/ guarda los PDF que se entregan tras el formulario:
+      // no deben indexarse ni competir con la landing del recurso.
+      disallow: ["/api/", "/preview/", "/biblioteca/", "/recursos/pdf/"],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,

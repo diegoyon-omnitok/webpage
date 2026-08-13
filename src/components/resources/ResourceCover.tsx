@@ -32,15 +32,20 @@ export default function ResourceCover({
   const isHero = variant === "hero";
 
   if (resource.cover) {
-    const wide = resource.coverAspect === "wide";
+    // Apaisadas ("wide" y "page") ocupan toda la columna; las verticales, no.
+    const landscape = resource.coverAspect === "wide" || resource.coverAspect === "page";
+    const ratio =
+      resource.coverAspect === "page"
+        ? { width: 1600, height: 1200 }
+        : { width: 1920, height: 1080 };
     return (
       <Image
         src={resource.cover}
         alt={resource.coverAlt ?? `Portada de ${resource.title}`}
-        width={wide ? 1920 : isHero ? 900 : 640}
-        height={wide ? 1080 : isHero ? 1160 : 820}
+        width={landscape ? ratio.width : isHero ? 900 : 640}
+        height={landscape ? ratio.height : isHero ? 1160 : 820}
         sizes={
-          wide
+          landscape
             ? "(max-width: 1024px) 92vw, 620px"
             : isHero
               ? "(max-width: 1024px) 90vw, 320px"

@@ -18,6 +18,15 @@
  *  contacto que un embed, activan los workflows y quedan en el timeline. No se
  *  crea ninguna base de datos aparte y no hace falta token ni backend propio.
  *
+ *  Entrega del archivo:
+ *  ────────────────────
+ *  Si el recurso declara `file` en `src/data/resources.ts`, el PDF se entrega
+ *  en la pantalla de éxito, después de que el envío a HubSpot salió bien. El
+ *  archivo no se enlaza desde ningún otro lugar del sitio y su carpeta está
+ *  bloqueada en `robots.ts`, así que el camino normal para llegar a él es el
+ *  formulario. Si el recurso no declara `file`, la entrega queda a cargo del
+ *  workflow de correo de HubSpot.
+ *
  *  Mientras `formId` esté vacío en `src/lib/hubspot-forms.ts`, el formulario
  *  funciona en MODO VISTA PREVIA: valida, muestra el estado de éxito y NO envía
  *  nada a ningún sitio. Sirve para revisar el diseño antes de conectar HubSpot.
@@ -29,7 +38,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Loader2, MailCheck } from "lucide-react";
+import { Download, Loader2, MailCheck } from "lucide-react";
 import {
   HUBSPOT_RESOURCE_FIELD,
   isHubSpotFormConfigured,
@@ -47,6 +56,13 @@ type ResourceDownloadFormProps = {
   resourceType: ResourceType;
   /** Form ID propio del recurso; si viene vacío se usa el genérico de recursos. */
   hubspotFormId?: string;
+  /**
+   * Ruta del PDF (`resource.file`). Si viene, el archivo se entrega en pantalla
+   * apenas se envía el formulario: el lead queda igual en HubSpot, pero la
+   * descarga no depende de que el workflow de correo esté configurado.
+   * Si no viene, la pantalla de éxito anuncia la entrega por correo.
+   */
+  downloadUrl?: string;
 };
 
 type FieldName = "firstname" | "lastname" | "email" | "company" | "jobtitle";
@@ -131,6 +147,7 @@ export default function ResourceDownloadForm({
   resourceTitle,
   resourceType,
   hubspotFormId,
+  downloadUrl,
 }: ResourceDownloadFormProps) {
   const noun = resourceNoun(resourceType); // "el ebook", "la guía"…
   const nounBare = resourceNounBare(resourceType); // "ebook", "guía"…
@@ -243,7 +260,9 @@ export default function ResourceDownloadForm({
     }
   }
 
-  /* ── Éxito: la entrega es por email, sin enlace público al PDF ── */
+  /* ── Éxito ──────────────────────────────────────────────────────────────
+     Con `downloadUrl` el PDF se entrega acá mismo. Sin él, la entrega queda
+     en el workflow de correo de HubSpot y el texto lo anuncia así.        */
   if (status === "submitted") {
     return (
       <div className="rounded-3xl border border-gray-100 bg-white p-7 shadow-card lg:p-8">
@@ -251,16 +270,46 @@ export default function ResourceDownloadForm({
           className="inline-flex h-12 w-12 items-center justify-center rounded-2xl"
           style={{ background: "rgba(255,106,170,0.12)", color: "#FF6AAA" }}
         >
-          <MailCheck size={22} />
+          {downloadUrl ? <Download size={22} /> : <MailCheck size={22} />}
         </div>
         <h2 className="mt-5 text-2xl font-bold text-gray-900">¡Listo!</h2>
-        <p className="mt-2 text-base font-semibold text-gray-700">
-          Te enviamos {noun} a tu correo.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-gray-600">
-          Revisa tu bandeja de entrada. Si no lo encuentras, revisa también spam o
-          promociones.
-        </p>
+
+        {downloadUrl ? (
+          <>
+            <p className="mt-2 text-base font-semibold text-gray-700">
+              {noun.charAt(0).toUpperCase() + noun.slice(1)} ya está disponible.
+            </p>
+            <a
+              href={downloadUrl}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("ebook_download", {
+                  resource_slug: ebookIdentifier,
+                  resource_title: resourceTitle,
+                })
+              }
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl gradient-brand px-6 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+            >
+              <Download size={16} /> Descargar {nounBare} en PDF
+            </a>
+            <p className="mt-4 text-sm leading-relaxed text-gray-600">
+              Se descarga en PDF y puedes compartirlo con tu equipo.
+            </p>
+          </>
+        ) : (
+          <>
+            <p className="mt-2 text-base font-semibold text-gray-700">
+              Te enviamos {noun} a tu correo.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-gray-600">
+              Revisa tu bandeja de entrada. Si no lo encuentras, revisa también spam o
+              promociones.
+            </p>
+          </>
+        )}
+
         {!connected ? (
           <p className="mt-5 rounded-xl bg-gray-50 px-4 py-3 text-xs leading-relaxed text-gray-500">
             Vista previa: el formulario todavía no está conectado a HubSpot, así que estos
@@ -278,7 +327,9 @@ export default function ResourceDownloadForm({
     <div className="rounded-3xl border border-gray-100 bg-white p-7 shadow-card lg:p-8">
       <h2 className="text-xl font-bold text-gray-900">Descarga gratis {noun}</h2>
       <p className="mt-2 text-sm leading-relaxed text-gray-600">
-        Completa tus datos y te lo enviamos por correo, sin costo.
+        {downloadUrl
+          ? "Completa tus datos y descárgalo al instante, sin costo."
+          : "Completa tus datos y te lo enviamos por correo, sin costo."}
       </p>
 
       <form onSubmit={handleSubmit} onFocus={handleFocus} noValidate className="mt-6">
@@ -332,6 +383,8 @@ export default function ResourceDownloadForm({
             <>
               <Loader2 size={16} className="animate-spin" /> Enviando…
             </>
+          ) : downloadUrl ? (
+            `Descargar ${nounBare}`
           ) : (
             `Recibir ${nounBare}`
           )}

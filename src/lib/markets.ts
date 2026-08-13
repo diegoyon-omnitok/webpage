@@ -102,6 +102,13 @@ export const marketConfigs: Record<MarketKey, MarketConfig> = {
       {
         label: "Recursos",
         items: [
+          {
+            // Apunta a la biblioteca completa. Cuando haya varios tipos de
+            // recurso publicados se puede prefiltrar con `?tipo=ebook`.
+            label: "Ebooks y guías",
+            href: canonicalRoutes.latam.recursos,
+            desc: "Descarga ebooks, guías, reportes y estudios",
+          },
           { label: "Blog", href: canonicalRoutes.latam.blog },
           { label: "Omnitok LABS", href: "https://lab.omnitok.com/", external: true },
         ],

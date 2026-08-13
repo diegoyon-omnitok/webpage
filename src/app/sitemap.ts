@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { latamBlogPosts, usaBlogPosts } from "@/lib/blog";
+import { resources, resourcePath } from "@/data/resources";
 import { SITE_URL, canonicalRoutes } from "@/lib/markets";
 
 /* ------------------------------------------------------------------ */
@@ -91,6 +92,9 @@ const staticUrls: string[] = [
 
 const allUrls = [
   ...staticUrls,
+  // Landings de la biblioteca de recursos (/es/recursos/<slug>).
+  // Se agregan solas al publicar un recurso en src/data/resources.ts.
+  ...resources.map((resource) => resourcePath(resource.slug)),
   ...latamBlogPosts.map((post) => post.path),
   ...usaBlogPosts.map((post) => post.path),
 ];

@@ -2,56 +2,13 @@
 
 import { useEffect, useId, useState } from "react";
 import type { HubSpotFormConfig } from "@/lib/hubspot-forms";
-
-declare global {
-  interface Window {
-    hbspt?: {
-      forms: {
-        create: (config: HubSpotFormConfig & { target: string }) => void;
-      };
-    };
-  }
-}
+import { loadHubSpotFormsScript } from "@/lib/hubspot-script";
 
 type HubSpotFormEmbedProps = {
   config: HubSpotFormConfig;
   className?: string;
   compact?: boolean;
 };
-
-function loadHubSpotScript() {
-  return new Promise<void>((resolve, reject) => {
-    if (window.hbspt?.forms) {
-      resolve();
-      return;
-    }
-
-    const existingScript = document.querySelector<HTMLScriptElement>('script[data-hubspot-forms="true"]');
-    if (existingScript) {
-      existingScript.addEventListener("load", () => resolve(), { once: true });
-      existingScript.addEventListener(
-        "error",
-        () => reject(new Error("Failed to load HubSpot forms script")),
-        { once: true }
-      );
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.src = "https://js.hsforms.net/forms/embed/v2.js";
-    script.async = true;
-    script.defer = true;
-    script.charset = "utf-8";
-    script.dataset.hubspotForms = "true";
-    script.addEventListener("load", () => resolve(), { once: true });
-    script.addEventListener(
-      "error",
-      () => reject(new Error("Failed to load HubSpot forms script")),
-      { once: true }
-    );
-    document.body.appendChild(script);
-  });
-}
 
 export default function HubSpotFormEmbed({ config, className, compact = false }: HubSpotFormEmbedProps) {
   const reactId = useId();
@@ -65,7 +22,7 @@ export default function HubSpotFormEmbed({ config, className, compact = false }:
     async function mountForm() {
       try {
         setStatus("loading");
-        await loadHubSpotScript();
+        await loadHubSpotFormsScript();
         if (cancelled || !window.hbspt?.forms) return;
 
         const targetNode = document.querySelector<HTMLElement>(targetSelector);

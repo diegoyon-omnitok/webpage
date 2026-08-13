@@ -8,7 +8,9 @@ import ContentPage from "@/app/plataforma/content/page";
 import ConnectPage from "@/app/plataforma/connect/page";
 import DigitalShelfAnalyticsPage from "@/app/plataforma/digital-shelf-analytics/page";
 import NosotrosPage from "@/app/nosotros/page";
-import RecursosPage from "@/app/recursos/page";
+import LatamRecursosPage from "@/components/pages/LatamRecursosPage";
+import LatamResourceLandingPage from "@/components/pages/LatamResourceLandingPage";
+import { getResourceBySlug, resourcePath } from "@/data/resources";
 import LatamPrivacyPolicyPage from "@/components/pages/LatamPrivacyPolicyPage";
 import LatamTermsOfUsePage from "@/components/pages/LatamTermsOfUsePage";
 import LatamServiceTermsPage from "@/components/pages/LatamServiceTermsPage";
@@ -169,11 +171,19 @@ const latamPages: Record<string, PageDefinition> = {
     ],
   },
   recursos: {
-    component: RecursosPage,
-    manualTitle: "Recursos de Ecommerce y Digital Shelf | Omnitok",
+    component: LatamRecursosPage,
+    manualTitle: "Recursos de eCommerce, PDP y Digital Shelf | Omnitok",
     manualDescription:
-      "Explora recursos de Omnitok sobre ejecución digital, ecommerce y contenido de producto para marcas en LATAM.",
-    keywords: ["recursos Omnitok", "recursos ecommerce", "digital shelf recursos"],
+      "Descubre ebooks, guías, estudios y análisis de Omnitok sobre eCommerce, Product Experience, PDP, Digital Shelf y retail digital.",
+    keywords: [
+      "recursos ecommerce",
+      "ebooks ecommerce",
+      "guías de digital shelf",
+      "estudios de retail digital",
+      "recursos de product experience",
+      "guía PDP ecommerce",
+      "reportes de digital shelf analytics",
+    ],
     alternates: marketAlternates.resources,
   },
   "recursos/blog/mundial-2026-ecommerce-contenido-producto": {
@@ -255,6 +265,20 @@ export async function generateMetadata(props: {
     });
   }
 
+  // Landings de la biblioteca de recursos: /es/recursos/<slug>
+  const resource = key.startsWith("recursos/")
+    ? getResourceBySlug(key.slice("recursos/".length))
+    : undefined;
+
+  if (resource) {
+    return buildMetadata({
+      title: resource.seoTitle,
+      description: resource.seoDescription,
+      path: resourcePath(resource.slug),
+      locale: "es",
+    });
+  }
+
   const entry = latamPages[key];
   if (!entry) return {};
 
@@ -310,6 +334,14 @@ export default async function LatamCatchAllPage(props: {
 
   if (latamRedirects[key]) {
     permanentRedirect(latamRedirects[key]);
+  }
+
+  // Landings de la biblioteca de recursos: /es/recursos/<slug>
+  if (key.startsWith("recursos/")) {
+    const resource = getResourceBySlug(key.slice("recursos/".length));
+    if (resource) {
+      return <LatamResourceLandingPage resource={resource} />;
+    }
   }
 
   const entry = latamPages[key];

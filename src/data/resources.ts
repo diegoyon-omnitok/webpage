@@ -168,10 +168,11 @@ export const resources: Resource[] = [
       "Qué tan distinta puede ser la calidad de una PDP según el canal.",
       "Por qué la ejecución se gestiona SKU por SKU y retailer por retailer.",
     ],
-    // Portada real del reporte: primera página del PDF v3, rasterizada a 1600px.
-    cover: "/recursos/estado-digital-shelf-chile-2026-portada.jpg",
+    // Portada real del reporte: primera página del PDF, rasterizada a 1600px.
+    // El sufijo -v2 evita que las cachés sigan sirviendo la portada anterior.
+    cover: "/recursos/estado-digital-shelf-chile-2026-portada-v2.jpg",
     coverAlt:
-      "Portada del estudio Estado del Digital Shelf en Chile 2026, con las cifras del análisis: 7.588 SKUs homologados, 807.057 observaciones, 1.050 posiciones top 10 y 291 PDPs auditadas",
+      "Portada del estudio Estado del Digital Shelf en Chile 2026: un equipo de trabajo analiza reportes impresos y gráficos en una mesa de reunión, con el título del estudio y el logo de Omnitok",
     coverAspect: "page",
     file: "/recursos/pdf/estado-digital-shelf-chile-2026.pdf",
     // La pregunta gancho vive en el resumen, no aquí: así no se repite.

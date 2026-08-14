@@ -52,7 +52,16 @@ export default function ResourceCover({
               : "(max-width: 640px) 90vw, 360px"
         }
         priority={priority}
-        className="h-full w-full object-cover"
+        /**
+         * Las portadas "page" son la primera página de un PDF: recortarlas
+         * corta el titular o el pie con el logo. Se muestran completas y
+         * centradas; el resto sigue rellenando el contenedor.
+         */
+        className={
+          resource.coverAspect === "page"
+            ? "h-full w-full bg-gray-50 object-contain"
+            : "h-full w-full object-cover"
+        }
       />
     );
   }

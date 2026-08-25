@@ -9,6 +9,7 @@ import ConnectFaq from "./ConnectFaq";
 import FinalCTA from "@/components/sections/FinalCTA";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
 import RelatedLinksSection from "@/components/seo/RelatedLinksSection";
+import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
 import ProductSchema from "@/components/seo/ProductSchema";
 import { canonicalRoutes } from "@/lib/markets";
 import { productHeroSection, sectionViewport } from "@/lib/sectionViewport";
@@ -85,6 +86,13 @@ export default function ConnectPage() {
       </section>
 
       <ClientsBar />
+
+      <SeoBreadcrumbs
+        items={[
+          { label: "Inicio", href: canonicalRoutes.latam.home },
+          { label: "Gestión de contenido de producto" },
+        ]}
+      />
 
 
       {/* Pain points timeline */}

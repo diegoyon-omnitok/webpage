@@ -28,7 +28,7 @@ const testimonials = [
       "Con Omnitok logramos ordenar y hacer más eficiente la administración del contenido, centralizando la gestión y facilitando la actualización de fichas de producto de forma más consistente entre los distintos canales. Hemos visto una mejora en la implementación y gestión de contenidos, además de una comunicación más ordenada entre equipos y retailers. Destacamos mucho la disposición del equipo y el acompañamiento constante durante el proceso.",
     name: "Andrés Morales",
     role: "Digital Marketing Head",
-    company: "Hisense Chile",
+    company: "Hisense",
     photo: "/testimonials/andres-morales.jpg",
   },
   {
@@ -36,7 +36,7 @@ const testimonials = [
       "Trabajar con Omnitok nos permitió optimizar la implementación de contenido in-page, mejorando significativamente la presentación de nuestros productos. Logramos fortalecer nuestra presencia de marca dentro del ecommerce, entregar una experiencia más completa e informativa al consumidor y contar con fichas de producto más atractivas, capaces de comunicar de mejor manera los beneficios y diferenciales de nuestros productos. Destacamos el acompañamiento del equipo, la rapidez en la gestión y la facilidad para implementar soluciones alineadas con nuestras necesidades.",
     name: "Josefa Ode",
     role: "Head of Marketing",
-    company: "Caixun Chile",
+    company: "Caixun",
     photo: "/testimonials/josefa-ode.jpg",
   },
 ];

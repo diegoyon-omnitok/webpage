@@ -6,7 +6,7 @@ import { canonicalRoutes } from "@/lib/markets";
 
 export default function SuscripcionPage() {
   return (
-    <main className="min-h-screen pt-28 pb-20 bg-white">
+    <div className="min-h-screen pt-28 pb-20 bg-white">
       <div className="max-w-lg mx-auto px-6">
 
         {/* Migas */}
@@ -41,6 +41,6 @@ export default function SuscripcionPage() {
           Al suscribirte aceptas recibir emails con contenido del blog de Omnitok. Puedes darte de baja cuando quieras.
         </p>
       </div>
-    </main>
+    </div>
   );
 }

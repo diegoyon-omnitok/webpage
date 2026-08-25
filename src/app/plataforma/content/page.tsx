@@ -8,6 +8,7 @@ import FaqAccordion from "./FaqAccordion";
 import FinalCTA from "@/components/sections/FinalCTA";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
 import RelatedLinksSection from "@/components/seo/RelatedLinksSection";
+import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
 import ProductSchema from "@/components/seo/ProductSchema";
 import { canonicalRoutes } from "@/lib/markets";
 import { LayoutTemplate, ArrowRight, Repeat, Folders, XCircle, TrendingDown } from "lucide-react";
@@ -84,6 +85,13 @@ export default function ContentPage() {
       </section>
 
       <ClientsBar />
+
+      <SeoBreadcrumbs
+        items={[
+          { label: "Inicio", href: canonicalRoutes.latam.home },
+          { label: "Contenido enriquecido" },
+        ]}
+      />
 
 
       <section className={`${sectionViewport} py-16 lg:py-20 relative overflow-hidden bg-white`}>

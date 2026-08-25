@@ -89,7 +89,7 @@ export default function ConnectFaq() {
           {/* Left — sticky header */}
           <div className="lg:sticky lg:top-32 lg:w-72 flex-shrink-0">
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#1F87B5" }}>FAQ</p>
-            <h6 className="text-3xl font-bold text-gray-900 leading-snug">Preguntas frecuentes</h6>
+            <h2 className="text-3xl font-bold text-gray-900 leading-snug">Preguntas frecuentes</h2>
             <p className="mt-4 text-sm text-gray-500 leading-relaxed">Todo lo que necesitas saber sobre Omnitok PIM.</p>
             <div className="mt-6 w-12 h-1 rounded-full" style={{ background: "linear-gradient(90deg, #6EC1E4, #4D4A9D)" }} />
           </div>

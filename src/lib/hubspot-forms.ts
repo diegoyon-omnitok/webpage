@@ -7,8 +7,8 @@ export type HubSpotFormConfig = {
 /* ══════════════════════════════════════════════════════════════════════════
    HUBSPOT · IDs de formularios
    ──────────────────────────────────────────────────────────────────────────
-   Portal LATAM (omnitok.com / mercado /es): 45476524
-   Portal USA   (mercado /en-us):            47201087
+   Portal LATAM (omnitok.com / mercados /es, /br y /en-us): 45476524
+   (El portal USA 47201087 dejó de usarse en agosto 2026.)
 
    Para agregar un formulario nuevo: crearlo en HubSpot, copiar el Form ID
    (Marketing → Formularios → Compartir → embed) y pegarlo abajo. La región
@@ -42,19 +42,31 @@ export const hubspotForms = {
     formId: "2166cd8f-dfbc-4981-982c-aa56bb1aa6af",
     region: "na1",
   },
+  brasilContact: {
+    portalId: "45476524",
+    formId: "ad8ec278-db57-4b99-92e1-9811e686a2c7",
+    region: "na1",
+  },
+  brasilNewsletter: {
+    portalId: "45476524",
+    formId: "a89de4db-ad26-4c44-abd5-09d904b80c24",
+    region: "na1",
+  },
+  // Los tres formularios USA apuntan al mismo form del portal 45476524
+  // (unificado en agosto 2026; antes vivían en el portal 47201087).
   usaContact: {
-    portalId: "47201087",
-    formId: "6455f60f-f38d-4b79-bc59-ac83604c8256",
+    portalId: "45476524",
+    formId: "136a5ca8-5c6d-42bc-8fcf-655f043bb9fc",
     region: "na1",
   },
   usaEbook: {
-    portalId: "47201087",
-    formId: "aaa7d0ec-18bf-4ca5-90fe-c968ae7ac84f",
+    portalId: "45476524",
+    formId: "136a5ca8-5c6d-42bc-8fcf-655f043bb9fc",
     region: "na1",
   },
   usaNewsletter: {
-    portalId: "47201087",
-    formId: "65bb24ea-6601-4982-b64d-565f29d321c2",
+    portalId: "45476524",
+    formId: "136a5ca8-5c6d-42bc-8fcf-655f043bb9fc",
     region: "na1",
   },
 } satisfies Record<string, HubSpotFormConfig>;

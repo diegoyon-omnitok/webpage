@@ -6,7 +6,7 @@ import { X, MessageCircle } from "lucide-react";
 const WHATSAPP_NUMBER = "56935388670";
 
 type WhatsAppWidgetProps = {
-  locale?: "es" | "en";
+  locale?: "es" | "en" | "pt";
 };
 
 export default function WhatsAppWidget({ locale = "es" }: WhatsAppWidgetProps) {
@@ -22,14 +22,23 @@ export default function WhatsAppWidget({ locale = "es" }: WhatsAppWidgetProps) {
           defaultMessage: "Hi Omnitok, I'd like to learn more about the platform.",
           bubbleLabel: "Chat with us",
         }
-      : {
-          title: "¿Necesitas ayuda?",
-          subtitle: "Escríbenos por WhatsApp y nos comunicaremos contigo.",
-          inputPlaceholder: "Escribe tu mensaje...",
-          cta: "Iniciar chat",
-          defaultMessage: "Hola Omnitok, me gustaría saber más sobre la plataforma.",
-          bubbleLabel: "Habla con nosotros",
-        };
+      : locale === "pt"
+        ? {
+            title: "Precisa de ajuda?",
+            subtitle: "Fale com a gente pelo WhatsApp e retornaremos em seguida.",
+            inputPlaceholder: "Escreva sua mensagem...",
+            cta: "Iniciar conversa",
+            defaultMessage: "Olá Omnitok, gostaria de saber mais sobre a plataforma.",
+            bubbleLabel: "Fale conosco",
+          }
+        : {
+            title: "¿Necesitas ayuda?",
+            subtitle: "Escríbenos por WhatsApp y nos comunicaremos contigo.",
+            inputPlaceholder: "Escribe tu mensaje...",
+            cta: "Iniciar chat",
+            defaultMessage: "Hola Omnitok, me gustaría saber más sobre la plataforma.",
+            bubbleLabel: "Habla con nosotros",
+          };
 
   const [message, setMessage] = useState(t.defaultMessage);
 
@@ -107,7 +116,11 @@ export default function WhatsAppWidget({ locale = "es" }: WhatsAppWidgetProps) {
             <div className="rounded-lg rounded-tl-none bg-white shadow-sm px-3 py-2 max-w-[85%]">
               <p className="text-xs text-gray-700 leading-relaxed">{t.title}</p>
               <p className="text-[10px] text-gray-400 mt-1">
-                {locale === "en" ? "Usually replies in minutes" : "Respondemos en minutos"}
+                {locale === "en"
+                  ? "Usually replies in minutes"
+                  : locale === "pt"
+                    ? "Respondemos em minutos"
+                    : "Respondemos en minutos"}
               </p>
             </div>
           </div>

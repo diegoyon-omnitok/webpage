@@ -15,7 +15,7 @@ export default function MarketShell({ market, children }: MarketShellProps) {
       <MarketNavbar market={market} />
       <main>{children}</main>
       <MarketFooter market={market} />
-      <WhatsAppWidget locale={market === "usa" ? "en" : "es"} />
+      <WhatsAppWidget locale={market === "usa" ? "en" : market === "brasil" ? "pt" : "es"} />
     </>
   );
 }

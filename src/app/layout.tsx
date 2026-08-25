@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     languages: {
       es: "/es",
       "en-US": "/en-us",
+      "pt-BR": "/br",
       "x-default": "/es",
     },
   },
@@ -59,6 +60,7 @@ export default async function RootLayout({
   const headerStore = await headers();
   const htmlLang = headerStore.get("x-omni-lang") ?? "en";
   const isUSA = htmlLang === "en" || htmlLang === "en-US";
+  const isBrasil = htmlLang === "pt-BR";
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -76,13 +78,19 @@ export default async function RootLayout({
     ],
     description: isUSA
       ? "Omnitok helps brands monitor MAP violations, detect unauthorized sellers and gain digital shelf visibility across retailers and marketplaces."
-      : "Omnitok ayuda a marcas a mejorar su ejecucion digital en retailers y marketplaces. Contenido enriquecido, gestion de producto y digital shelf analytics.",
+      : isBrasil
+        ? "A Omnitok ajuda marcas a melhorar sua execução digital em varejistas e marketplaces. Conteúdo enriquecido, gestão de produto e digital shelf analytics."
+        : "Omnitok ayuda a marcas a mejorar su ejecucion digital en retailers y marketplaces. Contenido enriquecido, gestion de producto y digital shelf analytics.",
   };
 
   const siteNavSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: isUSA ? "Omnitok USA Navigation" : "Omnitok LATAM Navigation",
+    name: isUSA
+      ? "Omnitok USA Navigation"
+      : isBrasil
+        ? "Omnitok Brasil Navigation"
+        : "Omnitok LATAM Navigation",
     itemListElement: isUSA
       ? [
           { "@type": "SiteNavigationElement", position: 1, name: "Home", url: `${SITE_URL}/en-us` },
@@ -91,14 +99,23 @@ export default async function RootLayout({
           { "@type": "SiteNavigationElement", position: 4, name: "Contact", url: `${SITE_URL}/en-us/contact` },
           { "@type": "SiteNavigationElement", position: 5, name: "Blog", url: `${SITE_URL}/en-us/blog` },
         ]
-      : [
-          { "@type": "SiteNavigationElement", position: 1, name: "Inicio", url: `${SITE_URL}/es` },
-          { "@type": "SiteNavigationElement", position: 2, name: "Contenido Enriquecido", url: `${SITE_URL}/es/contenido-enriquecido` },
-          { "@type": "SiteNavigationElement", position: 3, name: "Digital Shelf Analytics", url: `${SITE_URL}/es/digital-shelf-analytics` },
-          { "@type": "SiteNavigationElement", position: 4, name: "Gestion de Contenido", url: `${SITE_URL}/es/gestion-de-contenido-de-producto` },
-          { "@type": "SiteNavigationElement", position: 5, name: "Contacto", url: `${SITE_URL}/es/contacto` },
-          { "@type": "SiteNavigationElement", position: 6, name: "Blog", url: `${SITE_URL}/es/blog` },
-        ],
+      : isBrasil
+        ? [
+            { "@type": "SiteNavigationElement", position: 1, name: "Início", url: `${SITE_URL}/br` },
+            { "@type": "SiteNavigationElement", position: 2, name: "Conteúdo Enriquecido", url: `${SITE_URL}/br/conteudo-enriquecido` },
+            { "@type": "SiteNavigationElement", position: 3, name: "Digital Shelf Analytics", url: `${SITE_URL}/br/digital-shelf-analytics` },
+            { "@type": "SiteNavigationElement", position: 4, name: "Gestão de Conteúdo", url: `${SITE_URL}/br/gestao-de-conteudo-de-produto` },
+            { "@type": "SiteNavigationElement", position: 5, name: "Contato", url: `${SITE_URL}/br/contato` },
+            { "@type": "SiteNavigationElement", position: 6, name: "Blog", url: `${SITE_URL}/br/blog` },
+          ]
+        : [
+            { "@type": "SiteNavigationElement", position: 1, name: "Inicio", url: `${SITE_URL}/es` },
+            { "@type": "SiteNavigationElement", position: 2, name: "Contenido Enriquecido", url: `${SITE_URL}/es/contenido-enriquecido` },
+            { "@type": "SiteNavigationElement", position: 3, name: "Digital Shelf Analytics", url: `${SITE_URL}/es/digital-shelf-analytics` },
+            { "@type": "SiteNavigationElement", position: 4, name: "Gestion de Contenido", url: `${SITE_URL}/es/gestion-de-contenido-de-producto` },
+            { "@type": "SiteNavigationElement", position: 5, name: "Contacto", url: `${SITE_URL}/es/contacto` },
+            { "@type": "SiteNavigationElement", position: 6, name: "Blog", url: `${SITE_URL}/es/blog` },
+          ],
   };
 
   const GA_ID = "G-Z26M7SM2Z7";

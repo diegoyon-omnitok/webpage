@@ -1,0 +1,88 @@
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { canonicalRoutes } from "@/lib/markets";
+
+export default function HeroSection() {
+  return (
+    <section className="relative flex-1 min-h-0 w-full gradient-hero flex flex-col overflow-hidden pt-20 sm:pt-24 lg:pt-12 pb-0">
+      {/* Background grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Glow effects */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full flex-1 flex flex-col min-h-0 pt-4 sm:pt-6 lg:pt-8 pb-0">
+        <div className="grid flex-1 min-h-0 lg:grid-cols-2 gap-8 lg:gap-20 xl:gap-24 lg:items-stretch">
+          {/* Left column */}
+          <div className="animate-slide-up self-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 mb-6">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <span className="text-xs font-medium text-white/80">
+                Execução digital para marcas no Brasil e na América Latina
+              </span>
+            </div>
+
+            <h1 className="text-[2rem] sm:text-5xl lg:text-[3.25rem] font-bold text-white leading-[1.15] tracking-tight">
+              Melhore a{" "}
+              <span className="text-gradient-brand">execução digital</span>{" "}
+              da sua marca em varejistas e marketplaces
+            </h1>
+
+            <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-xl">
+              Monitore sua presença digital, otimize páginas de produto e
+              centralize conteúdo com a Omnitok.
+            </p>
+
+            {/* CTA */}
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href={canonicalRoutes.brasil.contacto}
+                className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-white gradient-brand hover:opacity-90 transition-opacity shadow-lg"
+              >
+                Vamos conversar
+                <ArrowRight size={18} />
+              </Link>
+              <a
+                href="https://lab.omnitok.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-white border border-white/20 bg-white/10 hover:bg-white/15 transition-colors"
+              >
+                Diagnóstico gratuito
+              </a>
+            </div>
+
+          </div>
+
+          {/* Right column — Portada image (tamaño amplio, corrida a la derecha para el copy) */}
+          <div className="relative animate-fade-in flex items-end justify-center lg:justify-end w-full min-w-0 pl-0 lg:pl-2 self-end">
+            <Image
+              src="/Imagen principal.png"
+              alt="Omnitok: experiência de compra e execução no digital shelf em varejistas"
+              title="Plataforma Omnitok — conteúdo enriquecido, digital shelf analytics e gestão de conteúdo de produto para varejistas"
+              width={1600}
+              height={1000}
+              className="hero-image block h-auto w-full max-w-[min(100%,22rem)] sm:max-w-[min(100%,30rem)] lg:max-w-[min(100%,40rem)] xl:max-w-[min(100%,44rem)] object-contain object-center lg:object-left-bottom lg:translate-x-5 xl:translate-x-8 2xl:translate-x-12 lg:translate-y-[10%] origin-center lg:origin-right lg:[mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)] lg:[-webkit-mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)]"
+              style={{
+                filter: "drop-shadow(0 24px 48px rgba(77,74,157,0.5))",
+              }}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+
+    </section>
+  );
+}

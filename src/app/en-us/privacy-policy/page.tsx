@@ -64,6 +64,7 @@ export const metadata: Metadata = buildMetadata({
   alternates: {
     es: marketAlternates.privacy.latam,
     "en-US": marketAlternates.privacy.usa,
+    "pt-BR": marketAlternates.privacy.brasil,
   },
 });
 

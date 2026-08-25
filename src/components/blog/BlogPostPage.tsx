@@ -7,6 +7,7 @@ import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
 import BlogContent from "@/components/blog/BlogContent";
 import { cyberDayCharts } from "@/components/blog/CyberDayCharts";
 import { digitalShelfEmbeds } from "@/components/blog/DigitalShelfEmbeds";
+import { digitalShelfEmbedsPtBr } from "@/components/markets/brasil/sections/DigitalShelfEmbedsPtBr";
 import { getSiblingPosts, type BlogRecord } from "@/lib/blog";
 import { canonicalRoutes, SITE_URL } from "@/lib/markets";
 
@@ -19,6 +20,52 @@ type BlogPostPageProps = {
   cta: ReactNode;
 };
 
+// Textos fijos de la plantilla del post, por mercado.
+const postStrings = {
+  latam: {
+    faqTitle: "Preguntas frecuentes",
+    nextStepEyebrow: "Siguiente paso",
+    nextStepTitle: "Convierte estos aprendizajes en ejecucion",
+    nextStepBody:
+      "Si tu equipo necesita mejorar contenido, consistencia digital o conversion en retailers y marketplaces, Omnitok puede ayudarte a pasar de estrategia a ejecucion.",
+    latestEyebrow: "Lee los ultimos articulos",
+    latestTitle: "Lee los ultimos articulos",
+    readArticle: "Leer artículo",
+    relatedEyebrow: "Recursos relacionados",
+    relatedTitle: "Sigue profundizando la estrategia",
+    relatedDescription:
+      "Explora las paginas y soluciones de Omnitok que complementan el tema de este articulo.",
+  },
+  usa: {
+    faqTitle: "Frequently Asked Questions",
+    nextStepEyebrow: "Next step",
+    nextStepTitle: "Connect insights with action",
+    nextStepBody:
+      "If your team is reviewing MAP enforcement, pricing visibility or unauthorized seller monitoring, Omnitok can help you operationalize the next move.",
+    latestEyebrow: "Latest articles",
+    latestTitle: "Read the latest articles",
+    readArticle: "Read article",
+    relatedEyebrow: "Related resources",
+    relatedTitle: "Keep building your strategy",
+    relatedDescription:
+      "Explore the Omnitok pages and workflows that support the themes covered in this article.",
+  },
+  brasil: {
+    faqTitle: "Perguntas frequentes",
+    nextStepEyebrow: "Próximo passo",
+    nextStepTitle: "Transforme esses aprendizados em execução",
+    nextStepBody:
+      "Se o seu time precisa melhorar conteúdo, consistência digital ou conversão em varejistas e marketplaces, a Omnitok pode ajudar a passar da estratégia para a execução.",
+    latestEyebrow: "Leia os últimos artigos",
+    latestTitle: "Leia os últimos artigos",
+    readArticle: "Ler artigo",
+    relatedEyebrow: "Recursos relacionados",
+    relatedTitle: "Continue aprofundando a estratégia",
+    relatedDescription:
+      "Explore as páginas e soluções da Omnitok que complementam o tema deste artigo.",
+  },
+} as const;
+
 export default function BlogPostPage({
   post,
   blogLabel,
@@ -28,12 +75,15 @@ export default function BlogPostPage({
   cta,
 }: BlogPostPageProps) {
   const latestArticles = getSiblingPosts(post, 3);
+  const strings = postStrings[post.market];
   const contentEmbeds =
     post.slug === "cyber-day-2026-precios-retail-chile"
       ? cyberDayCharts
       : post.slug === "por-que-medir-tu-digital-shelf-ya-no-es-opcional"
         ? digitalShelfEmbeds
-        : undefined;
+        : post.slug === "por-que-medir-seu-digital-shelf-nao-e-mais-opcional"
+          ? digitalShelfEmbedsPtBr
+          : undefined;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -134,9 +184,7 @@ export default function BlogPostPage({
 
           {post.faqItems?.length ? (
             <section className="mt-14 border-t border-gray-100 pt-10">
-              <h2 className="mb-6 text-2xl font-bold text-gray-900">
-                {post.market === "usa" ? "Frequently Asked Questions" : "Preguntas frecuentes"}
-              </h2>
+              <h2 className="mb-6 text-2xl font-bold text-gray-900">{strings.faqTitle}</h2>
               <dl className="space-y-6">
                 {post.faqItems.map((item) => (
                   <div key={item.question} className="rounded-2xl border border-gray-100 bg-gray-50/50 p-6">
@@ -150,15 +198,11 @@ export default function BlogPostPage({
 
           <div className="mt-16 rounded-3xl gradient-hero p-8 text-white shadow-card">
             <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-pink-300">
-              {post.market === "usa" ? "Next step" : "Siguiente paso"}
+              {strings.nextStepEyebrow}
             </p>
-            <h2 className="text-2xl font-bold text-white">
-              {post.market === "usa" ? "Connect insights with action" : "Convierte estos aprendizajes en ejecucion"}
-            </h2>
+            <h2 className="text-2xl font-bold text-white">{strings.nextStepTitle}</h2>
             <p className="mt-3 max-w-2xl font-[var(--font-open-sans)] text-base leading-relaxed text-white/80">
-              {post.market === "usa"
-                ? "If your team is reviewing MAP enforcement, pricing visibility or unauthorized seller monitoring, Omnitok can help you operationalize the next move."
-                : "Si tu equipo necesita mejorar contenido, consistencia digital o conversion en retailers y marketplaces, Omnitok puede ayudarte a pasar de estrategia a ejecucion."}
+              {strings.nextStepBody}
             </p>
             <div className="mt-6">{cta}</div>
           </div>
@@ -167,12 +211,10 @@ export default function BlogPostPage({
             <section className="mt-16 border-t border-gray-100 pt-14">
               <div className="mb-8">
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">
-                  {post.market === "usa" ? "Latest articles" : "Lee los ultimos articulos"}
+                  {strings.latestEyebrow}
                 </p>
                 <h2 className="mt-3 text-2xl font-bold text-gray-900 lg:text-3xl">
-                  {post.market === "usa"
-                    ? "Read the latest articles"
-                    : "Lee los ultimos articulos"}
+                  {strings.latestTitle}
                 </h2>
               </div>
 
@@ -208,7 +250,7 @@ export default function BlogPostPage({
                       </h3>
                       <p className="mt-3 text-sm leading-relaxed text-gray-500">{article.excerpt}</p>
                       <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                        {post.market === "usa" ? "Read article" : "Leer artículo"}
+                        {strings.readArticle}
                         <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
@@ -221,13 +263,9 @@ export default function BlogPostPage({
       </section>
 
       <RelatedLinksSection
-        eyebrow={post.market === "usa" ? "Related resources" : "Recursos relacionados"}
-        title={post.market === "usa" ? "Keep building your strategy" : "Sigue profundizando la estrategia"}
-        description={
-          post.market === "usa"
-            ? "Explore the Omnitok pages and workflows that support the themes covered in this article."
-            : "Explora las paginas y soluciones de Omnitok que complementan el tema de este articulo."
-        }
+        eyebrow={strings.relatedEyebrow}
+        title={strings.relatedTitle}
+        description={strings.relatedDescription}
         links={post.relatedLinks}
       />
     </>
@@ -252,6 +290,17 @@ export function LatamArticleCta() {
       className="inline-flex items-center rounded-xl bg-white/12 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur-sm transition-opacity hover:bg-white/18"
     >
       Conversemos
+    </Link>
+  );
+}
+
+export function BrasilArticleCta() {
+  return (
+    <Link
+      href={canonicalRoutes.brasil.contacto}
+      className="inline-flex items-center rounded-xl bg-white/12 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur-sm transition-opacity hover:bg-white/18"
+    >
+      Vamos conversar
     </Link>
   );
 }

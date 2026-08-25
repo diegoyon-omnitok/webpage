@@ -15,7 +15,8 @@ type MarketNavbarProps = {
 
 export default function MarketNavbar({ market }: MarketNavbarProps) {
   const config = marketConfigs[market];
-  const loginLabel = market === "usa" ? "Log in" : "Iniciar sesión";
+  const loginLabel =
+    market === "usa" ? "Log in" : market === "brasil" ? "Entrar" : "Iniciar sesión";
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);

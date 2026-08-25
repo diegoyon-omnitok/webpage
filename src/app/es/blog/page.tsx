@@ -21,6 +21,7 @@ export const metadata: Metadata = buildMetadata({
   alternates: {
     es: marketAlternates.blog.latam,
     "en-US": marketAlternates.blog.usa,
+    "pt-BR": marketAlternates.blog.brasil,
   },
 });
 

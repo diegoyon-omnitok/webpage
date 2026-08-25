@@ -13,6 +13,7 @@ export const metadata: Metadata = buildMetadata({
   alternates: {
     es: canonicalRoutes.latam.contacto,
     "en-US": canonicalRoutes.usa.contact,
+    "pt-BR": canonicalRoutes.brasil.contacto,
   },
   keywords: ["contact Omnitok", "MAP monitoring demo", "digital shelf analytics demo", "talk to sales Omnitok"],
 });

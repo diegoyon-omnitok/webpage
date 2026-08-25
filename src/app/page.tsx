@@ -5,12 +5,13 @@ import { buildMetadata } from "@/lib/markets";
 export const metadata: Metadata = buildMetadata({
   title: "Choose your market",
   description:
-    "Select the Omnitok experience that matches your market: LATAM in Spanish or United States in English.",
+    "Select the Omnitok experience that matches your market: LATAM in Spanish, Brazil in Portuguese or United States in English.",
   path: "/",
   locale: "en_US",
   alternates: {
     es: "/es",
     "en-US": "/en-us",
+    "pt-BR": "/br",
     "x-default": "/es",
   },
 });

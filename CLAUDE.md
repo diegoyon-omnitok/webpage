@@ -8,9 +8,10 @@ This file is the handoff context for any future work on this repository. Read it
 
 - Marketing website for Omnitok.
 - Built with Next.js App Router, React, TypeScript, and Tailwind CSS.
-- Serves two market experiences from one codebase:
+- Serves three market experiences from one codebase:
   - LATAM in Spanish under `/es`
   - USA in English under `/en-us`
+  - Brazil in Portuguese under `/br`
 - Main business areas in the site:
   - Product pages
   - Solutions and industries
@@ -56,7 +57,7 @@ Notes:
 
 ### Market Model
 
-The site is not using a classic i18n library. Instead, it has two explicit market experiences with their own copy, routes, metadata, and navigation.
+The site is not using a classic i18n library. Instead, it has three explicit market experiences with their own copy, routes, metadata, and navigation.
 
 - LATAM market:
   - Base path: `/es`
@@ -64,6 +65,13 @@ The site is not using a classic i18n library. Instead, it has two explicit marke
 - USA market:
   - Base path: `/en-us`
   - Language: English
+- Brazil market:
+  - Base path: `/br`
+  - Language: Brazilian Portuguese
+  - Mirrors the LATAM experience (same design/components, translated copy, PT slugs)
+  - Translated page components live in `src/components/markets/brasil/`
+  - Routed through the catch-all `src/app/br/[[...slug]]/page.tsx` plus explicit blog routes
+  - No resources library yet (`/es/recursos` has no PT equivalent; nav points to the blog)
 
 The single source of truth for this setup is:
 
@@ -88,8 +96,8 @@ That file contains:
 
 This file is critical. It handles:
 
-- market detection by cookie, geo headers, and `Accept-Language`
-- redirecting `/` to `/es/` or `/en-us/`
+- market detection by cookie, geo headers, and `Accept-Language` (country `BR` and language `pt` route to `/br`; `BR` was removed from `latamCountryCodes`)
+- redirecting `/` to `/es/`, `/en-us/` or `/br/`
 - permanent redirects from old paths to canonical paths
 - returning `410` for `/thank-you`
 - setting `x-omni-lang`, which is later used by the root layout
@@ -129,6 +137,26 @@ Important LATAM areas include:
 - `/es/blog`
 - `/es/suscripcion`
 - `/es/nosotros`
+
+### Brazil
+
+Brazil routing mirrors LATAM through:
+
+- `src/app/br/[[...slug]]/page.tsx` (catch-all: home, product pages, contato, sobre-nos, assinatura, legal pages)
+- `src/app/br/blog/page.tsx` and `src/app/br/blog/[slug]/page.tsx`
+
+Important Brazil areas include:
+
+- `/br`
+- `/br/conteudo-enriquecido`
+- `/br/gestao-de-conteudo-de-produto`
+- `/br/digital-shelf-analytics`
+- `/br/contato`
+- `/br/blog`
+- `/br/sobre-nos`
+- `/br/assinatura`
+
+Translated components live in `src/components/markets/brasil/pages/` and `.../sections/`. When editing LATAM copy in shared sections or product pages, check whether the Brazil fork needs the same change.
 
 ### USA
 
@@ -206,6 +234,10 @@ Main files:
   - `src/data/blog-posts.generated.json`
   - `src/data/blog-redirects.generated.json`
   - `src/data/blog-migration-tracker.generated.json`
+- Brazil blog data (NOT generated from the CSV — curated pt-BR translations of the LATAM posts, merged into the blog at runtime by `src/lib/blog.ts`):
+  - `src/data/blog-posts-pt-br.json`
+  - Three LATAM posts were intentionally excluded as too local: Cyber Day 2026 Chile, CyberDay contenido de producto, and fechas clave del ecommerce.
+  - If a new LATAM post is added via the CSV pipeline, translate and append it here manually to keep Brazil in sync.
 - Blog helpers:
   - `src/lib/blog.ts`
 - Blog images:

@@ -66,7 +66,13 @@ export default function MarketFooter({ market }: MarketFooterProps) {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-5 sm:flex-row lg:px-8">
           <Link
-            href={market === "latam" ? canonicalRoutes.latam.privacyPolicy : canonicalRoutes.usa.privacyPolicy}
+            href={
+              market === "latam"
+                ? canonicalRoutes.latam.privacyPolicy
+                : market === "brasil"
+                  ? canonicalRoutes.brasil.privacyPolicy
+                  : canonicalRoutes.usa.privacyPolicy
+            }
             className="text-xs text-white/40 hover:text-white/70 transition-colors"
           >
             © {new Date().getFullYear()} Omnitok. All rights reserved.

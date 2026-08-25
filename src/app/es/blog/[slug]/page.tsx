@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostPage, { LatamArticleCta } from "@/components/blog/BlogPostPage";
-import { getBlogPostBySlug, latamBlogPosts } from "@/lib/blog";
+import { getBlogPostBySlug, getTranslatedPost, latamBlogPosts } from "@/lib/blog";
 import { buildMetadata, canonicalRoutes } from "@/lib/markets";
 
 export function generateStaticParams() {
@@ -15,6 +15,8 @@ export async function generateMetadata(props: {
   const post = getBlogPostBySlug("latam", slug);
   if (!post) return {};
 
+  const translated = getTranslatedPost(post);
+
   return buildMetadata({
     title: post.seoTitle,
     description: post.metaDescription,
@@ -22,6 +24,9 @@ export async function generateMetadata(props: {
     locale: "es",
     keywords: [post.primaryKeyword, ...post.secondaryKeywords],
     openGraphImage: post.coverImage,
+    alternates: translated
+      ? { es: post.path, "pt-BR": translated.path, "x-default": post.path }
+      : undefined,
   });
 }
 

@@ -78,6 +78,7 @@ const latamPages: Record<string, PageDefinition> = {
       "rich content para ecommerce",
       "contenido enriquecido en PDP",
     ],
+    alternates: marketAlternates.content,
   },
   "gestion-de-contenido-de-producto": {
     component: ConnectPage,
@@ -94,6 +95,7 @@ const latamPages: Record<string, PageDefinition> = {
       "gestión de fichas de producto",
       "actualización de contenido en múltiples canales",
     ],
+    alternates: marketAlternates.connect,
   },
   "digital-shelf-analytics": {
     component: DigitalShelfAnalyticsPage,
@@ -246,6 +248,7 @@ function buildAlternates(entry?: Partial<Record<MarketKey, string>>) {
   return {
     ...(entry.latam ? { es: entry.latam, "x-default": entry.latam } : {}),
     ...(entry.usa ? { "en-US": entry.usa } : {}),
+    ...(entry.brasil ? { "pt-BR": entry.brasil } : {}),
   };
 }
 

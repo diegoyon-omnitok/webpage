@@ -132,16 +132,13 @@ Referencia para copy, metadata (`title` / `description`), H1/H2 y variedad seman
 | monitoreo de posicionamiento digital | DSA |
 | deteccion de quiebres de stock ecommerce | DSA |
 
-### Tier 5 — Assistant Module
+### Tier 5 — IA (nota: el módulo Assistant fue eliminado del sitio en el rebrand 2026)
 
 | Keyword | Target |
 |---------|--------|
-| asistente de compra para ecommerce | Assistant |
-| asistente virtual para ecommerce | Assistant |
-| chatbot para ecommerce | Assistant / Blog |
-| recomendador de productos ecommerce | Assistant / Blog |
 | IA para ecommerce | Blog |
 | recomendaciones de producto con IA | Blog |
+| IA conversacional para ventas | Blog |
 
 ### Tier 6 — Informational Blog (LATAM)
 
@@ -157,6 +154,57 @@ Referencia para copy, metadata (`title` / `description`), H1/H2 y variedad seman
 | como mejorar la visibilidad de productos online | Blog |
 | errores comunes en paginas de producto | Blog |
 | que es share of search | Blog |
+
+---
+
+## Brasil Market (Português)
+
+Estrategia espejo de LATAM adaptada a terminología de ecommerce brasileña
+("varejo/varejistas", "estoque", "página de produto"). El término "digital shelf"
+se mantiene en inglés (estándar del sector en Brasil).
+
+### Tier 1 — High Commercial Intent (Priority)
+
+| Keyword | Target Page | Notes |
+|---------|-------------|-------|
+| conteúdo enriquecido para ecommerce | Content (`/br/conteudo-enriquecido`) | Core product keyword |
+| conteúdo enriquecido para varejistas | Content | Channel-specific |
+| páginas de produto enriquecidas | Content | Product-level |
+| rich content para ecommerce | Content | Anglicismo usado en Brasil |
+| gestão de conteúdo de produto | PIM (`/br/gestao-de-conteudo-de-produto`) | Core module keyword |
+| centralização de informações de produto | PIM | Process keyword |
+| sindicação de conteúdo de produto | PIM | Process keyword |
+| automação de cadastro de produtos | PIM | "cadastro" es el término BR |
+| digital shelf analytics | DSA (`/br/digital-shelf-analytics`) | Module-specific |
+| monitoramento de preços | DSA | Product keyword |
+| monitoramento de preços da concorrência | DSA | Competitive angle |
+| monitoramento de preços, estoque e conteúdo | DSA | Execution keyword |
+| execução digital em varejistas | Home / DSA | Cross-module |
+| visibilidade digital em varejistas | DSA / Blog | Outcome keyword |
+| monitoramento de produtos em marketplaces | DSA | Channel-specific |
+| share of search ecommerce | DSA | Se mantiene en inglés |
+
+### Tier 2 — Informational Blog (Brasil)
+
+| Keyword | Target |
+|---------|--------|
+| o que é conteúdo enriquecido | Blog |
+| o que é digital shelf analytics | Blog |
+| como melhorar uma página de produto | Blog |
+| como aumentar conversão no ecommerce | Blog |
+| automação de conteúdo no varejo | Blog |
+| cross-selling e up-selling no ecommerce | Blog |
+| ruptura de estoque ecommerce | Blog / DSA |
+| tíquete médio ecommerce | Blog |
+| varejo omnichannel | Blog |
+| experiência de compra omnichannel | Blog |
+
+### Notas Brasil
+
+- Los posts del blog BR viven en `src/data/blog-posts-pt-br.json` (traducciones curadas de LATAM; 3 posts locales excluidos).
+- Cada post BR declara hreflang hacia su original ES y viceversa (par de traducción).
+- Retailers de ejemplo: Mercado Livre, Magazine Luiza, Americanas, Casas Bahia, Leroy Merlin, Pão de Açúcar, KaBuM!, Época Cosméticos.
+- Eventos: usar Black Friday / Dia do Consumidor / Copa do Mundo; NO usar CyberDay (Chile), Buen Fin (México) ni Hot Sale.
 
 ---
 
@@ -184,6 +232,18 @@ Referencia para copy, metadata (`title` / `description`), H1/H2 y variedad seman
 | Contact | `/es/contacto` |
 | Blog | `/es/blog` |
 
+(La ruta Assistant `/es/asistente-de-compra` fue eliminada; redirige al home LATAM.)
+
+### Brasil
+| Page | Route |
+|------|-------|
+| Home | `/br` |
+| Content | `/br/conteudo-enriquecido` |
+| PIM | `/br/gestao-de-conteudo-de-produto` |
+| DSA | `/br/digital-shelf-analytics` |
+| Contact | `/br/contato` |
+| Blog | `/br/blog` |
+
 ### USA
 | Page | Route |
 |------|-------|
@@ -195,4 +255,4 @@ Referencia para copy, metadata (`title` / `description`), H1/H2 y variedad seman
 
 ---
 
-Last updated: 2026-04-16 — Full keyword strategy with blog SEO rules and LLM optimization.
+Last updated: 2026-08-25 — Added Brasil (pt-BR) market strategy; removed Assistant module (rebrand 2026).

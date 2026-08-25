@@ -4,7 +4,7 @@ import { blogRedirectMap } from "@/lib/blog";
 export const SITE_URL = "https://omnitok.com";
 export const MARKET_COOKIE = "omnitok-market";
 
-export type MarketKey = "latam" | "usa";
+export type MarketKey = "latam" | "usa" | "brasil";
 
 export type NavItem = {
   label: string;
@@ -25,8 +25,8 @@ export type MarketConfig = {
   label: string;
   locale: string;
   htmlLang: string;
-  basePath: "/es" | "/en-us";
-  homePath: "/es" | "/en-us";
+  basePath: "/es" | "/en-us" | "/br";
+  homePath: "/es" | "/en-us" | "/br";
   ctaLabel: string;
   ctaHref: string;
   brandText: string;
@@ -49,6 +49,18 @@ export const canonicalRoutes = {
     suscripcion: "/es/suscripcion",
     privacyPolicy: "/es/politica-de-privacidad",
     termsOfUse: "/es/terminos-de-uso",
+  },
+  brasil: {
+    home: "/br",
+    content: "/br/conteudo-enriquecido",
+    connect: "/br/gestao-de-conteudo-de-produto",
+    dsa: "/br/digital-shelf-analytics",
+    nosotros: "/br/sobre-nos",
+    contacto: "/br/contato",
+    blog: "/br/blog",
+    suscripcion: "/br/assinatura",
+    privacyPolicy: "/br/politica-de-privacidade",
+    termsOfUse: "/br/termos-de-uso",
   },
   usa: {
     home: "/en-us",
@@ -143,6 +155,75 @@ export const marketConfigs: Record<MarketKey, MarketConfig> = {
       ],
     },
   },
+  brasil: {
+    key: "brasil",
+    label: "Brasil / Português",
+    locale: "pt-BR",
+    htmlLang: "pt-BR",
+    basePath: "/br",
+    homePath: canonicalRoutes.brasil.home,
+    ctaLabel: "Vamos conversar",
+    ctaHref: canonicalRoutes.brasil.contacto,
+    brandText: "Digital Shelf Execution Platform para o Brasil",
+    footerText:
+      "A plataforma de execução digital no varejo para marcas que vendem no Brasil.",
+    navGroups: [
+      {
+        label: "Produtos",
+        items: [
+          {
+            label: "Omnitok DSA",
+            href: canonicalRoutes.brasil.dsa,
+            desc: "Digital shelf analytics: monitoramento de preços, estoque e conteúdo nos varejistas",
+          },
+          {
+            label: "Omnitok Content",
+            href: canonicalRoutes.brasil.content,
+            desc: "Conteúdo enriquecido para ecommerce e varejistas",
+          },
+          {
+            label: "Omnitok PIM",
+            href: canonicalRoutes.brasil.connect,
+            desc: "Gestão de conteúdo de produto e sindicação",
+          },
+        ],
+      },
+      {
+        label: "Recursos",
+        items: [
+          { label: "Blog", href: canonicalRoutes.brasil.blog },
+          { label: "Omnitok LABS", href: "https://lab.omnitok.com/", external: true },
+        ],
+        overviewHref: canonicalRoutes.brasil.blog,
+        overviewLabel: "Ver todos os conteúdos",
+      },
+      {
+        label: "Empresa",
+        items: [
+          { label: "Sobre nós", href: canonicalRoutes.brasil.nosotros },
+          { label: "Contato", href: canonicalRoutes.brasil.contacto },
+        ],
+      },
+    ],
+    footerColumns: {
+      Plataforma: [
+        { label: "Conteúdo enriquecido", href: canonicalRoutes.brasil.content },
+        { label: "Digital Shelf Analytics", href: canonicalRoutes.brasil.dsa },
+        { label: "Gestão de conteúdo (PIM)", href: canonicalRoutes.brasil.connect },
+      ],
+      Recursos: [
+        { label: "Blog", href: canonicalRoutes.brasil.blog },
+        { label: "Omnitok LABS", href: "https://lab.omnitok.com/", external: true },
+      ],
+      Empresa: [
+        { label: "Sobre nós", href: canonicalRoutes.brasil.nosotros },
+        { label: "Contato", href: canonicalRoutes.brasil.contacto },
+        { label: "Assinatura", href: canonicalRoutes.brasil.suscripcion },
+        { label: "Política de privacidade", href: canonicalRoutes.brasil.privacyPolicy },
+        { label: "Vamos conversar", href: canonicalRoutes.brasil.contacto },
+      ],
+    },
+  },
   usa: {
     key: "usa",
     label: "United States / English",
@@ -224,14 +305,25 @@ export const marketAlternates = {
   home: {
     latam: canonicalRoutes.latam.home,
     usa: canonicalRoutes.usa.home,
+    brasil: canonicalRoutes.brasil.home,
   },
   contact: {
     latam: canonicalRoutes.latam.contacto,
     usa: canonicalRoutes.usa.contact,
+    brasil: canonicalRoutes.brasil.contacto,
   },
   dsa: {
     latam: canonicalRoutes.latam.dsa,
     usa: canonicalRoutes.usa.dsa,
+    brasil: canonicalRoutes.brasil.dsa,
+  },
+  content: {
+    latam: canonicalRoutes.latam.content,
+    brasil: canonicalRoutes.brasil.content,
+  },
+  connect: {
+    latam: canonicalRoutes.latam.connect,
+    brasil: canonicalRoutes.brasil.connect,
   },
   resources: {
     latam: canonicalRoutes.latam.recursos,
@@ -240,34 +332,49 @@ export const marketAlternates = {
   blog: {
     latam: canonicalRoutes.latam.blog,
     usa: canonicalRoutes.usa.blog,
+    brasil: canonicalRoutes.brasil.blog,
   },
   privacy: {
     latam: canonicalRoutes.latam.privacyPolicy,
     usa: canonicalRoutes.usa.privacyPolicy,
+    brasil: canonicalRoutes.brasil.privacyPolicy,
   },
   about: {
     latam: canonicalRoutes.latam.nosotros,
     usa: canonicalRoutes.usa.about,
+    brasil: canonicalRoutes.brasil.nosotros,
   },
   terms: {
     latam: canonicalRoutes.latam.termsOfUse,
     usa: canonicalRoutes.usa.termsOfService,
+    brasil: canonicalRoutes.brasil.termsOfUse,
   },
 } as const;
 
 export const switcherMap: Record<string, Partial<Record<MarketKey, string>>> = {
-  [canonicalRoutes.latam.home]: { usa: canonicalRoutes.usa.home },
-  [canonicalRoutes.usa.home]: { latam: canonicalRoutes.latam.home },
-  [canonicalRoutes.latam.contacto]: { usa: canonicalRoutes.usa.contact },
-  [canonicalRoutes.usa.contact]: { latam: canonicalRoutes.latam.contacto },
-  [canonicalRoutes.latam.dsa]: { usa: canonicalRoutes.usa.dsa },
-  [canonicalRoutes.usa.dsa]: { latam: canonicalRoutes.latam.dsa },
+  [canonicalRoutes.latam.home]: { usa: canonicalRoutes.usa.home, brasil: canonicalRoutes.brasil.home },
+  [canonicalRoutes.usa.home]: { latam: canonicalRoutes.latam.home, brasil: canonicalRoutes.brasil.home },
+  [canonicalRoutes.brasil.home]: { latam: canonicalRoutes.latam.home, usa: canonicalRoutes.usa.home },
+  [canonicalRoutes.latam.contacto]: { usa: canonicalRoutes.usa.contact, brasil: canonicalRoutes.brasil.contacto },
+  [canonicalRoutes.usa.contact]: { latam: canonicalRoutes.latam.contacto, brasil: canonicalRoutes.brasil.contacto },
+  [canonicalRoutes.brasil.contacto]: { latam: canonicalRoutes.latam.contacto, usa: canonicalRoutes.usa.contact },
+  [canonicalRoutes.latam.dsa]: { usa: canonicalRoutes.usa.dsa, brasil: canonicalRoutes.brasil.dsa },
+  [canonicalRoutes.usa.dsa]: { latam: canonicalRoutes.latam.dsa, brasil: canonicalRoutes.brasil.dsa },
+  [canonicalRoutes.brasil.dsa]: { latam: canonicalRoutes.latam.dsa, usa: canonicalRoutes.usa.dsa },
+  [canonicalRoutes.latam.content]: { brasil: canonicalRoutes.brasil.content },
+  [canonicalRoutes.brasil.content]: { latam: canonicalRoutes.latam.content },
+  [canonicalRoutes.latam.connect]: { brasil: canonicalRoutes.brasil.connect },
+  [canonicalRoutes.brasil.connect]: { latam: canonicalRoutes.latam.connect },
+  [canonicalRoutes.latam.nosotros]: { usa: canonicalRoutes.usa.about, brasil: canonicalRoutes.brasil.nosotros },
+  [canonicalRoutes.brasil.nosotros]: { latam: canonicalRoutes.latam.nosotros, usa: canonicalRoutes.usa.about },
   [canonicalRoutes.latam.recursos]: { usa: canonicalRoutes.usa.resources },
   [canonicalRoutes.usa.resources]: { latam: canonicalRoutes.latam.recursos },
-  [canonicalRoutes.latam.blog]: { usa: canonicalRoutes.usa.blog },
-  [canonicalRoutes.usa.blog]: { latam: canonicalRoutes.latam.blog },
-  [canonicalRoutes.latam.privacyPolicy]: { usa: canonicalRoutes.usa.privacyPolicy },
-  [canonicalRoutes.usa.privacyPolicy]: { latam: canonicalRoutes.latam.privacyPolicy },
+  [canonicalRoutes.latam.blog]: { usa: canonicalRoutes.usa.blog, brasil: canonicalRoutes.brasil.blog },
+  [canonicalRoutes.usa.blog]: { latam: canonicalRoutes.latam.blog, brasil: canonicalRoutes.brasil.blog },
+  [canonicalRoutes.brasil.blog]: { latam: canonicalRoutes.latam.blog, usa: canonicalRoutes.usa.blog },
+  [canonicalRoutes.latam.privacyPolicy]: { usa: canonicalRoutes.usa.privacyPolicy, brasil: canonicalRoutes.brasil.privacyPolicy },
+  [canonicalRoutes.usa.privacyPolicy]: { latam: canonicalRoutes.latam.privacyPolicy, brasil: canonicalRoutes.brasil.privacyPolicy },
+  [canonicalRoutes.brasil.privacyPolicy]: { latam: canonicalRoutes.latam.privacyPolicy, usa: canonicalRoutes.usa.privacyPolicy },
 };
 
 export const exactRedirects: Record<string, string> = {
@@ -329,10 +436,10 @@ export const exactRedirects: Record<string, string> = {
   ...blogRedirectMap,
 };
 
+// Brasil tiene su propio mercado (/br) y se detecta aparte en el proxy.
 export const latamCountryCodes = new Set([
   "AR",
   "BO",
-  "BR",
   "CL",
   "CO",
   "CR",
@@ -353,6 +460,7 @@ export const latamCountryCodes = new Set([
 
 export function getMarketFromPathname(pathname: string): MarketKey | null {
   if (pathname === "/en-us" || pathname.startsWith("/en-us/")) return "usa";
+  if (pathname === "/br" || pathname.startsWith("/br/")) return "brasil";
   if (pathname === "/es" || pathname.startsWith("/es/")) return "latam";
   return null;
 }
@@ -406,7 +514,12 @@ export function buildMetadata(input: MetadataInput): Metadata {
       description: input.description,
       url: canonical,
       siteName: "Omnitok",
-      locale: input.locale === "es" ? "es_CL" : "en_US",
+      locale:
+        input.locale === "es"
+          ? "es_CL"
+          : input.locale.toLowerCase().startsWith("pt")
+            ? "pt_BR"
+            : "en_US",
       type: "website",
       images: [input.openGraphImage ?? OG_DEFAULT_IMAGE],
     },

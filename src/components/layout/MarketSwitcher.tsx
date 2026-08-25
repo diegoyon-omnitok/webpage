@@ -38,6 +38,11 @@ export default function MarketSwitcher({
       href: getSwitcherTarget(currentPath, "latam"),
     },
     {
+      key: "brasil" as const,
+      label: marketConfigs.brasil.label,
+      href: getSwitcherTarget(currentPath, "brasil"),
+    },
+    {
       key: "usa" as const,
       label: marketConfigs.usa.label,
       href: getSwitcherTarget(currentPath, "usa"),

@@ -9,7 +9,7 @@ import {
 
 function getPreferredMarket(request: NextRequest): MarketKey | null {
   const cookieValue = request.cookies.get(MARKET_COOKIE)?.value;
-  if (cookieValue === "latam" || cookieValue === "usa") {
+  if (cookieValue === "latam" || cookieValue === "usa" || cookieValue === "brasil") {
     return cookieValue;
   }
 
@@ -19,9 +19,11 @@ function getPreferredMarket(request: NextRequest): MarketKey | null {
     request.headers.get("x-country-code");
 
   if (country === "US") return "usa";
+  if (country?.toUpperCase() === "BR") return "brasil";
   if (country && latamCountryCodes.has(country.toUpperCase())) return "latam";
 
   const acceptLanguage = request.headers.get("accept-language")?.toLowerCase() ?? "";
+  if (acceptLanguage.includes("pt")) return "brasil";
   if (acceptLanguage.includes("en-us") || acceptLanguage.includes("en")) return "usa";
   if (acceptLanguage.includes("es")) return "latam";
 
@@ -124,6 +126,10 @@ export function proxy(request: NextRequest) {
       return NextResponse.redirect(new URL("/en-us/", request.url), 307);
     }
 
+    if (preferredMarket === "brasil") {
+      return NextResponse.redirect(new URL("/br/", request.url), 307);
+    }
+
     if (preferredMarket === "latam") {
       return NextResponse.redirect(new URL("/es/", request.url), 307);
     }
@@ -137,6 +143,10 @@ export function proxy(request: NextRequest) {
 
   if (pathname === "/en-us" || pathname.startsWith("/en-us/")) {
     return nextWithLang(request, "en-US");
+  }
+
+  if (pathname === "/br" || pathname.startsWith("/br/")) {
+    return nextWithLang(request, "pt-BR");
   }
 
   return nextWithLang(request, "en");

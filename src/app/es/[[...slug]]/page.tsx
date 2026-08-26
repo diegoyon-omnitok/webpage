@@ -82,17 +82,21 @@ const latamPages: Record<string, PageDefinition> = {
   },
   "gestion-de-contenido-de-producto": {
     component: ConnectPage,
-    manualTitle: "Gestión de Contenido de Producto | Omnitok",
+    manualTitle: "Software PIM: Gestión de Contenido de Producto | Omnitok",
     manualDescription:
-      "Centraliza, adapta y distribuye tu contenido de producto a retailers y marketplaces. Reduce trabajo manual y mejora la consistencia entre canales.",
+      "Software PIM para ecommerce y retail: centraliza tu información de producto, adapta formatos por canal y distribuye fichas a retailers y marketplaces.",
     keywords: [
       "gestión de contenido de producto",
+      "software PIM",
+      "PIM para ecommerce",
+      "PIM para retail",
       "centralización de información de producto",
       "distribución de contenido de producto",
       "sindicación de contenido de producto",
       "automatización de carga de productos",
       "publicación de productos en retailers",
       "gestión de fichas de producto",
+      "catálogo de productos centralizado",
       "actualización de contenido en múltiples canales",
     ],
     alternates: marketAlternates.connect,

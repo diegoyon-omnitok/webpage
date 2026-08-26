@@ -6,6 +6,14 @@ import { CombineWithLinks } from "@/components/sections/ModuleLinks";
 
 const faqs = [
   {
+    q: "¿Qué es un software PIM?",
+    a: "Un software PIM (Product Information Management) centraliza toda la información de producto —descripciones, atributos, imágenes y datos técnicos— en una única fuente, y la prepara para distribuirla a cada canal de venta. Omnitok PIM aplica ese modelo para marcas que venden en retailers y marketplaces de Latinoamérica.",
+  },
+  {
+    q: "¿Para qué sirve un PIM en ecommerce y retail?",
+    a: "Un PIM para ecommerce y retail sirve para mantener un catálogo de productos centralizado, reducir errores en la carga y actualizar contenido en múltiples canales sin duplicar trabajo. Es la base para escalar la gestión de fichas de producto cuando se vende en varios retailers a la vez.",
+  },
+  {
     q: "¿Qué es Omnitok PIM?",
     a: "Omnitok PIM es el módulo que centraliza la información de producto y la adapta a los formatos que necesita cada retailer o canal digital.",
   },

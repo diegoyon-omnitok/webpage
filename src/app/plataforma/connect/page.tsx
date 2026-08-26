@@ -15,9 +15,9 @@ import { canonicalRoutes } from "@/lib/markets";
 import { productHeroSection, sectionViewport } from "@/lib/sectionViewport";
 
 export const metadata: Metadata = {
-  title: "Gestiona y distribuye tu contenido de producto | Omnitok PIM",
+  title: "Software PIM: Gestión de Contenido de Producto | Omnitok",
   description:
-    "Centraliza, adapta y distribuye tu contenido de producto a retailers y marketplaces. Reduce trabajo manual y mejora la consistencia entre canales.",
+    "Software PIM para ecommerce y retail: centraliza tu información de producto, adapta formatos por canal y distribuye fichas a retailers y marketplaces.",
 };
 
 export default function ConnectPage() {
@@ -25,7 +25,7 @@ export default function ConnectPage() {
     <>
       <ProductSchema
         name="Omnitok PIM"
-        description="Centraliza, adapta y distribuye tu contenido de producto a retailers y marketplaces. Reduce trabajo manual y mejora la consistencia entre canales."
+        description="Software PIM para ecommerce y retail: centraliza tu información de producto, adapta formatos por canal y distribuye fichas a retailers y marketplaces."
         path={canonicalRoutes.latam.connect}
         locale="es"
       />
@@ -51,10 +51,10 @@ export default function ConnectPage() {
                 Gestión de contenido de producto: centraliza y distribuye a retailers y marketplaces
               </h1>
               <p className="mt-5 text-xl text-white/70 leading-relaxed">
-                Gestiona contenido de producto para retailers y marketplaces desde una sola fuente de verdad.
+                El software PIM para ecommerce y retail: gestiona contenido de producto para retailers y marketplaces desde una sola fuente de verdad.
               </p>
               <p className="mt-4 max-w-xl text-lg text-white/70 leading-relaxed">
-                Centraliza información de producto, adapta formatos por canal y acelera la publicación de fichas de producto con más control operativo.
+                Centraliza información de producto, adapta formatos por canal, automatiza la carga de productos y acelera la publicación de fichas con más control operativo.
               </p>
               <div className="flex flex-wrap gap-3 mt-6">
                 <Link href={canonicalRoutes.latam.contacto} className="w-full sm:w-auto justify-center flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white gradient-brand hover:opacity-90 transition-opacity shadow-md">

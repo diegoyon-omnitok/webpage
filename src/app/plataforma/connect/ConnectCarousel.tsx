@@ -10,7 +10,7 @@ const labels = ["", "", ""] as const;
 const features: ProductFeatureCarouselItem[] = [
   {
     icon: Database,
-    title: "Unifica tu catálogo en una única fuente de información.",
+    title: "Un catálogo de productos centralizado en una única fuente de información.",
     desc: "Toda la información de tus productos queda unificada, actualizada y siempre disponible desde una sola plataforma.",
     accent: "from-[#6EC1E4] to-[#1F87B5]",
     dot: "#1F87B5",

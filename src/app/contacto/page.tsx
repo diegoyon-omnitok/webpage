@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Mail, Zap, ShieldCheck, Users } from "lucide-react";
 import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
 import RelatedLinksSection from "@/components/seo/RelatedLinksSection";
-import HubSpotFormEmbed from "@/components/ui/HubSpotFormEmbed";
+import ContactFormCard from "@/components/ui/ContactFormCard";
 import { hubspotForms } from "@/lib/hubspot-forms";
 import { canonicalRoutes } from "@/lib/markets";
 
@@ -41,10 +41,12 @@ export default function ContactoPage() {
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Formulario */}
-            <div className="bg-white rounded-2xl shadow-[0_8px_40px_-8px_rgba(77,74,157,0.12)] p-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">Envíanos un mensaje</h2>
-              <HubSpotFormEmbed config={hubspotForms.latamContact} />
-            </div>
+            <ContactFormCard
+              config={hubspotForms.latamContact}
+              title="Envíanos un mensaje"
+              submittedTitle="Te enviamos un mensaje"
+              submittedMessage="¡Muchas gracias por escribirnos! Te responderemos a la brevedad."
+            />
 
             {/* Panel de marca */}
             <div className="relative rounded-2xl overflow-hidden p-8 lg:p-10" style={{ background: "linear-gradient(135deg, #4D4A9D 0%, #2D2B5F 100%)" }}>

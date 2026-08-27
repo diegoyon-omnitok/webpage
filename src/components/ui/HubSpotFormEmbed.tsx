@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import type { HubSpotFormConfig } from "@/lib/hubspot-forms";
 import { loadHubSpotFormsScript } from "@/lib/hubspot-script";
 
@@ -8,12 +8,27 @@ type HubSpotFormEmbedProps = {
   config: HubSpotFormConfig;
   className?: string;
   compact?: boolean;
+  /** Se ejecuta tras un envío correcto del formulario. */
+  onFormSubmitted?: () => void;
+  /** Sobrescribe el mensaje inline de HubSpot ("" lo oculta para manejar el éxito en React). */
+  inlineMessage?: string;
 };
 
-export default function HubSpotFormEmbed({ config, className, compact = false }: HubSpotFormEmbedProps) {
+export default function HubSpotFormEmbed({
+  config,
+  className,
+  compact = false,
+  onFormSubmitted,
+  inlineMessage,
+}: HubSpotFormEmbedProps) {
   const reactId = useId();
   const targetId = `hubspot-form-${reactId.replace(/[:]/g, "")}`;
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+  const onFormSubmittedRef = useRef(onFormSubmitted);
+
+  useEffect(() => {
+    onFormSubmittedRef.current = onFormSubmitted;
+  }, [onFormSubmitted]);
 
   useEffect(() => {
     let cancelled = false;
@@ -32,6 +47,10 @@ export default function HubSpotFormEmbed({ config, className, compact = false }:
         window.hbspt.forms.create({
           ...config,
           target: targetSelector,
+          ...(inlineMessage !== undefined ? { inlineMessage } : {}),
+          onFormSubmitted: () => {
+            onFormSubmittedRef.current?.();
+          },
         });
 
         if (!cancelled) {
@@ -46,14 +65,31 @@ export default function HubSpotFormEmbed({ config, className, compact = false }:
 
     mountForm();
 
+    // Respaldo: HubSpot también anuncia el envío vía postMessage (por si la
+    // versión del embed no ejecuta el callback de create()).
+    function handleMessage(event: MessageEvent) {
+      const data = event.data as
+        | { type?: string; eventName?: string; id?: string }
+        | undefined;
+      if (
+        data?.type === "hsFormCallback" &&
+        data.eventName === "onFormSubmitted" &&
+        (!data.id || data.id === config.formId)
+      ) {
+        onFormSubmittedRef.current?.();
+      }
+    }
+    window.addEventListener("message", handleMessage);
+
     return () => {
       cancelled = true;
+      window.removeEventListener("message", handleMessage);
       const targetNode = document.querySelector<HTMLElement>(targetSelector);
       if (targetNode) {
         targetNode.innerHTML = "";
       }
     };
-  }, [config, targetId]);
+  }, [config, targetId, inlineMessage]);
 
   return (
     <div className={`hubspot-form-shell ${compact ? "hubspot-form-shell-compact" : ""} ${className ?? ""}`.trim()}>

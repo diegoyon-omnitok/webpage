@@ -1,6 +1,5 @@
 import { Mail, Zap, ShieldCheck, Users } from "lucide-react";
 import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
-import RelatedLinksSection from "@/components/seo/RelatedLinksSection";
 import HubSpotFormEmbedPtBr from "@/components/markets/brasil/sections/HubSpotFormEmbedPtBr";
 import { hubspotForms } from "@/lib/hubspot-forms";
 import { canonicalRoutes } from "@/lib/markets";
@@ -91,32 +90,6 @@ export default function BrasilContatoPage() {
           </div>
         </div>
       </section>
-
-      <RelatedLinksSection
-        eyebrow="Páginas-chave"
-        title="Explore as soluções antes de falar com vendas"
-        description="Se você chegou ao contato por interesse comercial, estas páginas ajudam a entender onde a Omnitok gera mais impacto sem competir com a intenção transacional desta URL."
-        links={[
-          {
-            title: "Conteúdo enriquecido para ecommerce",
-            description: "Melhore páginas de produto e distribua conteúdo visual em varejistas e marketplaces.",
-            href: canonicalRoutes.brasil.content,
-            anchor: "Ver Omnitok Content",
-          },
-          {
-            title: "Gestão de conteúdo de produto",
-            description: "Centralize informações de produto e publique com menos fricção em múltiplos canais.",
-            href: canonicalRoutes.brasil.connect,
-            anchor: "Conheça o Omnitok PIM",
-          },
-          {
-            title: "Digital Shelf Analytics",
-            description: "Meça preço, estoque, conteúdo e visibilidade digital em todos os seus varejistas.",
-            href: canonicalRoutes.brasil.dsa,
-            anchor: "Explore o Digital Shelf Analytics",
-          },
-        ]}
-      />
     </>
   );
 }

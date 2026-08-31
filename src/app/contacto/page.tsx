@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Mail, Zap, ShieldCheck, Users } from "lucide-react";
 import SeoBreadcrumbs from "@/components/seo/SeoBreadcrumbs";
-import RelatedLinksSection from "@/components/seo/RelatedLinksSection";
 import ContactFormCard from "@/components/ui/ContactFormCard";
 import { hubspotForms } from "@/lib/hubspot-forms";
 import { canonicalRoutes } from "@/lib/markets";
@@ -100,32 +99,6 @@ export default function ContactoPage() {
           </div>
         </div>
       </section>
-
-      <RelatedLinksSection
-        eyebrow="Paginas clave"
-        title="Explora las soluciones antes de hablar con ventas"
-        description="Si llegaste a contacto por interés comercial, estas páginas te ayudan a entender dónde Omnitok genera más impacto sin competir con la intención transaccional de esta URL."
-        links={[
-          {
-            title: "Contenido enriquecido para ecommerce",
-            description: "Mejora fichas de producto y distribuye contenido visual en retailers y marketplaces.",
-            href: canonicalRoutes.latam.content,
-            anchor: "Ver Omnitok Content",
-          },
-          {
-            title: "Gestión de contenido de producto",
-            description: "Centraliza información de producto y publica con menos fricción en múltiples canales.",
-            href: canonicalRoutes.latam.connect,
-            anchor: "Conoce Omnitok PIM",
-          },
-          {
-            title: "Digital Shelf Analytics",
-            description: "Mide precio, stock, contenido y visibilidad digital en todos tus retailers.",
-            href: canonicalRoutes.latam.dsa,
-            anchor: "Explora Digital Shelf Analytics",
-          },
-        ]}
-      />
     </>
   );
 }

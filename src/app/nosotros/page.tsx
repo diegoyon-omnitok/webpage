@@ -66,25 +66,25 @@ export default function NosotrosPage() {
       </section>
 
       <RelatedLinksSection
-        eyebrow="Explora Omnitok"
-        title="Conoce la plataforma detrás de nuestra historia"
-        description="La página Nosotros refuerza confianza de marca. Desde aquí puedes profundizar en las soluciones principales y luego hablar con el equipo."
+        eyebrow="Paginas clave"
+        title="Explora las soluciones antes de hablar con ventas"
+        description="Estas páginas te ayudan a entender dónde Omnitok genera más impacto antes de hablar con el equipo."
         links={[
           {
-            title: "Gestión de contenido de producto",
-            description: "Descubre cómo Omnitok centraliza información de producto para retailers y marketplaces.",
-            href: canonicalRoutes.latam.connect,
-            anchor: "Explora Omnitok PIM",
-          },
-          {
             title: "Contenido enriquecido para ecommerce",
-            description: "Descubre cómo Omnitok mejora las páginas de producto en retailers.",
+            description: "Mejora fichas de producto y distribuye contenido visual en retailers y marketplaces.",
             href: canonicalRoutes.latam.content,
             anchor: "Ver Omnitok Content",
           },
           {
+            title: "Gestión de contenido de producto",
+            description: "Centraliza información de producto y publica con menos fricción en múltiples canales.",
+            href: canonicalRoutes.latam.connect,
+            anchor: "Conoce Omnitok PIM",
+          },
+          {
             title: "Digital Shelf Analytics",
-            description: "Entiende cómo monitoreamos ejecución digital, visibilidad y conversión.",
+            description: "Mide precio, stock, contenido y visibilidad digital en todos tus retailers.",
             href: canonicalRoutes.latam.dsa,
             anchor: "Explora Digital Shelf Analytics",
           },

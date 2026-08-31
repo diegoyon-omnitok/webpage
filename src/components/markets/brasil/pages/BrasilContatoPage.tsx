@@ -34,7 +34,7 @@ export default function BrasilContatoPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Formulario */}
             <div className="bg-white rounded-2xl shadow-[0_8px_40px_-8px_rgba(77,74,157,0.12)] p-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">Envie uma mensagem para nós</h2>
+              <h2 className="text-xl font-bold text-gray-900 mb-6">Agende uma reunião conosco</h2>
               <HubSpotFormEmbedPtBr config={hubspotForms.brasilContact} />
             </div>
 

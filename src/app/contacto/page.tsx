@@ -42,7 +42,7 @@ export default function ContactoPage() {
             {/* Formulario */}
             <ContactFormCard
               config={hubspotForms.latamContact}
-              title="Envíanos un mensaje"
+              title="Agenda una reunión con nosotros"
               submittedTitle="Te enviamos un mensaje"
               submittedMessage="¡Muchas gracias por escribirnos! Te responderemos a la brevedad."
             />

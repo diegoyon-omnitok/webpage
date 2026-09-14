@@ -23,9 +23,9 @@ const features: ProductFeatureCarouselItem[] = [
   },
   {
     icon: Share2,
-    title: "Distribuye tu contenido a cada retailer, automáticamente",
-    descLead: "Publica una vez y tu contenido enriquecido llega a todos tus canales al mismo tiempo.",
-    desc: "Nuestra tecnología conecta tu contenido directamente con cada retailer. No necesitas cargar archivos manualmente ni coordinar con cada canal. Actualizas en Omnitok y el cambio se refleja en todos los puntos de venta digitales. Actualmente contamos con más de 150 retailers conectados en LATAM.",
+    title: "Distribuye tu contenido de forma simple a cada retailer",
+    descLead: "Crea y administra tu contenido en Omnitok y entrégalo mediante un script estándar.",
+    desc: "Cada retailer implementa el script en sus PDPs y, una vez activo, las actualizaciones realizadas en Omnitok se reflejan automáticamente en el contenido publicado. Más de 150 retailers en LATAM ya utilizan esta tecnología.",
     accent: "from-[#4D4A9D] to-[#6366f1]",
     dot: "#4D4A9D",
     customVisual: <ContentDistributionMockup />,

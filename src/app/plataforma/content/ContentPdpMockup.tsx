@@ -418,11 +418,13 @@ export default function ContentPdpMockup() {
       <div className="mb-4">
         <div className="flex w-full rounded-xl border border-gray-200 bg-gray-50 p-1">
           <button type="button" onClick={() => setMode("before")}
-            className={`flex-1 text-center rounded-lg px-2 py-2 text-[10px] sm:text-[11px] font-semibold transition-all ${mode === "before" ? "bg-white text-gray-900 shadow-sm" : "text-gray-400 hover:text-gray-600"}`}>
+            aria-pressed={mode === "before"}
+            className={`flex-1 text-center rounded-lg px-2 py-2 text-[10px] sm:text-[11px] font-semibold transition-all cursor-pointer ${mode === "before" ? "bg-[#4D4A9D] text-white shadow-md" : "text-gray-500 hover:bg-white hover:text-gray-900"}`}>
             Sin contenido enriquecido
           </button>
           <button type="button" onClick={() => setMode("after")}
-            className={`flex-1 text-center rounded-lg px-2 py-2 text-[10px] sm:text-[11px] font-semibold transition-all ${mode === "after" ? "bg-white text-gray-900 shadow-sm" : "text-gray-400 hover:text-gray-600"}`}>
+            aria-pressed={mode === "after"}
+            className={`flex-1 text-center rounded-lg px-2 py-2 text-[10px] sm:text-[11px] font-semibold transition-all cursor-pointer ${mode === "after" ? "bg-[#FF177B] text-white shadow-md" : "text-gray-500 hover:bg-white hover:text-gray-900"}`}>
             Con Omnitok Content
           </button>
         </div>

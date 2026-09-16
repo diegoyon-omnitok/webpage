@@ -5,7 +5,7 @@ import Image from "next/image";
 // `tall` = stacked logos (icon + wordmark) that need extra height to stay legible.
 // `shiftUp` = logos whose wordmark sits below the visual center because the source
 //             image has extra content (taglines, secondary text) below the wordmark.
-const clients: { name: string; src: string; tall?: boolean; shiftUp?: boolean }[] = [
+export const clients: { name: string; src: string; tall?: boolean; shiftUp?: boolean }[] = [
   { name: "Xiaomi",        src: "/clients/xiaomi-logo.webp", tall: true },
   { name: "HP",            src: "/clients/hp-logo.png", tall: true },
   { name: "Panasonic",     src: "/clients/panasonic-logo.png" },

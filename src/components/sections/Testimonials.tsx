@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Quote, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { canonicalRoutes } from "@/lib/markets";
 
-const testimonials = [
+export const testimonials = [
   {
     quote:
       "Elegimos trabajar con Omnitok porque se adaptaron perfectamente a nuestras necesidades, ofreciendo una excelente relación calidad-precio. Con su apoyo, logramos aumentar la visibilidad de nuestra marca, identificamos oportunidades para mejorar la experiencia del cliente y optimizamos nuestras inversiones, lo que resultó en un crecimiento significativo de los ingresos.",

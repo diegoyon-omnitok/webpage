@@ -10,7 +10,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 
-const problems = [
+export const problems = [
   {
     icon: FileX,
     number: "01",

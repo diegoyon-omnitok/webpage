@@ -9,6 +9,7 @@ import ConnectPage from "@/app/plataforma/connect/page";
 import DigitalShelfAnalyticsPage from "@/app/plataforma/digital-shelf-analytics/page";
 import NosotrosPage from "@/app/nosotros/page";
 import LatamRecursosPage from "@/components/pages/LatamRecursosPage";
+import LatamSummitPage from "@/components/pages/LatamSummitPage";
 import LatamResourceLandingPage from "@/components/pages/LatamResourceLandingPage";
 import { getResourceBySlug, resourcePath } from "@/data/resources";
 import LatamPrivacyPolicyPage from "@/components/pages/LatamPrivacyPolicyPage";
@@ -160,6 +161,15 @@ const latamPages: Record<string, PageDefinition> = {
     manualTitle: "Términos y Condiciones del Servicio | Omnitok",
     manualDescription:
       "Términos y Condiciones del Servicio de la plataforma Omnitok en modalidad SaaS.",
+    robots: { index: false, follow: false },
+  },
+  // Página NO LISTADA: landing del Summit, se llega escaneando el QR del stand.
+  // Sin nav propia, fuera del sitemap y con noindex/nofollow.
+  summit: {
+    component: LatamSummitPage,
+    manualTitle: "Omnitok en el eCommerce Innovation Summit 2026 | Agenda una reunión",
+    manualDescription:
+      "Mejora la ejecución digital de tu marca: monitorea cómo se ven tus productos en cada retailer, centraliza su información y activa contenido enriquecido. Agenda una reunión con Julián Portilla.",
     robots: { index: false, follow: false },
   },
   nosotros: {

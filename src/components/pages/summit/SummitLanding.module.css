@@ -1,0 +1,50 @@
+/* Estilos de la landing del Summit que Tailwind no cubre: marquee de logos y
+   carrusel de testimonios. Todo respeta prefers-reduced-motion. */
+
+/* ── Marquee de logos ─────────────────────────────────────────────────── */
+
+.marquee {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: summit-marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.marqueeWrap:hover .marquee,
+.marqueeWrap:focus-within .marquee {
+  animation-play-state: paused;
+}
+
+@keyframes summit-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.75rem;
+  }
+  /* Sin animación no hace falta la copia que cierra el bucle. */
+  .dup {
+    display: none;
+  }
+}
+
+/* ── Carrusel de testimonios ──────────────────────────────────────────── */
+
+.noScrollbar {
+  scrollbar-width: none;
+}
+
+.noScrollbar::-webkit-scrollbar {
+  display: none;
+}

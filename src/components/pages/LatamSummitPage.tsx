@@ -7,7 +7,7 @@
  *
  *  Experiencia CERRADA de conversión: la persona llega escaneando el QR del
  *  stand (casi siempre desde el celular) y el único objetivo es que agende una
- *  reunión con Julián Portilla.
+ *  reunión con Diego Yon.
  *
  *  Orden (principios de landing SaaS de alta conversión):
  *    1. Hero: titular corto de beneficio, dolor → solución, 3 beneficios, CTA.
@@ -16,7 +16,7 @@
  *    3b. Cómo ayuda Omnitok (DSA · PIM · Content) — beneficios, no features.
  *    4. CTA repetido.
  *    5. Testimonios reales en carrusel compacto.
- *    6. Cierre: invitación + calendario de Julián embebido (la conversión).
+ *    6. Cierre: invitación + calendario de Diego embebido (la conversión).
  *
  *  - Sin navbar, footer ni WhatsApp (ver `layout/ShellFrame.tsx`).
  *  - Encabezado mínimo: solo el logo, sin enlace. No hay salidas.
@@ -26,7 +26,7 @@
  *  - Logos de clientes: lista de `sections/ClientsBar` (home LATAM).
  *  - Testimonios: lista de `sections/Testimonials` (home LATAM).
  *
- *  El calendario es el HubSpot Meetings de Julián embebido en
+ *  El calendario es el HubSpot Meetings de Diego embebido en
  *  `summit/SummitAgenda.tsx` (link en `summit/config.ts`). No se toca.
  *
  *  Página NO LISTADA: fuera de menú y sitemap, con noindex/nofollow desde el
@@ -220,11 +220,11 @@ export default function LatamSummitPage() {
               de tus productos en cada retailer.
             </p>
             <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-primary">
-              Agenda directamente con Julián Portilla
+              Agenda directamente con Diego Yon
             </p>
           </div>
 
-          {/* HubSpot Meetings de Julián — integración intacta */}
+          {/* HubSpot Meetings de Diego — integración intacta */}
           <SummitAgenda />
         </div>
       </section>

@@ -5,7 +5,7 @@
  *  CALENDARIO DE /es/summit — HubSpot Meetings embebido
  * ════════════════════════════════════════════════════════════════════════════
  *
- *  Inserta el calendario de reuniones de HubSpot de Julián dentro de la página
+ *  Inserta el calendario de reuniones de HubSpot de Diego dentro de la página
  *  (sin salir del sitio). HubSpot se encarga de la disponibilidad real, del
  *  formulario de datos, de crear el evento y de enviar la invitación.
  *
@@ -92,7 +92,7 @@ export default function SummitAgenda() {
             className="mt-4 inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#E0156E]"
           >
             <ExternalLink size={16} />
-            Abrir la agenda de Julián
+            Abrir la agenda de Diego
           </a>
         </div>
       )}

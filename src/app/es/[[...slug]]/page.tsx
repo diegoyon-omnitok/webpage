@@ -169,7 +169,7 @@ const latamPages: Record<string, PageDefinition> = {
     component: LatamSummitPage,
     manualTitle: "Omnitok en el eCommerce Innovation Summit 2026 | Agenda una reunión",
     manualDescription:
-      "Mejora la ejecución digital de tu marca: monitorea cómo se ven tus productos en cada retailer, centraliza su información y activa contenido enriquecido. Agenda una reunión con Julián Portilla.",
+      "Mejora la ejecución digital de tu marca: monitorea cómo se ven tus productos en cada retailer, centraliza su información y activa contenido enriquecido. Agenda una reunión con Diego Yon.",
     robots: { index: false, follow: false },
   },
   nosotros: {

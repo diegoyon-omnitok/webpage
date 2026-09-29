@@ -433,6 +433,9 @@ export const exactRedirects: Record<string, string> = {
   "/casos-de-exito": canonicalRoutes.latam.home,
   "/demo": canonicalRoutes.latam.contacto,
   "/pricing": canonicalRoutes.latam.contacto,
+  // URL corta de los TyC del Servicio usada en propuestas y contratos.
+  "/condicionesSaaS": "/es/terminos-y-condiciones",
+  "/condicionessaas": "/es/terminos-y-condiciones",
   ...blogRedirectMap,
 };
 
